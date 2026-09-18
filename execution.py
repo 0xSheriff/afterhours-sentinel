@@ -711,7 +711,91 @@ class SentinelLogger:
             writer = csv.DictWriter(f, fieldnames=CSV_HEADERS, extrasaction="ignore")
             writer.writerow(record)
 
+        # 3. Synchronize static dashboard records (public, dist, and src)
+        try:
+            self._sync_dashboard_records()
+        except Exception:
+            pass
+
         return record
+
+    def _sync_dashboard_records(self):
+        """
+        Synchronizes JSONL records directly into the static dashboard records.json
+        (dashboard/public/data/records.json, dashboard/dist/data/records.json, dashboard/src/data/records.json)
+        whenever a new decision is logged. This ensures the web dashboard reflects live status immediately.
+        """
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        public_out = os.path.join(base_dir, "dashboard", "public", "data", "records.json")
+        dist_out = os.path.join(base_dir, "dashboard", "dist", "data", "records.json")
+        src_out = os.path.join(base_dir, "dashboard", "src", "data", "records.json")
+
+        all_records = []
+        seen = set()
+
+        def dedup_key(r):
+            return f"{r.get('timestamp')}|{r.get('event_headline')}|{r.get('decision')}"
+
+        if os.path.exists(self.jsonl_path):
+            with open(self.jsonl_path, mode="r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        obj = json.loads(line)
+                        k = dedup_key(obj)
+                        if k not in seen:
+                            seen.add(k)
+                            all_records.append(obj)
+                    except Exception:
+                        pass
+
+        if os.path.exists(self.csv_path):
+            try:
+                with open(self.csv_path, mode="r", encoding="utf-8") as f:
+                    reader = csv.DictReader(f)
+                    num_fields = ["expected_move", "actual_move", "divergence", "z_score", "volume_ratio", "position_size", "stop_price", "entry_price", "exit_price", "pnl"]
+                    for row in reader:
+                        for nf in num_fields:
+                            if nf in row:
+                                try:
+                                    row[nf] = float(row[nf])
+                                except (ValueError, TypeError):
+                                    row[nf] = 0.0
+                        k = dedup_key(row)
+                        if k not in seen:
+                            seen.add(k)
+                            all_records.append(row)
+            except Exception:
+                pass
+
+        try:
+            all_records.sort(key=lambda r: str(r.get("timestamp", "")), reverse=True)
+        except Exception:
+            pass
+
+        for idx, r in enumerate(all_records):
+            r["id"] = idx + 1
+
+        json_bytes = json.dumps(all_records, indent=2)
+
+        for target_path in (public_out, src_out):
+            try:
+                os.makedirs(os.path.dirname(target_path), exist_ok=True)
+                with open(target_path, mode="w", encoding="utf-8") as f:
+                    f.write(json_bytes)
+            except Exception:
+                pass
+
+        dist_dir = os.path.join(base_dir, "dashboard", "dist")
+        if os.path.exists(dist_dir):
+            try:
+                os.makedirs(os.path.dirname(dist_out), exist_ok=True)
+                with open(dist_out, mode="w", encoding="utf-8") as f:
+                    f.write(json_bytes)
+            except Exception:
+                pass
 
 
 def export_submission_log(output_csv: str = "logs/submission_audit_trail.csv") -> int:
