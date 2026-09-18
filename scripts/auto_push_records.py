@@ -73,7 +73,7 @@ def push_updates():
     except Exception:
         pass
 
-    commit_msg = f"telemetry: sync live trade records ({rec_count}) [skip ci]"
+    commit_msg = f"telemetry: sync live trade records ({rec_count})"
     code, out, err = run_cmd(f'git commit -m "{commit_msg}"')
     if code != 0:
         logging.error(f"Git commit failed: {err or out}")
