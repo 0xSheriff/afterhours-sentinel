@@ -1,6 +1,5 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import rawRecords from './data/records.json'
 import riskConfig from './data/riskConfig.json'
 
 // ── Dev mode flag (set to false for submission build) ──
@@ -9,14 +8,6 @@ const USE_DEMO_DATA = false
 const DEMO_RECORDS = [
   { id: 99, timestamp: '2026-09-18T00:00:00Z', mode: 'live', execution_client: 'DemoClient', llm_source: 'groq_qwen3.8-27b [live_api]', event_headline: 'DEMO EVENT — NOT REAL', event_type: 'earnings', expected_move: 0.01, actual_move: 0.03, divergence: 0.02, z_score: 2.5, volume_ratio: 0.3, qwen_direction: 'BULLISH', qwen_reasoning: 'Demo reasoning — not real data.', decision: 'NO_TRADE', signals_aligned: '0/3', position_size: 0, stop_price: 0, entry_price: 100, exit_price: 0, exit_reason: 'N/A', pnl: 0, reason: 'DEMO: This is synthetic data for development only.' }
 ]
-
-function getRecords() {
-  if (rawRecords && rawRecords.length > 0) return { records: rawRecords, isDemo: false }
-  if (USE_DEMO_DATA) return { records: DEMO_RECORDS, isDemo: true }
-  return { records: [], isDemo: true }
-}
-
-const { records, isDemo } = getRecords()
 
 // ── Strict Numerical Formatters (JetBrains Mono tabular figures) ──
 const fmt = (n, d = 2) => Number(n).toFixed(d)
@@ -194,6 +185,51 @@ export default function App() {
   const [filterSource, setFilterSource] = useState('all') // all | live | fallback
   const [filterSymbol, setFilterSymbol] = useState('')
   const [scrolled, setScrolled] = useState(false)
+  const [records, setRecords] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [isDemo, setIsDemo] = useState(false)
+  const [lastRefreshed, setLastRefreshed] = useState(null)
+
+  const loadRecords = useCallback(async (silent = false) => {
+    try {
+      if (!silent) setIsLoading(true)
+      const baseUrl = import.meta.env.BASE_URL || './'
+      const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`
+      const url = `${normalizedBase}data/records.json?_t=${Date.now()}`
+      const res = await fetch(url)
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}: failed to fetch records.json`)
+      }
+      const data = await res.json()
+      if (Array.isArray(data)) {
+        setRecords(data)
+        setIsDemo(false)
+        setLastRefreshed(new Date())
+      } else {
+        throw new Error('Data is not an array')
+      }
+    } catch (err) {
+      console.warn('Dashboard records fetch warning:', err)
+      setRecords((prev) => {
+        if (prev && prev.length > 0) return prev
+        if (USE_DEMO_DATA) {
+          setIsDemo(true)
+          return DEMO_RECORDS
+        }
+        return []
+      })
+    } finally {
+      if (!silent) setIsLoading(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    loadRecords(false)
+    const interval = setInterval(() => {
+      loadRecords(true)
+    }, 60000)
+    return () => clearInterval(interval)
+  }, [loadRecords])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -235,7 +271,7 @@ export default function App() {
       noTrades,
       skipped
     }
-  }, [])
+  }, [records])
 
   // 2. BACKTEST CALIBRATION STATS (Secondary validation sample)
   const backtestStats = useMemo(() => {
@@ -261,7 +297,7 @@ export default function App() {
       maxT,
       noTrades
     }
-  }, [])
+  }, [records])
 
   // Filtered records for Decision Feed
   const filteredRecords = useMemo(() => {
@@ -272,7 +308,7 @@ export default function App() {
     if (filterSource === 'fallback') r = r.filter(rec => !isLiveCall(rec))
     if (filterSymbol) r = r.filter(rec => rec.event_headline?.toLowerCase().includes(filterSymbol.toLowerCase()))
     return r.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-  }, [filterMode, filterSource, filterSymbol])
+  }, [records, filterMode, filterSource, filterSymbol])
 
   // Featured decision: latest real record from records.json
   const featuredRecord = useMemo(() => {
@@ -281,7 +317,7 @@ export default function App() {
       return [...liveRecs].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))[0]
     }
     return records[0] || null
-  }, [])
+  }, [records])
 
   const selectedRecord = selectedId != null ? records.find(r => r.id === selectedId) : null
 
@@ -374,6 +410,15 @@ export default function App() {
 
             {/* Right Controls: Light/Dark Toggle + Launch App CTA */}
             <div className="flex items-center gap-2 sm:gap-3">
+              <div
+                className="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border text-[11px] font-mono-data select-none"
+                style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-hairline)', color: 'var(--text-secondary)' }}
+                title="Telemetric background polling active (refreshes every 60s without reload)"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Live Feed (60s)</span>
+              </div>
+
               <button
                 onClick={() => setDark(!dark)}
                 className="p-2 rounded-xl border text-xs font-display font-bold transition-transform hover:scale-105"
@@ -430,6 +475,14 @@ export default function App() {
             MAIN CONTENT AREA
            ═══════════════════════════════════════════════════════════ */}
         <main className="flex-1">
+          {isLoading ? (
+            <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-4">
+              <div className="w-10 h-10 border-2 rounded-full animate-spin" style={{ borderColor: 'var(--border-hairline)', borderTopColor: 'var(--brand-chartreuse)' }} />
+              <div className="font-mono-data text-xs tracking-wider uppercase text-center" style={{ color: 'var(--text-muted)' }}>
+                Syncing Autonomous Audit Trail...
+              </div>
+            </div>
+          ) : (
           <AnimatePresence mode="wait">
             {/* ─────────────────────────────────────────────────────────
                 1. LANDING PAGE SCREEN (ProFinance Chartreuse/Dark Framer Style)
@@ -1486,6 +1539,7 @@ export default function App() {
               </motion.div>
             )}
           </AnimatePresence>
+          )}
         </main>
 
         {/* Minimal Bottom Line for App Screens (Landing has its own full footer) */}

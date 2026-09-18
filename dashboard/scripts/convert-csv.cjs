@@ -3,9 +3,15 @@ const path = require('path');
 
 const csvPath = path.resolve(__dirname, '../../logs/submission_audit_trail.csv');
 const jsonlPath = path.resolve(__dirname, '../../logs/sentinel_trades.jsonl');
-const outPath = path.resolve(__dirname, '../src/data/records.json');
+const publicOutPath = path.resolve(__dirname, '../public/data/records.json');
+const distOutPath = path.resolve(__dirname, '../dist/data/records.json');
+const srcOutPath = path.resolve(__dirname, '../src/data/records.json');
 
-fs.mkdirSync(path.dirname(outPath), { recursive: true });
+fs.mkdirSync(path.dirname(publicOutPath), { recursive: true });
+fs.mkdirSync(path.dirname(srcOutPath), { recursive: true });
+if (fs.existsSync(path.resolve(__dirname, '../dist'))) {
+  fs.mkdirSync(path.dirname(distOutPath), { recursive: true });
+}
 
 // Primary: JSONL (has all records including live)
 // Fallback: CSV (submission subset)
@@ -63,8 +69,14 @@ allRecords.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 // Assign stable IDs
 allRecords.forEach((r, i) => { r.id = i + 1; });
 
-fs.writeFileSync(outPath, JSON.stringify(allRecords, null, 2));
-console.log(`Converted ${allRecords.length} deduplicated records to ${outPath}`);
+const jsonContent = JSON.stringify(allRecords, null, 2);
+fs.writeFileSync(publicOutPath, jsonContent);
+fs.writeFileSync(srcOutPath, jsonContent);
+if (fs.existsSync(path.resolve(__dirname, '../dist'))) {
+  fs.mkdirSync(path.dirname(distOutPath), { recursive: true });
+  fs.writeFileSync(distOutPath, jsonContent);
+}
+console.log(`Converted ${allRecords.length} deduplicated records to ${publicOutPath}`);
 
 function parseCSVRow(row) {
   const result = [];

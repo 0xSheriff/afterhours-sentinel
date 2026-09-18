@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "update-data": "node scripts/convert-csv.cjs",
+    "build": "node scripts/convert-csv.cjs && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
