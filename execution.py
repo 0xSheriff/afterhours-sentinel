@@ -724,8 +724,18 @@ class SentinelLogger:
         Synchronizes JSONL records directly into the static dashboard records.json
         (dashboard/public/data/records.json, dashboard/dist/data/records.json, dashboard/src/data/records.json)
         whenever a new decision is logged. This ensures the web dashboard reflects live status immediately.
+
+        Guard: only runs when self.jsonl_path is the canonical production log.
+        Tests use temporary paths and must NEVER overwrite the real dashboard data.
         """
         base_dir = os.path.dirname(os.path.abspath(__file__))
+
+        # Only sync when logging to the canonical production file.
+        # Tests pass tmpdir paths — bail out immediately so they cannot corrupt records.json.
+        canonical_jsonl = os.path.realpath(os.path.join(base_dir, "logs", "sentinel_trades.jsonl"))
+        if os.path.realpath(self.jsonl_path) != canonical_jsonl:
+            return
+
         public_out = os.path.join(base_dir, "dashboard", "public", "data", "records.json")
         dist_out = os.path.join(base_dir, "dashboard", "dist", "data", "records.json")
         src_out = os.path.join(base_dir, "dashboard", "src", "data", "records.json")
