@@ -28,8 +28,32 @@ function isLiveMode(r) {
 function isBacktestMode(r) {
   return r.mode === 'backtest' || r.mode === 'historical_replay'
 }
+// ── Three-Way LLM Evaluation Classification ──
+// 1. LIVE: Groq API was called and returned verified model inference
+// 2. FALLBACK: An equity asset matched, but dropped to local rule classifier (rare / fallback allowed)
+// 3. SKIPPED: Pre-filter discarded event (no target ticker); zero LLM tokens spent (not an evaluation failure)
+function getLLMSourceCategory(r) {
+  if (!r) return 'skipped'
+  if (r.decision === 'SKIPPED_NO_ASSET_MATCH' || r.llm_source === 'skipped') {
+    return 'skipped'
+  }
+  if (r.llm_source && r.llm_source.includes('[live_api]')) {
+    return 'live'
+  }
+  if (r.llm_source && (r.llm_source.includes('fallback') || r.llm_source.includes('pending'))) {
+    return 'fallback'
+  }
+  return r.symbol ? 'fallback' : 'skipped'
+}
+
 function isLiveCall(r) {
-  return r.llm_source && r.llm_source.includes('[live_api]')
+  return getLLMSourceCategory(r) === 'live'
+}
+function isFallbackCall(r) {
+  return getLLMSourceCategory(r) === 'fallback'
+}
+function isSkippedCall(r) {
+  return getLLMSourceCategory(r) === 'skipped'
 }
 
 // ── Hand-Drawn Doodle Components (Landing & Brand Flourishes only) ──
@@ -109,23 +133,62 @@ function ZScoreGauge({ value, threshold = 2.0 }) {
   )
 }
 
-// ── Badges: Live (Chartreuse) vs Fallback (Warm Neutral Gray) ──
+// ── Badges: Live API (Chartreuse) vs Fallback (Amber) vs Pre-Filter Skipped (Indigo) ──
 function SourceBadge({ record, isDark = false }) {
-  const live = isLiveCall(record)
+  const cat = getLLMSourceCategory(record)
+  if (cat === 'live') {
+    return (
+      <span
+        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold uppercase tracking-wider transition-all"
+        style={{
+          background: 'var(--badge-live-bg)',
+          color: 'var(--badge-live-text)',
+          border: '1px solid var(--badge-live-border)',
+        }}
+        title="Live LLM API Ping: Groq Qwen 3.8-27B successfully executed"
+      >
+        <span
+          className="inline-block w-1.5 h-1.5 rounded-full"
+          style={{ background: 'var(--badge-live-text)' }}
+        />
+        Live API
+      </span>
+    )
+  }
+  if (cat === 'fallback') {
+    return (
+      <span
+        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold uppercase tracking-wider transition-all"
+        style={{
+          background: 'var(--badge-fallback-bg)',
+          color: 'var(--badge-fallback-text)',
+          border: '1px solid var(--badge-fallback-border)',
+        }}
+        title="Deterministic Fallback Rules: Target asset matched, but processed via fallback"
+      >
+        <span
+          className="inline-block w-1.5 h-1.5 rounded-full"
+          style={{ background: 'var(--badge-fallback-text)' }}
+        />
+        Fallback
+      </span>
+    )
+  }
   return (
     <span
       className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold uppercase tracking-wider transition-all"
       style={{
-        background: live ? (isDark ? 'rgba(212, 255, 63, 0.14)' : 'rgba(212, 255, 63, 0.3)') : 'var(--badge-fallback-bg)',
-        color: live ? (isDark ? '#D4FF3F' : '#223602') : 'var(--badge-fallback-text)',
-        border: `1px solid ${live ? (isDark ? 'rgba(212, 255, 63, 0.35)' : 'rgba(180, 220, 40, 0.75)') : 'var(--badge-fallback-border)'}`,
+        background: 'var(--badge-skipped-bg)',
+        color: 'var(--badge-skipped-text)',
+        border: '1px solid var(--badge-skipped-border)',
       }}
+      title="Pre-Filter Skipped: Headline contained no target ticker (zero LLM tokens consumed)"
     >
       <span
         className="inline-block w-1.5 h-1.5 rounded-full"
-        style={{ background: live ? (isDark ? '#D4FF3F' : '#223602') : 'var(--badge-fallback-text)' }}
+        style={{ background: 'var(--badge-skipped-text)' }}
       />
-      {live ? 'Live Call' : 'Fallback'}
+      Pre-Filter Skipped
     </span>
   )
 }
@@ -176,13 +239,14 @@ export default function App() {
   const queryParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null
   const initialDark = queryParams ? queryParams.get('theme') === 'dark' : false
   const initialScreen = queryParams && queryParams.get('screen') ? queryParams.get('screen') : 'Home'
+  const initialSource = queryParams && queryParams.get('source') ? queryParams.get('source') : 'all'
 
   // Requirement 1: Default theme is light mode
   const [dark, setDark] = useState(initialDark)
   const [activeScreen, setActiveScreen] = useState(initialScreen)
   const [selectedId, setSelectedId] = useState(null)
   const [filterMode, setFilterMode] = useState('all')     // all | live | backtest
-  const [filterSource, setFilterSource] = useState('all') // all | live | fallback
+  const [filterSource, setFilterSource] = useState(initialSource) // all | live | fallback | skipped
   const [filterSymbol, setFilterSymbol] = useState('')
   const [scrolled, setScrolled] = useState(false)
   const [records, setRecords] = useState([])
@@ -252,10 +316,23 @@ export default function App() {
     const trades = liveRecs.filter(r => r.decision === 'LONG' || r.decision === 'SHORT')
     const wins = trades.filter(r => (r.pnl || 0) > 0)
     const totalPnl = trades.reduce((s, r) => s + (r.pnl || 0), 0)
+
+    // Three-Way LLM Breakdown:
+    // - liveCalls: Groq Qwen 3.8-27B live HTTP inference succeeded
+    // - fallbackCalls: Target asset matched, but dropped to local rule classifier (rare / fallback allowed)
+    // - skippedCalls: Pre-filtered out before LLM because headline did not mention target assets (zero tokens spent)
     const liveCalls = liveRecs.filter(isLiveCall).length
-    const fallbackCalls = liveRecs.length - liveCalls
+    const fallbackCalls = liveRecs.filter(isFallbackCall).length
+    const skippedCalls = liveRecs.filter(isSkippedCall).length
+
+    // LLM Reliability Denominator:
+    // Only count events that actually reached the LLM evaluation stage (asset matched).
+    // Pre-filtered macro headlines (skippedCalls) must NOT dilute API reliability.
+    const evaluatedCalls = liveCalls + fallbackCalls
+    const liveCallRate = evaluatedCalls > 0 ? ((liveCalls / evaluatedCalls) * 100).toFixed(0) : '100'
+
     const noTrades = liveRecs.filter(r => r.decision === 'NO_TRADE').length
-    const skipped = liveRecs.filter(r => r.decision === 'SKIPPED_NO_ASSET_MATCH').length
+    const skipped = skippedCalls
 
     return {
       total: liveRecs.length,
@@ -268,6 +345,9 @@ export default function App() {
       endTime: maxT,
       liveCalls,
       fallbackCalls,
+      skippedCalls,
+      evaluatedCalls,
+      liveCallRate,
       noTrades,
       skipped
     }
@@ -305,7 +385,8 @@ export default function App() {
     if (filterMode === 'live') r = r.filter(isLiveMode)
     if (filterMode === 'backtest') r = r.filter(isBacktestMode)
     if (filterSource === 'live') r = r.filter(isLiveCall)
-    if (filterSource === 'fallback') r = r.filter(rec => !isLiveCall(rec))
+    if (filterSource === 'fallback') r = r.filter(isFallbackCall)
+    if (filterSource === 'skipped') r = r.filter(isSkippedCall)
     if (filterSymbol) r = r.filter(rec => rec.event_headline?.toLowerCase().includes(filterSymbol.toLowerCase()))
     return r.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
   }, [records, filterMode, filterSource, filterSymbol])
@@ -540,9 +621,9 @@ export default function App() {
                           </button>
                         </div>
 
-                        {/* Honest Trust Bar - Computed real count from liveStats */}
+                        {/* Honest Trust Bar - Computed real count from liveStats (excluding pre-filtered macro noise) */}
                         <div className="flex flex-wrap items-center gap-6 pt-4 text-xs font-display font-bold text-black/70 border-t border-black/10">
-                          <div>✓ {liveStats ? `${liveStats.liveCalls} Verified Live AI Calls Logged` : 'Groq Qwen3.8-27B Connected'}</div>
+                          <div>✓ {liveStats ? `${liveStats.liveCalls} Verified Live AI Calls (${liveStats.liveCallRate}% of Evaluated Events)` : 'Groq Qwen3.8-27B Connected'}</div>
                           <div>✓ 2.0σ Strict Overreaction Gate</div>
                           <div>✓ Bitget Agent Hub Demo</div>
                         </div>
@@ -1013,25 +1094,34 @@ export default function App() {
                           sublabel="Continuous loop"
                         />
                         <KPI
-                          label="Events Polled"
+                          label="Events Ingested"
                           value={liveStats.total}
-                          sublabel="News ingested"
+                          sublabel="Total RSS headlines"
                         />
                         <KPI
-                          label="LLM Source Split"
-                          value={`${liveStats.liveCalls} Live / ${liveStats.fallbackCalls} Fallback`}
-                          sublabel="API vs fallback rules"
+                          label="LLM Evaluation Split"
+                          value={
+                            <div className="flex flex-wrap items-baseline gap-1 text-sm sm:text-base font-bold font-mono-data">
+                              <span style={{ color: dark ? '#D4FF3F' : '#223602' }}>{liveStats.liveCalls} Live</span>
+                              <span style={{ color: 'var(--text-muted)' }}>/</span>
+                              <span style={{ color: '#F59E0B' }}>{liveStats.fallbackCalls} Fallback</span>
+                              <span style={{ color: 'var(--text-muted)' }}>/</span>
+                              <span style={{ color: '#818CF8' }}>{liveStats.skippedCalls} Skipped</span>
+                            </div>
+                          }
+                          valueClassName="font-mono-data py-0.5"
+                          sublabel="Live API vs fallback vs pre-filtered noise"
                         />
                         <KPI
                           label="Trades Executed"
                           value={liveStats.tradesCount}
-                          sublabel={liveStats.tradesCount === 0 ? `${liveStats.total} decisions logged` : 'Orders submitted'}
+                          sublabel={liveStats.tradesCount === 0 ? `${liveStats.evaluatedCalls} evaluated (${liveStats.skippedCalls} pre-filtered)` : 'Orders submitted'}
                           accent={liveStats.tradesCount > 0 ? '#10B981' : undefined}
                         />
                         <KPI
                           label="Win Rate"
-                          value={liveStats.winRate !== null ? `${liveStats.winRate}%` : '0 trades executed'}
-                          sublabel={liveStats.tradesCount === 0 ? `${liveStats.total} gate reviews` : `${liveStats.winsCount} wins`}
+                          value={liveStats.tradesCount > 0 ? `${liveStats.winRate}%` : '0%'}
+                          sublabel={liveStats.tradesCount === 0 ? `${liveStats.evaluatedCalls} gate reviews (0 trades)` : `${liveStats.winsCount} wins`}
                         />
                         <KPI
                           label="Realized P&L"
@@ -1047,21 +1137,21 @@ export default function App() {
                           <div className="p-2.5 rounded-xl text-lg" style={{ background: 'var(--brand-chartreuse-subtle)', color: dark ? '#D4FF3F' : '#223602' }}>⚡</div>
                           <div>
                             <div className="font-mono-data text-lg font-bold">{liveStats.tradesCount}</div>
-                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Executed Orders</div>
+                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Executed Orders (LONG / SHORT)</div>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
                           <div className="p-2.5 rounded-xl bg-zinc-500/10 text-zinc-400 text-lg">🛡️</div>
                           <div>
                             <div className="font-mono-data text-lg font-bold">{liveStats.noTrades}</div>
-                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Risk Gate Rejections (NO_TRADE)</div>
+                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Risk Gate Evaluated &amp; Blocked (NO_TRADE)</div>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
-                          <div className="p-2.5 rounded-xl text-lg" style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#818CF8' }}>⏭️</div>
+                          <div className="p-2.5 rounded-xl text-lg" style={{ background: 'var(--badge-skipped-bg)', color: 'var(--badge-skipped-text)' }}>⏭️</div>
                           <div>
-                            <div className="font-mono-data text-lg font-bold">{liveStats.skipped}</div>
-                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Macro Filtered (No Equity Match)</div>
+                            <div className="font-mono-data text-lg font-bold">{liveStats.skippedCalls}</div>
+                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Pre-Filter Skipped (No Target Equity Ticker)</div>
                           </div>
                         </div>
                       </div>
@@ -1169,7 +1259,7 @@ export default function App() {
                       <option value="backtest">Backtest Calibration Only</option>
                     </select>
 
-                    {/* Source Filter: Live API vs Fallback */}
+                    {/* Source Filter: Live API vs Fallback vs Skipped */}
                     <select
                       value={filterSource}
                       onChange={e => setFilterSource(e.target.value)}
@@ -1180,20 +1270,25 @@ export default function App() {
                         color: 'var(--text-primary)',
                       }}
                     >
-                      <option value="all">All LLM Sources</option>
-                      <option value="live">Live API Calls</option>
-                      <option value="fallback">Fallback Rules</option>
+                      <option value="all">All Sources (Live, Fallback &amp; Skipped)</option>
+                      <option value="live">Live API Calls (Groq Qwen 3.8-27B)</option>
+                      <option value="fallback">Fallback Rules (Target Asset Matched)</option>
+                      <option value="skipped">Pre-Filter Skipped (No Target Asset)</option>
                     </select>
                   </div>
 
                   <div className="flex items-center gap-4 text-xs font-mono-data" style={{ color: 'var(--text-muted)' }}>
                     <div className="flex items-center gap-1.5">
                       <span className="w-2.5 h-2.5 rounded-sm" style={{ background: 'var(--brand-chartreuse)' }} />
-                      <span>Live Call</span>
+                      <span>Live API</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2.5 h-2.5 rounded-sm" style={{ background: '#78716C' }} />
+                      <span className="w-2.5 h-2.5 rounded-sm" style={{ background: '#F59E0B' }} />
                       <span>Fallback</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-sm" style={{ background: '#818CF8' }} />
+                      <span>Pre-Filter Skipped</span>
                     </div>
                     <span className="font-bold">{filteredRecords.length} records</span>
                   </div>
@@ -1218,8 +1313,12 @@ export default function App() {
                       </thead>
                       <tbody>
                         {filteredRecords.map((r, idx) => {
-                          const isLive = isLiveCall(r)
-                          const barColor = isLive ? 'var(--brand-chartreuse)' : '#78716C'
+                          const cat = getLLMSourceCategory(r)
+                          const barColor = cat === 'live'
+                            ? 'var(--brand-chartreuse)'
+                            : cat === 'fallback'
+                              ? '#F59E0B'
+                              : '#818CF8'
 
                           return (
                             <motion.tr
@@ -1414,7 +1513,16 @@ export default function App() {
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
                           <DataRow label="Directional Classification" value={selectedRecord.qwen_direction} />
                           <DataRow label="LLM Engine" value={selectedRecord.llm_source} />
-                          <DataRow label="Call Provenance" value={isLiveCall(selectedRecord) ? 'Verified Live API Ping' : 'Deterministic Fallback'} />
+                          <DataRow
+                            label="Call Provenance"
+                            value={
+                              isLiveCall(selectedRecord)
+                                ? 'Verified Live API Ping (Groq Qwen 3.8-27B)'
+                                : isFallbackCall(selectedRecord)
+                                  ? 'Deterministic Fallback Rules'
+                                  : 'Pre-Filter Skipped (No Target Equity Ticker)'
+                            }
+                          />
                         </div>
 
                         <div className="rounded-xl p-4 border" style={{ background: 'var(--bg-canvas)', borderColor: 'var(--border-hairline)' }}>
@@ -1422,7 +1530,7 @@ export default function App() {
                             Full Un-truncated LLM Reasoning:
                           </div>
                           <p className="text-sm leading-relaxed font-mono-data" style={{ color: 'var(--text-secondary)' }}>
-                            {selectedRecord.qwen_reasoning || 'No LLM reasoning captured.'}
+                            {selectedRecord.qwen_reasoning || (isSkippedCall(selectedRecord) ? 'Pre-filtered: Headline contained no target equity ticker (NVDA, TSLA, AAPL, etc.). Zero LLM tokens consumed.' : 'No LLM reasoning captured.')}
                           </p>
                         </div>
                       </PipelineStage>
@@ -1561,20 +1669,22 @@ export default function App() {
 }
 
 // ── Shared Visual Sub-components ──
-function KPI({ label, value, sublabel, accent }) {
+function KPI({ label, value, sublabel, accent, valueClassName }) {
   return (
     <div
-      className="rounded-2xl p-4 border transition-all duration-200 hover:-translate-y-0.5 shadow-sm"
+      className="rounded-2xl p-4 border transition-all duration-200 hover:-translate-y-0.5 shadow-sm flex flex-col justify-between"
       style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-hairline)' }}
     >
-      <div className="text-[10px] font-display font-bold uppercase tracking-wider mb-1.5" style={{ color: 'var(--text-muted)' }}>
-        {label}
-      </div>
-      <div className="font-mono-data text-lg sm:text-xl font-bold truncate" style={{ color: accent || 'var(--text-primary)' }}>
-        {value}
+      <div>
+        <div className="text-[10px] font-display font-bold uppercase tracking-wider mb-1.5" style={{ color: 'var(--text-muted)' }}>
+          {label}
+        </div>
+        <div className={valueClassName || "font-mono-data text-lg sm:text-xl font-bold truncate"} style={{ color: accent || 'var(--text-primary)' }}>
+          {value}
+        </div>
       </div>
       {sublabel && (
-        <div className="text-[10px] mt-1 truncate font-display font-medium" style={{ color: 'var(--text-muted)' }}>
+        <div className="text-[10px] mt-1.5 font-display font-medium leading-tight" style={{ color: 'var(--text-muted)' }}>
           {sublabel}
         </div>
       )}
