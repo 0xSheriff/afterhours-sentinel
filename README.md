@@ -29,11 +29,11 @@ To guarantee account security and zero unintended exposure:
 
 ```mermaid
 graph TD
-    A[1. Event Listener] -->|Structured Market Event| B[2. Divergence Engine]
-    B -->|Deterministic Z-Score & Volume Ratio| C[3. LLM Analyst (Groq)]
-    C -->|Implied Event Direction: Bullish/Bearish/Neutral| D[4. Risk Engine]
-    D -->|3/3 Signals Verified + Risk Checks| E[5. Bitget Execution & Logger]
-    E -->|Structured Log JSONL / CSV| F[Backtest / Live Audit Logs]
+    A["1. Event Listener"] -->|Structured Market Event| B["2. Divergence Engine"]
+    B -->|Deterministic Z-Score & Volume Ratio| C["3. LLM Analyst (Groq)"]
+    C -->|Implied Event Direction: Bullish/Bearish/Neutral| D["4. Risk Engine"]
+    D -->|3/3 Signals Verified + Risk Checks| E["5. Bitget Execution & Logger"]
+    E -->|Structured Log JSONL / CSV| F["Backtest / Live Audit Logs"]
 ```
 
 ### Component Breakdown & Mathematical Rigor
