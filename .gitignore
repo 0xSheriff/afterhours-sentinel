@@ -1,0 +1,65 @@
+# Secrets & Credentials
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Dependencies
+node_modules/
+dashboard/node_modules/
+
+# Production Build Outputs
+dist/
+dashboard/dist/
+
+# Python cache & environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+parts/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary Chrome Profiles (headless screenshot captures)
+dashboard/tmp_chrome_profile*
+dashboard/.chrome-user-data*
+.chrome-user-data/
+
+# OS & Editor Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Ephemeral runtime lockfiles & process output
+*.pid
+logs/*.pid
+logs/supervisor_stdout.log
+logs/supervisor.log

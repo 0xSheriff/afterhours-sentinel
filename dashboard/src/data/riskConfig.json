@@ -1,0 +1,13 @@
+{
+  "positionSizePct": 0.03,
+  "stopLossPct": 0.015,
+  "maxOpenPositions": 2,
+  "dailyLossLimitPct": 0.02,
+  "zScoreThreshold": 2.0,
+  "volumeWeakThreshold": 0.5,
+  "minResidualStdev": 0.008,
+  "betaRollingWindowDays": 30,
+  "residualRollingWindowDays": 30,
+  "defaultPortfolioBalance": 100000,
+  "eventFreshnessHours": 4.0
+}

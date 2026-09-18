@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+
+:root {
+  --brand-chartreuse: #D4FF3F;
+  --brand-chartreuse-hover: #c4f329;
+  --brand-chartreuse-subtle: rgba(212, 255, 63, 0.14);
+  --brand-chartreuse-border: rgba(212, 255, 63, 0.45);
+
+  /* Light mode (off-white base) */
+  --bg-canvas: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F1F3F5;
+  --bg-card-stacked: #E9ECEF;
+  --border-hairline: rgba(0, 0, 0, 0.08);
+  --border-focus: rgba(212, 255, 63, 0.6);
+  --text-primary: #121417;
+  --text-secondary: #5E6573;
+  --text-muted: #8C94A4;
+
+  /* Badges & Highlights */
+  --accent-primary: #111111;
+  --badge-live-bg: rgba(212, 255, 63, 0.22);
+  --badge-live-text: #192305;
+  --badge-live-border: rgba(212, 255, 63, 0.85);
+  --badge-fallback-bg: rgba(120, 113, 108, 0.12);
+  --badge-fallback-text: #78716C;
+  --badge-fallback-border: rgba(120, 113, 108, 0.25);
+
+  --shadow-layered: 0 20px 40px -15px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  /* Dark mode (near-black base #111111 range) */
+  --bg-canvas: #0D0F12;
+  --bg-surface: #14171D;
+  --bg-surface-elevated: #1B2028;
+  --bg-card-stacked: #101217;
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(212, 255, 63, 0.4);
+  --text-primary: #F4F6F8;
+  --text-secondary: #9DA6B5;
+  --text-muted: #646E80;
+
+  /* Badges & Highlights */
+  --accent-primary: #D4FF3F;
+  --badge-live-bg: rgba(212, 255, 63, 0.12);
+  --badge-live-text: #D4FF3F;
+  --badge-live-border: rgba(212, 255, 63, 0.35);
+  --badge-fallback-bg: rgba(168, 162, 158, 0.1);
+  --badge-fallback-text: #A8A29E;
+  --badge-fallback-border: rgba(168, 162, 158, 0.2);
+
+  --shadow-layered: 0 25px 50px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+body {
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Typography tokens */
+.font-display {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: 'tnum' 1, 'zero' 1;
+  letter-spacing: -0.015em;
+}
+
+/* Custom layered card depth styles */
+.layered-card-stack {
+  position: relative;
+  isolation: isolate;
+}
+
+.layered-card-under {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: var(--bg-card-stacked);
+  border: 1px solid var(--border-hairline);
+  transform: rotate(-2.2deg) translateY(6px);
+  z-index: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.layered-card-main {
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-layered);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.layered-card-main:hover {
+  transform: translateY(-2px);
+}
+
+/* ProFinance CTA button */
+.btn-chartreuse {
+  background-color: var(--brand-chartreuse);
+  color: #0D0F12;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-chartreuse:hover {
+  background-color: var(--brand-chartreuse-hover);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(212, 255, 63, 0.35);
+}
+
+.btn-ghost-dark {
+  background: rgba(255, 255, 255, 0.06);
+  color: #F4F6F8;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.2s ease;
+}
+
+.btn-ghost-dark:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
