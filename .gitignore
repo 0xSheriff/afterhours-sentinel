@@ -63,3 +63,5 @@ Thumbs.db
 logs/*.pid
 logs/supervisor_stdout.log
 logs/supervisor.log
+logs/heartbeat.log
+logs/auto_push.log

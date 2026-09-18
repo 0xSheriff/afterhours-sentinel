@@ -63,6 +63,28 @@ if (fs.existsSync(csvPath)) {
   }
 }
 
+// Also read existing records.json if present (e.g. in Vercel build environment where logs/ might be outside root)
+if (fs.existsSync(publicOutPath)) {
+  try {
+    const existing = JSON.parse(fs.readFileSync(publicOutPath, 'utf-8'));
+    if (Array.isArray(existing)) {
+      for (const obj of existing) {
+        const key = dedupKey(obj);
+        if (!seen.has(key)) {
+          seen.add(key);
+          allRecords.push(obj);
+        }
+      }
+    }
+  } catch (e) { /* ignore parse errors */ }
+}
+
+// Safety: If no records found but publicOutPath exists, do not overwrite with empty data
+if (allRecords.length === 0 && fs.existsSync(publicOutPath)) {
+  console.warn('No records extracted from logs, preserving existing records.json');
+  process.exit(0);
+}
+
 // Sort by timestamp descending (most recent first for display)
 allRecords.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
