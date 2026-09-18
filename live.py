@@ -305,7 +305,8 @@ class LiveSentinelRunner:
                 quant_signal="FAIL",
                 risk_gate="BLOCK",
                 liquidity_condition="INSUFFICIENT_DATA",
-                llm_source="skipped"
+                llm_source="skipped",
+                strategy_mode="MOMENTUM" if event.event_type in ("earnings", "product") else "MEAN_REVERSION"
             )
             try:
                 self.logger.log_decision(
@@ -379,9 +380,10 @@ class LiveSentinelRunner:
             current_price=price_data["current_price"],
             portfolio_state=portfolio_state,
             llm_source=llm_res.llm_source,
-            qwen_validation=llm_res.qwen_validation
+            qwen_validation=llm_res.qwen_validation,
+            event_type=event.event_type
         )
-        print(f" -> [Risk Engine] Decision: {evaluation.decision} ({evaluation.signals_aligned} | Quant: {evaluation.quant_signal} | Align: {evaluation.direction_alignment})")
+        print(f" -> [Risk Engine] Decision: {evaluation.decision} ({evaluation.signals_aligned} | Mode: {evaluation.strategy_mode} | Quant: {evaluation.quant_signal} | Align: {evaluation.direction_alignment})")
         print(f"    ↳ Details: {evaluation.reason}")
 
         # 5. Execution (External Call 3: Protected Bitget Agent Hub Paper Trading)

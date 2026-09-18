@@ -215,6 +215,29 @@ function ModeBadge({ mode, isDark = false }) {
   )
 }
 
+function StrategyBadge({ mode, isDark = false }) {
+  const isMomentum = mode === 'MOMENTUM'
+  return (
+    <span
+      className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono-data font-bold uppercase tracking-wider border"
+      style={{
+        background: isMomentum
+          ? (isDark ? 'rgba(56, 189, 248, 0.12)' : 'rgba(56, 189, 248, 0.22)')
+          : (isDark ? 'rgba(245, 158, 11, 0.12)' : 'rgba(245, 158, 11, 0.22)'),
+        color: isMomentum
+          ? (isDark ? '#38BDF8' : '#0369A1')
+          : (isDark ? '#F59E0B' : '#B45309'),
+        borderColor: isMomentum
+          ? (isDark ? 'rgba(56, 189, 248, 0.35)' : 'rgba(56, 189, 248, 0.5)')
+          : (isDark ? 'rgba(245, 158, 11, 0.35)' : 'rgba(245, 158, 11, 0.5)'),
+      }}
+      title={isMomentum ? 'Momentum Strategy (PEAD trend continuation)' : 'Mean-Reversion Strategy (Transitory dislocation fade)'}
+    >
+      {isMomentum ? 'Momentum' : 'Fade'}
+    </span>
+  )
+}
+
 function DecisionBadge({ decision }) {
   const styles = {
     'LONG': { bg: 'rgba(16, 185, 129, 0.15)', text: '#10B981', border: 'rgba(16, 185, 129, 0.3)' },
@@ -1537,7 +1560,11 @@ export default function App() {
 
                       {/* Stage 4: Strict Deterministic Risk Gate */}
                       <PipelineStage num={4} title="Stage 4: Risk Engine Verification Gate" color="#F59E0B">
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+                          <DataRow
+                            label="Strategy Mode"
+                            value={<StrategyBadge mode={selectedRecord.strategy_mode} isDark={isDark} />}
+                          />
                           <DataRow label="3-Signal Alignment" value={selectedRecord.signals_aligned} />
                           <DataRow label="Gate Decision" value={selectedRecord.decision} />
                           <DataRow

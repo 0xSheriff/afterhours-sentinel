@@ -610,7 +610,7 @@ CSV_HEADERS = [
     "event_timestamp", "pre_event_price", "entry_price", "actual_move", "actual_move_basis", "actual_move_status",
     "expected_move", "benchmark_type", "benchmark_move", "beta", "residual", "residual_std", "volatility_floor",
     "z_score", "z_threshold", "volume_ratio", "volume_basis", "volume_status", "liquidity_condition",
-    "event_direction", "price_direction", "direction_alignment", "qwen_direction", "qwen_validation",
+    "event_direction", "price_direction", "direction_alignment", "strategy_mode", "qwen_direction", "qwen_validation",
     "qwen_reasoning", "quant_signal", "risk_gate", "decision", "signals_aligned",
     "position_size", "stop_price", "exit_price", "exit_reason",
     "pnl", "reason", "divergence"
@@ -686,6 +686,7 @@ class SentinelLogger:
             "event_direction": getattr(evaluation, "event_direction", evaluation.qwen_direction.lower()),
             "price_direction": getattr(evaluation, "price_direction", "flat"),
             "direction_alignment": getattr(evaluation, "direction_alignment", "ALIGNMENT"),
+            "strategy_mode": getattr(evaluation, "strategy_mode", "MEAN_REVERSION"),
             "qwen_direction": evaluation.qwen_direction.upper(),
             "qwen_validation": getattr(evaluation, "qwen_validation", "PASS"),
             "qwen_reasoning": evaluation.qwen_reasoning,

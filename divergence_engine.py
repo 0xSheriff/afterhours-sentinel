@@ -32,7 +32,7 @@ class DivergenceResult:
     volume_confirmation: str = "unknown"  # "weak" | "normal" | "unknown"
     volume_basis: str = "MEASURED"  # "MEASURED" | "FALLBACK_ESTIMATE" | "INSUFFICIENT_DATA"
     volume_status: str = "MEASURED"  # "MEASURED" | "INSUFFICIENT_DATA" | "EMPIRICAL"
-    liquidity_condition: str = "INSUFFICIENT_DATA"  # "WEAK_LIQUIDITY" | "HIGH_VOLUME_CONFIRMED" | "INSUFFICIENT_DATA" | "NORMAL"
+    liquidity_condition: str = "INSUFFICIENT_DATA"  # "WEAK_LIQUIDITY" | "CONFIRMING_VOLUME" | "HIGH_VOLUME_CONFIRMED" | "INSUFFICIENT_DATA" | "NORMAL"
     actual_move_basis: str = "EVENT_WINDOW"  # "EVENT_WINDOW" | "ROLLING_24H"
     actual_move_status: str = "MEASURED"  # "MEASURED" | "INSUFFICIENT_DATA"
     benchmark_type: str = "QQQ"  # "PEER_TECH_BASKET" | "QQQ" | "BTC"
@@ -54,8 +54,13 @@ class DivergenceResult:
         if self.liquidity_condition == "INSUFFICIENT_DATA":
             if self.volume_confirmation == "weak":
                 object.__setattr__(self, "liquidity_condition", "WEAK_LIQUIDITY")
-            elif self.volume_confirmation == "normal":
-                object.__setattr__(self, "liquidity_condition", "HIGH_VOLUME_CONFIRMED")
+            elif self.volume_confirmation in ("confirming", "high"):
+                object.__setattr__(self, "liquidity_condition", "CONFIRMING_VOLUME")
+            elif self.volume_confirmation in ("normal",):
+                if self.volume_ratio is not None and self.volume_ratio >= config.VOLUME_RATIO_CONFIRMING_THRESHOLD:
+                    object.__setattr__(self, "liquidity_condition", "CONFIRMING_VOLUME")
+                else:
+                    object.__setattr__(self, "liquidity_condition", "HIGH_VOLUME_CONFIRMED")
 
     @property
     def volume_confirmed(self) -> bool:
@@ -276,6 +281,10 @@ def compute_divergence(
         vol_status = "EMPIRICAL"
         liq_cond = "WEAK_LIQUIDITY"
         vol_conf_bool = True
+    elif vol_ratio >= getattr(config, "VOLUME_RATIO_CONFIRMING_THRESHOLD", 0.8):
+        vol_status = "EMPIRICAL"
+        liq_cond = "CONFIRMING_VOLUME"
+        vol_conf_bool = False
     else:
         vol_status = "EMPIRICAL"
         liq_cond = "HIGH_VOLUME_CONFIRMED"

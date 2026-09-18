@@ -60,6 +60,7 @@ class RiskEvaluation:
     side: str = ""
     stop_loss_pct: float = config.STOP_LOSS_PCT
     take_profit_pct: float = config.TAKE_PROFIT_PCT
+    strategy_mode: str = "MEAN_REVERSION"  # "MEAN_REVERSION" | "MOMENTUM"
 
     def __post_init__(self):
         if self.action and self.decision == "NO_TRADE":
@@ -99,6 +100,8 @@ def evaluate_trade_risk(
     daily_loss_pct: float = 0.0,
     qwen_validation: str = "PASS",
     current_price: float = 100.0,
+    event_type: str = "other",
+    strategy_mode: Optional[str] = None,
     **kwargs
 ) -> RiskEvaluation:
     """Wrapper entrypoint for trade risk evaluation supporting alternative parameter conventions."""
@@ -107,13 +110,17 @@ def evaluate_trade_risk(
         open_positions=active_positions or [],
         daily_realized_loss_pct=daily_loss_pct
     )
+    ev_type = kwargs.get("event_type", event_type)
+    strat_mode = kwargs.get("strategy_mode", strategy_mode)
     return evaluate_trade(
         divergence=divergence,
         qwen_direction=sentiment_direction,
         qwen_reasoning="Risk evaluation model analysis",
         current_price=current_price,
         portfolio_state=state,
-        qwen_validation=qwen_validation
+        qwen_validation=qwen_validation,
+        event_type=ev_type,
+        strategy_mode=strat_mode
     )
 
 
@@ -124,17 +131,25 @@ def evaluate_trade(
     current_price: float,
     portfolio_state: Optional[PortfolioState] = None,
     llm_source: str = "fallback_rules [pending_qwen_api_key]",
-    qwen_validation: str = "PASS"
+    qwen_validation: str = "PASS",
+    event_type: str = "other",
+    strategy_mode: Optional[str] = None
 ) -> RiskEvaluation:
     """
-    Evaluates whether an observed divergence and event direction qualify for a mean-reversion trade.
+    Evaluates whether an observed divergence and event direction qualify for a trade.
     Decouples Quantitative Anomaly Signal from Qwen Event Validation.
 
-    Mean-Reversion Philosophy:
-      We seek situations where information and price disagree (anomalous dislocation on weak liquidity).
-      - If event is bullish and price pumped: DIRECTIONAL ALIGNMENT (price discovery, not an overreaction to fade).
-      - If event is bearish and price pumped on weak liquidity (|z| > 2.0): CONTRADICTION (fade candidate -> SHORT).
-      - If event is bullish and price dumped on weak liquidity (|z| > 2.0): CONTRADICTION (fade candidate -> LONG).
+    Event-Type-Differentiated Strategies:
+      1. MOMENTUM / PEAD (Post-Earnings Announcement Drift):
+         Applied to event_type in ("earnings", "product").
+         - Seeks fundamental price discovery continuation with institutional volume confirmation.
+         - Requires DIRECTIONAL ALIGNMENT (Bullish event + positive price move -> LONG; Bearish event + negative price move -> SHORT).
+         - Requires CONFIRMING_VOLUME (volume_ratio >= 0.8) and |z| >= 2.0.
+      2. MEAN_REVERSION / FADE:
+         Applied to all other event types ("macro", "tariff", "geopolitical", "regulatory", "other").
+         - Seeks transitory dislocations where information and price disagree on weak liquidity.
+         - Requires DIRECTIONAL CONTRADICTION (Bearish event + price pumped -> SHORT; Bullish event + price dumped -> LONG).
+         - Requires WEAK_LIQUIDITY (volume_ratio < 0.5) and |z| >= 2.0.
 
     Deterministic Risk Bounds:
       - Fixed 3% of paper portfolio per trade.
@@ -146,6 +161,13 @@ def evaluate_trade(
     failed_conditions: List[str] = []
     aligned_count = 0
     dir_clean = qwen_direction.strip().lower()
+
+    # Determine strategy mode from event_type if not explicitly provided
+    if strategy_mode is None:
+        clean_type = str(event_type).strip().lower()
+        mode = "MOMENTUM" if clean_type in ("earnings", "product") else "MEAN_REVERSION"
+    else:
+        mode = strategy_mode.strip().upper()
 
     # 1. Price Direction & Event Direction Analysis
     price_dir = "bullish" if divergence.actual_move > 0.0001 else ("bearish" if divergence.actual_move < -0.0001 else "flat")
@@ -161,8 +183,8 @@ def evaluate_trade(
     else:
         direction_alignment = "NEUTRAL"
 
-    # Check Signal 1: Z-score threshold
-    z_score_pass = abs(divergence.z_score) > config.Z_SCORE_THRESHOLD
+    # Check Signal 1: Z-score threshold (Identical bar for both modes)
+    z_score_pass = abs(divergence.z_score) >= config.Z_SCORE_THRESHOLD
     if z_score_pass:
         aligned_count += 1
     else:
@@ -170,37 +192,77 @@ def evaluate_trade(
             f"Z-score threshold failed: abs({divergence.z_score:.2f}) <= {config.Z_SCORE_THRESHOLD}"
         )
 
-    # Check Signal 2: Directional Contradiction (Mean-Reversion Dislocation)
+    # Check Signal 2: Directional Condition & Tentative Side
     tentative_side: Optional[str] = None
-    if direction_alignment == "CONTRADICTION":
-        aligned_count += 1
-        if event_dir == "bearish" and price_dir == "bullish":
-            tentative_side = "SHORT"
-        elif event_dir == "bullish" and price_dir == "bearish":
-            tentative_side = "LONG"
-    elif direction_alignment == "ALIGNMENT":
-        failed_conditions.append(
-            f"Direction alignment confirmed: Qwen ({dir_clean}) agrees with price move ({divergence.actual_move:+.2%})"
-        )
-    else:
-        failed_conditions.append(
-            f"Direction neutral/unclear: Qwen classified event as '{dir_clean}'"
-        )
-
-    # Check Signal 3: Liquidity Condition (Volume confirmation == "weak")
-    vol_pass = (divergence.liquidity_condition == "WEAK_LIQUIDITY")
-    if vol_pass:
-        aligned_count += 1
-    else:
-        if divergence.liquidity_condition == "INSUFFICIENT_DATA":
+    if mode == "MOMENTUM":
+        # Momentum (PEAD) requires fundamental ALIGNMENT
+        if direction_alignment == "ALIGNMENT":
+            aligned_count += 1
+            if event_dir == "bullish" and price_dir == "bullish":
+                tentative_side = "LONG"
+            elif event_dir == "bearish" and price_dir == "bearish":
+                tentative_side = "SHORT"
+        elif direction_alignment == "CONTRADICTION":
             failed_conditions.append(
-                "Volume confirmation failed: Insufficient volume history to verify liquidity vacuum"
+                f"Direction contradiction rejected in momentum mode: Qwen ({dir_clean}) contradicts price move ({divergence.actual_move:+.2%})"
             )
         else:
-            v_ratio_str = f"{divergence.volume_ratio:.2f}" if divergence.volume_ratio is not None else "N/A"
             failed_conditions.append(
-                f"Volume confirmation failed: Volume ratio is {v_ratio_str} (expected weak < {config.VOLUME_RATIO_WEAK_THRESHOLD})"
+                f"Direction neutral/unclear: Qwen classified event as '{dir_clean}'"
             )
+    else:
+        # MEAN_REVERSION requires fundamental CONTRADICTION (fade candidate)
+        if direction_alignment == "CONTRADICTION":
+            aligned_count += 1
+            if event_dir == "bearish" and price_dir == "bullish":
+                tentative_side = "SHORT"
+            elif event_dir == "bullish" and price_dir == "bearish":
+                tentative_side = "LONG"
+        elif direction_alignment == "ALIGNMENT":
+            failed_conditions.append(
+                f"Direction alignment confirmed: Qwen ({dir_clean}) agrees with price move ({divergence.actual_move:+.2%})"
+            )
+        else:
+            failed_conditions.append(
+                f"Direction neutral/unclear: Qwen classified event as '{dir_clean}'"
+            )
+
+    # Check Signal 3: Liquidity Condition
+    if mode == "MOMENTUM":
+        # Momentum requires confirming volume (volume_ratio >= 0.8)
+        vol_confirming = (
+            divergence.liquidity_condition in ("CONFIRMING_VOLUME", "HIGH_VOLUME_CONFIRMED")
+            or (divergence.volume_ratio is not None and divergence.volume_ratio >= config.VOLUME_RATIO_CONFIRMING_THRESHOLD)
+        )
+        if vol_confirming and divergence.liquidity_condition != "INSUFFICIENT_DATA":
+            vol_pass = True
+            aligned_count += 1
+        else:
+            vol_pass = False
+            if divergence.liquidity_condition == "INSUFFICIENT_DATA" or divergence.volume_ratio is None:
+                failed_conditions.append(
+                    "Volume confirmation failed: Insufficient volume history to verify institutional participation"
+                )
+            else:
+                v_ratio_str = f"{divergence.volume_ratio:.2f}"
+                failed_conditions.append(
+                    f"Volume confirmation failed: Volume ratio is {v_ratio_str} (expected confirming >= {config.VOLUME_RATIO_CONFIRMING_THRESHOLD})"
+                )
+    else:
+        # MEAN_REVERSION requires weak liquidity (volume_ratio < 0.5)
+        vol_pass = (divergence.liquidity_condition == "WEAK_LIQUIDITY")
+        if vol_pass:
+            aligned_count += 1
+        else:
+            if divergence.liquidity_condition == "INSUFFICIENT_DATA":
+                failed_conditions.append(
+                    "Volume confirmation failed: Insufficient volume history to verify liquidity vacuum"
+                )
+            else:
+                v_ratio_str = f"{divergence.volume_ratio:.2f}" if divergence.volume_ratio is not None else "N/A"
+                failed_conditions.append(
+                    f"Volume confirmation failed: Volume ratio is {v_ratio_str} (expected weak < {config.VOLUME_RATIO_WEAK_THRESHOLD})"
+                )
 
     # Quantitative Anomaly Signal (Pure Math + Liquidity)
     quant_signal = "PASS" if (z_score_pass and vol_pass) else "FAIL"
@@ -229,62 +291,102 @@ def evaluate_trade(
 
     # Final Decision Formulation
     signals_aligned_str = f"{aligned_count}/3 signals aligned"
+    required_alignment = "ALIGNMENT" if mode == "MOMENTUM" else "CONTRADICTION"
 
     if (
         quant_signal == "PASS"
-        and direction_alignment == "CONTRADICTION"
+        and direction_alignment == required_alignment
         and qwen_pass
         and risk_gate == "PASS"
         and tentative_side is not None
     ):
         decision = tentative_side
         position_size_usd = round(state.portfolio_balance * config.POSITION_SIZE_PCT, 2)
+        vol_ratio_str = f"{divergence.volume_ratio:.2f}" if divergence.volume_ratio is not None else "measured"
 
-        vol_ratio_str = f"{divergence.volume_ratio:.2f}" if divergence.volume_ratio is not None else "measured weak"
-        if decision == "SHORT":
-            stop_price = round(current_price * (1.0 + config.STOP_LOSS_PCT), 4)
-            reason = (
-                f"SHORT signal approved: Price pumped {divergence.actual_move:+.2%} on bearish event "
-                f"with weak volume ({vol_ratio_str}) and high divergence (z={divergence.z_score:+.2f})."
-            )
-        else:  # LONG
-            stop_price = round(current_price * (1.0 - config.STOP_LOSS_PCT), 4)
-            reason = (
-                f"LONG signal approved: Price dumped {divergence.actual_move:+.2%} on bullish event "
-                f"with weak volume ({vol_ratio_str}) and high divergence (z={divergence.z_score:+.2f})."
-            )
+        if mode == "MOMENTUM":
+            if decision == "LONG":
+                stop_price = round(current_price * (1.0 - config.STOP_LOSS_PCT), 4)
+                reason = (
+                    f"LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume "
+                    f"({vol_ratio_str} >= {config.VOLUME_RATIO_CONFIRMING_THRESHOLD}) and statistical significance (z={divergence.z_score:+.2f})."
+                )
+            else:  # SHORT
+                stop_price = round(current_price * (1.0 + config.STOP_LOSS_PCT), 4)
+                reason = (
+                    f"SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume "
+                    f"({vol_ratio_str} >= {config.VOLUME_RATIO_CONFIRMING_THRESHOLD}) and statistical significance (z={divergence.z_score:+.2f})."
+                )
+        else:  # MEAN_REVERSION
+            if decision == "SHORT":
+                stop_price = round(current_price * (1.0 + config.STOP_LOSS_PCT), 4)
+                reason = (
+                    f"SHORT signal approved: Price pumped {divergence.actual_move:+.2%} on bearish event "
+                    f"with weak volume ({vol_ratio_str}) and high divergence (z={divergence.z_score:+.2f})."
+                )
+            else:  # LONG
+                stop_price = round(current_price * (1.0 - config.STOP_LOSS_PCT), 4)
+                reason = (
+                    f"LONG signal approved: Price dumped {divergence.actual_move:+.2%} on bullish event "
+                    f"with weak volume ({vol_ratio_str}) and high divergence (z={divergence.z_score:+.2f})."
+                )
     else:
         decision = "NO_TRADE"
         position_size_usd = 0.0
         stop_price = 0.0
 
         # Construct clear institutional explanation
-        if direction_alignment == "ALIGNMENT":
-            reason = (
-                f"NO_TRADE: Quantitative divergence did not exceed the configured threshold. "
-                f"Fundamental direction is {event_dir} and price direction is {price_dir}, "
-                f"so the event reaction is directionally aligned. No statistically significant "
-                f"mean-reversion opportunity was detected."
-            )
-        elif not z_score_pass:
-            reason = (
-                f"NO_TRADE: Insufficient divergence (|z|={abs(divergence.z_score):.2f} <= {config.Z_SCORE_THRESHOLD:.1f}) "
-                f"— price move ({divergence.actual_move:+.2%}) is within normal rolling beta-adjusted volatility."
-            )
-        elif divergence.liquidity_condition == "HIGH_VOLUME_CONFIRMED":
-            v_ratio_str = f"{divergence.volume_ratio:.2f}" if divergence.volume_ratio is not None else ">=0.5"
-            reason = (
-                f"NO_TRADE: High volume confirmation (volume_ratio={v_ratio_str} >= {config.VOLUME_RATIO_WEAK_THRESHOLD}) "
-                f"indicates institutional conviction; do not fade high-volume moves."
-            )
-        elif divergence.liquidity_condition == "INSUFFICIENT_DATA":
-            reason = "NO_TRADE: Insufficient volume history to verify liquidity vacuum; risk engine blocks trade on unverified liquidity."
-        elif not qwen_pass:
-            reason = f"NO_TRADE: Qwen validation failed or event direction is neutral ('{event_dir}'); no directional edge to trade against."
-        elif risk_gate == "BLOCK":
-            reason = f"NO_TRADE: Risk limit block: {'; '.join(failed_conditions)}"
+        if mode == "MOMENTUM":
+            if direction_alignment == "CONTRADICTION":
+                reason = (
+                    f"NO_TRADE: Price move ({divergence.actual_move:+.2%}) contradicts {event_dir} fundamental direction "
+                    f"in momentum mode. Post-Earnings Announcement Drift requires fundamental alignment."
+                )
+            elif not z_score_pass:
+                reason = (
+                    f"NO_TRADE: Insufficient divergence (|z|={abs(divergence.z_score):.2f} <= {config.Z_SCORE_THRESHOLD:.1f}) "
+                    f"— price move ({divergence.actual_move:+.2%}) is within normal rolling beta-adjusted volatility."
+                )
+            elif not vol_pass:
+                v_ratio_str = f"{divergence.volume_ratio:.2f}" if divergence.volume_ratio is not None else "N/A"
+                reason = (
+                    f"NO_TRADE: Momentum confirmation failed: Volume ratio {v_ratio_str} < {config.VOLUME_RATIO_CONFIRMING_THRESHOLD}. "
+                    f"Institutional momentum drift requires confirming volume."
+                )
+            elif not qwen_pass:
+                reason = f"NO_TRADE: Qwen validation failed or event direction is neutral ('{event_dir}'); no directional edge to trade against."
+            elif risk_gate == "BLOCK":
+                reason = f"NO_TRADE: Risk limit block: {'; '.join(failed_conditions)}"
+            else:
+                reason = f"NO_TRADE: {'; '.join(failed_conditions)}"
         else:
-            reason = f"NO_TRADE: {'; '.join(failed_conditions)}"
+            # Existing MEAN_REVERSION explanation logic (unchanged)
+            if direction_alignment == "ALIGNMENT":
+                reason = (
+                    f"NO_TRADE: Quantitative divergence did not exceed the configured threshold. "
+                    f"Fundamental direction is {event_dir} and price direction is {price_dir}, "
+                    f"so the event reaction is directionally aligned. No statistically significant "
+                    f"mean-reversion opportunity was detected."
+                )
+            elif not z_score_pass:
+                reason = (
+                    f"NO_TRADE: Insufficient divergence (|z|={abs(divergence.z_score):.2f} <= {config.Z_SCORE_THRESHOLD:.1f}) "
+                    f"— price move ({divergence.actual_move:+.2%}) is within normal rolling beta-adjusted volatility."
+                )
+            elif divergence.liquidity_condition in ("HIGH_VOLUME_CONFIRMED", "CONFIRMING_VOLUME"):
+                v_ratio_str = f"{divergence.volume_ratio:.2f}" if divergence.volume_ratio is not None else ">=0.5"
+                reason = (
+                    f"NO_TRADE: High volume confirmation (volume_ratio={v_ratio_str} >= {config.VOLUME_RATIO_WEAK_THRESHOLD}) "
+                    f"indicates institutional conviction; do not fade high-volume moves."
+                )
+            elif divergence.liquidity_condition == "INSUFFICIENT_DATA":
+                reason = "NO_TRADE: Insufficient volume history to verify liquidity vacuum; risk engine blocks trade on unverified liquidity."
+            elif not qwen_pass:
+                reason = f"NO_TRADE: Qwen validation failed or event direction is neutral ('{event_dir}'); no directional edge to trade against."
+            elif risk_gate == "BLOCK":
+                reason = f"NO_TRADE: Risk limit block: {'; '.join(failed_conditions)}"
+            else:
+                reason = f"NO_TRADE: {'; '.join(failed_conditions)}"
 
     return RiskEvaluation(
         decision=decision,
@@ -309,5 +411,7 @@ def evaluate_trade(
         liquidity_condition=divergence.liquidity_condition,
         qwen_validation="PASS" if qwen_pass else "FAIL",
         risk_gate=risk_gate,
-        llm_source=llm_source
+        llm_source=llm_source,
+        strategy_mode=mode
     )
+

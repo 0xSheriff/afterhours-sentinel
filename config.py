@@ -94,6 +94,7 @@ BETA_ROLLING_WINDOW_DAYS: int = 30
 RESIDUAL_ROLLING_WINDOW_DAYS: int = 30
 Z_SCORE_THRESHOLD: float = 2.0
 VOLUME_RATIO_WEAK_THRESHOLD: float = 0.5
+VOLUME_RATIO_CONFIRMING_THRESHOLD: float = 0.8
 
 # Defensive residual volatility floor (0.8% = 0.008 / 80 bps)
 # NOTE: This is a defensive risk floor to prevent numerical zero-division artifacts
