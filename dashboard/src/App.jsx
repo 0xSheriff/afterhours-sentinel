@@ -94,16 +94,21 @@ const ENUM_DISPLAY_MAP = {
   'corporate': 'Corporate Action',
 
   // Risk Architecture Parameters
-  'POSITION_SIZE_PCT': 'Position Size Pct',
-  'STOP_LOSS_PCT': 'Stop Loss Pct',
-  'MAX_OPEN_POSITIONS': 'Max Open Positions',
-  'DAILY_LOSS_LIMIT_PCT': 'Daily Loss Limit Pct',
-  'Z_SCORE_THRESHOLD': 'Z-Score Threshold',
-  'VOLUME_WEAK_THRESHOLD': 'Volume Weak Threshold',
-  'MIN_RESIDUAL_STDEV': 'Min Residual Stdev',
-  'BETA_ROLLING_WINDOW': 'Beta Rolling Window',
-  'PORTFOLIO_BALANCE': 'Portfolio Balance',
-  'EVENT_FRESHNESS': 'Event Freshness',
+  'POSITION_SIZE_PCT': 'Position Size Allocation',
+  'STOP_LOSS_PCT': 'Stop Loss Threshold',
+  'MAX_OPEN_POSITIONS': 'Max Concurrent Positions',
+  'DAILY_LOSS_LIMIT_PCT': 'Daily Drawdown Limit',
+  'Z_SCORE_THRESHOLD': 'Z-Score Anomaly Threshold',
+  'VOLUME_WEAK_THRESHOLD': 'Weak Volume Ceiling',
+  'MIN_RESIDUAL_STDEV': 'Minimum Volatility Floor',
+  'BETA_ROLLING_WINDOW': 'Beta Lookback Window',
+  'PORTFOLIO_BALANCE': 'Paper Portfolio Balance',
+  'EVENT_FRESHNESS': 'Maximum Catalyst Age',
+
+  // Benchmark Baskets
+  'PEER_TECH_BASKET': 'Peer Tech Basket (QQQ)',
+  'QQQ': 'Invesco QQQ (Nasdaq 100)',
+  'BTC': 'Bitcoin Reference Index (BTC)',
 }
 
 export function formatEnumLabel(val) {
@@ -1572,7 +1577,7 @@ export default function App() {
                           <DataRow label="Liquidity Condition" value={formatEnumLabel(selectedRecord.liquidity_condition || (selectedRecord.volume_ratio < riskConfig.volumeWeakThreshold ? 'WEAK_LIQUIDITY' : 'NORMAL'))} />
                           <DataRow label="Volume Tensor Status" value={formatEnumLabel(selectedRecord.volume_status || 'MEASURED')} />
                           <DataRow label="Move Measurement Basis" value={formatEnumLabel(selectedRecord.actual_move_basis || 'ROLLING_24H')} />
-                          <DataRow label="Benchmark Basket" value={selectedRecord.benchmark_type || 'QQQ'} />
+                          <DataRow label="Benchmark Basket" value={formatEnumLabel(selectedRecord.benchmark_type || 'QQQ')} />
                         </div>
 
                         {/* Mathematical Proof calculated strictly from logged tensors */}
@@ -1763,7 +1768,6 @@ export default function App() {
                         <tr key={param} style={{ background: 'var(--bg-surface)', borderBottom: '1px solid var(--border-hairline)' }}>
                           <td className="px-4 py-3.5">
                             <div className="font-bold text-xs font-display" style={{ color: 'var(--text-primary)' }}>{formatEnumLabel(param)}</div>
-                            <div className="text-[10px] text-muted font-mono-data">{param}</div>
                           </td>
                           <td className="px-4 py-3.5 font-mono-data text-xs font-bold" style={{ color: dark ? '#D4FF3F' : '#223602' }}>{val}</td>
                           <td className="px-4 py-3.5 text-xs" style={{ color: 'var(--text-secondary)' }}>{desc}</td>
