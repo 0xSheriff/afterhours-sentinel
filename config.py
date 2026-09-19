@@ -123,7 +123,8 @@ DEFAULT_PORTFOLIO_BALANCE_USD: float = 100_000.0
 # ==============================================================================
 TECH_SEMI_SYMBOLS: List[str] = [
     "NVDA", "AAPL", "MSFT", "GOOGL", "GOOG", "AMZN", "META",
-    "TSLA", "AMD", "INTC", "AVGO", "QCOM", "ARM", "MU", "SMCI", "ASML"
+    "TSLA", "AMD", "INTC", "AVGO", "QCOM", "ARM", "MU", "SMCI", "ASML",
+    "PLTR", "COIN", "MSTR", "BABA", "NFLX"
 ]
 
 BENCHMARK_TECH: str = "QQQ"
@@ -139,12 +140,22 @@ PEER_TECH_BASKET: Dict[str, List[str]] = {
     "AMZN": ["MSFT", "GOOGL", "AAPL", "META"],
     "META": ["GOOGL", "MSFT", "SNAP", "PINS"],
     "AMD": ["NVDA", "INTC", "QCOM", "AVGO"],
-    "INTC": ["NVDA", "AMD", "QCOM", "AVGO"]
+    "INTC": ["NVDA", "AMD", "QCOM", "AVGO"],
+    "ARM": ["NVDA", "AMD", "QCOM", "AVGO", "INTC"],
+    "PLTR": ["MSFT", "GOOGL", "AMZN", "SNOW", "AI"],
+    "COIN": ["MSTR", "MARA", "RIOT", "HOOD"],
+    "MSTR": ["COIN", "MARA", "RIOT", "CLSK"],
+    "BABA": ["JD", "PDD", "BIDU", "TCEHY"],
+    "NFLX": ["DIS", "WBD", "PARA", "AMZN"]
 }
 
 def get_benchmark_for_symbol(symbol: str) -> str:
     """Returns QQQ for tech/semi tickers, BTC for all other rTokens."""
-    clean_sym = symbol.upper().replace("R", "").replace("-USDT", "").replace("USDT", "")
+    sym = symbol.upper().replace("-USDT", "").replace("USDT", "")
+    if sym.startswith("R") and sym[1:] in TECH_SEMI_SYMBOLS:
+        clean_sym = sym[1:]
+    else:
+        clean_sym = sym
     if clean_sym in TECH_SEMI_SYMBOLS:
         return BENCHMARK_TECH
     return BENCHMARK_GENERAL
@@ -184,7 +195,9 @@ TRADES_CSV_LOG: str = os.path.join(LOG_DIR, "sentinel_trades.csv")
 SUPERVISOR_PID_FILE: str = os.path.join(LOG_DIR, "supervisor.pid")
 LIVE_PID_FILE: str = os.path.join(LOG_DIR, "live.pid")
 
-# Equity Ticker Metadata & Parameters
+# Equity Ticker Metadata & Parameters (All 15 Single-Stock Bitget Demo Equities)
+# NOTE: Betas are initial heuristic estimates against QQQ based on historical beta profiles,
+# not empirical fits, matching the standard of the original 9 assets.
 EQUITY_TICKER_MAP: Dict[str, Dict[str, Any]] = {
     "NVDA": {"name": "NVIDIA", "benchmark": "QQQ", "beta": 1.35},
     "TSLA": {"name": "Tesla", "benchmark": "QQQ", "beta": 1.45},
@@ -194,6 +207,25 @@ EQUITY_TICKER_MAP: Dict[str, Dict[str, Any]] = {
     "AMZN": {"name": "Amazon", "benchmark": "QQQ", "beta": 1.20},
     "META": {"name": "Meta", "benchmark": "QQQ", "beta": 1.25},
     "AMD": {"name": "AMD", "benchmark": "QQQ", "beta": 1.40},
-    "INTC": {"name": "Intel", "benchmark": "QQQ", "beta": 1.10}
+    "INTC": {"name": "Intel", "benchmark": "QQQ", "beta": 1.10},
+    "ARM": {"name": "Arm Holdings", "benchmark": "QQQ", "beta": 1.55},
+    "PLTR": {"name": "Palantir", "benchmark": "QQQ", "beta": 1.65},
+    # --------------------------------------------------------------------------
+    # Crypto-Correlated Equities (COIN, MSTR):
+    # Architectural Benchmark Decision:
+    # We assign 'QQQ' as their primary equity benchmark in EQUITY_TICKER_MAP
+    # (with explicit 'secondary_benchmark': 'BTC' metadata).
+    # Reasoning:
+    # 1. Pipeline Parity: Keeps uniform equity beta calculations against the US market
+    #    without modifying the 5-stage mathematical engine.
+    # 2. Known Approximation Disclosure: While QQQ captures general tech risk appetite,
+    #    COIN and MSTR are fundamentally driven by spot Bitcoin volatility. Documented
+    #    explicitly as an approximation; their elevated initial betas (2.20 and 2.50)
+    #    absorb this crypto-driven volatility against QQQ moves.
+    # --------------------------------------------------------------------------
+    "COIN": {"name": "Coinbase", "benchmark": "QQQ", "secondary_benchmark": "BTC", "beta": 2.20},
+    "MSTR": {"name": "MicroStrategy", "benchmark": "QQQ", "secondary_benchmark": "BTC", "beta": 2.50},
+    "BABA": {"name": "Alibaba", "benchmark": "QQQ", "beta": 0.95},
+    "NFLX": {"name": "Netflix", "benchmark": "QQQ", "beta": 1.20}
 }
 

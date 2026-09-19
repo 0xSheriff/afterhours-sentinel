@@ -69,8 +69,12 @@ def main():
     else:
         print(body)
 
-    # Confirmed Tokenized U.S. Stock Candidates on Bitget USDT-Futures
-    CANDIDATE_SYMBOLS = ["NVDAUSDT", "TSLAUSDT", "AAPLUSDT", "AMZNUSDT", "GOOGLUSDT", "METAUSDT"]
+    # Confirmed Tokenized U.S. Stock Candidates on Bitget USDT-Futures (All 15 Single-Stock Equities)
+    CANDIDATE_SYMBOLS = [
+        "NVDAUSDT", "TSLAUSDT", "AAPLUSDT", "AMZNUSDT", "GOOGLUSDT", "METAUSDT",
+        "AMDUSDT", "INTCUSDT", "ARMUSDT", "PLTRUSDT", "COINUSDT", "MSTRUSDT",
+        "BABAUSDT", "NFLXUSDT"
+    ]
 
     # --------------------------------------------------------------------------
     # STEP 1c: Check Existing Open Positions (Dynamic Flat-State Candidate Selector)
