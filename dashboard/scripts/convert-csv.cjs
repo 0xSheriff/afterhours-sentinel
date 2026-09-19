@@ -85,13 +85,21 @@ if (allRecords.length === 0 && fs.existsSync(publicOutPath)) {
   process.exit(0);
 }
 
+// Filter out malformed records
+const validRecords = allRecords.filter(r => {
+  if (!r || typeof r !== 'object') return false;
+  if (!r.timestamp || !r.event_headline) return false;
+  if (r.null || typeof r.decision !== 'string') return false;
+  return true;
+});
+
 // Sort by timestamp descending (most recent first for display)
-allRecords.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+validRecords.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
 // Assign stable IDs
-allRecords.forEach((r, i) => { r.id = i + 1; });
+validRecords.forEach((r, i) => { r.id = i + 1; });
 
-const jsonContent = JSON.stringify(allRecords, null, 2);
+const jsonContent = JSON.stringify(validRecords, null, 2);
 fs.writeFileSync(publicOutPath, jsonContent);
 fs.writeFileSync(srcOutPath, jsonContent);
 if (fs.existsSync(path.resolve(__dirname, '../dist'))) {
