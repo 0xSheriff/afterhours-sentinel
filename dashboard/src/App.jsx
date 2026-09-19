@@ -365,11 +365,12 @@ export default function App() {
   const initialDark = queryParams ? queryParams.get('theme') === 'dark' : false
   const initialScreen = queryParams && queryParams.get('screen') ? queryParams.get('screen') : 'Home'
   const initialSource = queryParams && queryParams.get('source') ? queryParams.get('source') : 'all'
+  const initialId = queryParams && queryParams.get('id') ? Number(queryParams.get('id')) : null
 
   // Requirement 1: Default theme is light mode
   const [dark, setDark] = useState(initialDark)
   const [activeScreen, setActiveScreen] = useState(initialScreen)
-  const [selectedId, setSelectedId] = useState(null)
+  const [selectedId, setSelectedId] = useState(initialId)
   const [filterMode, setFilterMode] = useState('all')     // all | live | backtest
   const [filterSource, setFilterSource] = useState(initialSource) // all | live | fallback | skipped
   const [filterSymbol, setFilterSymbol] = useState('')
