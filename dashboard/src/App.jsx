@@ -22,6 +22,100 @@ const fmtTime = (ts) => {
   }
 }
 
+// ── Canonical Enum & Technical String Humanizer ──
+const ENUM_DISPLAY_MAP = {
+  // Decisions
+  'SKIPPED_NO_ASSET_MATCH': 'No Matching Asset',
+  'NO_TRADE': 'No Trade',
+  'LONG': 'Long',
+  'SHORT': 'Short',
+
+  // Operating Modes
+  'live': 'Live Paper',
+  'live_dryrun_mock': 'Live Mock (Dry Run)',
+  'backtest': 'Backtest',
+  'historical_replay': 'Historical Replay',
+  'demo': 'Demo Simulation',
+
+  // Strategy Modes
+  'MEAN_REVERSION': 'Mean Reversion',
+  'MOMENTUM': 'Momentum',
+
+  // Liquidity & Volume Conditions
+  'INSUFFICIENT_DATA': 'Insufficient Data',
+  'WEAK_LIQUIDITY': 'Weak Liquidity',
+  'CONFIRMING_VOLUME': 'Confirming Volume',
+  'NORMAL': 'Normal Liquidity',
+  'MEASURED': 'Measured',
+  'EMPIRICAL': 'Empirical',
+
+  // Measurement Basis
+  'ROLLING_24H': 'Rolling 24h',
+  'EVENT_WINDOW': 'Event Window',
+
+  // Direction & Alignment
+  'ALIGNMENT': 'Aligned',
+  'CONTRADICTION': 'Contradiction',
+  'BULLISH': 'Bullish',
+  'BEARISH': 'Bearish',
+  'NEUTRAL': 'Neutral',
+  'NONE': 'None',
+  'flat': 'Flat',
+  'bullish': 'Bullish',
+  'bearish': 'Bearish',
+  'neutral': 'Neutral',
+
+  // Validations & Gates
+  'PASS': 'Passed',
+  'FAIL': 'Failed',
+  'BLOCK': 'Blocked',
+
+  // Exit Reasons
+  'OPEN': 'Open Position',
+  'N/A': 'N/A',
+  'TAKE_PROFIT_MEAN_REVERSION': 'Take Profit (Mean Reversion)',
+  'STOP_LOSS': 'Stop Loss',
+  'TIME_EXIT': 'Time Exit',
+
+  // Signal Alignments
+  '0/3 (No Asset Match)': '0/3 (No Matching Asset)',
+  '0/3 signals aligned': '0/3 Signals Aligned',
+  '1/3 signals aligned': '1/3 Signals Aligned',
+  '2/3 signals aligned': '2/3 Signals Aligned',
+  '3/3 signals aligned': '3/3 Signals Aligned',
+
+  // Event Types
+  'macro': 'Macro',
+  'geopolitical': 'Geopolitical',
+  'analyst': 'Analyst Rating',
+  'earnings': 'Earnings',
+  'regulatory': 'Regulatory',
+  'tariff': 'Tariff',
+  'corporate': 'Corporate Action',
+
+  // Risk Architecture Parameters
+  'POSITION_SIZE_PCT': 'Position Size Pct',
+  'STOP_LOSS_PCT': 'Stop Loss Pct',
+  'MAX_OPEN_POSITIONS': 'Max Open Positions',
+  'DAILY_LOSS_LIMIT_PCT': 'Daily Loss Limit Pct',
+  'Z_SCORE_THRESHOLD': 'Z-Score Threshold',
+  'VOLUME_WEAK_THRESHOLD': 'Volume Weak Threshold',
+  'MIN_RESIDUAL_STDEV': 'Min Residual Stdev',
+  'BETA_ROLLING_WINDOW': 'Beta Rolling Window',
+  'PORTFOLIO_BALANCE': 'Portfolio Balance',
+  'EVENT_FRESHNESS': 'Event Freshness',
+}
+
+export function formatEnumLabel(val) {
+  if (val === null || val === undefined || val === '') return '—'
+  const str = String(val).trim()
+  if (ENUM_DISPLAY_MAP[str]) return ENUM_DISPLAY_MAP[str]
+  return str
+    .replace(/[_-]+/g, ' ')
+    .toLowerCase()
+    .replace(/\b[a-z]/g, (c) => c.toUpperCase())
+}
+
 function isLiveMode(r) {
   return r.mode === 'live'
 }
@@ -195,9 +289,10 @@ function SourceBadge({ record, isDark = false }) {
 
 function ModeBadge({ mode, isDark = false }) {
   const isLive = mode === 'live' || (typeof mode === 'string' && mode.startsWith('live'))
+  const label = formatEnumLabel(mode)
   return (
     <span
-      className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono-data font-bold uppercase tracking-wider border"
+      className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono-data font-bold tracking-wide border"
       style={{
         background: isLive
           ? (isDark ? 'rgba(212, 255, 63, 0.12)' : 'rgba(212, 255, 63, 0.28)')
@@ -210,16 +305,17 @@ function ModeBadge({ mode, isDark = false }) {
           : (isDark ? 'rgba(99, 102, 241, 0.3)' : 'rgba(99, 102, 241, 0.4)'),
       }}
     >
-      {isLive ? 'Live Paper' : 'Backtest'}
+      {label}
     </span>
   )
 }
 
 function StrategyBadge({ mode, isDark = false }) {
   const isMomentum = mode === 'MOMENTUM'
+  const label = isMomentum ? 'Momentum' : 'Mean Reversion'
   return (
     <span
-      className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono-data font-bold uppercase tracking-wider border"
+      className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono-data font-bold tracking-wide border"
       style={{
         background: isMomentum
           ? (isDark ? 'rgba(56, 189, 248, 0.12)' : 'rgba(56, 189, 248, 0.22)')
@@ -233,12 +329,13 @@ function StrategyBadge({ mode, isDark = false }) {
       }}
       title={isMomentum ? 'Momentum Strategy (PEAD trend continuation)' : 'Mean-Reversion Strategy (Transitory dislocation fade)'}
     >
-      {isMomentum ? 'Momentum' : 'Fade'}
+      {label}
     </span>
   )
 }
 
 function DecisionBadge({ decision }) {
+  const label = formatEnumLabel(decision)
   const styles = {
     'LONG': { bg: 'rgba(16, 185, 129, 0.15)', text: '#10B981', border: 'rgba(16, 185, 129, 0.3)' },
     'SHORT': { bg: 'rgba(244, 63, 94, 0.15)', text: '#F43F5E', border: 'rgba(244, 63, 94, 0.3)' },
@@ -251,7 +348,7 @@ function DecisionBadge({ decision }) {
       className="inline-flex px-2 py-0.5 rounded text-[11px] font-mono-data font-bold border"
       style={{ background: s.bg, color: s.text, borderColor: s.border }}
     >
-      {decision}
+      {label}
     </span>
   )
 }
@@ -714,7 +811,7 @@ export default function App() {
                               <div className="flex justify-between items-center text-xs font-mono-data">
                                 <span className="text-white/60">Gatekeeper Decision:</span>
                                 <span className="font-bold px-2 py-0.5 rounded bg-white/10 text-white/90">
-                                  {featuredRecord ? featuredRecord.decision : 'NO_TRADE'}
+                                  {featuredRecord ? formatEnumLabel(featuredRecord.decision) : 'No Trade'}
                                 </span>
                               </div>
                             </div>
@@ -840,7 +937,7 @@ export default function App() {
                               {liveStats ? liveStats.noTrades : 0}
                             </div>
                             <div className="text-xs text-white/60 font-display font-medium mt-1">
-                              Risk Gate Defenses (NO_TRADE)
+                              Risk Gate Defenses (No Trade)
                             </div>
                           </div>
                         </div>
@@ -880,14 +977,14 @@ export default function App() {
                             </div>
                             <div className="flex justify-between">
                               <span className="text-white/50">Decision Verdict:</span>
-                              <span className="font-bold text-amber-400">{featuredRecord.decision} ({featuredRecord.signals_aligned || '0/3'})</span>
+                              <span className="font-bold text-amber-400">{formatEnumLabel(featuredRecord.decision)} ({formatEnumLabel(featuredRecord.signals_aligned) || '0/3'})</span>
                             </div>
                           </div>
                           <div className="text-white/70 text-[11px] leading-relaxed line-clamp-2">
                             VERDICT DETAIL: {featuredRecord.reason || featuredRecord.qwen_reasoning}
                           </div>
                           <div className="pt-2 border-t border-white/10 flex justify-between items-center text-[10px] text-white/40">
-                            <span>MODE: {featuredRecord.mode}</span>
+                            <span>MODE: {formatEnumLabel(featuredRecord.mode)}</span>
                             <button
                               onClick={() => selectAndViewDetail(featuredRecord)}
                               className="text-[var(--brand-chartreuse)] hover:underline font-bold"
@@ -1160,14 +1257,14 @@ export default function App() {
                           <div className="p-2.5 rounded-xl text-lg" style={{ background: 'var(--brand-chartreuse-subtle)', color: dark ? '#D4FF3F' : '#223602' }}>⚡</div>
                           <div>
                             <div className="font-mono-data text-lg font-bold">{liveStats.tradesCount}</div>
-                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Executed Orders (LONG / SHORT)</div>
+                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Executed Orders (Long / Short)</div>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
                           <div className="p-2.5 rounded-xl bg-zinc-500/10 text-zinc-400 text-lg">🛡️</div>
                           <div>
                             <div className="font-mono-data text-lg font-bold">{liveStats.noTrades}</div>
-                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Risk Gate Evaluated &amp; Blocked (NO_TRADE)</div>
+                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Risk Gate Evaluated &amp; Blocked (No Trade)</div>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
@@ -1226,7 +1323,7 @@ export default function App() {
                           <div className="font-mono-data text-base font-bold text-emerald-500">{fmtUSD(backtestStats.totalPnl)}</div>
                         </div>
                         <div className="p-3 rounded-xl" style={{ background: 'var(--bg-surface-elevated)' }}>
-                          <div className="text-[10px] uppercase font-display font-semibold" style={{ color: 'var(--text-muted)' }}>NO_TRADE Rejections</div>
+                          <div className="text-[10px] uppercase font-display font-semibold" style={{ color: 'var(--text-muted)' }}>No Trade Rejections</div>
                           <div className="font-mono-data text-base font-bold">{backtestStats.noTrades}</div>
                         </div>
                       </div>
@@ -1452,9 +1549,9 @@ export default function App() {
                       {/* Stage 1: Event Ingestion & Freshness Filtering */}
                       <PipelineStage num={1} title="Stage 1: News Catalyst Ingestion" color="#8B5CF6">
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
-                          <DataRow label="Event Type" value={selectedRecord.event_type?.toUpperCase()} />
+                          <DataRow label="Event Type" value={formatEnumLabel(selectedRecord.event_type)} />
                           <DataRow label="Timestamp" value={fmtTime(selectedRecord.timestamp)} />
-                          <DataRow label="Operating Mode" value={selectedRecord.mode} />
+                          <DataRow label="Operating Mode" value={formatEnumLabel(selectedRecord.mode)} />
                           <DataRow label="Max Allowable Age" value={`${riskConfig.eventFreshnessHours} hours`} />
                         </div>
                         <div className="p-3 rounded-xl text-xs" style={{ background: 'var(--bg-canvas)' }}>
@@ -1470,6 +1567,12 @@ export default function App() {
                           <DataRow label="Benchmark Expected Move" value={fmtPct(selectedRecord.expected_move)} />
                           <DataRow label="Divergence (Residual)" value={fmtPct(selectedRecord.divergence)} />
                           <DataRow label="Volume Ratio" value={fmt(selectedRecord.volume_ratio, 4)} />
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3 pt-2.5 border-t" style={{ borderColor: 'var(--border-hairline)' }}>
+                          <DataRow label="Liquidity Condition" value={formatEnumLabel(selectedRecord.liquidity_condition || (selectedRecord.volume_ratio < riskConfig.volumeWeakThreshold ? 'WEAK_LIQUIDITY' : 'NORMAL'))} />
+                          <DataRow label="Volume Tensor Status" value={formatEnumLabel(selectedRecord.volume_status || 'MEASURED')} />
+                          <DataRow label="Move Measurement Basis" value={formatEnumLabel(selectedRecord.actual_move_basis || 'ROLLING_24H')} />
+                          <DataRow label="Benchmark Basket" value={selectedRecord.benchmark_type || 'QQQ'} />
                         </div>
 
                         {/* Mathematical Proof calculated strictly from logged tensors */}
@@ -1519,7 +1622,7 @@ export default function App() {
                                 <span className="font-bold text-[var(--text-primary)]">{fmt(volRatio, 4)}</span>
                                 <span>→</span>
                                 <span className={isWeakVol ? 'text-emerald-500 font-bold' : 'text-rose-500 font-bold'}>
-                                  {isWeakVol ? 'WEAK VOLUME CONFIRMED (< 0.50) ✓' : 'NORMAL/HIGH VOLUME (NOT A LIQUIDITY SPIKE) ✗'}
+                                  {isWeakVol ? 'Weak Volume Confirmed (< 0.50) ✓' : 'Normal / Elevated Volume (Not a Dislocation) ✗'}
                                 </span>
                               </div>
                             </div>
@@ -1533,9 +1636,10 @@ export default function App() {
 
                       {/* Stage 3: LLM Directional Analyst (Groq/Qwen) */}
                       <PipelineStage num={3} title="Stage 3: LLM Sentiment & Directional Analyst" color="#10B981">
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
-                          <DataRow label="Directional Classification" value={selectedRecord.qwen_direction} />
-                          <DataRow label="LLM Engine" value={selectedRecord.llm_source} />
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+                          <DataRow label="Directional Classification" value={formatEnumLabel(selectedRecord.qwen_direction)} />
+                          <DataRow label="Direction Alignment" value={formatEnumLabel(selectedRecord.direction_alignment)} />
+                          <DataRow label="Model Validation" value={formatEnumLabel(selectedRecord.qwen_validation || 'PASS')} />
                           <DataRow
                             label="Call Provenance"
                             value={
@@ -1543,7 +1647,7 @@ export default function App() {
                                 ? 'Verified Live API Ping (Groq Qwen 3.8-27B)'
                                 : isFallbackCall(selectedRecord)
                                   ? 'Deterministic Fallback Rules'
-                                  : 'Pre-Filter Skipped (No Target Equity Ticker)'
+                                  : 'Pre-Filter Skipped (No Target Asset)'
                             }
                           />
                         </div>
@@ -1565,15 +1669,9 @@ export default function App() {
                             label="Strategy Mode"
                             value={<StrategyBadge mode={selectedRecord?.strategy_mode} isDark={dark} />}
                           />
-                          <DataRow label="3-Signal Alignment" value={selectedRecord.signals_aligned} />
-                          <DataRow label="Gate Decision" value={selectedRecord.decision} />
-                          <DataRow
-                            label="Position Sizing Allocation"
-                            value={selectedRecord.decision === 'LONG' || selectedRecord.decision === 'SHORT'
-                              ? `${(riskConfig.positionSizePct * 100).toFixed(0)}% Portfolio ($${(riskConfig.defaultPortfolioBalance * riskConfig.positionSizePct).toLocaleString()})`
-                              : '$0.00'
-                            }
-                          />
+                          <DataRow label="3-Signal Alignment" value={formatEnumLabel(selectedRecord.signals_aligned)} />
+                          <DataRow label="Risk Gate Verification" value={formatEnumLabel(selectedRecord.risk_gate || (selectedRecord.decision === 'LONG' || selectedRecord.decision === 'SHORT' ? 'PASS' : 'BLOCK'))} />
+                          <DataRow label="Gate Decision" value={<DecisionBadge decision={selectedRecord.decision} />} />
                         </div>
 
                         <div className="p-3.5 rounded-xl border" style={{ background: 'var(--bg-canvas)', borderColor: 'var(--border-hairline)' }}>
@@ -1594,12 +1692,12 @@ export default function App() {
                       >
                         {selectedRecord.decision === 'LONG' || selectedRecord.decision === 'SHORT' ? (
                           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                            <DataRow label="Trade Direction" value={selectedRecord.decision} />
+                            <DataRow label="Trade Direction" value={formatEnumLabel(selectedRecord.decision)} />
                             <DataRow label="Position Size" value={fmtUSD(selectedRecord.position_size)} />
                             <DataRow label="Entry Execution Price" value={fmtUSD(selectedRecord.entry_price)} />
                             <DataRow label="Stop-Loss Price" value={fmtUSD(selectedRecord.stop_price)} />
                             <DataRow label="Exit Price" value={fmtUSD(selectedRecord.exit_price)} />
-                            <DataRow label="Exit Catalyst" value={selectedRecord.exit_reason} />
+                            <DataRow label="Exit Catalyst" value={formatEnumLabel(selectedRecord.exit_reason)} />
                             <DataRow
                               label="Trade P&L"
                               value={fmtUSD(selectedRecord.pnl)}
@@ -1663,7 +1761,10 @@ export default function App() {
                         ['EVENT_FRESHNESS', `${riskConfig.eventFreshnessHours.toFixed(1)} hours`, 'Maximum timestamp age for news items to qualify for real-time pricing analysis'],
                       ].map(([param, val, desc]) => (
                         <tr key={param} style={{ background: 'var(--bg-surface)', borderBottom: '1px solid var(--border-hairline)' }}>
-                          <td className="px-4 py-3.5 font-mono-data text-xs font-bold">{param}</td>
+                          <td className="px-4 py-3.5">
+                            <div className="font-bold text-xs font-display" style={{ color: 'var(--text-primary)' }}>{formatEnumLabel(param)}</div>
+                            <div className="text-[10px] text-muted font-mono-data">{param}</div>
+                          </td>
                           <td className="px-4 py-3.5 font-mono-data text-xs font-bold" style={{ color: dark ? '#D4FF3F' : '#223602' }}>{val}</td>
                           <td className="px-4 py-3.5 text-xs" style={{ color: 'var(--text-secondary)' }}>{desc}</td>
                         </tr>
