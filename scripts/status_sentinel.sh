@@ -38,6 +38,19 @@ else
     echo "Live Worker (live.py): NOT RUNNING (No live.pid)"
 fi
 
+# 3. Auto-Push Daemon Check
+AUTOPUSH_PID_FILE="$LOGS_DIR/autopush.pid"
+if [ -f "$AUTOPUSH_PID_FILE" ]; then
+    AP_PID=$(cat "$AUTOPUSH_PID_FILE")
+    if kill -0 "$AP_PID" 2>/dev/null; then
+        echo "Auto-Push Daemon: ACTIVE (PID: $AP_PID)"
+    else
+        echo "Auto-Push Daemon: STOPPED (Stale PID $AP_PID)"
+    fi
+else
+    echo "Auto-Push Daemon: NOT RUNNING (No autopush.pid)"
+fi
+
 echo ""
 echo "--- LATEST HEARTBEAT (Last 3 hourly ticks) ---"
 if [ -f "$LOGS_DIR/heartbeat.log" ]; then

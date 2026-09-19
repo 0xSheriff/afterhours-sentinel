@@ -82,6 +82,11 @@ def push_updates():
     logging.info(f"Committed: {commit_msg}")
     
     code, out, err = run_cmd("git push origin main")
+    if code != 0:
+        logging.warning(f"Initial push failed, attempting git pull --rebase: {err or out}")
+        run_cmd("git pull --rebase origin main")
+        code, out, err = run_cmd("git push origin main")
+
     if code == 0:
         logging.info("Pushed successfully to origin/main -> Vercel will trigger deploy")
         return True

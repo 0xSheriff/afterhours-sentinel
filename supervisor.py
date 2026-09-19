@@ -36,6 +36,7 @@ CRASH_LOG = os.path.join(LOG_DIR, "crash.log")
 HEARTBEAT_LOG = os.path.join(LOG_DIR, "heartbeat.log")
 SUPERVISOR_PID_FILE = os.path.join(LOG_DIR, "supervisor.pid")
 LIVE_PID_FILE = os.path.join(LOG_DIR, "live.pid")
+AUTOPUSH_PID_FILE = os.path.join(LOG_DIR, "autopush.pid")
 TRADES_JSONL_LOG = os.path.join(LOG_DIR, "sentinel_trades.jsonl")
 
 RESTART_BACKOFF_SEC = 30
@@ -43,13 +44,14 @@ HEARTBEAT_INTERVAL_SEC = 3600  # 1 hour
 
 running = True
 current_child_process: Optional[subprocess.Popen] = None
+current_autopush_process: Optional[subprocess.Popen] = None
 recent_stderr_lines: List[str] = []
 stderr_lock = threading.Lock()
 
 
 def sig_handler(signum, frame):
     """Handles termination signals gracefully."""
-    global running, current_child_process
+    global running, current_child_process, current_autopush_process
     sig_name = signal.Signals(signum).name
     now_str = datetime.datetime.now(datetime.timezone.utc).isoformat()
     msg = f"\n[{now_str[:19]} UTC] [Supervisor] Received {sig_name}. Terminating child process..."
@@ -64,9 +66,23 @@ def sig_handler(signum, frame):
                 current_child_process.kill()
             except Exception:
                 pass
+    if current_autopush_process and current_autopush_process.poll() is None:
+        try:
+            current_autopush_process.terminate()
+            current_autopush_process.wait(timeout=5)
+        except Exception:
+            try:
+                current_autopush_process.kill()
+            except Exception:
+                pass
     if os.path.exists(LIVE_PID_FILE):
         try:
             os.remove(LIVE_PID_FILE)
+        except Exception:
+            pass
+    if os.path.exists(AUTOPUSH_PID_FILE):
+        try:
+            os.remove(AUTOPUSH_PID_FILE)
         except Exception:
             pass
     if os.path.exists(SUPERVISOR_PID_FILE):
@@ -166,6 +182,28 @@ def log_crash(exit_code: Optional[int], stderr_output: str, exception_msg: Optio
         print(f"[Supervisor ERROR] Failed writing to crash log: {e}", file=sys.stderr, flush=True)
 
 
+def ensure_autopush():
+    """Ensures auto_push_records.py is running to continuously push telemetry to GitHub/Vercel."""
+    global current_autopush_process
+    if not running:
+        return
+    if current_autopush_process is None or current_autopush_process.poll() is not None:
+        autopush_script = os.path.join(PROJECT_ROOT, "scripts", "auto_push_records.py")
+        if os.path.exists(autopush_script):
+            try:
+                current_autopush_process = subprocess.Popen(
+                    [sys.executable, "-u", autopush_script],
+                    cwd=PROJECT_ROOT,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL
+                )
+                with open(AUTOPUSH_PID_FILE, "w", encoding="utf-8") as f:
+                    f.write(str(current_autopush_process.pid))
+                print(f"[Supervisor] Auto-push daemon launched (PID: {current_autopush_process.pid})", flush=True)
+            except Exception as e:
+                print(f"[Supervisor Warning] Failed to start auto-push daemon: {e}", flush=True)
+
+
 def write_heartbeat(start_time: float, total_restarts: int, initial_events: int):
     """Appends an hourly heartbeat confirmation line to logs/heartbeat.log."""
     os.makedirs(LOG_DIR, exist_ok=True)
@@ -181,10 +219,14 @@ def write_heartbeat(start_time: float, total_restarts: int, initial_events: int)
     child_status = "RUNNING" if (current_child_process and current_child_process.poll() is None) else "RESTARTING"
     child_pid = current_child_process.pid if (current_child_process and current_child_process.poll() is None) else "N/A"
 
+    autopush_status = "RUNNING" if (current_autopush_process and current_autopush_process.poll() is None) else "STOPPED"
+    autopush_pid = current_autopush_process.pid if (current_autopush_process and current_autopush_process.poll() is None) else "N/A"
+
     line = (
         f"[{now_str}] HEARTBEAT: ALIVE | Monitoring Span: {monitoring_span_hrs:.1f}h (Log-Derived) | "
         f"Process Uptime: {uptime_hrs:.1f}h | "
         f"Supervisor PID: {os.getpid()} | live.py PID: {child_pid} (Status: {child_status}) | "
+        f"AutoPush PID: {autopush_pid} (Status: {autopush_status}) | "
         f"Restarts: {total_restarts} | Events Processed Since Start: {session_events} "
         f"(Total Logged: {current_events})\n"
     )
@@ -256,6 +298,8 @@ def main():
             with open(LIVE_PID_FILE, "w", encoding="utf-8") as f:
                 f.write(str(current_child_process.pid))
 
+            ensure_autopush()
+
             # Initial heartbeat entry AFTER verifying child process is active and PID is assigned
             if initial_start:
                 time.sleep(0.2)  # Short pause to ensure initial pipe setup
@@ -272,6 +316,7 @@ def main():
         # Supervisor monitor loop
         while running and current_child_process.poll() is None:
             time.sleep(1)
+            ensure_autopush()
 
             now_t = time.time()
             if now_t - last_heartbeat_time >= HEARTBEAT_INTERVAL_SEC:

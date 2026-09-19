@@ -33,3 +33,12 @@ else
     echo "Process with PID $PID was already stopped. Cleaning up stale PID file."
     rm -f "$PID_FILE"
 fi
+
+AUTOPUSH_PID_FILE="$LOGS_DIR/autopush.pid"
+if [ -f "$AUTOPUSH_PID_FILE" ]; then
+    AP_PID=$(cat "$AUTOPUSH_PID_FILE")
+    if kill -0 "$AP_PID" 2>/dev/null; then
+        kill -TERM "$AP_PID" 2>/dev/null || true
+    fi
+    rm -f "$AUTOPUSH_PID_FILE"
+fi
