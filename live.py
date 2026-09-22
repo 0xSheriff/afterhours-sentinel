@@ -339,6 +339,14 @@ class LiveSentinelRunner:
         except Exception as e:
             print(f"[Sentinel Market Data WARNING] Kline volume query failed for {formatted_sym}: {e}")
 
+        # Option 2 — Volume fallback: if candle history is sparse/unavailable but 24H ticker vol exists,
+        # derive an estimated hourly baseline (24H vol / 24). Labeled FALLBACK_ESTIMATE, never MEASURED.
+        if trailing_avg_vol is None and after_hours_vol is not None and after_hours_vol > 0:
+            trailing_avg_vol = after_hours_vol / 24.0
+            volume_status = "FALLBACK_ESTIMATE"
+            volume_basis = "FALLBACK_ESTIMATE"
+            print(f" -> [Volume Fallback] {formatted_sym}: Sparse candle history. Using 24H ticker vol / 24 as hourly baseline ({trailing_avg_vol:,.1f}, basis=FALLBACK_ESTIMATE).")
+
         vol_display = f"{trailing_avg_vol:,.1f}" if trailing_avg_vol is not None else "INSUFFICIENT_DATA"
         print(f" -> [Live Market Data] {formatted_sym}: Price=${current_price:.2f} | 24h Move={actual_move:+.2%} (basis: ROLLING_24H) | Vol={after_hours_vol:,.1f} vs Avg={vol_display} (Benchmark [{benchmark}] Move={benchmark_move:+.2%})")
 

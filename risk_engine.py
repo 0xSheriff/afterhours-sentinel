@@ -165,7 +165,7 @@ def evaluate_trade(
     # Determine strategy mode from event_type if not explicitly provided
     if strategy_mode is None:
         clean_type = str(event_type).strip().lower()
-        mode = "MOMENTUM" if clean_type in ("earnings", "product") else "MEAN_REVERSION"
+        mode = "MOMENTUM" if clean_type in ("earnings", "product", "analyst") else "MEAN_REVERSION"
     else:
         mode = strategy_mode.strip().upper()
 
