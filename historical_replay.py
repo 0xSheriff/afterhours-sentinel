@@ -210,7 +210,7 @@ def run_historical_replay():
                 size_usd=evaluation.position_size_usd,
                 entry_price=evaluation.entry_price,
                 stop_price=evaluation.stop_price,
-                dry_run=config.DEFAULT_DRY_RUN
+                dry_run=True
             )
             order_res = execution_client.place_order(order_req)
             print(f"Execution Route  -> Client: {order_res.execution_client}")

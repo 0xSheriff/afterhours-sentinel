@@ -24,9 +24,10 @@ if os.path.exists(_env_path):
 # ==============================================================================
 # NON-NEGOTIABLE SAFETY CONSTRAINTS
 # ==============================================================================
-# All order-placing functions default to dryRun=True.
-# To enable actual demo order placement against Bitget Agent Hub Demo, set this to False.
-DEFAULT_DRY_RUN: bool = True
+# All order-placing functions support Smart Hybrid Execution:
+# - Supported contracts on Bitget Demo (NVDA, TSLA, AAPL, AMZN, GOOGL, META, COIN, MSTR, BTC, ETH) execute live on Bitget Demo.
+# - Unlisted contracts (MSFT, PLTR, ARM, AMD, INTC, BABA, NFLX) seamlessly execute in client-side paper simulation.
+DEFAULT_DRY_RUN: bool = False
 
 # Enforce Demo Environment Only (Never mainnet/live)
 DEMO_MODE: bool = True
