@@ -26,12 +26,19 @@ logging.basicConfig(
     ]
 )
 
-def run_cmd(cmd, cwd=BASE_DIR):
-    res = subprocess.run(cmd, cwd=cwd, shell=True, capture_output=True, text=True)
-    return res.returncode, res.stdout.strip(), res.stderr.strip()
+def run_cmd(cmd, cwd=BASE_DIR, timeout=60):
+    try:
+        res = subprocess.run(cmd, cwd=cwd, shell=True, capture_output=True, text=True, timeout=timeout)
+        return res.returncode, res.stdout.strip(), res.stderr.strip()
+    except subprocess.TimeoutExpired:
+        logging.warning(f"Command timed out after {timeout}s: {cmd}")
+        return -1, "", f"Timeout after {timeout}s"
+    except Exception as e:
+        logging.warning(f"Command execution error: {e}")
+        return -1, "", str(e)
 
 def sync_records():
-    code, out, err = run_cmd("node dashboard/scripts/convert-csv.cjs")
+    code, out, err = run_cmd("node dashboard/scripts/convert-csv.cjs", timeout=30)
     if code != 0:
         logging.warning(f"convert-csv.cjs warning: {err or out}")
     return code == 0
@@ -43,7 +50,7 @@ def check_uncommitted():
         "logs/sentinel_trades.jsonl",
         "logs/sentinel_trades.csv"
     ]
-    code, out, _ = run_cmd(f"git status --porcelain {' '.join(files_to_check)}")
+    code, out, _ = run_cmd(f"git status --porcelain {' '.join(files_to_check)}", timeout=20)
     return bool(out.strip())
 
 def push_updates():
@@ -55,9 +62,9 @@ def push_updates():
         "logs/sentinel_trades.jsonl",
         "logs/sentinel_trades.csv"
     ]
-    run_cmd(f"git add {' '.join(files_to_stage)}")
+    run_cmd(f"git add {' '.join(files_to_stage)}", timeout=30)
     
-    code, _, _ = run_cmd("git diff --cached --quiet")
+    code, _, _ = run_cmd("git diff --cached --quiet", timeout=20)
     if code == 0:
         return False  # No staged changes
     
@@ -74,18 +81,21 @@ def push_updates():
         pass
 
     commit_msg = f"telemetry: sync live trade records ({rec_count})"
-    code, out, err = run_cmd(f'git commit -m "{commit_msg}"')
+    code, out, err = run_cmd(f'git commit -m "{commit_msg}"', timeout=30)
     if code != 0:
         logging.error(f"Git commit failed: {err or out}")
         return False
 
     logging.info(f"Committed: {commit_msg}")
     
-    code, out, err = run_cmd("git push origin main")
+    git_push_cmd = "git -c http.lowSpeedLimit=1000 -c http.lowSpeedTime=15 push origin main"
+    git_pull_cmd = "git -c http.lowSpeedLimit=1000 -c http.lowSpeedTime=15 pull --rebase origin main"
+    
+    code, out, err = run_cmd(git_push_cmd, timeout=45)
     if code != 0:
         logging.warning(f"Initial push failed, attempting git pull --rebase: {err or out}")
-        run_cmd("git pull --rebase origin main")
-        code, out, err = run_cmd("git push origin main")
+        run_cmd(git_pull_cmd, timeout=45)
+        code, out, err = run_cmd(git_push_cmd, timeout=45)
 
     if code == 0:
         logging.info("Pushed successfully to origin/main -> Vercel will trigger deploy")
