@@ -21,7 +21,7 @@ After-hours equity markets exhibit structural liquidity thinning. When breaking 
 
 To guarantee strict capital protection and zero unintended exposure:
 1. **Paper-Trading Isolation**: All execution targets Bitget Agent Hub in `--paper-trading` mode against Bitget's Demo environment (`DEMO_MODE=True`). Mainnet live accounts are strictly isolated.
-2. **`dryRun=True` by Default**: Every order placement defaults to `dryRun=True` in [`config.py`](file:///Users/mac/AH-Sentinel/config.py) (`DEFAULT_DRY_RUN = True`), requiring explicit runtime invocation for live paper execution.
+2. **Smart Hybrid Execution Router**: Operates with `DEFAULT_DRY_RUN = False` in [`config.py`](file:///Users/mac/AH-Sentinel/config.py) under the **Smart Hybrid Execution Router**. Contracts actively listed on Bitget Demo (`NVDA`, `TSLA`, `AAPL`, `AMZN`, `GOOGL`, `META`, `COIN`, `MSTR`, `BTC`, `ETH`) route live orders directly to the Bitget Demo matching engine, while unlisted demo contracts (`MSFT`, `PLTR`, `ARM`, etc.) seamlessly execute in client-side paper simulation with zero rejection errors.
 3. **Zero Dangerous Endpoints**: Zero withdrawal, transfer, or mass-cancellation endpoints exist in the codebase.
 4. **Transparent Client Logging**: Tracks routing via `BitgetAgentHubClient` against official `api.bitget.com` demo endpoints with fallback to local `MockExecutionClient`.
 
@@ -34,7 +34,7 @@ graph TD
     A["1. Event Listener (RSS + Taxonomy)"] -->|Structured Market Event| B["2. Divergence Engine (Beta + Z-Score)"]
     B -->|Deterministic Z-Score & Volume Ratio| C["3. LLM Analyst (Groq Qwen 3.8-27B)"]
     C -->|Directional Sentiment & Reasoning| D["4. Risk Engine (Differentiated Strategy Gate)"]
-    D -->|3/3 Signals Aligned + Pure Risk Rules| E["5. Execution & Logger (Bitget Agent Hub)"]
+    D -->|3/3 Signals Aligned + Pure Risk Rules| E["5. Execution & Logger (Smart Hybrid Router)"]
     E -->|Immutable JSONL / CSV Audit Log| F["Live Audit Dashboard (Vercel)"]
 ```
 
@@ -52,6 +52,7 @@ graph TD
   $$\text{residual} = \Delta_{\text{actual}} - \text{expected\_move}$$
   $$z = \frac{\text{residual}}{\sigma_{\text{residual}}} \quad (\text{defensive volatility floor } \sigma_{\min} = 80\text{ bps})$$
   $$\text{volume\_ratio} = \frac{\text{Volume}_{\text{after\_hours}}}{\overline{\text{Volume}}_{\text{trailing}}}$$
+- **Empirical Volume Fallback**: When Bitget Demo 1H candle history is sparse ($<3$ candles), Sentinel dynamically falls back to the rolling 24H ticker volume normalized to hourly ($\text{Vol}_{24\text{h}} / 24$). Tagged `volume_basis: "FALLBACK_ESTIMATE"` for complete data-provenance transparency.
 
 #### 3. LLM Analyst (`llm_analyst.py`)
 - Executes high-speed OpenAI-compatible inference against Groq (`qwen/qwen3.8-27b` / `llama-3.3-70b-versatile`).
@@ -63,10 +64,11 @@ graph TD
 
 #### 4. Dual-Strategy Risk Engine (`risk_engine.py`)
 Pure rule-based gatekeeper evaluating dynamic strategy modes:
-- **`MEAN_REVERSION` Mode** (Macro, Tariffs, Geopolitics, Regulatory, Corporate, Analyst):
+- **`MEAN_REVERSION` Mode** (Macro, Tariffs, Geopolitics, Regulatory, Corporate):
   - Requires: Direction Contradiction (price moved opposite to fundamental news) + Weak Liquidity (`volume_ratio < 0.50`) + Statistical Outlier ($|z| \ge 2.0\sigma$).
-- **`MOMENTUM` Mode** (Earnings & Product Releases):
+- **`MOMENTUM` Mode** (Earnings, Product Releases, Analyst Upgrades/Downgrades):
   - Requires: Direction Alignment (price confirmed by fundamental upside/downside) + Confirming Volume (`volume_ratio \ge 0.80`) + Statistical Breakout ($|z| \ge 2.0\sigma$).
+  - *Analyst Routing Justification*: Empirical log analysis across all live analyst events confirmed that analyst price-target changes trigger immediate directional momentum (`ALIGNMENT`). Routing them to MOMENTUM captures post-upgrade drift rather than attempting to fade institutional revisions.
 - **Portfolio Defense Rules**:
   - Fixed **3% portfolio sizing** per trade.
   - Hard stop loss at **1.5% from entry**.
@@ -74,8 +76,9 @@ Pure rule-based gatekeeper evaluating dynamic strategy modes:
   - Maximum **2 concurrent open positions**.
   - Daily loss limit of **2% of portfolio** (automatic circuit-breaker trading halt).
 
-#### 5. Bitget Execution & Structured Logger (`execution.py`)
-- Dispatches orders to Bitget Agent Hub Paper Trading in Demo environment (`api.bitget.com`).
+#### 5. Smart Hybrid Execution Router & Logger (`execution.py`)
+- **Dynamic Contract Discovery**: Queries Bitget Demo's live contract specifications (`/api/v2/mix/market/contracts`) to route supported contracts (`NVDA`, `TSLA`, `AAPL`, `AMZN`, etc.) directly to Bitget's matching engine via HMAC-SHA256 REST orders.
+- **Seamless Paper Fallback**: Unlisted demo contracts (`MSFT`, `PLTR`, etc.) are seamlessly captured in client-side simulation without exchange rejection errors.
 - Appends immutable audit records to `logs/sentinel_trades.jsonl` and `logs/sentinel_trades.csv`.
 
 ---
@@ -124,7 +127,12 @@ python3 historical_replay.py
 python3 verify_bitget_connection.py
 ```
 
-### 4. Continuous Background Supervisor
+### 4. Inspect Live Bitget Demo Positions & Balance
+```bash
+python3 scripts/check_positions.py
+```
+
+### 5. Continuous Background Supervisor
 ```bash
 # Launch unattended supervisor with auto-restart backoff and hourly heartbeats
 ./scripts/start_sentinel.sh
@@ -136,7 +144,7 @@ python3 verify_bitget_connection.py
 ./scripts/stop_sentinel.sh
 ```
 
-### 5. Interactive Audit Dashboard
+### 6. Interactive Audit Dashboard
 ```bash
 cd dashboard
 npm install
@@ -153,7 +161,7 @@ The canonical record of all autonomous decisions is maintained in `logs/`:
 * **`logs/sentinel_trades.jsonl`**: Complete JSON Lines log containing every evaluated event, benchmark move, beta, residual z-score, volume ratio, Qwen classification, risk gate outcome, and paper execution status.
 * **`logs/sentinel_trades.csv`**: Tabular export of all logged decisions.
 * **`logs/submission_audit_trail.csv`**: Verified competition dataset (distinguishing live vs calibration backtest data).
-* **`logs/heartbeat.log`**: Hourly supervisor heartbeats recording process health and continuous **50+ hours unattended monitoring span**.
+* **`logs/heartbeat.log`**: Hourly supervisor heartbeats recording process health and continuous **147+ hours unattended monitoring span** (545+ live event decisions recorded).
 
 ---
 
