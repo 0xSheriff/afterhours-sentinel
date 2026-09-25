@@ -1,5 +1,52 @@
 [
   {
+    "timestamp": "2026-09-25T22:13:33.847799+00:00",
+    "mode": "live",
+    "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+    "llm_source": "skipped",
+    "symbol": "",
+    "event_headline": "CDW completes acquisition of data and AI firm Lovelytics",
+    "event_type": "corporate",
+    "event_timestamp": "2026-09-25 22:00:30",
+    "pre_event_price": 0,
+    "entry_price": 0,
+    "actual_move": 0,
+    "actual_move_basis": "ROLLING_24H",
+    "actual_move_status": "MEASURED",
+    "expected_move": 0,
+    "benchmark_type": "QQQ",
+    "benchmark_move": 0,
+    "beta": 1,
+    "residual": 0,
+    "residual_std": 0.008,
+    "volatility_floor": 0.008,
+    "z_score": 0,
+    "z_threshold": 2,
+    "volume_ratio": null,
+    "volume_basis": "MEASURED",
+    "volume_status": "MEASURED",
+    "liquidity_condition": "INSUFFICIENT_DATA",
+    "event_direction": "neutral",
+    "price_direction": "flat",
+    "direction_alignment": "ALIGNMENT",
+    "strategy_mode": "MEAN_REVERSION",
+    "qwen_direction": "NONE",
+    "qwen_validation": "PASS",
+    "qwen_reasoning": "Event skipped (no target equity asset match)",
+    "quant_signal": "FAIL",
+    "risk_gate": "BLOCK",
+    "decision": "SKIPPED_NO_ASSET_MATCH",
+    "signals_aligned": "0/3 (No Asset Match)",
+    "position_size": 0,
+    "stop_price": 0,
+    "exit_price": 0,
+    "exit_reason": "OPEN",
+    "pnl": 0,
+    "reason": "Event does not mention target tokenized equity asset (macro/general news)",
+    "divergence": 0,
+    "id": 1
+  },
+  {
     "timestamp": "2026-09-25T21:30:33.245081+00:00",
     "mode": "live",
     "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
@@ -44,7 +91,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 1
+    "id": 2
   },
   {
     "timestamp": "2026-09-25T21:30:33.178785+00:00",
@@ -91,7 +138,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 2
+    "id": 3
   },
   {
     "timestamp": "2026-09-25T21:15:22.203020+00:00",
@@ -138,7 +185,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 3
+    "id": 4
   },
   {
     "timestamp": "2026-09-25T21:02:21.138357+00:00",
@@ -185,7 +232,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 4
+    "id": 5
   },
   {
     "timestamp": "2026-09-25T20:46:36.831471+00:00",
@@ -232,7 +279,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 5
+    "id": 6
   },
   {
     "timestamp": "2026-09-25T20:25:42.032697+00:00",
@@ -279,7 +326,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 6
+    "id": 7
   },
   {
     "timestamp": "2026-09-25T19:34:43.344605+00:00",
@@ -326,7 +373,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 7
+    "id": 8
   },
   {
     "timestamp": "2026-09-25T19:34:43.300965+00:00",
@@ -373,7 +420,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 8
+    "id": 9
   },
   {
     "timestamp": "2026-09-25T19:34:43.258672+00:00",
@@ -420,7 +467,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 9
+    "id": 10
   },
   {
     "timestamp": "2026-09-25T19:34:43.211371+00:00",
@@ -467,7 +514,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 10
+    "id": 11
   },
   {
     "timestamp": "2026-09-25T19:14:30.353993+00:00",
@@ -514,7 +561,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 11
+    "id": 12
   },
   {
     "timestamp": "2026-09-25T18:34:52.214556+00:00",
@@ -561,7 +608,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 12
+    "id": 13
   },
   {
     "timestamp": "2026-09-25T18:16:04.747168+00:00",
@@ -608,7 +655,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 13
+    "id": 14
   },
   {
     "timestamp": "2026-09-25T18:16:04.682483+00:00",
@@ -655,7 +702,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 14
+    "id": 15
   },
   {
     "timestamp": "2026-09-25T18:05:21.127620+00:00",
@@ -702,7 +749,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 15
+    "id": 16
   },
   {
     "timestamp": "2026-09-25T17:44:28.947337+00:00",
@@ -749,7 +796,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 16
+    "id": 17
   },
   {
     "timestamp": "2026-09-25T17:07:17.338205+00:00",
@@ -796,7 +843,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 17
+    "id": 18
   },
   {
     "timestamp": "2026-09-25T15:15:33.799749+00:00",
@@ -843,7 +890,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 18
+    "id": 19
   },
   {
     "timestamp": "2026-09-25T15:04:46.982366+00:00",
@@ -890,7 +937,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 19
+    "id": 20
   },
   {
     "timestamp": "2026-09-25T14:56:07.125492+00:00",
@@ -937,7 +984,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 20
+    "id": 21
   },
   {
     "timestamp": "2026-09-25T14:47:15.502343+00:00",
@@ -984,7 +1031,7 @@
     "pnl": 0,
     "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (24.00 >= 0.8) and statistical significance (z=+3.28).",
     "divergence": 0.026234,
-    "id": 21
+    "id": 22
   },
   {
     "timestamp": "2026-09-25T14:47:15.443045+00:00",
@@ -1031,7 +1078,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 22
+    "id": 23
   },
   {
     "timestamp": "2026-09-25T14:47:15.385191+00:00",
@@ -1078,7 +1125,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 23
+    "id": 24
   },
   {
     "timestamp": "2026-09-25T14:47:15.322986+00:00",
@@ -1125,7 +1172,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 24
+    "id": 25
   },
   {
     "timestamp": "2026-09-25T14:24:43.708803+00:00",
@@ -1172,7 +1219,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 25
+    "id": 26
   },
   {
     "timestamp": "2026-09-25T14:15:49.597249+00:00",
@@ -1219,7 +1266,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 26
+    "id": 27
   },
   {
     "timestamp": "2026-09-25T14:15:49.538780+00:00",
@@ -1266,7 +1313,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 27
+    "id": 28
   },
   {
     "timestamp": "2026-09-25T13:54:56.184653+00:00",
@@ -1313,7 +1360,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 28
+    "id": 29
   },
   {
     "timestamp": "2026-09-25T13:54:56.123785+00:00",
@@ -1360,7 +1407,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 29
+    "id": 30
   },
   {
     "timestamp": "2026-09-25T13:54:56.066133+00:00",
@@ -1407,7 +1454,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 30
+    "id": 31
   },
   {
     "timestamp": "2026-09-25T13:54:56.008031+00:00",
@@ -1454,7 +1501,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 31
+    "id": 32
   },
   {
     "timestamp": "2026-09-25T13:46:11.804338+00:00",
@@ -1501,7 +1548,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 32
+    "id": 33
   },
   {
     "timestamp": "2026-09-25T13:25:30.444085+00:00",
@@ -1548,7 +1595,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 33
+    "id": 34
   },
   {
     "timestamp": "2026-09-25T13:25:30.387298+00:00",
@@ -1595,7 +1642,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 34
+    "id": 35
   },
   {
     "timestamp": "2026-09-25T13:16:13.533714+00:00",
@@ -1642,7 +1689,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 35
+    "id": 36
   },
   {
     "timestamp": "2026-09-25T13:16:13.475411+00:00",
@@ -1689,7 +1736,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 36
+    "id": 37
   },
   {
     "timestamp": "2026-09-25T13:05:32.614088+00:00",
@@ -1736,7 +1783,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 37
+    "id": 38
   },
   {
     "timestamp": "2026-09-25T13:05:32.556942+00:00",
@@ -1783,7 +1830,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 38
+    "id": 39
   },
   {
     "timestamp": "2026-09-25T13:05:32.500178+00:00",
@@ -1830,7 +1877,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 39
+    "id": 40
   },
   {
     "timestamp": "2026-09-25T13:05:32.443289+00:00",
@@ -1877,7 +1924,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 40
+    "id": 41
   },
   {
     "timestamp": "2026-09-25T12:55:08.091428+00:00",
@@ -1924,7 +1971,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 41
+    "id": 42
   },
   {
     "timestamp": "2026-09-25T12:45:46.865351+00:00",
@@ -1971,7 +2018,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 42
+    "id": 43
   },
   {
     "timestamp": "2026-09-25T12:05:34.231257+00:00",
@@ -2018,7 +2065,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 43
+    "id": 44
   },
   {
     "timestamp": "2026-09-25T12:05:34.187623+00:00",
@@ -2065,7 +2112,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 44
+    "id": 45
   },
   {
     "timestamp": "2026-09-25T12:05:34.143657+00:00",
@@ -2112,7 +2159,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 45
+    "id": 46
   },
   {
     "timestamp": "2026-09-25T12:05:34.091818+00:00",
@@ -2159,7 +2206,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 46
+    "id": 47
   },
   {
     "timestamp": "2026-09-25T12:03:16.391672+00:00",
@@ -2206,7 +2253,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 47
+    "id": 48
   },
   {
     "timestamp": "2026-09-25T11:54:40.880061+00:00",
@@ -2253,7 +2300,7 @@
     "pnl": 0,
     "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.76 >= 0.8) and statistical significance (z=+4.36).",
     "divergence": 0.034872,
-    "id": 48
+    "id": 49
   },
   {
     "timestamp": "2026-09-25T11:54:40.823415+00:00",
@@ -2300,7 +2347,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 49
+    "id": 50
   },
   {
     "timestamp": "2026-09-25T11:54:40.753429+00:00",
@@ -2347,7 +2394,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 50
+    "id": 51
   },
   {
     "timestamp": "2026-09-25T11:45:33.943192+00:00",
@@ -2394,7 +2441,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 51
+    "id": 52
   },
   {
     "timestamp": "2026-09-25T11:45:33.887896+00:00",
@@ -2441,7 +2488,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 52
+    "id": 53
   },
   {
     "timestamp": "2026-09-25T11:35:50.524866+00:00",
@@ -2488,7 +2535,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 53
+    "id": 54
   },
   {
     "timestamp": "2026-09-25T11:35:50.464274+00:00",
@@ -2535,7 +2582,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 54
+    "id": 55
   },
   {
     "timestamp": "2026-09-25T11:35:50.409008+00:00",
@@ -2582,7 +2629,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 55
+    "id": 56
   },
   {
     "timestamp": "2026-09-25T11:35:50.352912+00:00",
@@ -2629,7 +2676,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 56
+    "id": 57
   },
   {
     "timestamp": "2026-09-25T11:35:50.293968+00:00",
@@ -2676,7 +2723,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 57
+    "id": 58
   },
   {
     "timestamp": "2026-09-25T11:26:40.057816+00:00",
@@ -2723,7 +2770,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 58
+    "id": 59
   },
   {
     "timestamp": "2026-09-25T11:26:40.002548+00:00",
@@ -2770,7 +2817,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 59
+    "id": 60
   },
   {
     "timestamp": "2026-09-25T11:26:39.947036+00:00",
@@ -2817,7 +2864,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 60
+    "id": 61
   },
   {
     "timestamp": "2026-09-25T11:26:39.887425+00:00",
@@ -2864,7 +2911,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 61
+    "id": 62
   },
   {
     "timestamp": "2026-09-25T11:15:09.716683+00:00",
@@ -2911,7 +2958,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 62
+    "id": 63
   },
   {
     "timestamp": "2026-09-25T11:05:54.509616+00:00",
@@ -2958,7 +3005,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 63
+    "id": 64
   },
   {
     "timestamp": "2026-09-25T10:55:03.338384+00:00",
@@ -3005,7 +3052,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 64
+    "id": 65
   },
   {
     "timestamp": "2026-09-25T10:47:46.239990+00:00",
@@ -3052,7 +3099,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 65
+    "id": 66
   },
   {
     "timestamp": "2026-09-25T10:45:16.098966+00:00",
@@ -3099,7 +3146,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 66
+    "id": 67
   },
   {
     "timestamp": "2026-09-25T10:38:08.079284+00:00",
@@ -3146,7 +3193,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 67
+    "id": 68
   },
   {
     "timestamp": "2026-09-25T10:25:07.395486+00:00",
@@ -3193,7 +3240,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 68
+    "id": 69
   },
   {
     "timestamp": "2026-09-25T10:25:07.330825+00:00",
@@ -3240,7 +3287,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 69
+    "id": 70
   },
   {
     "timestamp": "2026-09-25T10:18:39.410387+00:00",
@@ -3287,7 +3334,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 70
+    "id": 71
   },
   {
     "timestamp": "2026-09-25T10:18:39.326152+00:00",
@@ -3334,7 +3381,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 71
+    "id": 72
   },
   {
     "timestamp": "2026-09-25T06:26:00.923618+00:00",
@@ -3381,7 +3428,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 72
+    "id": 73
   },
   {
     "timestamp": "2026-09-25T05:14:42.694828+00:00",
@@ -3428,7 +3475,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 73
+    "id": 74
   },
   {
     "timestamp": "2026-09-25T04:11:40.461104+00:00",
@@ -3475,7 +3522,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 74
+    "id": 75
   },
   {
     "timestamp": "2026-09-25T02:56:40.864565+00:00",
@@ -3522,7 +3569,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 75
+    "id": 76
   },
   {
     "timestamp": "2026-09-25T01:18:40.623288+00:00",
@@ -3569,7 +3616,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 76
+    "id": 77
   },
   {
     "timestamp": "2026-09-24T23:42:22.376956+00:00",
@@ -3616,7 +3663,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 77
+    "id": 78
   },
   {
     "timestamp": "2026-09-24T23:25:37.760871+00:00",
@@ -3663,7 +3710,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 78
+    "id": 79
   },
   {
     "timestamp": "2026-09-24T23:23:25.356258+00:00",
@@ -3710,7 +3757,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 79
+    "id": 80
   },
   {
     "timestamp": "2026-09-24T22:32:15.150867+00:00",
@@ -3757,7 +3804,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 80
+    "id": 81
   },
   {
     "timestamp": "2026-09-24T22:12:11.178031+00:00",
@@ -3804,7 +3851,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 81
+    "id": 82
   },
   {
     "timestamp": "2026-09-24T22:12:11.094258+00:00",
@@ -3851,7 +3898,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 82
+    "id": 83
   },
   {
     "timestamp": "2026-09-24T21:54:58.747918+00:00",
@@ -3898,7 +3945,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 83
+    "id": 84
   },
   {
     "timestamp": "2026-09-24T21:54:58.675548+00:00",
@@ -3945,7 +3992,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 84
+    "id": 85
   },
   {
     "timestamp": "2026-09-24T21:34:10.868218+00:00",
@@ -3992,7 +4039,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 85
+    "id": 86
   },
   {
     "timestamp": "2026-09-24T21:34:10.800922+00:00",
@@ -4039,7 +4086,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 86
+    "id": 87
   },
   {
     "timestamp": "2026-09-24T21:15:43.724000+00:00",
@@ -4086,7 +4133,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 87
+    "id": 88
   },
   {
     "timestamp": "2026-09-24T21:04:21.606682+00:00",
@@ -4133,7 +4180,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 88
+    "id": 89
   },
   {
     "timestamp": "2026-09-24T20:56:29.668266+00:00",
@@ -4180,7 +4227,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 89
+    "id": 90
   },
   {
     "timestamp": "2026-09-24T20:44:43.700353+00:00",
@@ -4227,7 +4274,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 90
+    "id": 91
   },
   {
     "timestamp": "2026-09-24T20:12:52.159774+00:00",
@@ -4274,7 +4321,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 91
+    "id": 92
   },
   {
     "timestamp": "2026-09-24T20:12:52.095286+00:00",
@@ -4321,7 +4368,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 92
+    "id": 93
   },
   {
     "timestamp": "2026-09-24T19:52:02.645130+00:00",
@@ -4368,7 +4415,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 93
+    "id": 94
   },
   {
     "timestamp": "2026-09-24T19:45:27.280401+00:00",
@@ -4415,7 +4462,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 94
+    "id": 95
   },
   {
     "timestamp": "2026-09-24T19:36:39.991298+00:00",
@@ -4462,7 +4509,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 95
+    "id": 96
   },
   {
     "timestamp": "2026-09-24T19:25:08.510671+00:00",
@@ -4509,7 +4556,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 96
+    "id": 97
   },
   {
     "timestamp": "2026-09-24T19:23:58.920815+00:00",
@@ -4556,7 +4603,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 97
+    "id": 98
   },
   {
     "timestamp": "2026-09-24T19:05:12.610065+00:00",
@@ -4603,7 +4650,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 98
+    "id": 99
   },
   {
     "timestamp": "2026-09-24T18:47:15.634913+00:00",
@@ -4650,7 +4697,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 99
+    "id": 100
   },
   {
     "timestamp": "2026-09-24T18:34:51.088511+00:00",
@@ -4697,7 +4744,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 100
+    "id": 101
   },
   {
     "timestamp": "2026-09-24T18:07:27.156142+00:00",
@@ -4744,7 +4791,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 101
+    "id": 102
   },
   {
     "timestamp": "2026-09-24T18:07:27.098770+00:00",
@@ -4791,7 +4838,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 102
+    "id": 103
   },
   {
     "timestamp": "2026-09-24T17:14:47.277994+00:00",
@@ -4838,7 +4885,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 103
+    "id": 104
   },
   {
     "timestamp": "2026-09-24T17:14:47.217317+00:00",
@@ -4885,7 +4932,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 104
+    "id": 105
   },
   {
     "timestamp": "2026-09-24T17:04:51.086454+00:00",
@@ -4932,7 +4979,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 105
+    "id": 106
   },
   {
     "timestamp": "2026-09-24T16:41:55.581512+00:00",
@@ -4979,7 +5026,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 106
+    "id": 107
   },
   {
     "timestamp": "2026-09-24T16:05:37.937683+00:00",
@@ -5026,7 +5073,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 107
+    "id": 108
   },
   {
     "timestamp": "2026-09-24T16:05:37.887908+00:00",
@@ -5073,7 +5120,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 108
+    "id": 109
   },
   {
     "timestamp": "2026-09-24T16:05:37.828944+00:00",
@@ -5120,7 +5167,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 109
+    "id": 110
   },
   {
     "timestamp": "2026-09-24T15:45:37.080962+00:00",
@@ -5167,7 +5214,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 110
+    "id": 111
   },
   {
     "timestamp": "2026-09-24T15:45:37.027707+00:00",
@@ -5214,7 +5261,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 111
+    "id": 112
   },
   {
     "timestamp": "2026-09-24T15:34:02.681064+00:00",
@@ -5261,7 +5308,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 112
+    "id": 113
   },
   {
     "timestamp": "2026-09-24T15:20:54.955101+00:00",
@@ -5308,7 +5355,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 113
+    "id": 114
   },
   {
     "timestamp": "2026-09-24T15:02:29.300455+00:00",
@@ -5355,7 +5402,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 114
+    "id": 115
   },
   {
     "timestamp": "2026-09-24T15:02:29.174440+00:00",
@@ -5402,7 +5449,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 115
+    "id": 116
   },
   {
     "timestamp": "2026-09-24T15:02:29.121367+00:00",
@@ -5449,7 +5496,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 116
+    "id": 117
   },
   {
     "timestamp": "2026-09-24T15:02:29.068003+00:00",
@@ -5496,7 +5543,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 117
+    "id": 118
   },
   {
     "timestamp": "2026-09-24T15:02:29.015021+00:00",
@@ -5543,7 +5590,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 118
+    "id": 119
   },
   {
     "timestamp": "2026-09-24T14:59:40.613469+00:00",
@@ -5590,7 +5637,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 119
+    "id": 120
   },
   {
     "timestamp": "2026-09-24T14:34:07.147602+00:00",
@@ -5637,7 +5684,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 120
+    "id": 121
   },
   {
     "timestamp": "2026-09-24T14:34:07.105867+00:00",
@@ -5684,7 +5731,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 121
+    "id": 122
   },
   {
     "timestamp": "2026-09-24T14:34:07.055973+00:00",
@@ -5731,7 +5778,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 122
+    "id": 123
   },
   {
     "timestamp": "2026-09-24T14:13:43.648733+00:00",
@@ -5778,7 +5825,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 123
+    "id": 124
   },
   {
     "timestamp": "2026-09-24T14:13:43.608274+00:00",
@@ -5825,7 +5872,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 124
+    "id": 125
   },
   {
     "timestamp": "2026-09-24T14:13:43.539503+00:00",
@@ -5872,7 +5919,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 125
+    "id": 126
   },
   {
     "timestamp": "2026-09-24T14:04:02.230683+00:00",
@@ -5919,7 +5966,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 126
+    "id": 127
   },
   {
     "timestamp": "2026-09-24T13:52:11.792195+00:00",
@@ -5966,7 +6013,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 127
+    "id": 128
   },
   {
     "timestamp": "2026-09-24T13:52:11.733930+00:00",
@@ -6013,7 +6060,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 128
+    "id": 129
   },
   {
     "timestamp": "2026-09-24T13:35:56.347658+00:00",
@@ -6060,7 +6107,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 129
+    "id": 130
   },
   {
     "timestamp": "2026-09-24T13:24:31.484649+00:00",
@@ -6107,7 +6154,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 130
+    "id": 131
   },
   {
     "timestamp": "2026-09-24T13:24:31.410790+00:00",
@@ -6154,7 +6201,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 131
+    "id": 132
   },
   {
     "timestamp": "2026-09-24T13:15:16.185380+00:00",
@@ -6201,7 +6248,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 132
+    "id": 133
   },
   {
     "timestamp": "2026-09-24T13:06:18.853945+00:00",
@@ -6248,7 +6295,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Insufficient divergence (|z|=1.43 <= 2.0) — price move (-1.85%) is within normal rolling beta-adjusted volatility.",
     "divergence": 0.011442,
-    "id": 133
+    "id": 134
   },
   {
     "timestamp": "2026-09-24T12:55:59.696294+00:00",
@@ -6295,7 +6342,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 134
+    "id": 135
   },
   {
     "timestamp": "2026-09-24T12:55:42.828140+00:00",
@@ -6342,7 +6389,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Insufficient divergence (|z|=1.95 <= 2.0) — price move (-1.53%) is within normal rolling beta-adjusted volatility.",
     "divergence": 0.01556,
-    "id": 135
+    "id": 136
   },
   {
     "timestamp": "2026-09-24T12:45:59.309720+00:00",
@@ -6389,7 +6436,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 136
+    "id": 137
   },
   {
     "timestamp": "2026-09-24T12:36:10.157367+00:00",
@@ -6436,7 +6483,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 137
+    "id": 138
   },
   {
     "timestamp": "2026-09-24T12:26:22.204518+00:00",
@@ -6483,7 +6530,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 138
+    "id": 139
   },
   {
     "timestamp": "2026-09-24T12:14:57.554887+00:00",
@@ -6530,7 +6577,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 139
+    "id": 140
   },
   {
     "timestamp": "2026-09-24T12:07:21.473931+00:00",
@@ -6577,7 +6624,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 140
+    "id": 141
   },
   {
     "timestamp": "2026-09-24T12:07:21.418987+00:00",
@@ -6624,7 +6671,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 141
+    "id": 142
   },
   {
     "timestamp": "2026-09-24T11:54:18.576497+00:00",
@@ -6671,7 +6718,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 142
+    "id": 143
   },
   {
     "timestamp": "2026-09-24T11:54:18.505609+00:00",
@@ -6718,7 +6765,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 143
+    "id": 144
   },
   {
     "timestamp": "2026-09-24T11:35:42.718840+00:00",
@@ -6765,7 +6812,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 144
+    "id": 145
   },
   {
     "timestamp": "2026-09-24T11:35:42.675420+00:00",
@@ -6812,7 +6859,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 145
+    "id": 146
   },
   {
     "timestamp": "2026-09-24T11:26:12.603159+00:00",
@@ -6859,7 +6906,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 146
+    "id": 147
   },
   {
     "timestamp": "2026-09-24T11:16:18.857289+00:00",
@@ -6906,7 +6953,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 147
+    "id": 148
   },
   {
     "timestamp": "2026-09-24T11:04:47.388657+00:00",
@@ -6953,7 +7000,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 148
+    "id": 149
   },
   {
     "timestamp": "2026-09-24T11:04:47.344101+00:00",
@@ -7000,7 +7047,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 149
+    "id": 150
   },
   {
     "timestamp": "2026-09-24T10:58:48.964344+00:00",
@@ -7047,7 +7094,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 150
+    "id": 151
   },
   {
     "timestamp": "2026-09-24T10:57:11.207162+00:00",
@@ -7094,7 +7141,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 151
+    "id": 152
   },
   {
     "timestamp": "2026-09-24T10:57:11.172412+00:00",
@@ -7141,7 +7188,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 152
+    "id": 153
   },
   {
     "timestamp": "2026-09-24T10:57:11.136305+00:00",
@@ -7188,7 +7235,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 153
+    "id": 154
   },
   {
     "timestamp": "2026-09-24T10:57:11.098205+00:00",
@@ -7235,7 +7282,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 154
+    "id": 155
   },
   {
     "timestamp": "2026-09-24T10:57:11.054049+00:00",
@@ -7282,7 +7329,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 155
+    "id": 156
   },
   {
     "timestamp": "2026-09-24T10:50:30.147562+00:00",
@@ -7329,7 +7376,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 156
+    "id": 157
   },
   {
     "timestamp": "2026-09-24T10:50:30.112906+00:00",
@@ -7376,7 +7423,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 157
+    "id": 158
   },
   {
     "timestamp": "2026-09-24T10:50:30.078710+00:00",
@@ -7423,7 +7470,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 158
+    "id": 159
   },
   {
     "timestamp": "2026-09-24T10:50:30.043931+00:00",
@@ -7470,7 +7517,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 159
+    "id": 160
   },
   {
     "timestamp": "2026-09-24T10:50:30.000985+00:00",
@@ -7517,7 +7564,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 160
+    "id": 161
   },
   {
     "timestamp": "2026-09-24T10:40:11.671174+00:00",
@@ -7564,7 +7611,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 161
+    "id": 162
   },
   {
     "timestamp": "2026-09-24T10:40:11.622605+00:00",
@@ -7611,7 +7658,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 162
+    "id": 163
   },
   {
     "timestamp": "2026-09-24T10:30:13.795832+00:00",
@@ -7658,7 +7705,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 163
+    "id": 164
   },
   {
     "timestamp": "2026-09-24T10:30:13.747403+00:00",
@@ -7705,7 +7752,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 164
+    "id": 165
   },
   {
     "timestamp": "2026-09-24T10:13:33.805426+00:00",
@@ -7752,7 +7799,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 165
+    "id": 166
   },
   {
     "timestamp": "2026-09-24T10:13:33.757201+00:00",
@@ -7799,7 +7846,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 166
+    "id": 167
   },
   {
     "timestamp": "2026-09-24T09:52:30.499121+00:00",
@@ -7846,7 +7893,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 167
+    "id": 168
   },
   {
     "timestamp": "2026-09-24T09:52:30.458888+00:00",
@@ -7893,7 +7940,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 168
+    "id": 169
   },
   {
     "timestamp": "2026-09-24T09:35:29.965738+00:00",
@@ -7940,7 +7987,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 169
+    "id": 170
   },
   {
     "timestamp": "2026-09-24T09:22:11.827928+00:00",
@@ -7987,7 +8034,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 170
+    "id": 171
   },
   {
     "timestamp": "2026-09-24T09:07:33.411413+00:00",
@@ -8034,7 +8081,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 171
+    "id": 172
   },
   {
     "timestamp": "2026-09-24T09:05:58.618682+00:00",
@@ -8081,7 +8128,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Price move (-1.58%) contradicts bullish fundamental direction in momentum mode. Post-Earnings Announcement Drift requires fundamental alignment.",
     "divergence": 0.03563,
-    "id": 172
+    "id": 173
   },
   {
     "timestamp": "2026-09-24T08:52:01.070680+00:00",
@@ -8128,7 +8175,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 173
+    "id": 174
   },
   {
     "timestamp": "2026-09-24T08:52:01.035456+00:00",
@@ -8175,7 +8222,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 174
+    "id": 175
   },
   {
     "timestamp": "2026-09-24T08:52:00.997864+00:00",
@@ -8222,7 +8269,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 175
+    "id": 176
   },
   {
     "timestamp": "2026-09-24T08:15:09.112010+00:00",
@@ -8269,7 +8316,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 176
+    "id": 177
   },
   {
     "timestamp": "2026-09-24T06:15:22.992500+00:00",
@@ -8316,7 +8363,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 177
+    "id": 178
   },
   {
     "timestamp": "2026-09-24T05:34:39.043123+00:00",
@@ -8363,7 +8410,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 178
+    "id": 179
   },
   {
     "timestamp": "2026-09-24T05:14:51.256774+00:00",
@@ -8410,7 +8457,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 179
+    "id": 180
   },
   {
     "timestamp": "2026-09-24T05:05:22.293320+00:00",
@@ -8457,7 +8504,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 180
+    "id": 181
   },
   {
     "timestamp": "2026-09-24T04:45:52.362809+00:00",
@@ -8504,7 +8551,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 181
+    "id": 182
   },
   {
     "timestamp": "2026-09-24T04:11:59.617663+00:00",
@@ -8551,7 +8598,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 182
+    "id": 183
   },
   {
     "timestamp": "2026-09-24T02:54:29.679721+00:00",
@@ -8598,7 +8645,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 183
+    "id": 184
   },
   {
     "timestamp": "2026-09-24T02:35:30.597023+00:00",
@@ -8645,7 +8692,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 184
+    "id": 185
   },
   {
     "timestamp": "2026-09-24T02:16:32.881725+00:00",
@@ -8692,7 +8739,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 185
+    "id": 186
   },
   {
     "timestamp": "2026-09-24T01:34:45.157828+00:00",
@@ -8739,7 +8786,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 186
+    "id": 187
   },
   {
     "timestamp": "2026-09-24T01:34:45.109660+00:00",
@@ -8786,7 +8833,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 187
+    "id": 188
   },
   {
     "timestamp": "2026-09-24T01:26:09.513003+00:00",
@@ -8833,7 +8880,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 188
+    "id": 189
   },
   {
     "timestamp": "2026-09-24T01:26:09.445847+00:00",
@@ -8880,7 +8927,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 189
+    "id": 190
   },
   {
     "timestamp": "2026-09-24T01:15:25.863698+00:00",
@@ -8927,7 +8974,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 190
+    "id": 191
   },
   {
     "timestamp": "2026-09-24T01:15:25.795477+00:00",
@@ -8974,7 +9021,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 191
+    "id": 192
   },
   {
     "timestamp": "2026-09-23T23:45:36.687004+00:00",
@@ -9021,7 +9068,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 192
+    "id": 193
   },
   {
     "timestamp": "2026-09-23T23:14:10.639229+00:00",
@@ -9068,7 +9115,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 193
+    "id": 194
   },
   {
     "timestamp": "2026-09-23T22:22:18.644593+00:00",
@@ -9115,7 +9162,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 194
+    "id": 195
   },
   {
     "timestamp": "2026-09-23T22:06:01.684861+00:00",
@@ -9162,7 +9209,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 195
+    "id": 196
   },
   {
     "timestamp": "2026-09-23T22:03:07.081251+00:00",
@@ -9209,7 +9256,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 196
+    "id": 197
   },
   {
     "timestamp": "2026-09-23T22:03:07.027514+00:00",
@@ -9256,7 +9303,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 197
+    "id": 198
   },
   {
     "timestamp": "2026-09-23T21:35:57.952672+00:00",
@@ -9303,7 +9350,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 198
+    "id": 199
   },
   {
     "timestamp": "2026-09-23T21:16:32.214268+00:00",
@@ -9350,7 +9397,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 199
+    "id": 200
   },
   {
     "timestamp": "2026-09-23T21:15:47.044507+00:00",
@@ -9397,7 +9444,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Qwen validation failed or event direction is neutral ('neutral'); no directional edge to trade against.",
     "divergence": 0.021121,
-    "id": 200
+    "id": 201
   },
   {
     "timestamp": "2026-09-23T21:11:35.889837+00:00",
@@ -9444,7 +9491,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Qwen validation failed or event direction is neutral ('neutral'); no directional edge to trade against.",
     "divergence": 0.04489,
-    "id": 201
+    "id": 202
   },
   {
     "timestamp": "2026-09-23T20:49:36.325963+00:00",
@@ -9491,7 +9538,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 202
+    "id": 203
   },
   {
     "timestamp": "2026-09-23T20:05:28.786461+00:00",
@@ -9538,7 +9585,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 203
+    "id": 204
   },
   {
     "timestamp": "2026-09-23T19:50:19.488595+00:00",
@@ -9585,7 +9632,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 204
+    "id": 205
   },
   {
     "timestamp": "2026-09-23T19:35:26.028907+00:00",
@@ -9632,7 +9679,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 205
+    "id": 206
   },
   {
     "timestamp": "2026-09-23T19:01:08.148292+00:00",
@@ -9679,7 +9726,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 206
+    "id": 207
   },
   {
     "timestamp": "2026-09-23T18:56:40.192255+00:00",
@@ -9726,7 +9773,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 207
+    "id": 208
   },
   {
     "timestamp": "2026-09-23T18:56:40.152184+00:00",
@@ -9773,7 +9820,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 208
+    "id": 209
   },
   {
     "timestamp": "2026-09-23T18:45:13.079449+00:00",
@@ -9820,7 +9867,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 209
+    "id": 210
   },
   {
     "timestamp": "2026-09-23T18:35:14.487574+00:00",
@@ -9867,7 +9914,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 210
+    "id": 211
   },
   {
     "timestamp": "2026-09-23T18:33:24.973760+00:00",
@@ -9914,7 +9961,7 @@
     "pnl": 0,
     "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (24.00 >= 0.8) and statistical significance (z=+6.38).",
     "divergence": 0.051055,
-    "id": 211
+    "id": 212
   },
   {
     "timestamp": "2026-09-23T18:10:36.336881+00:00",
@@ -9961,7 +10008,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 212
+    "id": 213
   },
   {
     "timestamp": "2026-09-23T18:08:18.667368+00:00",
@@ -10008,7 +10055,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 213
+    "id": 214
   },
   {
     "timestamp": "2026-09-23T18:06:35.270898+00:00",
@@ -10055,7 +10102,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 214
+    "id": 215
   },
   {
     "timestamp": "2026-09-23T18:06:02.350664+00:00",
@@ -10102,7 +10149,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 215
+    "id": 216
   },
   {
     "timestamp": "2026-09-23T17:59:52.867499+00:00",
@@ -10149,7 +10196,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 216
+    "id": 217
   },
   {
     "timestamp": "2026-09-23T17:55:40.134075+00:00",
@@ -10196,7 +10243,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 217
+    "id": 218
   },
   {
     "timestamp": "2026-09-23T17:52:54.101562+00:00",
@@ -10243,7 +10290,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 218
+    "id": 219
   },
   {
     "timestamp": "2026-09-23T17:45:42.188706+00:00",
@@ -10290,7 +10337,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 219
+    "id": 220
   },
   {
     "timestamp": "2026-09-23T17:45:42.155871+00:00",
@@ -10337,7 +10384,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 220
+    "id": 221
   },
   {
     "timestamp": "2026-09-23T17:35:43.586161+00:00",
@@ -10384,7 +10431,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 221
+    "id": 222
   },
   {
     "timestamp": "2026-09-23T17:31:37.083542+00:00",
@@ -10431,7 +10478,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 222
+    "id": 223
   },
   {
     "timestamp": "2026-09-23T17:25:00.486776+00:00",
@@ -10478,7 +10525,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 223
+    "id": 224
   },
   {
     "timestamp": "2026-09-23T17:22:29.541363+00:00",
@@ -10525,7 +10572,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 224
+    "id": 225
   },
   {
     "timestamp": "2026-09-23T17:15:10.871526+00:00",
@@ -10572,7 +10619,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 225
+    "id": 226
   },
   {
     "timestamp": "2026-09-23T17:06:17.027687+00:00",
@@ -10619,7 +10666,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 226
+    "id": 227
   },
   {
     "timestamp": "2026-09-23T17:06:16.987895+00:00",
@@ -10666,7 +10713,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 227
+    "id": 228
   },
   {
     "timestamp": "2026-09-23T17:06:16.944518+00:00",
@@ -10713,7 +10760,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 228
+    "id": 229
   },
   {
     "timestamp": "2026-09-23T16:47:04.000621+00:00",
@@ -10760,7 +10807,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 229
+    "id": 230
   },
   {
     "timestamp": "2026-09-23T16:46:28.856082+00:00",
@@ -10807,7 +10854,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 230
+    "id": 231
   },
   {
     "timestamp": "2026-09-23T16:46:28.817242+00:00",
@@ -10854,7 +10901,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 231
+    "id": 232
   },
   {
     "timestamp": "2026-09-23T16:22:40.128362+00:00",
@@ -10901,7 +10948,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 232
+    "id": 233
   },
   {
     "timestamp": "2026-09-23T16:15:20.375159+00:00",
@@ -10948,7 +10995,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 233
+    "id": 234
   },
   {
     "timestamp": "2026-09-23T16:15:20.331840+00:00",
@@ -10995,7 +11042,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 234
+    "id": 235
   },
   {
     "timestamp": "2026-09-23T16:12:17.824052+00:00",
@@ -11042,7 +11089,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 235
+    "id": 236
   },
   {
     "timestamp": "2026-09-23T16:12:17.779503+00:00",
@@ -11089,7 +11136,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 236
+    "id": 237
   },
   {
     "timestamp": "2026-09-23T16:12:17.736416+00:00",
@@ -11136,7 +11183,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 237
+    "id": 238
   },
   {
     "timestamp": "2026-09-23T16:12:17.688857+00:00",
@@ -11183,7 +11230,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 238
+    "id": 239
   },
   {
     "timestamp": "2026-09-23T16:02:11.260622+00:00",
@@ -11230,7 +11277,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 239
+    "id": 240
   },
   {
     "timestamp": "2026-09-23T15:44:18.191515+00:00",
@@ -11277,7 +11324,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 240
+    "id": 241
   },
   {
     "timestamp": "2026-09-23T15:37:30.259405+00:00",
@@ -11324,7 +11371,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: High volume confirmation (volume_ratio=24.00 >= 0.5) indicates institutional conviction; do not fade high-volume moves.",
     "divergence": 0.045123,
-    "id": 241
+    "id": 242
   },
   {
     "timestamp": "2026-09-23T15:34:05.486054+00:00",
@@ -11371,7 +11418,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 242
+    "id": 243
   },
   {
     "timestamp": "2026-09-23T15:23:16.106812+00:00",
@@ -11418,7 +11465,7 @@
     "pnl": 0,
     "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (24.00 >= 0.8) and statistical significance (z=+6.58).",
     "divergence": 0.052668,
-    "id": 243
+    "id": 244
   },
   {
     "timestamp": "2026-09-23T15:15:28.392476+00:00",
@@ -11465,7 +11512,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 244
+    "id": 245
   },
   {
     "timestamp": "2026-09-23T15:15:28.344011+00:00",
@@ -11512,7 +11559,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 245
+    "id": 246
   },
   {
     "timestamp": "2026-09-23T15:13:17.849000+00:00",
@@ -11559,7 +11606,7 @@
     "pnl": 0,
     "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (24.00 >= 0.8) and statistical significance (z=+4.12).",
     "divergence": 0.032985,
-    "id": 246
+    "id": 247
   },
   {
     "timestamp": "2026-09-23T15:13:17.806115+00:00",
@@ -11606,7 +11653,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 247
+    "id": 248
   },
   {
     "timestamp": "2026-09-23T15:06:53.938609+00:00",
@@ -11653,7 +11700,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 248
+    "id": 249
   },
   {
     "timestamp": "2026-09-23T15:06:53.898258+00:00",
@@ -11700,7 +11747,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 249
+    "id": 250
   },
   {
     "timestamp": "2026-09-23T15:06:53.855541+00:00",
@@ -11747,7 +11794,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 250
+    "id": 251
   },
   {
     "timestamp": "2026-09-23T14:55:13.577486+00:00",
@@ -11794,7 +11841,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 251
+    "id": 252
   },
   {
     "timestamp": "2026-09-23T14:55:13.535791+00:00",
@@ -11841,7 +11888,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 252
+    "id": 253
   },
   {
     "timestamp": "2026-09-23T14:55:13.494195+00:00",
@@ -11888,7 +11935,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 253
+    "id": 254
   },
   {
     "timestamp": "2026-09-23T14:44:49.529323+00:00",
@@ -11935,7 +11982,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 254
+    "id": 255
   },
   {
     "timestamp": "2026-09-23T14:44:49.487483+00:00",
@@ -11982,7 +12029,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 255
+    "id": 256
   },
   {
     "timestamp": "2026-09-23T14:37:55.878106+00:00",
@@ -12029,7 +12076,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 256
+    "id": 257
   },
   {
     "timestamp": "2026-09-23T14:37:55.836651+00:00",
@@ -12076,7 +12123,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 257
+    "id": 258
   },
   {
     "timestamp": "2026-09-23T14:27:47.533738+00:00",
@@ -12123,7 +12170,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 258
+    "id": 259
   },
   {
     "timestamp": "2026-09-23T14:23:42.710545+00:00",
@@ -12170,7 +12217,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 259
+    "id": 260
   },
   {
     "timestamp": "2026-09-23T14:13:16.614410+00:00",
@@ -12217,7 +12264,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 260
+    "id": 261
   },
   {
     "timestamp": "2026-09-23T14:13:16.573317+00:00",
@@ -12264,7 +12311,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 261
+    "id": 262
   },
   {
     "timestamp": "2026-09-23T14:13:16.532143+00:00",
@@ -12311,7 +12358,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 262
+    "id": 263
   },
   {
     "timestamp": "2026-09-23T14:03:40.224278+00:00",
@@ -12358,7 +12405,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 263
+    "id": 264
   },
   {
     "timestamp": "2026-09-23T13:53:29.363435+00:00",
@@ -12405,7 +12452,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 264
+    "id": 265
   },
   {
     "timestamp": "2026-09-23T13:53:29.320319+00:00",
@@ -12452,7 +12499,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 265
+    "id": 266
   },
   {
     "timestamp": "2026-09-23T13:37:16.186855+00:00",
@@ -12499,7 +12546,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 266
+    "id": 267
   },
   {
     "timestamp": "2026-09-23T13:33:35.121522+00:00",
@@ -12546,7 +12593,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 267
+    "id": 268
   },
   {
     "timestamp": "2026-09-23T13:33:35.081302+00:00",
@@ -12593,7 +12640,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 268
+    "id": 269
   },
   {
     "timestamp": "2026-09-23T13:33:35.038415+00:00",
@@ -12640,7 +12687,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 269
+    "id": 270
   },
   {
     "timestamp": "2026-09-23T13:29:55.571256+00:00",
@@ -12687,7 +12734,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 270
+    "id": 271
   },
   {
     "timestamp": "2026-09-23T13:21:49.839764+00:00",
@@ -12734,7 +12781,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 271
+    "id": 272
   },
   {
     "timestamp": "2026-09-23T13:12:46.685814+00:00",
@@ -12781,7 +12828,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 272
+    "id": 273
   },
   {
     "timestamp": "2026-09-23T13:09:18.901614+00:00",
@@ -12828,7 +12875,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 273
+    "id": 274
   },
   {
     "timestamp": "2026-09-23T12:59:34.565740+00:00",
@@ -12875,7 +12922,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 274
+    "id": 275
   },
   {
     "timestamp": "2026-09-23T12:55:03.192781+00:00",
@@ -12922,7 +12969,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 275
+    "id": 276
   },
   {
     "timestamp": "2026-09-23T12:55:03.149229+00:00",
@@ -12969,7 +13016,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 276
+    "id": 277
   },
   {
     "timestamp": "2026-09-23T12:51:08.139274+00:00",
@@ -13016,7 +13063,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 277
+    "id": 278
   },
   {
     "timestamp": "2026-09-23T12:42:00.399737+00:00",
@@ -13063,7 +13110,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 278
+    "id": 279
   },
   {
     "timestamp": "2026-09-23T12:36:15.810170+00:00",
@@ -13110,7 +13157,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 279
+    "id": 280
   },
   {
     "timestamp": "2026-09-23T12:16:47.816001+00:00",
@@ -13157,7 +13204,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 280
+    "id": 281
   },
   {
     "timestamp": "2026-09-23T12:16:47.779909+00:00",
@@ -13204,7 +13251,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 281
+    "id": 282
   },
   {
     "timestamp": "2026-09-23T12:15:05.552042+00:00",
@@ -13251,7 +13298,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 282
+    "id": 283
   },
   {
     "timestamp": "2026-09-23T12:15:05.513842+00:00",
@@ -13298,7 +13345,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 283
+    "id": 284
   },
   {
     "timestamp": "2026-09-23T12:02:16.125229+00:00",
@@ -13345,7 +13392,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 284
+    "id": 285
   },
   {
     "timestamp": "2026-09-23T11:54:00.493926+00:00",
@@ -13392,7 +13439,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 285
+    "id": 286
   },
   {
     "timestamp": "2026-09-23T11:52:22.597528+00:00",
@@ -13439,7 +13486,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 286
+    "id": 287
   },
   {
     "timestamp": "2026-09-23T11:52:22.567306+00:00",
@@ -13486,7 +13533,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 287
+    "id": 288
   },
   {
     "timestamp": "2026-09-23T11:52:22.537761+00:00",
@@ -13533,7 +13580,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 288
+    "id": 289
   },
   {
     "timestamp": "2026-09-23T11:52:22.506263+00:00",
@@ -13580,7 +13627,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 289
+    "id": 290
   },
   {
     "timestamp": "2026-09-23T11:52:22.474219+00:00",
@@ -13627,7 +13674,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 290
+    "id": 291
   },
   {
     "timestamp": "2026-09-23T11:52:22.440528+00:00",
@@ -13674,7 +13721,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 291
+    "id": 292
   },
   {
     "timestamp": "2026-09-23T11:37:45.826936+00:00",
@@ -13721,7 +13768,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 292
+    "id": 293
   },
   {
     "timestamp": "2026-09-23T11:37:45.787800+00:00",
@@ -13768,7 +13815,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 293
+    "id": 294
   },
   {
     "timestamp": "2026-09-23T11:37:45.748117+00:00",
@@ -13815,7 +13862,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 294
+    "id": 295
   },
   {
     "timestamp": "2026-09-23T11:31:25.051657+00:00",
@@ -13862,7 +13909,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Insufficient divergence (|z|=1.26 <= 2.0) — price move (+0.20%) is within normal rolling beta-adjusted volatility.",
     "divergence": 0.010068,
-    "id": 295
+    "id": 296
   },
   {
     "timestamp": "2026-09-23T11:24:53.587041+00:00",
@@ -13909,7 +13956,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 296
+    "id": 297
   },
   {
     "timestamp": "2026-09-23T11:14:44.027254+00:00",
@@ -13956,7 +14003,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 297
+    "id": 298
   },
   {
     "timestamp": "2026-09-23T11:14:43.987854+00:00",
@@ -14003,7 +14050,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 298
+    "id": 299
   },
   {
     "timestamp": "2026-09-23T11:14:43.949671+00:00",
@@ -14050,7 +14097,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 299
+    "id": 300
   },
   {
     "timestamp": "2026-09-23T11:13:05.466624+00:00",
@@ -14097,7 +14144,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 300
+    "id": 301
   },
   {
     "timestamp": "2026-09-23T11:05:27.494244+00:00",
@@ -14144,7 +14191,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 301
+    "id": 302
   },
   {
     "timestamp": "2026-09-23T11:05:27.456895+00:00",
@@ -14191,7 +14238,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 302
+    "id": 303
   },
   {
     "timestamp": "2026-09-23T10:56:50.840210+00:00",
@@ -14238,7 +14285,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 303
+    "id": 304
   },
   {
     "timestamp": "2026-09-23T10:51:49.861464+00:00",
@@ -14285,7 +14332,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 304
+    "id": 305
   },
   {
     "timestamp": "2026-09-23T10:44:32.151555+00:00",
@@ -14332,7 +14379,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 305
+    "id": 306
   },
   {
     "timestamp": "2026-09-23T10:35:40.613283+00:00",
@@ -14379,7 +14426,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 306
+    "id": 307
   },
   {
     "timestamp": "2026-09-23T10:35:40.573897+00:00",
@@ -14426,7 +14473,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 307
+    "id": 308
   },
   {
     "timestamp": "2026-09-23T10:25:07.219948+00:00",
@@ -14473,7 +14520,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 308
+    "id": 309
   },
   {
     "timestamp": "2026-09-23T10:20:38.610753+00:00",
@@ -14520,7 +14567,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 309
+    "id": 310
   },
   {
     "timestamp": "2026-09-23T10:16:42.952346+00:00",
@@ -14567,7 +14614,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 310
+    "id": 311
   },
   {
     "timestamp": "2026-09-23T10:15:03.981013+00:00",
@@ -14614,7 +14661,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 311
+    "id": 312
   },
   {
     "timestamp": "2026-09-23T10:15:03.950910+00:00",
@@ -14661,7 +14708,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 312
+    "id": 313
   },
   {
     "timestamp": "2026-09-23T10:15:03.912559+00:00",
@@ -14708,7 +14755,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 313
+    "id": 314
   },
   {
     "timestamp": "2026-09-23T10:05:57.405525+00:00",
@@ -14755,7 +14802,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 314
+    "id": 315
   },
   {
     "timestamp": "2026-09-23T09:54:12.938825+00:00",
@@ -14802,7 +14849,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Price move (-0.34%) contradicts bullish fundamental direction in momentum mode. Post-Earnings Announcement Drift requires fundamental alignment.",
     "divergence": 0.000544,
-    "id": 315
+    "id": 316
   },
   {
     "timestamp": "2026-09-23T09:54:12.904716+00:00",
@@ -14849,7 +14896,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 316
+    "id": 317
   },
   {
     "timestamp": "2026-09-23T09:48:55.768196+00:00",
@@ -14896,7 +14943,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 317
+    "id": 318
   },
   {
     "timestamp": "2026-09-23T09:36:25.271348+00:00",
@@ -14943,7 +14990,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 318
+    "id": 319
   },
   {
     "timestamp": "2026-09-23T09:36:25.243509+00:00",
@@ -14990,7 +15037,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 319
+    "id": 320
   },
   {
     "timestamp": "2026-09-23T09:36:25.213792+00:00",
@@ -15037,7 +15084,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 320
+    "id": 321
   },
   {
     "timestamp": "2026-09-23T09:36:25.186464+00:00",
@@ -15084,7 +15131,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 321
+    "id": 322
   },
   {
     "timestamp": "2026-09-23T09:29:27.865293+00:00",
@@ -15131,7 +15178,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 322
+    "id": 323
   },
   {
     "timestamp": "2026-09-23T09:26:08.452225+00:00",
@@ -15178,7 +15225,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 323
+    "id": 324
   },
   {
     "timestamp": "2026-09-23T09:26:08.414284+00:00",
@@ -15225,7 +15272,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 324
+    "id": 325
   },
   {
     "timestamp": "2026-09-23T09:15:29.100888+00:00",
@@ -15272,7 +15319,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 325
+    "id": 326
   },
   {
     "timestamp": "2026-09-23T09:15:29.065398+00:00",
@@ -15319,7 +15366,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 326
+    "id": 327
   },
   {
     "timestamp": "2026-09-23T09:15:29.030147+00:00",
@@ -15366,7 +15413,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 327
+    "id": 328
   },
   {
     "timestamp": "2026-09-23T08:52:01.795838+00:00",
@@ -15413,7 +15460,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 328
+    "id": 329
   },
   {
     "timestamp": "2026-09-23T08:34:10.396186+00:00",
@@ -15460,7 +15507,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 329
+    "id": 330
   },
   {
     "timestamp": "2026-09-23T08:34:10.359796+00:00",
@@ -15507,7 +15554,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 330
+    "id": 331
   },
   {
     "timestamp": "2026-09-23T08:34:10.318316+00:00",
@@ -15554,7 +15601,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 331
+    "id": 332
   },
   {
     "timestamp": "2026-09-23T07:53:08.819102+00:00",
@@ -15601,7 +15648,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 332
+    "id": 333
   },
   {
     "timestamp": "2026-09-23T06:40:58.228339+00:00",
@@ -15648,7 +15695,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 333
+    "id": 334
   },
   {
     "timestamp": "2026-09-23T05:55:01.789808+00:00",
@@ -15695,7 +15742,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 334
+    "id": 335
   },
   {
     "timestamp": "2026-09-23T05:24:56.301409+00:00",
@@ -15742,7 +15789,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 335
+    "id": 336
   },
   {
     "timestamp": "2026-09-23T04:24:36.937648+00:00",
@@ -15789,7 +15836,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 336
+    "id": 337
   },
   {
     "timestamp": "2026-09-23T04:24:36.889707+00:00",
@@ -15836,7 +15883,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 337
+    "id": 338
   },
   {
     "timestamp": "2026-09-23T04:14:55.164288+00:00",
@@ -15883,7 +15930,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 338
+    "id": 339
   },
   {
     "timestamp": "2026-09-23T03:45:41.070972+00:00",
@@ -15930,7 +15977,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 339
+    "id": 340
   },
   {
     "timestamp": "2026-09-23T01:32:55.347638+00:00",
@@ -15977,7 +16024,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 340
+    "id": 341
   },
   {
     "timestamp": "2026-09-23T01:07:08.520599+00:00",
@@ -16024,7 +16071,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 341
+    "id": 342
   },
   {
     "timestamp": "2026-09-23T00:51:32.152572+00:00",
@@ -16071,7 +16118,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 342
+    "id": 343
   },
   {
     "timestamp": "2026-09-23T00:51:32.113653+00:00",
@@ -16118,7 +16165,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 343
+    "id": 344
   },
   {
     "timestamp": "2026-09-23T00:51:32.055197+00:00",
@@ -16165,7 +16212,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 344
+    "id": 345
   },
   {
     "timestamp": "2026-09-23T00:21:50.138821+00:00",
@@ -16212,7 +16259,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 345
+    "id": 346
   },
   {
     "timestamp": "2026-09-22T23:52:02.739783+00:00",
@@ -16259,7 +16306,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 346
+    "id": 347
   },
   {
     "timestamp": "2026-09-22T22:45:22.009052+00:00",
@@ -16306,7 +16353,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 347
+    "id": 348
   },
   {
     "timestamp": "2026-09-22T22:14:32.253726+00:00",
@@ -16353,7 +16400,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 348
+    "id": 349
   },
   {
     "timestamp": "2026-09-22T21:46:58.734585+00:00",
@@ -16400,7 +16447,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 349
+    "id": 350
   },
   {
     "timestamp": "2026-09-22T21:45:21.546362+00:00",
@@ -16447,7 +16494,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 350
+    "id": 351
   },
   {
     "timestamp": "2026-09-22T21:45:21.506233+00:00",
@@ -16494,7 +16541,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 351
+    "id": 352
   },
   {
     "timestamp": "2026-09-22T21:15:30.392848+00:00",
@@ -16541,7 +16588,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 352
+    "id": 353
   },
   {
     "timestamp": "2026-09-22T21:05:45.996608+00:00",
@@ -16588,7 +16635,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 353
+    "id": 354
   },
   {
     "timestamp": "2026-09-22T20:45:27.613533+00:00",
@@ -16635,7 +16682,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 354
+    "id": 355
   },
   {
     "timestamp": "2026-09-22T20:36:37.557152+00:00",
@@ -16682,7 +16729,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 355
+    "id": 356
   },
   {
     "timestamp": "2026-09-22T20:26:40.119207+00:00",
@@ -16729,7 +16776,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 356
+    "id": 357
   },
   {
     "timestamp": "2026-09-22T20:26:40.084841+00:00",
@@ -16776,7 +16823,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 357
+    "id": 358
   },
   {
     "timestamp": "2026-09-22T20:16:14.081055+00:00",
@@ -16823,7 +16870,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 358
+    "id": 359
   },
   {
     "timestamp": "2026-09-22T20:06:19.071779+00:00",
@@ -16870,7 +16917,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 359
+    "id": 360
   },
   {
     "timestamp": "2026-09-22T18:05:45.917387+00:00",
@@ -16917,7 +16964,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 360
+    "id": 361
   },
   {
     "timestamp": "2026-09-22T17:46:29.004205+00:00",
@@ -16964,7 +17011,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 361
+    "id": 362
   },
   {
     "timestamp": "2026-09-22T17:37:40.307242+00:00",
@@ -17011,7 +17058,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 362
+    "id": 363
   },
   {
     "timestamp": "2026-09-22T17:35:11.055351+00:00",
@@ -17058,7 +17105,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 363
+    "id": 364
   },
   {
     "timestamp": "2026-09-22T17:19:17.101912+00:00",
@@ -17105,7 +17152,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 364
+    "id": 365
   },
   {
     "timestamp": "2026-09-22T17:14:44.555115+00:00",
@@ -17152,7 +17199,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 365
+    "id": 366
   },
   {
     "timestamp": "2026-09-22T17:14:44.526474+00:00",
@@ -17199,7 +17246,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 366
+    "id": 367
   },
   {
     "timestamp": "2026-09-22T17:06:42.889430+00:00",
@@ -17246,7 +17293,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 367
+    "id": 368
   },
   {
     "timestamp": "2026-09-22T17:06:42.863033+00:00",
@@ -17293,7 +17340,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 368
+    "id": 369
   },
   {
     "timestamp": "2026-09-22T17:06:42.838348+00:00",
@@ -17340,7 +17387,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 369
+    "id": 370
   },
   {
     "timestamp": "2026-09-22T17:06:42.810408+00:00",
@@ -17387,7 +17434,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 370
+    "id": 371
   },
   {
     "timestamp": "2026-09-22T17:02:35.346218+00:00",
@@ -17434,7 +17481,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 371
+    "id": 372
   },
   {
     "timestamp": "2026-09-22T16:59:50.650114+00:00",
@@ -17481,7 +17528,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 372
+    "id": 373
   },
   {
     "timestamp": "2026-09-22T16:56:31.667393+00:00",
@@ -17528,7 +17575,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 373
+    "id": 374
   },
   {
     "timestamp": "2026-09-22T16:44:33.850350+00:00",
@@ -17575,7 +17622,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 374
+    "id": 375
   },
   {
     "timestamp": "2026-09-22T16:29:05.672806+00:00",
@@ -17622,7 +17669,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 375
+    "id": 376
   },
   {
     "timestamp": "2026-09-22T16:21:55.463860+00:00",
@@ -17669,7 +17716,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 376
+    "id": 377
   },
   {
     "timestamp": "2026-09-22T16:16:19.496465+00:00",
@@ -17716,7 +17763,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 377
+    "id": 378
   },
   {
     "timestamp": "2026-09-22T16:16:19.464974+00:00",
@@ -17763,7 +17810,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 378
+    "id": 379
   },
   {
     "timestamp": "2026-09-22T15:59:23.849315+00:00",
@@ -17810,7 +17857,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 379
+    "id": 380
   },
   {
     "timestamp": "2026-09-22T15:50:37.278463+00:00",
@@ -17857,7 +17904,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 380
+    "id": 381
   },
   {
     "timestamp": "2026-09-22T15:39:55.732707+00:00",
@@ -17904,7 +17951,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 381
+    "id": 382
   },
   {
     "timestamp": "2026-09-22T15:23:05.055967+00:00",
@@ -17951,7 +17998,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 382
+    "id": 383
   },
   {
     "timestamp": "2026-09-22T15:20:01.236440+00:00",
@@ -17998,7 +18045,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 383
+    "id": 384
   },
   {
     "timestamp": "2026-09-22T15:20:01.205351+00:00",
@@ -18045,7 +18092,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 384
+    "id": 385
   },
   {
     "timestamp": "2026-09-22T15:20:01.172527+00:00",
@@ -18092,7 +18139,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 385
+    "id": 386
   },
   {
     "timestamp": "2026-09-22T15:20:01.137424+00:00",
@@ -18139,7 +18186,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 386
+    "id": 387
   },
   {
     "timestamp": "2026-09-22T15:04:01.211165+00:00",
@@ -18186,7 +18233,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 387
+    "id": 388
   },
   {
     "timestamp": "2026-09-22T15:02:55.865670+00:00",
@@ -18233,7 +18280,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 388
+    "id": 389
   },
   {
     "timestamp": "2026-09-22T15:02:55.831786+00:00",
@@ -18280,7 +18327,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 389
+    "id": 390
   },
   {
     "timestamp": "2026-09-22T14:58:53.494495+00:00",
@@ -18327,7 +18374,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 390
+    "id": 391
   },
   {
     "timestamp": "2026-09-22T14:51:50.978363+00:00",
@@ -18374,7 +18421,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 391
+    "id": 392
   },
   {
     "timestamp": "2026-09-22T14:46:15.086855+00:00",
@@ -18421,7 +18468,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 392
+    "id": 393
   },
   {
     "timestamp": "2026-09-22T14:46:15.055514+00:00",
@@ -18468,7 +18515,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 393
+    "id": 394
   },
   {
     "timestamp": "2026-09-22T14:46:15.027400+00:00",
@@ -18515,7 +18562,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 394
+    "id": 395
   },
   {
     "timestamp": "2026-09-22T14:46:14.997721+00:00",
@@ -18562,7 +18609,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 395
+    "id": 396
   },
   {
     "timestamp": "2026-09-22T14:33:35.450876+00:00",
@@ -18609,7 +18656,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 396
+    "id": 397
   },
   {
     "timestamp": "2026-09-22T14:33:35.418265+00:00",
@@ -18656,7 +18703,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 397
+    "id": 398
   },
   {
     "timestamp": "2026-09-22T14:33:35.387836+00:00",
@@ -18703,7 +18750,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 398
+    "id": 399
   },
   {
     "timestamp": "2026-09-22T14:33:35.355053+00:00",
@@ -18750,7 +18797,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 399
+    "id": 400
   },
   {
     "timestamp": "2026-09-22T14:20:33.282477+00:00",
@@ -18797,7 +18844,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 400
+    "id": 401
   },
   {
     "timestamp": "2026-09-22T14:20:33.249745+00:00",
@@ -18844,7 +18891,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 401
+    "id": 402
   },
   {
     "timestamp": "2026-09-22T14:17:56.566027+00:00",
@@ -18891,7 +18938,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 402
+    "id": 403
   },
   {
     "timestamp": "2026-09-22T14:14:23.168563+00:00",
@@ -18938,7 +18985,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 403
+    "id": 404
   },
   {
     "timestamp": "2026-09-22T14:08:01.763826+00:00",
@@ -18985,7 +19032,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 404
+    "id": 405
   },
   {
     "timestamp": "2026-09-22T13:54:19.130514+00:00",
@@ -19032,7 +19079,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 405
+    "id": 406
   },
   {
     "timestamp": "2026-09-22T13:52:40.301605+00:00",
@@ -19079,7 +19126,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 406
+    "id": 407
   },
   {
     "timestamp": "2026-09-22T13:47:02.130754+00:00",
@@ -19126,7 +19173,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 407
+    "id": 408
   },
   {
     "timestamp": "2026-09-22T13:47:02.101141+00:00",
@@ -19173,7 +19220,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 408
+    "id": 409
   },
   {
     "timestamp": "2026-09-22T13:44:13.751086+00:00",
@@ -19220,7 +19267,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 409
+    "id": 410
   },
   {
     "timestamp": "2026-09-22T13:44:13.721153+00:00",
@@ -19267,7 +19314,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 410
+    "id": 411
   },
   {
     "timestamp": "2026-09-22T13:41:57.523101+00:00",
@@ -19314,7 +19361,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 411
+    "id": 412
   },
   {
     "timestamp": "2026-09-22T13:41:57.477688+00:00",
@@ -19361,7 +19408,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 412
+    "id": 413
   },
   {
     "timestamp": "2026-09-22T13:41:57.432204+00:00",
@@ -19408,7 +19455,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 413
+    "id": 414
   },
   {
     "timestamp": "2026-09-22T13:34:39.271130+00:00",
@@ -19455,7 +19502,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 414
+    "id": 415
   },
   {
     "timestamp": "2026-09-22T13:34:39.241864+00:00",
@@ -19502,7 +19549,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 415
+    "id": 416
   },
   {
     "timestamp": "2026-09-22T13:28:28.755270+00:00",
@@ -19549,7 +19596,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 416
+    "id": 417
   },
   {
     "timestamp": "2026-09-22T13:28:28.724286+00:00",
@@ -19596,7 +19643,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 417
+    "id": 418
   },
   {
     "timestamp": "2026-09-22T13:12:46.027450+00:00",
@@ -19643,7 +19690,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 418
+    "id": 419
   },
   {
     "timestamp": "2026-09-22T13:12:45.996966+00:00",
@@ -19690,7 +19737,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 419
+    "id": 420
   },
   {
     "timestamp": "2026-09-22T13:08:40.086636+00:00",
@@ -19737,7 +19784,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 420
+    "id": 421
   },
   {
     "timestamp": "2026-09-22T13:01:42.180916+00:00",
@@ -19784,7 +19831,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 421
+    "id": 422
   },
   {
     "timestamp": "2026-09-22T13:01:42.150492+00:00",
@@ -19831,7 +19878,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 422
+    "id": 423
   },
   {
     "timestamp": "2026-09-22T12:51:54.251037+00:00",
@@ -19878,7 +19925,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 423
+    "id": 424
   },
   {
     "timestamp": "2026-09-22T12:51:54.223492+00:00",
@@ -19925,7 +19972,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 424
+    "id": 425
   },
   {
     "timestamp": "2026-09-22T12:51:54.192859+00:00",
@@ -19972,7 +20019,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 425
+    "id": 426
   },
   {
     "timestamp": "2026-09-22T12:47:29.601244+00:00",
@@ -20019,7 +20066,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 426
+    "id": 427
   },
   {
     "timestamp": "2026-09-22T12:46:18.247817+00:00",
@@ -20066,7 +20113,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 427
+    "id": 428
   },
   {
     "timestamp": "2026-09-22T12:42:16.795257+00:00",
@@ -20113,7 +20160,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 428
+    "id": 429
   },
   {
     "timestamp": "2026-09-22T12:22:10.110485+00:00",
@@ -20160,7 +20207,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 429
+    "id": 430
   },
   {
     "timestamp": "2026-09-22T12:11:31.225810+00:00",
@@ -20207,7 +20254,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 430
+    "id": 431
   },
   {
     "timestamp": "2026-09-22T12:11:31.205422+00:00",
@@ -20254,7 +20301,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 431
+    "id": 432
   },
   {
     "timestamp": "2026-09-22T12:08:09.008424+00:00",
@@ -20301,7 +20348,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 432
+    "id": 433
   },
   {
     "timestamp": "2026-09-22T12:01:53.753568+00:00",
@@ -20348,7 +20395,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 433
+    "id": 434
   },
   {
     "timestamp": "2026-09-22T12:01:53.725892+00:00",
@@ -20395,7 +20442,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 434
+    "id": 435
   },
   {
     "timestamp": "2026-09-22T11:52:07.556851+00:00",
@@ -20442,7 +20489,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 435
+    "id": 436
   },
   {
     "timestamp": "2026-09-22T11:52:07.528439+00:00",
@@ -20489,7 +20536,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 436
+    "id": 437
   },
   {
     "timestamp": "2026-09-22T11:35:10.613625+00:00",
@@ -20536,7 +20583,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 437
+    "id": 438
   },
   {
     "timestamp": "2026-09-22T11:24:46.318774+00:00",
@@ -20583,7 +20630,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 438
+    "id": 439
   },
   {
     "timestamp": "2026-09-22T11:24:30.788283+00:00",
@@ -20630,7 +20677,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Quantitative divergence did not exceed the configured threshold. Fundamental direction is bullish and price direction is bullish, so the event reaction is directionally aligned. No statistically significant mean-reversion opportunity was detected.",
     "divergence": -0.025035,
-    "id": 439
+    "id": 440
   },
   {
     "timestamp": "2026-09-22T11:04:40.184214+00:00",
@@ -20677,7 +20724,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 440
+    "id": 441
   },
   {
     "timestamp": "2026-09-22T11:04:40.155471+00:00",
@@ -20724,7 +20771,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 441
+    "id": 442
   },
   {
     "timestamp": "2026-09-22T10:57:51.175625+00:00",
@@ -20771,7 +20818,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 442
+    "id": 443
   },
   {
     "timestamp": "2026-09-22T10:53:23.922990+00:00",
@@ -20818,7 +20865,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 443
+    "id": 444
   },
   {
     "timestamp": "2026-09-22T10:45:16.236503+00:00",
@@ -20865,7 +20912,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 444
+    "id": 445
   },
   {
     "timestamp": "2026-09-22T10:45:16.212094+00:00",
@@ -20912,7 +20959,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 445
+    "id": 446
   },
   {
     "timestamp": "2026-09-22T10:45:16.184413+00:00",
@@ -20959,7 +21006,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 446
+    "id": 447
   },
   {
     "timestamp": "2026-09-22T10:36:27.289624+00:00",
@@ -21006,7 +21053,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 447
+    "id": 448
   },
   {
     "timestamp": "2026-09-22T10:25:47.074996+00:00",
@@ -21053,7 +21100,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 448
+    "id": 449
   },
   {
     "timestamp": "2026-09-22T10:23:18.687562+00:00",
@@ -21100,7 +21147,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 449
+    "id": 450
   },
   {
     "timestamp": "2026-09-22T10:20:52.423442+00:00",
@@ -21147,7 +21194,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 450
+    "id": 451
   },
   {
     "timestamp": "2026-09-22T10:14:04.142995+00:00",
@@ -21194,7 +21241,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 451
+    "id": 452
   },
   {
     "timestamp": "2026-09-22T10:14:04.118941+00:00",
@@ -21241,7 +21288,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 452
+    "id": 453
   },
   {
     "timestamp": "2026-09-22T10:14:04.095145+00:00",
@@ -21288,7 +21335,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 453
+    "id": 454
   },
   {
     "timestamp": "2026-09-22T10:14:04.067315+00:00",
@@ -21335,7 +21382,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 454
+    "id": 455
   },
   {
     "timestamp": "2026-09-22T09:56:24.320920+00:00",
@@ -21382,7 +21429,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 455
+    "id": 456
   },
   {
     "timestamp": "2026-09-22T09:56:24.291851+00:00",
@@ -21429,7 +21476,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 456
+    "id": 457
   },
   {
     "timestamp": "2026-09-22T09:45:54.736492+00:00",
@@ -21476,7 +21523,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 457
+    "id": 458
   },
   {
     "timestamp": "2026-09-22T09:45:54.708792+00:00",
@@ -21523,7 +21570,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 458
+    "id": 459
   },
   {
     "timestamp": "2026-09-22T09:42:31.965850+00:00",
@@ -21570,7 +21617,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 459
+    "id": 460
   },
   {
     "timestamp": "2026-09-22T09:38:09.651887+00:00",
@@ -21617,7 +21664,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 460
+    "id": 461
   },
   {
     "timestamp": "2026-09-22T09:38:09.625123+00:00",
@@ -21664,7 +21711,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 461
+    "id": 462
   },
   {
     "timestamp": "2026-09-22T09:23:36.548114+00:00",
@@ -21711,7 +21758,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 462
+    "id": 463
   },
   {
     "timestamp": "2026-09-22T09:22:54.492436+00:00",
@@ -21758,7 +21805,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 463
+    "id": 464
   },
   {
     "timestamp": "2026-09-22T09:22:54.465740+00:00",
@@ -21805,7 +21852,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 464
+    "id": 465
   },
   {
     "timestamp": "2026-09-22T09:17:58.244675+00:00",
@@ -21852,7 +21899,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 465
+    "id": 466
   },
   {
     "timestamp": "2026-09-22T09:17:58.220592+00:00",
@@ -21899,7 +21946,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 466
+    "id": 467
   },
   {
     "timestamp": "2026-09-22T09:05:52.789281+00:00",
@@ -21946,7 +21993,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 467
+    "id": 468
   },
   {
     "timestamp": "2026-09-22T09:05:52.772357+00:00",
@@ -21993,7 +22040,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 468
+    "id": 469
   },
   {
     "timestamp": "2026-09-22T09:05:52.754264+00:00",
@@ -22040,7 +22087,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 469
+    "id": 470
   },
   {
     "timestamp": "2026-09-22T09:05:52.728838+00:00",
@@ -22087,7 +22134,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 470
+    "id": 471
   },
   {
     "timestamp": "2026-09-22T09:02:13.720512+00:00",
@@ -22134,7 +22181,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 471
+    "id": 472
   },
   {
     "timestamp": "2026-09-22T09:02:13.694583+00:00",
@@ -22181,7 +22228,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 472
+    "id": 473
   },
   {
     "timestamp": "2026-09-22T08:46:46.618426+00:00",
@@ -22228,7 +22275,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 473
+    "id": 474
   },
   {
     "timestamp": "2026-09-22T08:35:44.395353+00:00",
@@ -22275,7 +22322,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 474
+    "id": 475
   },
   {
     "timestamp": "2026-09-22T08:25:47.264223+00:00",
@@ -22322,7 +22369,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 475
+    "id": 476
   },
   {
     "timestamp": "2026-09-22T08:25:47.238052+00:00",
@@ -22369,7 +22416,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 476
+    "id": 477
   },
   {
     "timestamp": "2026-09-22T08:15:59.790177+00:00",
@@ -22416,7 +22463,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 477
+    "id": 478
   },
   {
     "timestamp": "2026-09-22T08:15:59.768281+00:00",
@@ -22463,7 +22510,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 478
+    "id": 479
   },
   {
     "timestamp": "2026-09-22T07:52:00.329420+00:00",
@@ -22510,7 +22557,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 479
+    "id": 480
   },
   {
     "timestamp": "2026-09-22T07:35:30.832440+00:00",
@@ -22557,7 +22604,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 480
+    "id": 481
   },
   {
     "timestamp": "2026-09-22T07:22:44.125206+00:00",
@@ -22604,7 +22651,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 481
+    "id": 482
   },
   {
     "timestamp": "2026-09-22T06:46:15.723312+00:00",
@@ -22651,7 +22698,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 482
+    "id": 483
   },
   {
     "timestamp": "2026-09-22T05:45:28.471544+00:00",
@@ -22698,7 +22745,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 483
+    "id": 484
   },
   {
     "timestamp": "2026-09-22T05:26:28.766318+00:00",
@@ -22745,7 +22792,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 484
+    "id": 485
   },
   {
     "timestamp": "2026-09-22T05:14:36.072044+00:00",
@@ -22792,7 +22839,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 485
+    "id": 486
   },
   {
     "timestamp": "2026-09-22T05:02:07.506486+00:00",
@@ -22839,7 +22886,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 486
+    "id": 487
   },
   {
     "timestamp": "2026-09-22T04:02:30.090155+00:00",
@@ -22886,7 +22933,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 487
+    "id": 488
   },
   {
     "timestamp": "2026-09-22T02:54:06.808243+00:00",
@@ -22933,7 +22980,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 488
+    "id": 489
   },
   {
     "timestamp": "2026-09-22T02:54:06.771879+00:00",
@@ -22980,7 +23027,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 489
+    "id": 490
   },
   {
     "timestamp": "2026-09-22T02:15:39.343494+00:00",
@@ -23027,7 +23074,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 490
+    "id": 491
   },
   {
     "timestamp": "2026-09-22T02:15:39.319036+00:00",
@@ -23074,7 +23121,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 491
+    "id": 492
   },
   {
     "timestamp": "2026-09-22T01:37:58.994786+00:00",
@@ -23121,7 +23168,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 492
+    "id": 493
   },
   {
     "timestamp": "2026-09-22T01:04:51.062597+00:00",
@@ -23168,7 +23215,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 493
+    "id": 494
   },
   {
     "timestamp": "2026-09-22T00:05:09.679049+00:00",
@@ -23215,7 +23262,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 494
+    "id": 495
   },
   {
     "timestamp": "2026-09-21T22:07:48.679800+00:00",
@@ -23262,7 +23309,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 495
+    "id": 496
   },
   {
     "timestamp": "2026-09-21T21:50:35.023162+00:00",
@@ -23309,7 +23356,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 496
+    "id": 497
   },
   {
     "timestamp": "2026-09-21T21:28:57.303253+00:00",
@@ -23356,7 +23403,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 497
+    "id": 498
   },
   {
     "timestamp": "2026-09-21T21:15:40.972668+00:00",
@@ -23403,7 +23450,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 498
+    "id": 499
   },
   {
     "timestamp": "2026-09-21T21:05:25.350383+00:00",
@@ -23450,7 +23497,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 499
+    "id": 500
   },
   {
     "timestamp": "2026-09-21T20:46:37.425781+00:00",
@@ -23497,7 +23544,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 500
+    "id": 501
   },
   {
     "timestamp": "2026-09-21T20:46:37.400610+00:00",
@@ -23544,7 +23591,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 501
+    "id": 502
   },
   {
     "timestamp": "2026-09-21T20:35:41.855599+00:00",
@@ -23591,7 +23638,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 502
+    "id": 503
   },
   {
     "timestamp": "2026-09-21T18:43:48.310018+00:00",
@@ -23638,7 +23685,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 503
+    "id": 504
   },
   {
     "timestamp": "2026-09-21T18:43:48.286745+00:00",
@@ -23685,7 +23732,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 504
+    "id": 505
   },
   {
     "timestamp": "2026-09-21T18:03:10.099444+00:00",
@@ -23732,7 +23779,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 505
+    "id": 506
   },
   {
     "timestamp": "2026-09-21T17:53:54.880011+00:00",
@@ -23779,7 +23826,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 506
+    "id": 507
   },
   {
     "timestamp": "2026-09-21T17:25:58.520863+00:00",
@@ -23826,7 +23873,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 507
+    "id": 508
   },
   {
     "timestamp": "2026-09-21T17:18:23.609376+00:00",
@@ -23873,7 +23920,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 508
+    "id": 509
   },
   {
     "timestamp": "2026-09-21T17:08:47.500111+00:00",
@@ -23920,7 +23967,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 509
+    "id": 510
   },
   {
     "timestamp": "2026-09-21T16:59:29.828866+00:00",
@@ -23967,7 +24014,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 510
+    "id": 511
   },
   {
     "timestamp": "2026-09-21T16:59:29.799892+00:00",
@@ -24014,7 +24061,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 511
+    "id": 512
   },
   {
     "timestamp": "2026-09-21T16:47:00.952338+00:00",
@@ -24061,7 +24108,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 512
+    "id": 513
   },
   {
     "timestamp": "2026-09-21T16:47:00.930253+00:00",
@@ -24108,7 +24155,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 513
+    "id": 514
   },
   {
     "timestamp": "2026-09-21T16:24:22.549234+00:00",
@@ -24155,7 +24202,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 514
+    "id": 515
   },
   {
     "timestamp": "2026-09-21T16:13:28.737877+00:00",
@@ -24202,7 +24249,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 515
+    "id": 516
   },
   {
     "timestamp": "2026-09-21T16:13:28.717691+00:00",
@@ -24249,7 +24296,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 516
+    "id": 517
   },
   {
     "timestamp": "2026-09-21T16:02:47.583925+00:00",
@@ -24296,7 +24343,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 517
+    "id": 518
   },
   {
     "timestamp": "2026-09-21T16:01:34.878451+00:00",
@@ -24343,7 +24390,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 518
+    "id": 519
   },
   {
     "timestamp": "2026-09-21T16:01:34.855135+00:00",
@@ -24390,7 +24437,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 519
+    "id": 520
   },
   {
     "timestamp": "2026-09-21T15:51:20.952598+00:00",
@@ -24437,7 +24484,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 520
+    "id": 521
   },
   {
     "timestamp": "2026-09-21T15:51:20.926427+00:00",
@@ -24484,7 +24531,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 521
+    "id": 522
   },
   {
     "timestamp": "2026-09-21T13:50:43.385065+00:00",
@@ -24531,7 +24578,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 522
+    "id": 523
   },
   {
     "timestamp": "2026-09-21T13:50:25.430008+00:00",
@@ -24578,7 +24625,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Insufficient divergence (|z|=0.52 <= 2.0) — price move (+1.50%) is within normal rolling beta-adjusted volatility.",
     "divergence": 0.004153,
-    "id": 523
+    "id": 524
   },
   {
     "timestamp": "2026-09-21T13:45:53.792355+00:00",
@@ -24625,7 +24672,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 524
+    "id": 525
   },
   {
     "timestamp": "2026-09-21T13:45:53.771684+00:00",
@@ -24672,7 +24719,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 525
+    "id": 526
   },
   {
     "timestamp": "2026-09-21T13:44:11.270969+00:00",
@@ -24719,7 +24766,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 526
+    "id": 527
   },
   {
     "timestamp": "2026-09-21T13:38:08.627631+00:00",
@@ -24766,7 +24813,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 527
+    "id": 528
   },
   {
     "timestamp": "2026-09-21T13:28:29.765822+00:00",
@@ -24813,7 +24860,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 528
+    "id": 529
   },
   {
     "timestamp": "2026-09-21T13:19:26.574949+00:00",
@@ -24860,7 +24907,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 529
+    "id": 530
   },
   {
     "timestamp": "2026-09-21T13:15:14.731871+00:00",
@@ -24907,7 +24954,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 530
+    "id": 531
   },
   {
     "timestamp": "2026-09-21T13:15:14.712057+00:00",
@@ -24954,7 +25001,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 531
+    "id": 532
   },
   {
     "timestamp": "2026-09-21T13:07:48.415094+00:00",
@@ -25001,7 +25048,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 532
+    "id": 533
   },
   {
     "timestamp": "2026-09-21T13:07:48.395679+00:00",
@@ -25048,7 +25095,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 533
+    "id": 534
   },
   {
     "timestamp": "2026-09-21T13:07:13.918935+00:00",
@@ -25095,7 +25142,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 534
+    "id": 535
   },
   {
     "timestamp": "2026-09-21T12:45:05.768835+00:00",
@@ -25142,7 +25189,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 535
+    "id": 536
   },
   {
     "timestamp": "2026-09-21T12:45:05.751749+00:00",
@@ -25189,7 +25236,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 536
+    "id": 537
   },
   {
     "timestamp": "2026-09-21T12:45:05.735254+00:00",
@@ -25236,7 +25283,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 537
+    "id": 538
   },
   {
     "timestamp": "2026-09-21T12:45:05.718817+00:00",
@@ -25283,7 +25330,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 538
+    "id": 539
   },
   {
     "timestamp": "2026-09-21T12:45:05.702472+00:00",
@@ -25330,7 +25377,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 539
+    "id": 540
   },
   {
     "timestamp": "2026-09-21T12:45:05.682930+00:00",
@@ -25377,7 +25424,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 540
+    "id": 541
   },
   {
     "timestamp": "2026-09-21T12:37:57.551947+00:00",
@@ -25424,7 +25471,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 541
+    "id": 542
   },
   {
     "timestamp": "2026-09-21T12:34:47.387895+00:00",
@@ -25471,7 +25518,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Quantitative divergence did not exceed the configured threshold. Fundamental direction is bullish and price direction is bullish, so the event reaction is directionally aligned. No statistically significant mean-reversion opportunity was detected.",
     "divergence": 0.002187,
-    "id": 542
+    "id": 543
   },
   {
     "timestamp": "2026-09-21T12:14:53.097635+00:00",
@@ -25518,7 +25565,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 543
+    "id": 544
   },
   {
     "timestamp": "2026-09-21T12:05:36.072979+00:00",
@@ -25565,7 +25612,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 544
+    "id": 545
   },
   {
     "timestamp": "2026-09-21T12:05:36.053674+00:00",
@@ -25612,7 +25659,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 545
+    "id": 546
   },
   {
     "timestamp": "2026-09-21T11:55:35.128093+00:00",
@@ -25659,7 +25706,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 546
+    "id": 547
   },
   {
     "timestamp": "2026-09-21T11:55:35.108160+00:00",
@@ -25706,7 +25753,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 547
+    "id": 548
   },
   {
     "timestamp": "2026-09-21T11:55:35.088627+00:00",
@@ -25753,7 +25800,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 548
+    "id": 549
   },
   {
     "timestamp": "2026-09-21T11:55:35.067913+00:00",
@@ -25800,7 +25847,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 549
+    "id": 550
   },
   {
     "timestamp": "2026-09-21T11:55:35.048351+00:00",
@@ -25847,7 +25894,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 550
+    "id": 551
   },
   {
     "timestamp": "2026-09-21T11:53:09.798454+00:00",
@@ -25894,7 +25941,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 551
+    "id": 552
   },
   {
     "timestamp": "2026-09-21T11:45:44.479393+00:00",
@@ -25941,7 +25988,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 552
+    "id": 553
   },
   {
     "timestamp": "2026-09-21T11:26:01.796107+00:00",
@@ -25988,7 +26035,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 553
+    "id": 554
   },
   {
     "timestamp": "2026-09-21T11:26:01.782533+00:00",
@@ -26035,7 +26082,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 554
+    "id": 555
   },
   {
     "timestamp": "2026-09-21T11:26:01.764305+00:00",
@@ -26082,7 +26129,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 555
+    "id": 556
   },
   {
     "timestamp": "2026-09-21T11:18:19.349277+00:00",
@@ -26129,7 +26176,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 556
+    "id": 557
   },
   {
     "timestamp": "2026-09-21T11:17:12.595894+00:00",
@@ -26176,7 +26223,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 557
+    "id": 558
   },
   {
     "timestamp": "2026-09-21T11:05:24.940661+00:00",
@@ -26223,7 +26270,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 558
+    "id": 559
   },
   {
     "timestamp": "2026-09-21T11:05:24.920520+00:00",
@@ -26270,7 +26317,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 559
+    "id": 560
   },
   {
     "timestamp": "2026-09-21T10:55:50.887244+00:00",
@@ -26317,7 +26364,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 560
+    "id": 561
   },
   {
     "timestamp": "2026-09-21T10:46:04.671116+00:00",
@@ -26364,7 +26411,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 561
+    "id": 562
   },
   {
     "timestamp": "2026-09-21T10:46:04.656736+00:00",
@@ -26411,7 +26458,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 562
+    "id": 563
   },
   {
     "timestamp": "2026-09-21T10:46:04.639286+00:00",
@@ -26458,7 +26505,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 563
+    "id": 564
   },
   {
     "timestamp": "2026-09-21T10:44:23.521972+00:00",
@@ -26505,7 +26552,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 564
+    "id": 565
   },
   {
     "timestamp": "2026-09-21T10:39:15.578186+00:00",
@@ -26552,7 +26599,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 565
+    "id": 566
   },
   {
     "timestamp": "2026-09-21T10:37:00.208863+00:00",
@@ -26599,7 +26646,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 566
+    "id": 567
   },
   {
     "timestamp": "2026-09-21T10:15:54.509008+00:00",
@@ -26646,7 +26693,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 567
+    "id": 568
   },
   {
     "timestamp": "2026-09-21T10:15:54.490123+00:00",
@@ -26693,7 +26740,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 568
+    "id": 569
   },
   {
     "timestamp": "2026-09-21T10:14:10.675679+00:00",
@@ -26740,7 +26787,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 569
+    "id": 570
   },
   {
     "timestamp": "2026-09-21T10:06:36.891292+00:00",
@@ -26787,7 +26834,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 570
+    "id": 571
   },
   {
     "timestamp": "2026-09-21T10:06:36.877587+00:00",
@@ -26834,7 +26881,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 571
+    "id": 572
   },
   {
     "timestamp": "2026-09-21T10:06:36.860157+00:00",
@@ -26881,7 +26928,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 572
+    "id": 573
   },
   {
     "timestamp": "2026-09-21T10:04:41.628264+00:00",
@@ -26928,7 +26975,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 573
+    "id": 574
   },
   {
     "timestamp": "2026-09-21T09:53:55.457274+00:00",
@@ -26975,7 +27022,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 574
+    "id": 575
   },
   {
     "timestamp": "2026-09-21T09:53:55.439504+00:00",
@@ -27022,7 +27069,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 575
+    "id": 576
   },
   {
     "timestamp": "2026-09-21T09:33:50.549748+00:00",
@@ -27069,7 +27116,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 576
+    "id": 577
   },
   {
     "timestamp": "2026-09-21T09:33:50.531008+00:00",
@@ -27116,7 +27163,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 577
+    "id": 578
   },
   {
     "timestamp": "2026-09-21T09:33:15.594636+00:00",
@@ -27163,7 +27210,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 578
+    "id": 579
   },
   {
     "timestamp": "2026-09-21T09:17:35.320575+00:00",
@@ -27210,7 +27257,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 579
+    "id": 580
   },
   {
     "timestamp": "2026-09-21T09:12:59.843059+00:00",
@@ -27257,7 +27304,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 580
+    "id": 581
   },
   {
     "timestamp": "2026-09-21T09:01:45.319531+00:00",
@@ -27304,7 +27351,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 581
+    "id": 582
   },
   {
     "timestamp": "2026-09-21T08:43:22.672633+00:00",
@@ -27351,7 +27398,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 582
+    "id": 583
   },
   {
     "timestamp": "2026-09-21T08:32:06.426466+00:00",
@@ -27398,7 +27445,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 583
+    "id": 584
   },
   {
     "timestamp": "2026-09-21T08:32:06.408743+00:00",
@@ -27445,7 +27492,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 584
+    "id": 585
   },
   {
     "timestamp": "2026-09-21T08:14:08.282773+00:00",
@@ -27492,7 +27539,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 585
+    "id": 586
   },
   {
     "timestamp": "2026-09-21T08:01:33.165063+00:00",
@@ -27539,7 +27586,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 586
+    "id": 587
   },
   {
     "timestamp": "2026-09-21T07:50:19.627676+00:00",
@@ -27586,7 +27633,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 587
+    "id": 588
   },
   {
     "timestamp": "2026-09-21T07:50:19.609898+00:00",
@@ -27633,7 +27680,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 588
+    "id": 589
   },
   {
     "timestamp": "2026-09-21T07:12:52.531367+00:00",
@@ -27680,7 +27727,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 589
+    "id": 590
   },
   {
     "timestamp": "2026-09-21T07:02:41.685092+00:00",
@@ -27727,7 +27774,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 590
+    "id": 591
   },
   {
     "timestamp": "2026-09-21T07:02:41.667298+00:00",
@@ -27774,7 +27821,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 591
+    "id": 592
   },
   {
     "timestamp": "2026-09-21T06:13:24.325003+00:00",
@@ -27821,7 +27868,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 592
+    "id": 593
   },
   {
     "timestamp": "2026-09-21T05:15:36.159750+00:00",
@@ -27868,7 +27915,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 593
+    "id": 594
   },
   {
     "timestamp": "2026-09-21T04:55:01.482001+00:00",
@@ -27915,7 +27962,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 594
+    "id": 595
   },
   {
     "timestamp": "2026-09-21T03:56:10.249624+00:00",
@@ -27962,7 +28009,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 595
+    "id": 596
   },
   {
     "timestamp": "2026-09-21T02:56:39.343638+00:00",
@@ -28009,7 +28056,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 596
+    "id": 597
   },
   {
     "timestamp": "2026-09-20T23:57:46.647993+00:00",
@@ -28056,7 +28103,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 597
+    "id": 598
   },
   {
     "timestamp": "2026-09-20T23:36:34.039810+00:00",
@@ -28103,7 +28150,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 598
+    "id": 599
   },
   {
     "timestamp": "2026-09-20T23:28:26.721323+00:00",
@@ -28150,7 +28197,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 599
+    "id": 600
   },
   {
     "timestamp": "2026-09-20T23:12:26.608976+00:00",
@@ -28197,7 +28244,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 600
+    "id": 601
   },
   {
     "timestamp": "2026-09-20T21:43:20.779304+00:00",
@@ -28244,7 +28291,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 601
+    "id": 602
   },
   {
     "timestamp": "2026-09-20T21:35:03.096176+00:00",
@@ -28291,7 +28338,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 602
+    "id": 603
   },
   {
     "timestamp": "2026-09-20T21:27:43.144662+00:00",
@@ -28338,7 +28385,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 603
+    "id": 604
   },
   {
     "timestamp": "2026-09-20T20:10:36.220633+00:00",
@@ -28385,7 +28432,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 604
+    "id": 605
   },
   {
     "timestamp": "2026-09-20T19:02:45.582084+00:00",
@@ -28432,7 +28479,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 605
+    "id": 606
   },
   {
     "timestamp": "2026-09-20T17:47:44.435580+00:00",
@@ -28479,7 +28526,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 606
+    "id": 607
   },
   {
     "timestamp": "2026-09-20T17:15:24.426461+00:00",
@@ -28526,7 +28573,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 607
+    "id": 608
   },
   {
     "timestamp": "2026-09-20T15:45:07.931346+00:00",
@@ -28573,7 +28620,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 608
+    "id": 609
   },
   {
     "timestamp": "2026-09-20T15:39:24.293410+00:00",
@@ -28620,7 +28667,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 609
+    "id": 610
   },
   {
     "timestamp": "2026-09-20T15:19:51.940547+00:00",
@@ -28667,7 +28714,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 610
+    "id": 611
   },
   {
     "timestamp": "2026-09-20T15:15:18.308520+00:00",
@@ -28714,7 +28761,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 611
+    "id": 612
   },
   {
     "timestamp": "2026-09-20T15:15:18.289060+00:00",
@@ -28761,7 +28808,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 612
+    "id": 613
   },
   {
     "timestamp": "2026-09-20T15:11:17.310634+00:00",
@@ -28808,7 +28855,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 613
+    "id": 614
   },
   {
     "timestamp": "2026-09-20T14:27:31.279779+00:00",
@@ -28855,7 +28902,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 614
+    "id": 615
   },
   {
     "timestamp": "2026-09-20T13:04:24.506814+00:00",
@@ -28902,7 +28949,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 615
+    "id": 616
   },
   {
     "timestamp": "2026-09-20T13:02:11.979003+00:00",
@@ -28949,7 +28996,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 616
+    "id": 617
   },
   {
     "timestamp": "2026-09-20T11:14:48.486821+00:00",
@@ -28996,7 +29043,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 617
+    "id": 618
   },
   {
     "timestamp": "2026-09-20T07:04:51.293911+00:00",
@@ -29043,7 +29090,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 618
+    "id": 619
   },
   {
     "timestamp": "2026-09-20T04:16:33.303082+00:00",
@@ -29090,7 +29137,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 619
+    "id": 620
   },
   {
     "timestamp": "2026-09-19T22:47:24.788639+00:00",
@@ -29137,7 +29184,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Insufficient divergence (|z|=0.42 <= 2.0) — price move (+0.10%) is within normal rolling beta-adjusted volatility.",
     "divergence": -0.003356,
-    "id": 620
+    "id": 621
   },
   {
     "timestamp": "2026-09-19T22:07:03.515701+00:00",
@@ -29184,7 +29231,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 621
+    "id": 622
   },
   {
     "timestamp": "2026-09-19T22:04:22.685301+00:00",
@@ -29231,7 +29278,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Insufficient divergence (|z|=1.56 <= 2.0) — price move (+1.50%) is within normal rolling beta-adjusted volatility.",
     "divergence": 0.012485,
-    "id": 622
+    "id": 623
   },
   {
     "timestamp": "2026-09-19T22:02:21.799166+00:00",
@@ -29278,7 +29325,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 623
+    "id": 624
   },
   {
     "timestamp": "2026-09-19T19:56:33.480734+00:00",
@@ -29325,7 +29372,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 624
+    "id": 625
   },
   {
     "timestamp": "2026-09-19T19:22:53.094830+00:00",
@@ -29372,7 +29419,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 625
+    "id": 626
   },
   {
     "timestamp": "2026-09-19T18:28:23.016428+00:00",
@@ -29419,7 +29466,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 626
+    "id": 627
   },
   {
     "timestamp": "2026-09-19T18:00:37.607845+00:00",
@@ -29466,7 +29513,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 627
+    "id": 628
   },
   {
     "timestamp": "2026-09-19T18:00:37.585186+00:00",
@@ -29513,7 +29560,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 628
+    "id": 629
   },
   {
     "timestamp": "2026-09-19T17:27:55.929459+00:00",
@@ -29560,7 +29607,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 629
+    "id": 630
   },
   {
     "timestamp": "2026-09-19T17:27:55.906915+00:00",
@@ -29607,7 +29654,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 630
+    "id": 631
   },
   {
     "timestamp": "2026-09-19T16:07:08.140683+00:00",
@@ -29654,7 +29701,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 631
+    "id": 632
   },
   {
     "timestamp": "2026-09-19T16:00:34.945318+00:00",
@@ -29701,7 +29748,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 632
+    "id": 633
   },
   {
     "timestamp": "2026-09-19T15:10:24.357625+00:00",
@@ -29748,7 +29795,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 633
+    "id": 634
   },
   {
     "timestamp": "2026-09-19T14:14:11.109609+00:00",
@@ -29795,7 +29842,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 634
+    "id": 635
   },
   {
     "timestamp": "2026-09-19T14:14:11.085685+00:00",
@@ -29842,7 +29889,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 635
+    "id": 636
   },
   {
     "timestamp": "2026-09-19T13:39:09.498967+00:00",
@@ -29889,7 +29936,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 636
+    "id": 637
   },
   {
     "timestamp": "2026-09-19T13:38:37.675062+00:00",
@@ -29936,7 +29983,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 637
+    "id": 638
   },
   {
     "timestamp": "2026-09-19T13:38:37.663126+00:00",
@@ -29983,7 +30030,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 638
+    "id": 639
   },
   {
     "timestamp": "2026-09-19T13:38:22.713313+00:00",
@@ -30030,7 +30077,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Quantitative divergence did not exceed the configured threshold. Fundamental direction is bearish and price direction is bearish, so the event reaction is directionally aligned. No statistically significant mean-reversion opportunity was detected.",
     "divergence": -0.00067,
-    "id": 639
+    "id": 640
   },
   {
     "timestamp": "2026-09-19T13:38:22.703416+00:00",
@@ -30077,7 +30124,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 640
+    "id": 641
   },
   {
     "timestamp": "2026-09-19T13:38:22.688890+00:00",
@@ -30124,7 +30171,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 641
+    "id": 642
   },
   {
     "timestamp": "2026-09-19T11:02:36.251607+00:00",
@@ -30171,7 +30218,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 642
+    "id": 643
   },
   {
     "timestamp": "2026-09-18T23:14:45.270904+00:00",
@@ -30218,7 +30265,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 643
+    "id": 644
   },
   {
     "timestamp": "2026-09-18T22:51:32.992692+00:00",
@@ -30264,7 +30311,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 644
+    "id": 645
   },
   {
     "timestamp": "2026-09-18T22:34:04.244100+00:00",
@@ -30310,7 +30357,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 645
+    "id": 646
   },
   {
     "timestamp": "2026-09-18T21:44:43.716167+00:00",
@@ -30356,7 +30403,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 646
+    "id": 647
   },
   {
     "timestamp": "2026-09-18T21:16:58.752148+00:00",
@@ -30402,7 +30449,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 647
+    "id": 648
   },
   {
     "timestamp": "2026-09-18T20:57:18.330903+00:00",
@@ -30448,7 +30495,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 648
+    "id": 649
   },
   {
     "timestamp": "2026-09-18T20:42:09.064143+00:00",
@@ -30494,7 +30541,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 649
+    "id": 650
   },
   {
     "timestamp": "2026-09-18T20:25:48.261165+00:00",
@@ -30540,7 +30587,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 650
+    "id": 651
   },
   {
     "timestamp": "2026-09-18T20:25:48.259720+00:00",
@@ -30586,7 +30633,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 651
+    "id": 652
   },
   {
     "timestamp": "2026-09-18T20:13:10.231011+00:00",
@@ -30632,7 +30679,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 652
+    "id": 653
   },
   {
     "timestamp": "2026-09-18T20:13:10.230046+00:00",
@@ -30678,7 +30725,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 653
+    "id": 654
   },
   {
     "timestamp": "2026-09-18T20:04:57.387536+00:00",
@@ -30724,7 +30771,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 654
+    "id": 655
   },
   {
     "timestamp": "2026-09-18T20:04:57.386105+00:00",
@@ -30770,7 +30817,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 655
+    "id": 656
   },
   {
     "timestamp": "2026-09-18T19:36:58.058670+00:00",
@@ -30816,7 +30863,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 656
+    "id": 657
   },
   {
     "timestamp": "2026-09-18T19:08:35.669901+00:00",
@@ -30862,7 +30909,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 657
+    "id": 658
   },
   {
     "timestamp": "2026-09-18T18:16:02.290500+00:00",
@@ -30908,7 +30955,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 658
+    "id": 659
   },
   {
     "timestamp": "2026-09-18T18:16:02.286342+00:00",
@@ -30954,7 +31001,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 659
+    "id": 660
   },
   {
     "timestamp": "2026-09-18T17:53:16.546086+00:00",
@@ -31000,7 +31047,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 660
+    "id": 661
   },
   {
     "timestamp": "2026-09-18T17:47:21.602663+00:00",
@@ -31046,7 +31093,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 661
+    "id": 662
   },
   {
     "timestamp": "2026-09-18T17:47:21.601717+00:00",
@@ -31092,7 +31139,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 662
+    "id": 663
   },
   {
     "timestamp": "2026-09-18T17:47:21.600487+00:00",
@@ -31138,7 +31185,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 663
+    "id": 664
   },
   {
     "timestamp": "2026-09-18T17:45:10.721220+00:00",
@@ -31184,7 +31231,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 664
+    "id": 665
   },
   {
     "timestamp": "2026-09-18T17:36:26.641016+00:00",
@@ -31230,7 +31277,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 665
+    "id": 666
   },
   {
     "timestamp": "2026-09-18T17:30:18.752063+00:00",
@@ -31276,7 +31323,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 666
+    "id": 667
   },
   {
     "timestamp": "2026-09-18T17:26:00.360008+00:00",
@@ -31322,7 +31369,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 667
+    "id": 668
   },
   {
     "timestamp": "2026-09-18T17:10:17.934509+00:00",
@@ -31368,7 +31415,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 668
+    "id": 669
   },
   {
     "timestamp": "2026-09-18T17:10:17.931599+00:00",
@@ -31414,7 +31461,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 669
+    "id": 670
   },
   {
     "timestamp": "2026-09-18T17:01:35.626522+00:00",
@@ -31460,7 +31507,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 670
+    "id": 671
   },
   {
     "timestamp": "2026-09-18T17:01:35.626961+00:00",
@@ -31506,7 +31553,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 671
+    "id": 672
   },
   {
     "timestamp": "2026-09-18T17:01:35.625967+00:00",
@@ -31552,7 +31599,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 672
+    "id": 673
   },
   {
     "timestamp": "2026-09-18T17:00:31.158116+00:00",
@@ -31598,7 +31645,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 673
+    "id": 674
   },
   {
     "timestamp": "2026-09-18T17:00:31.157118+00:00",
@@ -31644,7 +31691,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 674
+    "id": 675
   },
   {
     "timestamp": "2026-09-18T17:00:31.156181+00:00",
@@ -31690,7 +31737,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 675
+    "id": 676
   },
   {
     "timestamp": "2026-09-18T17:00:31.155298+00:00",
@@ -31736,7 +31783,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 676
+    "id": 677
   },
   {
     "timestamp": "2026-09-18T17:00:31.154153+00:00",
@@ -31782,7 +31829,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 677
+    "id": 678
   },
   {
     "timestamp": "2026-09-18T15:27:31.587717+00:00",
@@ -31828,7 +31875,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 678
+    "id": 679
   },
   {
     "timestamp": "2026-09-18T15:27:31.583395+00:00",
@@ -31874,7 +31921,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 679
+    "id": 680
   },
   {
     "timestamp": "2026-09-18T14:46:20.103090+00:00",
@@ -31920,7 +31967,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 680
+    "id": 681
   },
   {
     "timestamp": "2026-09-18T14:45:15.756548+00:00",
@@ -31966,7 +32013,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 681
+    "id": 682
   },
   {
     "timestamp": "2026-09-18T14:15:24.194236+00:00",
@@ -32012,7 +32059,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 682
+    "id": 683
   },
   {
     "timestamp": "2026-09-18T14:03:36.886259+00:00",
@@ -32058,7 +32105,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 683
+    "id": 684
   },
   {
     "timestamp": "2026-09-18T14:03:36.886973+00:00",
@@ -32104,7 +32151,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 684
+    "id": 685
   },
   {
     "timestamp": "2026-09-18T14:03:36.885548+00:00",
@@ -32150,7 +32197,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 685
+    "id": 686
   },
   {
     "timestamp": "2026-09-18T14:03:36.884705+00:00",
@@ -32196,7 +32243,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 686
+    "id": 687
   },
   {
     "timestamp": "2026-09-18T14:03:36.883820+00:00",
@@ -32242,7 +32289,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 687
+    "id": 688
   },
   {
     "timestamp": "2026-09-18T14:03:36.882796+00:00",
@@ -32288,7 +32335,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 688
+    "id": 689
   },
   {
     "timestamp": "2026-09-18T14:03:36.881171+00:00",
@@ -32334,7 +32381,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 689
+    "id": 690
   },
   {
     "timestamp": "2026-09-18T14:02:32.615951+00:00",
@@ -32380,7 +32427,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 690
+    "id": 691
   },
   {
     "timestamp": "2026-09-18T13:58:16.390079+00:00",
@@ -32426,7 +32473,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 691
+    "id": 692
   },
   {
     "timestamp": "2026-09-18T13:58:16.388794+00:00",
@@ -32472,7 +32519,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 692
+    "id": 693
   },
   {
     "timestamp": "2026-09-18T13:58:16.387664+00:00",
@@ -32518,7 +32565,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 693
+    "id": 694
   },
   {
     "timestamp": "2026-09-18T13:58:16.386430+00:00",
@@ -32564,7 +32611,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 694
+    "id": 695
   },
   {
     "timestamp": "2026-09-18T13:58:16.383066+00:00",
@@ -32610,7 +32657,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 695
+    "id": 696
   },
   {
     "timestamp": "2026-09-18T07:22:22.951802+00:00",
@@ -32656,7 +32703,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 696
+    "id": 697
   },
   {
     "timestamp": "2026-09-18T07:19:37.212809+00:00",
@@ -32702,7 +32749,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 697
+    "id": 698
   },
   {
     "timestamp": "2026-09-18T07:19:37.204067+00:00",
@@ -32748,7 +32795,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 698
+    "id": 699
   },
   {
     "timestamp": "2026-09-18T07:01:37.280895+00:00",
@@ -32794,7 +32841,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 699
+    "id": 700
   },
   {
     "timestamp": "2026-09-18T06:24:15.948168+00:00",
@@ -32840,7 +32887,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 700
+    "id": 701
   },
   {
     "timestamp": "2026-09-18T05:48:46.000295+00:00",
@@ -32886,7 +32933,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 701
+    "id": 702
   },
   {
     "timestamp": "2026-09-18T05:31:59.378319+00:00",
@@ -32932,7 +32979,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 702
+    "id": 703
   },
   {
     "timestamp": "2026-09-18T05:15:42.065310+00:00",
@@ -32978,7 +33025,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 703
+    "id": 704
   },
   {
     "timestamp": "2026-09-18T04:37:09.365069+00:00",
@@ -33024,7 +33071,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 704
+    "id": 705
   },
   {
     "timestamp": "2026-09-18T04:33:29.978133+00:00",
@@ -33070,7 +33117,7 @@
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
     "divergence": 0,
-    "id": 705
+    "id": 706
   },
   {
     "timestamp": "2026-09-18T03:12:04.033539+00:00",
@@ -33095,7 +33142,7 @@
     "exit_reason": "OPEN",
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
-    "id": 706
+    "id": 707
   },
   {
     "timestamp": "2026-09-18T02:06:01.753256+00:00",
@@ -33120,7 +33167,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Z-score threshold failed: abs(-0.70) <= 2.0; Direction conflict failed: Qwen (bullish) agrees with price move (+1.52%)",
-    "id": 707
+    "id": 708
   },
   {
     "timestamp": "2026-09-18T02:03:06.970536+00:00",
@@ -33145,7 +33192,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Z-score threshold failed: abs(-1.34) <= 2.0; Direction conflict failed: Qwen (bullish) agrees with price move (+0.95%)",
-    "id": 708
+    "id": 709
   },
   {
     "timestamp": "2026-09-18T01:55:15.661843+00:00",
@@ -33170,7 +33217,7 @@
     "exit_reason": "OPEN",
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
-    "id": 709
+    "id": 710
   },
   {
     "timestamp": "2026-09-18T01:44:02.663791+00:00",
@@ -33195,7 +33242,7 @@
     "exit_reason": "OPEN",
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
-    "id": 710
+    "id": 711
   },
   {
     "timestamp": "2026-09-18T01:33:39.250015+00:00",
@@ -33220,7 +33267,7 @@
     "exit_reason": "OPEN",
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
-    "id": 711
+    "id": 712
   },
   {
     "timestamp": "2026-09-17T18:53:19.399887+00:00",
@@ -33245,7 +33292,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Z-score threshold failed: abs(-0.12) <= 2.0; Direction conflict failed: Qwen (bullish) agrees with price move (+2.41%)",
-    "id": 712
+    "id": 713
   },
   {
     "timestamp": "2026-09-17T18:53:05.151121+00:00",
@@ -33270,7 +33317,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Z-score threshold failed: abs(-1.69) <= 2.0",
-    "id": 713
+    "id": 714
   },
   {
     "timestamp": "2026-09-16T08:48:39.701679+00:00",
@@ -33295,7 +33342,7 @@
     "exit_reason": "OPEN",
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
-    "id": 714
+    "id": 715
   },
   {
     "timestamp": "2026-09-16T08:48:23.776157+00:00",
@@ -33320,7 +33367,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Z-score threshold failed: abs(1.29) <= 2.0; Direction conflict failed: Qwen classified event as neutral",
-    "id": 715
+    "id": 716
   },
   {
     "timestamp": "2026-09-16T08:48:23.775197+00:00",
@@ -33345,7 +33392,7 @@
     "exit_reason": "OPEN",
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
-    "id": 716
+    "id": 717
   },
   {
     "timestamp": "2026-09-16T08:37:41.208809+00:00",
@@ -33370,7 +33417,7 @@
     "exit_reason": "OPEN",
     "pnl": 0,
     "reason": "Event does not mention target tokenized equity asset (macro/general news)",
-    "id": 717
+    "id": 718
   },
   {
     "timestamp": "2026-09-16T08:36:12.112194+00:00",
@@ -33395,7 +33442,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Direction conflict failed: Qwen classified event as neutral",
-    "id": 718
+    "id": 719
   },
   {
     "timestamp": "2026-09-16T08:21:28.745624+00:00",
@@ -33420,7 +33467,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Direction conflict failed: Qwen classified event as neutral",
-    "id": 719
+    "id": 720
   },
   {
     "timestamp": "2026-09-16T07:58:04.532789+00:00",
@@ -33445,7 +33492,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Direction conflict failed: Qwen classified event as neutral",
-    "id": 720
+    "id": 721
   },
   {
     "timestamp": "2026-09-16T07:44:15.663839+00:00",
@@ -33470,7 +33517,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Direction conflict failed: Qwen classified event as neutral",
-    "id": 721
+    "id": 722
   },
   {
     "timestamp": "2026-09-16T07:44:12.708859+00:00",
@@ -33495,7 +33542,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Direction conflict failed: Qwen classified event as neutral",
-    "id": 722
+    "id": 723
   },
   {
     "timestamp": "2026-09-16T07:44:09.909057+00:00",
@@ -33520,7 +33567,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Direction conflict failed: Qwen classified event as neutral",
-    "id": 723
+    "id": 724
   },
   {
     "timestamp": "2026-09-08T20:10:00Z",
@@ -33545,7 +33592,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Z-score threshold failed: abs(-1.61) <= 2.0; Direction conflict failed: Qwen (bearish) agrees with price move (-2.50%)",
-    "id": 724
+    "id": 725
   },
   {
     "timestamp": "2026-09-02T21:15:00Z",
@@ -33570,7 +33617,7 @@
     "exit_reason": "N/A",
     "pnl": 0,
     "reason": "NO_TRADE: Z-score threshold failed: abs(1.93) <= 2.0; Volume confirmation failed: Volume ratio is 0.85 (expected weak < 0.5)",
-    "id": 725
+    "id": 726
   },
   {
     "timestamp": "2026-08-27T20:05:00Z",
@@ -33595,7 +33642,7 @@
     "exit_reason": "TAKE_PROFIT_MEAN_REVERSION",
     "pnl": 104.65,
     "reason": "LONG signal approved: Price dumped -3.80% on bullish event with weak volume (0.33) and high divergence (z=-4.07).",
-    "id": 726
+    "id": 727
   },
   {
     "timestamp": "2026-08-27T20:05:00Z",
@@ -33641,7 +33688,7 @@
     "pnl": 0,
     "reason": "NO_TRADE: Volume confirmation failed: Volume ratio is 0.33 (expected weak < 0.5)",
     "divergence": -0.032554,
-    "id": 727
+    "id": 728
   },
   {
     "timestamp": "2026-08-20T20:30:00Z",
@@ -33666,7 +33713,7 @@
     "exit_reason": "TAKE_PROFIT_MEAN_REVERSION",
     "pnl": 105.06,
     "reason": "SHORT signal approved: Price pumped +3.60% on bearish event with weak volume (0.21) and high divergence (z=3.62).",
-    "id": 728
+    "id": 729
   },
   {
     "timestamp": "2026-08-20T20:30:00Z",
@@ -33712,6 +33759,6 @@
     "pnl": 0,
     "reason": "NO_TRADE: Volume confirmation failed: Volume ratio is 0.21 (expected weak < 0.5)",
     "divergence": 0.028938,
-    "id": 729
+    "id": 730
   }
 ]
