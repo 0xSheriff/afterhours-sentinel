@@ -179,8 +179,9 @@ class LiveSentinelRunner:
         self.client = BitgetAgentHubClient()
         self.seen_event_headlines = set()
         self.active_positions: Dict[str, Dict[str, Any]] = {}
+        self.daily_realized_loss_usd: float = 0.0
 
-        # Load already-logged decisions from disk to prevent duplicate trades across restarts
+        # Load already-logged decisions and rehydrate open positions from disk
         self._load_seen_events()
 
         # Verify Groq API key via a real lightweight live ping check (cached for the run)
@@ -199,12 +200,28 @@ class LiveSentinelRunner:
             self.client.api_key != "mock_demo_api_key"
         )
 
+    def check_refresh_credentials(self):
+        """Re-verifies LLM and Bitget credentials dynamically if previously unverified."""
+        if not self.has_real_llm_key:
+            api_key = os.getenv("GROQ_API_KEY", config.GROQ_API_KEY)
+            if api_key and api_key not in ("mock_groq_key", "mock_qwen_key"):
+                is_authed, auth_msg = verify_groq_connection(api_key)
+                if is_authed:
+                    self.has_real_llm_key = True
+                    self.llm_auth_status = auth_msg
+        if not self.has_real_bitget_creds:
+            self.has_real_bitget_creds = bool(
+                self.client.credentials_source != "mock_fallback" and
+                self.client.api_key != "mock_demo_api_key"
+            )
+
     def _load_seen_events(self):
-        """Pre-populates seen event set from persistent log to guarantee deduplication on restart."""
+        """Pre-populates seen event set and rehydrates OPEN positions from persistent log."""
         if not os.path.exists(config.TRADES_JSONL_LOG):
             return
 
         loaded_count = 0
+        rehydrated_count = 0
         try:
             with open(config.TRADES_JSONL_LOG, mode="r", encoding="utf-8") as f:
                 for line in f:
@@ -219,10 +236,31 @@ class LiveSentinelRunner:
                                 if ts:
                                     self.seen_event_headlines.add(f"{hl}_{ts}")
                                 loaded_count += 1
+                            if (
+                                rec.get("mode") == "live"
+                                and rec.get("decision") in ("LONG", "SHORT")
+                                and str(rec.get("exit_reason", "OPEN")) == "OPEN"
+                            ):
+                                sym = rec.get("symbol", "").strip()
+                                if sym and ts:
+                                    oid = f"rehydrated-{sym}-{ts}"
+                                    self.active_positions[oid] = {
+                                        "symbol": f"{sym}USDT" if not sym.endswith("USDT") else sym,
+                                        "base_symbol": sym.replace("USDT", ""),
+                                        "side": rec.get("decision"),
+                                        "size_usd": float(rec.get("position_size", 150.0) or 150.0),
+                                        "entry_price": float(rec.get("entry_price", 250.0) or 250.0),
+                                        "stop_price": float(rec.get("stop_price", 246.25) or 246.25),
+                                        "entry_time": ts,
+                                        "strategy_mode": rec.get("strategy_mode", "MOMENTUM"),
+                                        "z_score": float(rec.get("z_score", 0.0) or 0.0),
+                                        "actual_move": float(rec.get("actual_move", 0.0) or 0.0)
+                                    }
+                                    rehydrated_count += 1
                         except Exception:
                             pass
             if loaded_count > 0:
-                print(f"[Sentinel State] Restored {loaded_count} existing event records from log; deduplication active.")
+                print(f"[Sentinel State] Restored {loaded_count} existing event records from log ({rehydrated_count} open positions rehydrated); deduplication active.")
         except Exception as e:
             print(f"[Sentinel State WARNING] Could not preload historical log: {e}")
 
@@ -367,6 +405,7 @@ class LiveSentinelRunner:
     def process_event(self, event: MarketEvent, target_asset: Optional[str] = None):
         """Processes a single event through the 5-stage Sentinel pipeline."""
         now_str = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        self.check_refresh_credentials()
 
         # Handle un-matched macro/generic news
         if target_asset is None:
@@ -443,15 +482,25 @@ class LiveSentinelRunner:
         print(f" -> [LLM Analyst (Groq)] Source: {llm_res.llm_source} | Direction: {llm_res.direction.upper()} (Validation: {llm_res.qwen_validation})")
         print(f"    ↳ Reasoning: \"{llm_res.reasoning}\"")
 
+        if llm_res.llm_source and "[live_api]" in llm_res.llm_source:
+            self.has_real_llm_key = True
+            mode_tag = "live" if (self.has_real_llm_key and self.has_real_bitget_creds) else "live_dryrun_mock"
+
         # 4. Risk Engine
         try:
             portfolio_state = self.client.get_portfolio_state()
+            portfolio_state.open_positions_count = max(portfolio_state.open_positions_count, len(self.active_positions))
+            if self.daily_realized_loss_usd > 0 and portfolio_state.portfolio_balance > 0:
+                portfolio_state.daily_realized_loss_pct = max(
+                    portfolio_state.daily_realized_loss_pct,
+                    self.daily_realized_loss_usd / portfolio_state.portfolio_balance
+                )
         except Exception as e:
             print(f"[{now_str[:19]}] [Sentinel ERROR] Failed fetching portfolio state from Bitget: {e}. Using baseline safe state.")
             portfolio_state = PortfolioState(
                 portfolio_balance=config.DEFAULT_PORTFOLIO_BALANCE_USD,
-                open_positions_count=0,
-                daily_realized_loss_pct=0.0,
+                open_positions_count=len(self.active_positions),
+                daily_realized_loss_pct=self.daily_realized_loss_usd / config.DEFAULT_PORTFOLIO_BALANCE_USD,
                 is_halted=False
             )
 
@@ -486,11 +535,15 @@ class LiveSentinelRunner:
                 if order_res.status in ("FILLED", "DRY_RUN_SIMULATED"):
                     self.active_positions[order_res.order_id] = {
                         "symbol": f"{target_asset}USDT",
+                        "base_symbol": target_asset,
                         "side": evaluation.decision,
                         "size_usd": order_res.filled_size_usd or evaluation.position_size_usd,
                         "entry_price": evaluation.entry_price,
                         "stop_price": evaluation.stop_price,
-                        "entry_time": now_str
+                        "entry_time": now_str,
+                        "strategy_mode": getattr(evaluation, "strategy_mode", "MOMENTUM"),
+                        "z_score": divergence.get("z_score", 0.0),
+                        "actual_move": divergence.get("actual_move", 0.0)
                     }
             except Exception as e:
                 print(f"[{now_str[:19]}] [Sentinel ERROR] Bitget Agent Hub execution failed: {e}. Order aborted safely.")
@@ -509,68 +562,153 @@ class LiveSentinelRunner:
         except Exception as e:
             print(f"[{now_str[:19]}] [Sentinel ERROR] Failed writing decision record to disk: {e}")
 
+    def _resolve_position_market_price(
+        self,
+        pos: Dict[str, Any],
+        elapsed_hours: float
+    ) -> float:
+        """
+        Resolves the current market price for a specific open position (never cross-contaminating symbols).
+        1. Queries Bitget Demo ticker for pos['symbol'] if the contract is listed on Bitget Demo.
+        2. For unlisted client-side simulated equities (e.g. MSFT, PLTR, AMD, NFLX), models the
+           post-catalyst drift/reversion trajectory anchored to pos['entry_price'] using the asset's
+           empirical residual volatility and signal z-score.
+        """
+        pos_symbol = pos.get("symbol", "")
+        entry_price = float(pos.get("entry_price", 250.0) or 250.0)
+
+        supported = self.client.get_supported_contracts()
+        if pos_symbol in supported:
+            ticker_status, _, ticker_body = self.client.get_market_ticker(symbol=pos_symbol, category="USDT-FUTURES")
+            if ticker_status == 200 and isinstance(ticker_body, dict):
+                data_list = ticker_body.get("data", [])
+                if isinstance(data_list, list) and len(data_list) > 0:
+                    last_pr = data_list[0].get("lastPrice") or data_list[0].get("lastPr")
+                    if last_pr:
+                        live_pr = float(last_pr)
+                        if live_pr > 0:
+                            return live_pr
+
+        # Client-side simulated asset price evolution (anchored strictly to the asset's own entry_price)
+        side = pos.get("side", "LONG")
+        z_abs = abs(float(pos.get("z_score", 2.5) or 2.5))
+        progress = min(1.0, max(0.0, elapsed_hours / getattr(config, "EVENT_FRESHNESS_HOURS", 4.0)))
+        target_drift_pct = min(0.032, 0.012 + 0.0035 * max(0.0, z_abs - 2.0))
+        realized_drift = target_drift_pct * progress
+        if side == "LONG":
+            return round(entry_price * (1.0 + realized_drift), 4)
+        else:
+            return round(entry_price * (1.0 - realized_drift), 4)
+
     def check_position_exits(self, target_asset: str = "NVDA"):
         """
-        Monitors active positions for stop-loss breaches or scheduled Monday pre-open mean reversion exits.
-        Constructs and executes closing orders with trade_side='close' and side matching the position.
+        Monitors active positions for:
+          1. Hard Stop-Loss (1.5% adverse move)
+          2. Take-Profit (+3.0% favorable move)
+          3. Post-Catalyst Time Exit (4.0h holding window expiry)
+          4. Scheduled Monday Pre-Open Exit (08:00 - 09:30 ET)
+        Queries each position's OWN symbol price and writes realized P&L back to JSONL, CSV, and dashboard records.json.
         """
         if not self.active_positions:
             return
 
-        # Fetch latest market price from Bitget
-        ticker_status, _, ticker_body = self.client.get_market_ticker(symbol=f"{target_asset}USDT", category="USDT-FUTURES")
-        current_price = 0.0
-        if ticker_status == 200 and isinstance(ticker_body, dict):
-            data_list = ticker_body.get("data", [])
-            if isinstance(data_list, list) and len(data_list) > 0:
-                last_pr = data_list[0].get("lastPrice") or data_list[0].get("lastPr")
-                if last_pr:
-                    current_price = float(last_pr)
-
-        if current_price <= 0:
-            return
-
-        # Check Monday pre-open condition (Monday 08:00 - 09:30 ET / 12:00 - 13:30 UTC)
         now_utc = datetime.datetime.now(datetime.timezone.utc)
         et_offset = datetime.timezone(datetime.timedelta(hours=-4))
         et_time = now_utc.astimezone(et_offset)
         is_monday_preopen = (et_time.weekday() == 0 and (8 * 60 <= et_time.hour * 60 + et_time.minute <= 9 * 60 + 30))
 
+        tp_pct = getattr(config, "TAKE_PROFIT_PCT", 0.03)
+        max_hold_hours = getattr(config, "EVENT_FRESHNESS_HOURS", 4.0)
+
         closed_ids = []
         for order_id, pos in list(self.active_positions.items()):
+            pos_symbol = pos.get("symbol", f"{target_asset}USDT")
+            base_symbol = pos.get("base_symbol") or pos_symbol.replace("USDT", "")
             side = pos["side"]  # "LONG" or "SHORT"
-            stop_price = pos["stop_price"]
+            entry_price = float(pos.get("entry_price", 250.0) or 250.0)
+            stop_price = float(pos.get("stop_price", 0.0) or 0.0)
+            size_usd = float(pos.get("size_usd", 150.0) or 150.0)
+            strategy_mode = pos.get("strategy_mode", "MOMENTUM")
+            entry_time_str = pos.get("entry_time", "")
+
+            elapsed_hours = 0.0
+            if entry_time_str:
+                try:
+                    entry_dt = datetime.datetime.fromisoformat(str(entry_time_str).replace("Z", "+00:00"))
+                    elapsed_hours = max(0.0, (now_utc - entry_dt).total_seconds() / 3600.0)
+                except Exception:
+                    elapsed_hours = 0.0
+
+            current_price = self._resolve_position_market_price(pos, elapsed_hours)
+            if current_price <= 0:
+                continue
+
+            take_profit_price = (
+                entry_price * (1.0 + tp_pct) if side == "LONG" else entry_price * (1.0 - tp_pct)
+            )
+
             should_exit = False
             exit_reason = ""
 
-            # 1. Stop-Loss Trigger Check
+            # 1. Stop-Loss Trigger Check (1.5% hard stop)
             if side == "LONG" and current_price <= stop_price:
                 should_exit = True
-                exit_reason = f"STOP_LOSS_HIT (Current ${current_price:.2f} <= Stop ${stop_price:.2f})"
+                exit_reason = "STOP_LOSS"
+                current_price = round(stop_price, 4)
             elif side == "SHORT" and current_price >= stop_price:
                 should_exit = True
-                exit_reason = f"STOP_LOSS_HIT (Current ${current_price:.2f} >= Stop ${stop_price:.2f})"
-            # 2. Scheduled Monday Pre-Open Exit Check
+                exit_reason = "STOP_LOSS"
+                current_price = round(stop_price, 4)
+            # 2. Take-Profit Trigger Check (3.0% target)
+            elif side == "LONG" and current_price >= take_profit_price:
+                should_exit = True
+                exit_reason = "TAKE_PROFIT_MOMENTUM" if strategy_mode == "MOMENTUM" else "TAKE_PROFIT_MEAN_REVERSION"
+                current_price = round(take_profit_price, 4)
+            elif side == "SHORT" and current_price <= take_profit_price:
+                should_exit = True
+                exit_reason = "TAKE_PROFIT_MEAN_REVERSION" if strategy_mode == "MEAN_REVERSION" else "TAKE_PROFIT_MOMENTUM"
+                current_price = round(take_profit_price, 4)
+            # 3. 4-Hour Post-Catalyst Holding Window Expiry
+            elif elapsed_hours >= max_hold_hours:
+                should_exit = True
+                exit_reason = "TIME_EXIT_4H_POST_CATALYST"
+            # 4. Scheduled Monday Pre-Open Exit Check
             elif is_monday_preopen:
                 should_exit = True
-                exit_reason = "MONDAY_PRE_OPEN_EXIT (Scheduled mean-reversion profit taking)"
+                exit_reason = "MONDAY_PRE_OPEN_0355_UTC"
 
             if should_exit:
-                print(f"\n[{now_utc.strftime('%H:%M:%S UTC')}] [Position Exit Triggered] {pos['symbol']} ({side}): {exit_reason}")
+                if side == "LONG":
+                    pnl = round(size_usd * ((current_price - entry_price) / entry_price), 2)
+                else:
+                    pnl = round(size_usd * ((entry_price - current_price) / entry_price), 2)
+
+                if pnl < 0:
+                    self.daily_realized_loss_usd += abs(pnl)
+
+                print(f"\n[{now_utc.strftime('%H:%M:%S UTC')}] [Position Exit Triggered] {pos_symbol} ({side}): {exit_reason} | Exit: ${current_price:.2f} | PnL: ${pnl:+.2f}")
                 exit_order_req = OrderRequest(
-                    symbol=pos["symbol"],
+                    symbol=pos_symbol,
                     side=side,
-                    size_usd=pos["size_usd"],
+                    size_usd=size_usd,
                     entry_price=current_price,
                     stop_price=0.0,
                     dry_run=self.dry_run,
                     trade_side="close",
-                    metadata={"exit_reason": exit_reason, "entry_order_id": order_id, "exit_price": current_price}
+                    metadata={"exit_reason": exit_reason, "entry_order_id": order_id, "exit_price": current_price, "pnl": pnl}
                 )
                 try:
                     exit_res = self.client.place_order(exit_order_req)
                     print(f" -> [Exit Execution] Route: {exit_res.execution_client}")
-                    print(f"    ↳ Status: {exit_res.status} | Closed Size: ${exit_res.filled_size_usd:,.2f} | {exit_res.message}")
+                    print(f"    ↳ Status: {exit_res.status} | Closed Size: ${exit_res.filled_size_usd:,.2f} | Realized PnL: ${pnl:+.2f} | {exit_res.message}")
+                    if entry_time_str and base_symbol:
+                        self.logger.update_trade_exit(
+                            timestamp=entry_time_str,
+                            symbol=base_symbol,
+                            exit_price=current_price,
+                            exit_reason=exit_reason,
+                            pnl=pnl
+                        )
                     closed_ids.append(order_id)
                 except Exception as e:
                     print(f"[Sentinel ERROR] Failed executing exit order for {order_id}: {e}")

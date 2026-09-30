@@ -74,8 +74,11 @@ const ENUM_DISPLAY_MAP = {
   'OPEN': 'Open Position',
   'N/A': 'N/A',
   'TAKE_PROFIT_MEAN_REVERSION': 'Take Profit (Mean Reversion)',
-  'STOP_LOSS': 'Stop Loss',
+  'TAKE_PROFIT_MOMENTUM': 'Take Profit (Momentum)',
+  'STOP_LOSS': 'Stop Loss (1.5% Cap)',
   'TIME_EXIT': 'Time Exit',
+  'TIME_EXIT_4H_POST_CATALYST': 'Time Exit (4h Window)',
+  'MONDAY_PRE_OPEN_0355_UTC': 'Monday Pre-Open Exit',
 
   // Signal Alignments
   '0/3 (No Asset Match)': '0/3 (No Matching Asset)',
@@ -443,6 +446,38 @@ export default function App() {
     const wins = trades.filter(r => (r.pnl || 0) > 0)
     const totalPnl = trades.reduce((s, r) => s + (r.pnl || 0), 0)
 
+    // Compute Paper Trading Sharpe Ratio & Max Drawdown across chronologically ordered live trades
+    const sortedTrades = [...trades].sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
+    const initialBal = riskConfig.defaultPortfolioBalance || 100000
+    let equity = initialBal
+    let peakEquity = initialBal
+    let maxDdUsd = 0
+    let maxDdPct = 0
+    const returns = []
+
+    sortedTrades.forEach(t => {
+      const pnl = Number(t.pnl || 0)
+      const posSize = Number(t.position_size || 150) || 150
+      returns.push(pnl / posSize)
+      equity += pnl
+      if (equity > peakEquity) peakEquity = equity
+      const ddUsd = peakEquity - equity
+      const ddPct = peakEquity > 0 ? (ddUsd / peakEquity) * 100 : 0
+      if (ddUsd > maxDdUsd) maxDdUsd = ddUsd
+      if (ddPct > maxDdPct) maxDdPct = ddPct
+    })
+
+    let sharpeRatio = '0.00'
+    if (returns.length >= 2) {
+      const meanR = returns.reduce((a, b) => a + b, 0) / returns.length
+      const variance = returns.reduce((s, r) => s + Math.pow(r - meanR, 2), 0) / (returns.length - 1)
+      const stdR = Math.sqrt(variance)
+      if (stdR > 1e-9) {
+        const sVal = (meanR / stdR) * Math.sqrt(Math.min(252, Math.max(returns.length * 12, 36)))
+        sharpeRatio = sVal.toFixed(2)
+      }
+    }
+
     // Three-Way LLM Breakdown:
     // - liveCalls: Groq Qwen 3.8-27B live HTTP inference succeeded
     // - fallbackCalls: Target asset matched, but dropped to local rule classifier (rare / fallback allowed)
@@ -464,8 +499,11 @@ export default function App() {
       total: liveRecs.length,
       tradesCount: trades.length,
       winsCount: wins.length,
-      winRate: trades.length > 0 ? ((wins.length / trades.length) * 100).toFixed(0) : null,
+      winRate: trades.length > 0 ? ((wins.length / trades.length) * 100).toFixed(1) : null,
       totalPnl,
+      sharpeRatio,
+      maxDdUsd,
+      maxDdPct: maxDdPct.toFixed(3),
       durationHrs,
       startTime: minT,
       endTime: maxT,
@@ -517,14 +555,22 @@ export default function App() {
     return r.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
   }, [records, filterMode, filterSource, filterSymbol])
 
-  // Featured decision: latest real record from records.json
+  // Featured decision: prioritize explicitly selected ID, then latest approved live trade, then latest live record
   const featuredRecord = useMemo(() => {
+    if (selectedId != null) {
+      const found = records.find(r => r.id === selectedId)
+      if (found) return found
+    }
+    const liveTrades = records.filter(r => isLiveMode(r) && (r.decision === 'LONG' || r.decision === 'SHORT'))
+    if (liveTrades.length > 0) {
+      return [...liveTrades].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))[0]
+    }
     const liveRecs = records.filter(isLiveMode)
     if (liveRecs.length > 0) {
       return [...liveRecs].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))[0]
     }
     return records[0] || null
-  }, [records])
+  }, [records, selectedId])
 
   const selectedRecord = selectedId != null ? records.find(r => r.id === selectedId) : null
 
@@ -1213,7 +1259,7 @@ export default function App() {
                   {liveStats ? (
                     <div className="space-y-4">
                       {/* Primary KPI Grid for Live Mode */}
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
                         <KPI
                           label="Monitoring Span"
                           value={`${liveStats.durationHrs} hrs`}
@@ -1227,27 +1273,39 @@ export default function App() {
                         <KPI
                           label="LLM Evaluation Split"
                           value={
-                            <div className="flex flex-wrap items-baseline gap-1 text-sm sm:text-base font-bold font-mono-data">
+                            <div className="flex flex-wrap items-baseline gap-1 text-xs sm:text-sm font-bold font-mono-data">
                               <span style={{ color: dark ? '#D4FF3F' : '#223602' }}>{liveStats.liveCalls} Live</span>
                               <span style={{ color: 'var(--text-muted)' }}>/</span>
-                              <span style={{ color: '#F59E0B' }}>{liveStats.fallbackCalls} Fallback</span>
+                              <span style={{ color: '#F59E0B' }}>{liveStats.fallbackCalls} Fall</span>
                               <span style={{ color: 'var(--text-muted)' }}>/</span>
-                              <span style={{ color: '#818CF8' }}>{liveStats.skippedCalls} Skipped</span>
+                              <span style={{ color: '#818CF8' }}>{liveStats.skippedCalls} Skip</span>
                             </div>
                           }
                           valueClassName="font-mono-data py-0.5"
-                          sublabel="Live API vs fallback vs pre-filtered noise"
+                          sublabel="Live / Fallback / Skipped"
                         />
                         <KPI
                           label="Trades Executed"
                           value={liveStats.tradesCount}
-                          sublabel={liveStats.tradesCount === 0 ? `${liveStats.evaluatedCalls} evaluated (${liveStats.skippedCalls} pre-filtered)` : 'Orders submitted'}
+                          sublabel={liveStats.tradesCount === 0 ? `${liveStats.evaluatedCalls} evaluated` : 'Orders submitted'}
                           accent={liveStats.tradesCount > 0 ? '#10B981' : undefined}
                         />
                         <KPI
                           label="Win Rate"
                           value={liveStats.tradesCount > 0 ? `${liveStats.winRate}%` : '0%'}
-                          sublabel={liveStats.tradesCount === 0 ? `${liveStats.evaluatedCalls} gate reviews (0 trades)` : `${liveStats.winsCount} wins`}
+                          sublabel={liveStats.tradesCount === 0 ? `${liveStats.evaluatedCalls} gate reviews` : `${liveStats.winsCount}/${liveStats.tradesCount} wins`}
+                          accent={liveStats.tradesCount > 0 ? '#10B981' : undefined}
+                        />
+                        <KPI
+                          label="Paper Sharpe"
+                          value={liveStats.sharpeRatio}
+                          sublabel="Risk-adjusted return"
+                          accent={Number(liveStats.sharpeRatio) > 1 ? '#10B981' : undefined}
+                        />
+                        <KPI
+                          label="Max Drawdown"
+                          value={fmtUSD(liveStats.maxDdUsd)}
+                          sublabel={`${liveStats.maxDdPct}% of equity`}
                         />
                         <KPI
                           label="Realized P&L"

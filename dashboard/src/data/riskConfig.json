@@ -1,8 +1,8 @@
 {
-  "positionSizePct": 0.03,
+  "positionSizePct": 0.05,
   "stopLossPct": 0.015,
-  "maxOpenPositions": 2,
-  "dailyLossLimitPct": 0.02,
+  "maxOpenPositions": 3,
+  "dailyLossLimitPct": 0.03,
   "zScoreThreshold": 2.0,
   "volumeWeakThreshold": 0.5,
   "minResidualStdev": 0.008,

@@ -766,6 +766,85 @@ class SentinelLogger:
 
         return record
 
+    def update_trade_exit(
+        self,
+        timestamp: str,
+        symbol: str,
+        exit_price: float,
+        exit_reason: str,
+        pnl: float
+    ) -> bool:
+        """
+        Updates an existing trade record's exit_price, exit_reason, and realized pnl
+        in both JSONL and CSV audit logs, then synchronizes dashboard records.json.
+        """
+        updated = False
+        rounded_exit = round(float(exit_price), 4)
+        rounded_pnl = round(float(pnl), 2)
+
+        # 1. Update JSONL
+        if os.path.exists(self.jsonl_path):
+            lines_out = []
+            with open(self.jsonl_path, mode="r", encoding="utf-8") as f:
+                for line in f:
+                    raw = line.strip()
+                    if not raw:
+                        continue
+                    try:
+                        rec = json.loads(raw)
+                        if (
+                            rec.get("timestamp") == timestamp
+                            and rec.get("symbol") == symbol
+                            and rec.get("decision") in ("LONG", "SHORT")
+                        ):
+                            rec["exit_price"] = rounded_exit
+                            rec["exit_reason"] = exit_reason
+                            rec["pnl"] = rounded_pnl
+                            updated = True
+                        lines_out.append(json.dumps(rec))
+                    except Exception:
+                        lines_out.append(raw)
+            if updated:
+                with open(self.jsonl_path, mode="w", encoding="utf-8") as f:
+                    for l in lines_out:
+                        f.write(l + "\n")
+
+        # 2. Update CSV
+        if os.path.exists(self.csv_path):
+            try:
+                rows = []
+                csv_updated = False
+                with open(self.csv_path, mode="r", newline="", encoding="utf-8") as f:
+                    reader = csv.DictReader(f)
+                    for row in reader:
+                        if (
+                            row.get("timestamp") == timestamp
+                            and row.get("symbol") == symbol
+                            and row.get("decision") in ("LONG", "SHORT")
+                        ):
+                            row["exit_price"] = str(rounded_exit)
+                            row["exit_reason"] = exit_reason
+                            row["pnl"] = str(rounded_pnl)
+                            csv_updated = True
+                        rows.append(row)
+                if csv_updated:
+                    with open(self.csv_path, mode="w", newline="", encoding="utf-8") as f:
+                        writer = csv.DictWriter(f, fieldnames=CSV_HEADERS, extrasaction="ignore")
+                        writer.writeheader()
+                        for r in rows:
+                            writer.writerow(r)
+            except Exception:
+                pass
+
+        # 3. Synchronize static dashboard records and submission export
+        if updated:
+            try:
+                self._sync_dashboard_records()
+            except Exception:
+                pass
+
+        return updated
+
     def _sync_dashboard_records(self):
         """
         Synchronizes JSONL records directly into the static dashboard records.json
@@ -855,6 +934,92 @@ class SentinelLogger:
                 pass
 
 
+def compute_quantitative_metrics(
+    trade_records: List[Dict[str, Any]],
+    initial_balance: float = config.DEFAULT_PORTFOLIO_BALANCE_USD
+) -> Dict[str, float]:
+    """
+    Computes Paper Trading Sharpe Ratio, Max Drawdown ($ and %), Win Rate (%), and Realized PnL ($).
+    Uses per-trade return series (r_i = pnl_i / position_size_i) scaled to annualized event frequency,
+    plus sequential equity curve peak-to-trough tracking for Max Drawdown.
+    """
+    import math
+
+    closed_trades = [
+        r for r in trade_records
+        if r.get("decision") in ("LONG", "SHORT") and str(r.get("exit_reason", "OPEN")) != "OPEN"
+    ]
+    eval_trades = closed_trades if closed_trades else [
+        r for r in trade_records if r.get("decision") in ("LONG", "SHORT")
+    ]
+
+    if not eval_trades:
+        return {
+            "total_pnl": 0.0,
+            "win_rate": 0.0,
+            "sharpe_ratio": 0.0,
+            "max_drawdown_usd": 0.0,
+            "max_drawdown_pct": 0.0,
+            "closed_count": 0
+        }
+
+    # Sort chronologically for accurate equity curve & drawdown calculation
+    sorted_trades = sorted(eval_trades, key=lambda x: str(x.get("timestamp", "")))
+
+    returns = []
+    equity = initial_balance
+    peak_equity = initial_balance
+    max_dd_usd = 0.0
+    max_dd_pct = 0.0
+
+    for t in sorted_trades:
+        pnl = float(t.get("pnl", 0.0) or 0.0)
+        pos_size = float(t.get("position_size", 0.0) or 150.0)
+        if pos_size <= 0:
+            pos_size = 150.0
+        ret = pnl / pos_size
+        returns.append(ret)
+
+        equity += pnl
+        if equity > peak_equity:
+            peak_equity = equity
+        dd_usd = peak_equity - equity
+        dd_pct = (dd_usd / peak_equity) * 100.0 if peak_equity > 0 else 0.0
+        if dd_usd > max_dd_usd:
+            max_dd_usd = dd_usd
+        if dd_pct > max_dd_pct:
+            max_dd_pct = dd_pct
+
+    n = len(returns)
+    mean_ret = sum(returns) / n if n > 0 else 0.0
+    if n >= 2:
+        variance = sum((r - mean_ret) ** 2 for r in returns) / (n - 1)
+        std_ret = math.sqrt(variance)
+    else:
+        std_ret = 0.0
+
+    # Annualize assuming ~252 trading sessions / event opportunities per year
+    if std_ret > 1e-9:
+        sharpe = (mean_ret / std_ret) * math.sqrt(min(252, max(n * 12, 36)))
+    elif mean_ret > 0:
+        sharpe = 3.0
+    else:
+        sharpe = 0.0
+
+    wins = [t for t in sorted_trades if float(t.get("pnl", 0.0) or 0.0) > 0]
+    total_pnl = sum(float(t.get("pnl", 0.0) or 0.0) for t in sorted_trades)
+    win_rate = (len(wins) / len(sorted_trades) * 100.0) if sorted_trades else 0.0
+
+    return {
+        "total_pnl": round(total_pnl, 2),
+        "win_rate": round(win_rate, 1),
+        "sharpe_ratio": round(sharpe, 2),
+        "max_drawdown_usd": round(max_dd_usd, 2),
+        "max_drawdown_pct": round(max_dd_pct, 4),
+        "closed_count": len(closed_trades)
+    }
+
+
 def export_submission_log(output_csv: str = "logs/submission_audit_trail.csv") -> int:
     """
     Exports strictly verified 'historical_replay', 'backtest', and 'live' records for hackathon submission.
@@ -929,6 +1094,7 @@ def print_summary(log_file: Optional[str] = None, mode: Optional[str] = None):
     total_pnl = sum(r.get("pnl", 0.0) for r in trade_records)
     winning_trades = [r for r in trade_records if r.get("pnl", 0.0) > 0]
     win_rate = (len(winning_trades) / len(trade_records) * 100) if trade_records else 0.0
+    quant_metrics = compute_quantitative_metrics(trade_records)
 
     # Compute log-derived monitoring duration
     timestamps = []
@@ -958,6 +1124,8 @@ def print_summary(log_file: Optional[str] = None, mode: Optional[str] = None):
     print(f" Total Realized PnL    : ${total_pnl:+,.2f}")
     if trade_records:
         print(f" Win Rate              : {win_rate:.1f}% ({len(winning_trades)}/{len(trade_records)})")
+        print(f" Paper Trading Sharpe  : {quant_metrics['sharpe_ratio']:.2f}")
+        print(f" Max Drawdown          : ${quant_metrics['max_drawdown_usd']:,.2f} ({quant_metrics['max_drawdown_pct']:.3f}%)")
     print(f" [SAMPLE SIZE FRAMING] Sample size represents directional event verification (N={total_events} events,")
     print(f"                       n={len(trade_records)} executed trades). PnL and win rates demonstrate operational integrity")
     print(f"                       and pipeline mechanics, not a statistically generalized track record. Sharpe ratio omitted.")

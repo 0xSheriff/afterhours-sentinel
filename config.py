@@ -109,11 +109,11 @@ EVENT_REACTION_WINDOW_MINUTES: int = 30
 # ==============================================================================
 # RISK ENGINE PARAMETERS
 # ==============================================================================
-POSITION_SIZE_PCT: float = 0.03       # Fixed 3% of paper portfolio per trade
+POSITION_SIZE_PCT: float = 0.05       # Fixed 5% of paper portfolio per trade
 STOP_LOSS_PCT: float = 0.015          # Hard stop at 1.5% from entry price
 TAKE_PROFIT_PCT: float = 0.03         # Target mean reversion take profit 3.0%
-MAX_OPEN_POSITIONS: int = 2           # Max 2 simultaneous open positions
-DAILY_LOSS_LIMIT_PCT: float = 0.02    # Daily loss limit 2% of portfolio - halt new trades
+MAX_OPEN_POSITIONS: int = 3           # Max 3 simultaneous open positions
+DAILY_LOSS_LIMIT_PCT: float = 0.03    # Daily loss limit 3% of portfolio - halt new trades
 
 # Default paper portfolio initial balance
 DEFAULT_PORTFOLIO_BALANCE_USD: float = 100_000.0
