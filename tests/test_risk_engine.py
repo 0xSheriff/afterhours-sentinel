@@ -64,8 +64,8 @@ class TestRiskEngine(unittest.TestCase):
         self.assertEqual(eval_res.signals_aligned, "3/3 signals aligned")
         self.assertEqual(eval_res.aligned_count, 3)
         self.assertEqual(len(eval_res.failed_conditions), 0)
-        # Position size = 3% of 100,000 = 3,000 USD
-        self.assertEqual(eval_res.position_size_usd, 3000.0)
+        # Position size = 5% of 100,000 = 5,000 USD
+        self.assertEqual(eval_res.position_size_usd, 5000.0)
         self.assertEqual(eval_res.entry_price, 120.0)
         # Stop loss for SHORT = entry * (1 + 0.015) = 120 * 1.015 = 121.8
         self.assertAlmostEqual(eval_res.stop_price, 121.8, places=2)
@@ -86,8 +86,8 @@ class TestRiskEngine(unittest.TestCase):
         self.assertEqual(eval_res.decision, "LONG")
         self.assertEqual(eval_res.signals_aligned, "3/3 signals aligned")
         self.assertEqual(eval_res.aligned_count, 3)
-        # Position size = 3% of 50,000 = 1,500 USD
-        self.assertEqual(eval_res.position_size_usd, 1500.0)
+        # Position size = 5% of 50,000 = 2,500 USD
+        self.assertEqual(eval_res.position_size_usd, 2500.0)
         self.assertEqual(eval_res.entry_price, 200.0)
         # Stop loss for LONG = entry * (1 - 0.015) = 200 * 0.985 = 197.0
         self.assertAlmostEqual(eval_res.stop_price, 197.0, places=2)
@@ -163,9 +163,9 @@ class TestRiskEngine(unittest.TestCase):
         self.assertTrue(any("neutral" in c for c in eval_res.failed_conditions))
 
     def test_daily_loss_limit_halts_trades(self):
-        # 3 signals pass, but daily loss limit (2.1% >= 2.0%) reached -> NO_TRADE
+        # 3 signals pass, but daily loss limit (3.1% >= 3.0%) reached -> NO_TRADE
         div = make_sample_divergence(z_score=2.8, actual_move=0.04, volume_ratio=0.3, volume_confirmation="weak")
-        state = PortfolioState(portfolio_balance=100_000.0, open_positions_count=0, daily_realized_loss_pct=0.021)
+        state = PortfolioState(portfolio_balance=100_000.0, open_positions_count=0, daily_realized_loss_pct=0.031)
 
         eval_res = evaluate_trade(
             divergence=div,
@@ -179,9 +179,9 @@ class TestRiskEngine(unittest.TestCase):
         self.assertTrue(any("Daily loss limit reached" in c for c in eval_res.failed_conditions))
 
     def test_max_open_positions_halts_trades(self):
-        # 3 signals pass, but already 2 open positions -> NO_TRADE
+        # 3 signals pass, but already 3 open positions -> NO_TRADE
         div = make_sample_divergence(z_score=2.8, actual_move=0.04, volume_ratio=0.3, volume_confirmation="weak")
-        state = PortfolioState(portfolio_balance=100_000.0, open_positions_count=2, daily_realized_loss_pct=0.0)
+        state = PortfolioState(portfolio_balance=100_000.0, open_positions_count=3, daily_realized_loss_pct=0.0)
 
         eval_res = evaluate_trade(
             divergence=div,
@@ -219,7 +219,7 @@ class TestRiskEngine(unittest.TestCase):
         self.assertEqual(eval_res.signals_aligned, "3/3 signals aligned")
         self.assertEqual(eval_res.aligned_count, 3)
         self.assertEqual(eval_res.direction_alignment, "ALIGNMENT")
-        self.assertEqual(eval_res.position_size_usd, 3000.0)
+        self.assertEqual(eval_res.position_size_usd, 5000.0)
         self.assertEqual(eval_res.entry_price, 100.0)
         # Stop loss for LONG: entry * (1 - 0.015) = 98.5
         self.assertAlmostEqual(eval_res.stop_price, 98.5, places=2)
@@ -250,7 +250,7 @@ class TestRiskEngine(unittest.TestCase):
         self.assertEqual(eval_res.signals_aligned, "3/3 signals aligned")
         self.assertEqual(eval_res.aligned_count, 3)
         self.assertEqual(eval_res.direction_alignment, "ALIGNMENT")
-        self.assertEqual(eval_res.position_size_usd, 3000.0)
+        self.assertEqual(eval_res.position_size_usd, 5000.0)
         self.assertEqual(eval_res.entry_price, 100.0)
         # Stop loss for SHORT: entry * (1 + 0.015) = 101.5
         self.assertAlmostEqual(eval_res.stop_price, 101.5, places=2)

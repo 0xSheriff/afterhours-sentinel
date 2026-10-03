@@ -115,8 +115,8 @@ TAKE_PROFIT_PCT: float = 0.03         # Target mean reversion take profit 3.0%
 MAX_OPEN_POSITIONS: int = 3           # Max 3 simultaneous open positions
 DAILY_LOSS_LIMIT_PCT: float = 0.03    # Daily loss limit 3% of portfolio - halt new trades
 
-# Default paper portfolio initial balance
-DEFAULT_PORTFOLIO_BALANCE_USD: float = 100_000.0
+# Default paper portfolio initial balance (Bitget Demo Multi-Asset Union Equity: 4,998.66 USDT + 0.4 BTC + 9 ETH)
+DEFAULT_PORTFOLIO_BALANCE_USD: float = 62_858.40
 
 # ==============================================================================
 # ASSET BENCHMARK MAPPINGS

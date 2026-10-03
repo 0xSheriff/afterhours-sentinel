@@ -8,6 +8,6 @@
   "minResidualStdev": 0.008,
   "betaRollingWindowDays": 30,
   "residualRollingWindowDays": 30,
-  "defaultPortfolioBalance": 100000,
+  "defaultPortfolioBalance": 62858.40,
   "eventFreshnessHours": 4.0
 }

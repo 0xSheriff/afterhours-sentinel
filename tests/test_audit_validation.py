@@ -229,10 +229,10 @@ class TestAuditValidation(unittest.TestCase):
         self.assertEqual(trade_neg.side, "LONG")
 
     # -------------------------------------------------------------------------
-    # Scenario 15: Position size calculation (3% account equity)
+    # Scenario 15: Position size calculation (5% account equity)
     # -------------------------------------------------------------------------
     def test_15_position_size_three_percent(self):
-        """Position size must equal 3% of account balance for an approved trade."""
+        """Position size must equal config.POSITION_SIZE_PCT (5%) of account balance for an approved trade."""
         balance = 10000.0
         div = DivergenceResult(
             symbol="NVDA", actual_move=0.05, expected_move=0.01, divergence=0.04,
@@ -251,7 +251,7 @@ class TestAuditValidation(unittest.TestCase):
             qwen_validation="VALID"
         )
         self.assertEqual(eval_res.action, "PAPER_TRADE")
-        self.assertAlmostEqual(eval_res.position_size_usd, balance * 0.03, places=2)
+        self.assertAlmostEqual(eval_res.position_size_usd, balance * config.POSITION_SIZE_PCT, places=2)
 
     # -------------------------------------------------------------------------
     # Scenario 16: Stop loss calculation (1.5% from entry)
@@ -278,10 +278,10 @@ class TestAuditValidation(unittest.TestCase):
         self.assertAlmostEqual(eval_res.stop_loss_pct, 0.015, places=4)
 
     # -------------------------------------------------------------------------
-    # Scenario 17: Max open positions enforcement (rejects 3rd position)
+    # Scenario 17: Max open positions enforcement (rejects when >= MAX_OPEN_POSITIONS)
     # -------------------------------------------------------------------------
     def test_17_max_open_positions_enforcement(self):
-        """Risk engine must reject trade when active positions >= MAX_OPEN_POSITIONS (2)."""
+        """Risk engine must reject trade when active positions >= MAX_OPEN_POSITIONS (3)."""
         div = DivergenceResult(
             symbol="NVDA", actual_move=0.05, expected_move=0.01, divergence=0.04,
             z_score=2.5, volume_ratio=0.3, volume_confirmation="weak",
@@ -294,7 +294,7 @@ class TestAuditValidation(unittest.TestCase):
             sentiment_direction="bearish",
             sentiment_score=0.8,
             account_balance=10000.0,
-            active_positions=["AAPL", "MSFT"],
+            active_positions=["AAPL", "MSFT", "TSLA"],
             daily_loss_pct=0.0,
             qwen_validation="VALID"
         )
@@ -302,10 +302,10 @@ class TestAuditValidation(unittest.TestCase):
         self.assertIn("max open positions", eval_res.reason.lower())
 
     # -------------------------------------------------------------------------
-    # Scenario 18: Daily loss limit enforcement (rejects when >= 2%)
+    # Scenario 18: Daily loss limit enforcement (rejects when >= 3%)
     # -------------------------------------------------------------------------
     def test_18_daily_loss_limit_enforcement(self):
-        """Risk engine must reject trade when daily loss >= MAX_DAILY_LOSS_PCT (0.02)."""
+        """Risk engine must reject trade when daily loss >= DAILY_LOSS_LIMIT_PCT (0.03)."""
         div = DivergenceResult(
             symbol="NVDA", actual_move=0.05, expected_move=0.01, divergence=0.04,
             z_score=2.5, volume_ratio=0.3, volume_confirmation="weak",
@@ -319,7 +319,7 @@ class TestAuditValidation(unittest.TestCase):
             sentiment_score=0.8,
             account_balance=10000.0,
             active_positions=[],
-            daily_loss_pct=0.025,
+            daily_loss_pct=0.035,
             qwen_validation="VALID"
         )
         self.assertEqual(eval_res.action, "NO_TRADE")

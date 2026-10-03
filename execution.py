@@ -417,11 +417,11 @@ class BitgetAgentHubClient(BaseExecutionClient):
         if status == 200 and isinstance(body, dict) and body.get("code") == "00000":
             data = body.get("data", {})
             if isinstance(data, dict):
-                eq = data.get("usdtEquity") or data.get("accountEquity")
+                eq = data.get("unionTotalMargin") or data.get("usdtEquity") or data.get("accountEquity")
                 if eq and float(eq) > 0:
                     balance = float(eq)
             elif isinstance(data, list) and len(data) > 0:
-                eq = data[0].get("usdtEquity") or data[0].get("equity") or data[0].get("available")
+                eq = data[0].get("unionTotalMargin") or data[0].get("usdtEquity") or data[0].get("equity") or data[0].get("available")
                 if eq and float(eq) > 0:
                     balance = float(eq)
 
