@@ -28,11 +28,15 @@ class MarketEvent:
         return asdict(self)
 
 
-# Free reliable RSS Feeds for Financial & Macro News
+# Free reliable RSS Feeds for Financial, Equity & Macro News
 DEFAULT_RSS_FEEDS = [
-    {"name": "YahooFinanceMacro", "url": "https://finance.yahoo.com/news/rssindex"},
+    {"name": "YahooFinanceEquities", "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=NVDA,TSLA,AAPL,MSFT,AMZN,GOOGL,META,AMD,INTC,ARM,PLTR,COIN,MSTR,BABA,NFLX&region=US&lang=en-US"},
+    {"name": "SeekingAlphaMarketCurrents", "url": "https://seekingalpha.com/market_currents.xml"},
     {"name": "InvestingNews", "url": "https://www.investing.com/rss/news.rss"},
-    {"name": "MarketWatch", "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories"}
+    {"name": "InvestingStockNews", "url": "https://www.investing.com/rss/news_25.rss"},
+    {"name": "InvestingEconomy", "url": "https://www.investing.com/rss/news_14.rss"},
+    {"name": "MarketWatch", "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories"},
+    {"name": "YahooFinanceMacro", "url": "https://finance.yahoo.com/news/rssindex"}
 ]
 
 

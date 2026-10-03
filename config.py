@@ -181,11 +181,21 @@ EVENT_TAXONOMY: List[str] = [
 
 EVENT_KEYWORDS: List[str] = [
     "tariff", "tariffs", "fed", "federal reserve", "rate decision", "interest rate",
-    "fomc", "cpi", "ppi", "inflation", "earnings", "guidance", "revenue beat",
-    "revenue miss", "eps", "profit warning", "sanctions", "geopolitical",
-    "trade war", "antitrust", "sec investigation", "war", "embargo", "stimulus",
-    "regulatory", "fda", "doj", "subpoena", "lawsuit", "patent", "recall",
-    "upgrade", "downgrade", "price target", "merger", "acquisition", "restructuring"
+    "rate hike", "rate cut", "fomc", "cpi", "ppi", "inflation", "treasury yields", "gdp",
+    "earnings", "guidance", "revenue", "revenue beat", "revenue miss", "eps", "profit",
+    "profit warning", "quarterly results", "sanctions", "geopolitical", "trade war",
+    "antitrust", "sec", "sec investigation", "war", "missile", "missiles", "embargo",
+    "stimulus", "regulatory", "fda", "doj", "ftc", "subpoena", "lawsuit", "probe",
+    "patent", "recall", "upgrade", "upgrades", "downgrade", "downgrades", "price target",
+    "outperform", "underperform", "overweight", "underweight", "merger", "acquisition",
+    "acquire", "acquires", "buyout", "restructuring", "layoff", "layoffs", "ceo", "cfo",
+    "resigns", "share buyback", "dividend", "launch", "launches", "unveil", "unveils",
+    "robotaxi", "autonomous", "chip", "data center", "foundry",
+    # Target 15 Single-Stock Equity Tickers & Company Names
+    "nvda", "nvidia", "tsla", "tesla", "aapl", "apple", "msft", "microsoft",
+    "googl", "alphabet", "amzn", "amazon", "meta", "amd", "advanced micro devices",
+    "intc", "intel", "arm", "pltr", "palantir", "coin", "coinbase",
+    "mstr", "microstrategy", "baba", "alibaba", "nflx", "netflix"
 ]
 
 # Logging paths
