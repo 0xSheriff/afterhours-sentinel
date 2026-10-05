@@ -425,13 +425,23 @@ class BitgetAgentHubClient(BaseExecutionClient):
                 if eq and float(eq) > 0:
                     balance = float(eq)
 
-        # Query open positions (try v3 then v2)
-        pos_status, _, pos_body = self.send_http_request("GET", "/api/v3/position/current-position", params={"category": "USDT-FUTURES"})
+        # Query open positions (check V2 Mix first when using env_vars, fallback to V3)
         open_pos_count = 0
+        pos_status, _, pos_body = self.send_http_request(
+            "GET",
+            "/api/v2/mix/position/all-position",
+            params={"productType": "usdt-futures", "marginCoin": "USDT"}
+        )
         if pos_status == 200 and isinstance(pos_body, dict) and pos_body.get("code") == "00000":
             pos_data = pos_body.get("data", [])
             if isinstance(pos_data, list):
-                open_pos_count = len(pos_data)
+                open_pos_count = sum(1 for p in pos_data if float(p.get("total", 0) or 0) > 0)
+        else:
+            pos_status, _, pos_body = self.send_http_request("GET", "/api/v3/position/current-position", params={"category": "USDT-FUTURES"})
+            if pos_status == 200 and isinstance(pos_body, dict) and pos_body.get("code") == "00000":
+                pos_data = pos_body.get("data", [])
+                if isinstance(pos_data, list):
+                    open_pos_count = len(pos_data)
 
         return PortfolioState(
             portfolio_balance=balance,
@@ -510,7 +520,11 @@ class BitgetAgentHubClient(BaseExecutionClient):
             except Exception:
                 pass
 
-        final_size = str(actual_pos_qty) if actual_pos_qty is not None else str(max(size_qty, 0.01))
+        if trade_side == "close" and actual_pos_qty is not None:
+            close_qty = min(size_qty, actual_pos_qty) if abs(actual_pos_qty - size_qty) > (size_qty * 0.25) else actual_pos_qty
+            final_size = str(round(max(close_qty, 0.01), 2))
+        else:
+            final_size = str(max(size_qty, 0.01))
 
         # In Bitget Classic Mix V2 (Hedge Mode):
         # - Open Long: side="buy", tradeSide="open"

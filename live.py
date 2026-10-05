@@ -609,8 +609,8 @@ class LiveSentinelRunner:
                         "stop_price": evaluation.stop_price,
                         "entry_time": now_str,
                         "strategy_mode": getattr(evaluation, "strategy_mode", "MOMENTUM"),
-                        "z_score": divergence.get("z_score", 0.0),
-                        "actual_move": divergence.get("actual_move", 0.0)
+                        "z_score": float(getattr(divergence, "z_score", 0.0) or 0.0),
+                        "actual_move": float(getattr(divergence, "actual_move", 0.0) or 0.0)
                     }
             except Exception as e:
                 print(f"[{now_str[:19]}] [Sentinel ERROR] Bitget Agent Hub execution failed: {e}. Order aborted safely.")
