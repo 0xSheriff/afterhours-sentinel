@@ -264,43 +264,112 @@ class LiveSentinelRunner:
         except Exception as e:
             print(f"[Sentinel State WARNING] Could not preload historical log: {e}")
 
+    def _fetch_yahoo_extended_hours_data(self, asset: str) -> Optional[Dict[str, float]]:
+        """
+        Queries Yahoo Finance v8 chart API (with includePrePost=true) for equities not listed
+        on Bitget Demo (e.g. MSFT, PLTR, AMD, INTC, ARM, BABA, NFLX).
+        Returns real extended-hours/regular-hours price, rolling 24h move, latest 1H volume,
+        and trailing 1H average volume.
+        """
+        import urllib.request
+        headers = {"User-Agent": "Mozilla/5.0 (compatible; AfterHoursSentinel/1.0)"}
+        try:
+            url_1d = f"https://query1.finance.yahoo.com/v8/finance/chart/{asset}?interval=1d&range=5d"
+            prev_day_close = None
+            with urllib.request.urlopen(urllib.request.Request(url_1d, headers=headers), timeout=6) as r1d:
+                res1d = json.load(r1d)["chart"]["result"][0]
+                d_closes = [c for c in res1d["indicators"]["quote"][0].get("close", []) if c is not None]
+                if len(d_closes) >= 2:
+                    prev_day_close = float(d_closes[-2])
+                elif res1d["meta"].get("chartPreviousClose"):
+                    prev_day_close = float(res1d["meta"]["chartPreviousClose"])
+
+            url_1h = f"https://query1.finance.yahoo.com/v8/finance/chart/{asset}?interval=1h&range=5d&includePrePost=true"
+            with urllib.request.urlopen(urllib.request.Request(url_1h, headers=headers), timeout=6) as r1h:
+                res1h = json.load(r1h)["chart"]["result"][0]
+                quote = res1h["indicators"]["quote"][0]
+                h_closes = [float(c) for c in quote.get("close", []) if c is not None and c > 0]
+                h_vols = [float(v) for v in quote.get("volume", []) if v is not None and v > 0]
+
+                if not h_closes:
+                    return None
+
+                latest_price = h_closes[-1]
+                if prev_day_close is None or prev_day_close <= 0:
+                    prev_day_close = float(res1h["meta"].get("previousClose") or res1h["meta"].get("chartPreviousClose") or h_closes[0])
+
+                actual_move = (latest_price - prev_day_close) / prev_day_close if prev_day_close > 0 else 0.0
+                latest_vol = h_vols[-1] if h_vols else 1500.0
+                avg_vol = (sum(h_vols[:-1]) / len(h_vols[:-1])) if len(h_vols) > 1 else latest_vol
+
+                return {
+                    "current_price": latest_price,
+                    "actual_move": actual_move,
+                    "after_hours_vol": latest_vol,
+                    "trailing_avg_vol": avg_vol
+                }
+        except Exception as e:
+            print(f"[Sentinel Market Data WARNING] Yahoo Finance extended-hours lookup failed for {asset}: {e}")
+            return None
+
     def fetch_live_price_data(self, asset: str) -> Dict[str, Any]:
         """
-        Retrieves live ticker price, 24h percentage move, and volume from Bitget Demo.
+        Retrieves live ticker price, 24h percentage move, and volume from Bitget Demo (Primary).
+        For unlisted equities (e.g. MSFT, PLTR, AMD, INTC, ARM, BABA, NFLX), seamlessly falls back
+        to live Yahoo Finance extended-hours market data (includePrePost=true).
         Seeds mathematical rolling buffers using historical 30-day baseline returns.
         """
         benchmark = config.get_benchmark_for_symbol(asset)
         bench_history = HISTORICAL_PRICE_BUFFERS.get(benchmark, HISTORICAL_PRICE_BUFFERS["QQQ"])
-        asset_history = HISTORICAL_PRICE_BUFFERS.get(asset, HISTORICAL_PRICE_BUFFERS.get(asset, HISTORICAL_PRICE_BUFFERS["NVDA"]))
+        asset_history = HISTORICAL_PRICE_BUFFERS.get(asset, HISTORICAL_PRICE_BUFFERS["NVDA"])
 
-        # 1. Query live market ticker for target asset
+        # 1. Query live market ticker for target asset on Bitget Demo (Primary)
         formatted_sym = f"{asset}USDT"
-        ticker_st, _, ticker_bd = self.client.get_market_ticker(symbol=formatted_sym, category="USDT-FUTURES")
+        supported_contracts = self.client.get_supported_contracts()
+        is_bitget_listed = formatted_sym in supported_contracts
 
         current_price = None
         actual_move = None
         after_hours_vol = None
+        trailing_avg_vol = None
+        volume_status = "INSUFFICIENT_DATA"
+        volume_basis = "INSUFFICIENT_DATA"
 
-        if ticker_st == 200 and isinstance(ticker_bd, dict):
-            d_list = ticker_bd.get("data", [])
-            if isinstance(d_list, list) and len(d_list) > 0:
-                d = d_list[0]
-                lp = d.get("lastPrice") or d.get("lastPr")
-                chg = d.get("price24hPcnt") or d.get("change24h")
-                vol = d.get("volume24h") or d.get("baseVolume")
-                if lp:
-                    current_price = float(lp)
-                if chg is not None:
-                    actual_move = float(chg)
-                if vol:
-                    after_hours_vol = float(vol)
+        if is_bitget_listed:
+            ticker_st, _, ticker_bd = self.client.get_market_ticker(symbol=formatted_sym, category="USDT-FUTURES")
+            if ticker_st == 200 and isinstance(ticker_bd, dict):
+                d_list = ticker_bd.get("data", [])
+                if isinstance(d_list, list) and len(d_list) > 0:
+                    d = d_list[0]
+                    lp = d.get("lastPrice") or d.get("lastPr")
+                    chg = d.get("price24hPcnt") or d.get("change24h")
+                    vol = d.get("volume24h") or d.get("baseVolume")
+                    if lp:
+                        current_price = float(lp)
+                    if chg is not None:
+                        actual_move = float(chg)
+                    if vol:
+                        after_hours_vol = float(vol)
 
+        # If unlisted on Bitget Demo (or Bitget ticker incomplete), fetch live extended-hours equity data
         if current_price is None or actual_move is None or after_hours_vol is None:
-            # Loud fallback with explicit logging
-            print(f"[Sentinel Market Data WARNING] Could not fetch complete live ticker data for {formatted_sym} (status={ticker_st}, body={str(ticker_bd)[:80]}). Falling back to calibrated baseline.")
-            current_price = current_price or (215.0 if asset == "NVDA" else (357.0 if asset == "TSLA" else (332.0 if asset == "AAPL" else 250.0)))
-            actual_move = actual_move or +0.015
-            after_hours_vol = after_hours_vol or 1500.0
+            yf_data = self._fetch_yahoo_extended_hours_data(asset)
+            if yf_data is not None:
+                current_price = yf_data["current_price"]
+                actual_move = yf_data["actual_move"]
+                after_hours_vol = yf_data["after_hours_vol"]
+                trailing_avg_vol = yf_data["trailing_avg_vol"]
+                volume_status = "MEASURED"
+                volume_basis = "MEASURED"
+                print(f" -> [Smart Hybrid Market Data] {asset} not listed on Bitget Demo; fetched live extended-hours equity data (${current_price:.2f}, move={actual_move:+.2%}).")
+            else:
+                print(f"[Sentinel Market Data WARNING] Could not fetch complete live ticker data for {formatted_sym}. Falling back to calibrated baseline.")
+                current_price = current_price or (215.0 if asset == "NVDA" else (357.0 if asset == "TSLA" else (332.0 if asset == "AAPL" else 250.0)))
+                actual_move = actual_move if actual_move is not None else +0.015
+                after_hours_vol = after_hours_vol or 1500.0
+                trailing_avg_vol = trailing_avg_vol or 1500.0
+                volume_status = "FALLBACK_ESTIMATE"
+                volume_basis = "FALLBACK_ESTIMATE"
 
         # 2. Query benchmark ticker (Respecting resolved benchmark for the asset)
         benchmark_move = None
@@ -316,8 +385,8 @@ class LiveSentinelRunner:
                         except (ValueError, TypeError):
                             pass
         elif benchmark == "QQQ":
-            # For QQQ benchmark: compute peer tech basket composite move, strictly excluding evaluated asset
-            tech_universe = ["NVDA", "AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA"]
+            # For QQQ benchmark: compute peer tech basket composite move from Bitget-listed tech leaders, excluding evaluated asset
+            tech_universe = ["NVDA", "AAPL", "GOOGL", "AMZN", "META", "TSLA"]
             basket_symbols = [s for s in tech_universe if s != asset]
             basket_moves = []
             for b_sym in basket_symbols:
@@ -338,49 +407,47 @@ class LiveSentinelRunner:
             # Sane baseline equity benchmark move (+0.2%)
             benchmark_move = +0.002
 
-        trailing_avg_vol = None
-        volume_status = "INSUFFICIENT_DATA"
-        volume_basis = "INSUFFICIENT_DATA"
-
-        # Query empirical historical hourly candle volume from Bitget Demo (48H lookback)
-        try:
-            c_st, _, c_bd = self.client.send_http_request(
-                "GET",
-                "/api/v2/mix/market/candles",
-                params={"symbol": formatted_sym, "productType": "usdt-futures", "granularity": "1H", "limit": "48"}
-            )
-            if c_st == 200 and isinstance(c_bd, dict) and c_bd.get("code") == "00000":
-                candles = c_bd.get("data", [])
-                if isinstance(candles, list) and len(candles) >= 3:
-                    # Current reaction window volume (latest 1H candle)
-                    try:
-                        latest_candle_vol = float(candles[0][5])
-                        if latest_candle_vol > 0:
-                            after_hours_vol = latest_candle_vol
-                    except (IndexError, ValueError, TypeError):
-                        pass
-
-                    # Baseline hourly volume across prior historical candles
-                    historical_vols = []
-                    for c in candles[1:]:
+        # Query empirical historical hourly candle volume from Bitget Demo (48H lookback) when listed
+        if is_bitget_listed and trailing_avg_vol is None:
+            try:
+                c_st, _, c_bd = self.client.send_http_request(
+                    "GET",
+                    "/api/v2/mix/market/candles",
+                    params={"symbol": formatted_sym, "productType": "usdt-futures", "granularity": "1H", "limit": "48"}
+                )
+                if c_st == 200 and isinstance(c_bd, dict) and c_bd.get("code") == "00000":
+                    candles = c_bd.get("data", [])
+                    if isinstance(candles, list) and len(candles) >= 3:
+                        # Current reaction window volume (latest 1H candle)
                         try:
-                            v = float(c[5])
-                            if v > 0:
-                                historical_vols.append(v)
+                            latest_candle_vol = float(candles[0][5])
+                            if latest_candle_vol > 0:
+                                after_hours_vol = latest_candle_vol
                         except (IndexError, ValueError, TypeError):
                             pass
 
-                    if historical_vols and after_hours_vol is not None:
-                        trailing_avg_vol = sum(historical_vols) / len(historical_vols)
-                        volume_status = "MEASURED"
-                        volume_basis = "MEASURED"
-        except Exception as e:
-            print(f"[Sentinel Market Data WARNING] Kline volume query failed for {formatted_sym}: {e}")
+                        # Baseline hourly volume across prior historical candles
+                        historical_vols = []
+                        for c in candles[1:]:
+                            try:
+                                v = float(c[5])
+                                if v > 0:
+                                    historical_vols.append(v)
+                            except (IndexError, ValueError, TypeError):
+                                pass
 
-        # Option 2 — Volume fallback: if candle history is sparse/unavailable but 24H ticker vol exists,
-        # derive an estimated hourly baseline (24H vol / 24). Labeled FALLBACK_ESTIMATE, never MEASURED.
+                        if historical_vols and after_hours_vol is not None:
+                            trailing_avg_vol = sum(historical_vols) / len(historical_vols)
+                            volume_status = "MEASURED"
+                            volume_basis = "MEASURED"
+            except Exception as e:
+                print(f"[Sentinel Market Data WARNING] Kline volume query failed for {formatted_sym}: {e}")
+
+        # Option 2 — Volume fallback: if candle history is sparse/unavailable, compare hourly-scaled
+        # volume against baseline (1.0x neutral baseline rather than dividing only denominator by 24).
         if trailing_avg_vol is None and after_hours_vol is not None and after_hours_vol > 0:
-            trailing_avg_vol = after_hours_vol / 24.0
+            after_hours_vol = after_hours_vol / 24.0
+            trailing_avg_vol = after_hours_vol
             volume_status = "FALLBACK_ESTIMATE"
             volume_basis = "FALLBACK_ESTIMATE"
             print(f" -> [Volume Fallback] {formatted_sym}: Sparse candle history. Using 24H ticker vol / 24 as hourly baseline ({trailing_avg_vol:,.1f}, basis=FALLBACK_ESTIMATE).")
