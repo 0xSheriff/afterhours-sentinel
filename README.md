@@ -21,7 +21,7 @@ After-hours equity markets exhibit structural liquidity thinning. When breaking 
 
 To guarantee strict capital protection and zero unintended exposure:
 1. **Paper-Trading Isolation**: All execution targets Bitget Agent Hub in `--paper-trading` mode against Bitget's Demo environment (`DEMO_MODE=True`). Mainnet live accounts are strictly isolated.
-2. **Smart Hybrid Execution Router**: Operates with `DEFAULT_DRY_RUN = False` in [`config.py`](file:///Users/mac/AH-Sentinel/config.py) under the **Smart Hybrid Execution Router**. Contracts actively listed on Bitget Demo (`NVDA`, `TSLA`, `AAPL`, `AMZN`, `GOOGL`, `META`, `COIN`, `MSTR`, `BTC`, `ETH`) route live orders directly to the Bitget Demo matching engine, while unlisted demo contracts (`MSFT`, `PLTR`, `ARM`, etc.) seamlessly execute in client-side paper simulation with zero rejection errors.
+2. **Smart Hybrid Execution Router**: Operates with `DEFAULT_DRY_RUN = False` in [`config.py`](file:///Users/mac/AH-Sentinel/config.py) and [`execution.py`](file:///Users/mac/AH-Sentinel/execution.py). Contracts verified via `get_supported_contracts()` (`GET /api/v2/mix/market/contracts?productType=usdt-futures`) as listed on Bitget Demo (`NVDAUSDT`, `TSLAUSDT`, `AAPLUSDT`, `AMZNUSDT`, `GOOGLUSDT`, `METAUSDT`, `COINUSDT`, `MSTRUSDT`, plus `BTCUSDT` and `ETHUSDT`) route orders to the Bitget Demo exchange (`status: "FILLED"`). The remaining 7 tracked equities that are not listed on Bitget Demo (`MSFT`, `AMD`, `INTC`, `ARM`, `PLTR`, `BABA`, `NFLX`) fall back to local client-side simulation (`status: "DRY_RUN_SIMULATED"`, tagged `[Smart Hybrid: Paper Fallback]`).
 3. **Zero Dangerous Endpoints**: Zero withdrawal, transfer, or mass-cancellation endpoints exist in the codebase.
 4. **Transparent Client Logging**: Tracks routing via `BitgetAgentHubClient` against official `api.bitget.com` demo endpoints with fallback to local `MockExecutionClient`.
 
@@ -41,8 +41,8 @@ graph TD
 ### Component Breakdown & Mathematical Rigor
 
 #### 1. Event Listener (`event_listener.py`)
-- Polls real-time financial and macroeconomic news feeds (Yahoo Finance, Investing.com, MarketWatch) with automated deduplication and a strict **4-hour freshness filter**.
-- **Zero-Cost Entity Resolver**: Accurately extracts company names, tickers, products, and executive leadership (e.g. Musk, Nadella, Saylor, Karp) across all **15 Bitget single-stock equities**. Events without equity mentions are classified as `SKIPPED_NO_ASSET_MATCH` with **zero LLM tokens spent**.
+- Polls 7 financial, macroeconomic, and equity-specific RSS feeds (Yahoo Finance Top Stories, Yahoo Finance Equities, Seeking Alpha Market Currents, Investing.com News & Stock Market, MarketWatch Top Stories & Real-Time Headlines) with automated deduplication and a **4-hour freshness filter**.
+- **Zero-Cost Entity Resolver**: Extracts company names, tickers, products, and executive leadership (e.g. Musk, Nadella, Saylor, Karp) across the **15 tracked single-stock equities**. Events without equity mentions are classified as `SKIPPED_NO_ASSET_MATCH` with **zero LLM tokens spent**.
 - **Standardized 9-Category Taxonomy**: Categorizes news into `earnings`, `macro`, `regulatory`, `tariff`, `geopolitical`, `product`, `corporate`, `analyst`, and `other`.
 
 #### 2. Deterministic Divergence Engine (`divergence_engine.py`)
@@ -53,9 +53,10 @@ graph TD
   $$z = \frac{\text{residual}}{\sigma_{\text{residual}}} \quad (\text{defensive volatility floor } \sigma_{\min} = 80\text{ bps})$$
   $$\text{volume\_ratio} = \frac{\text{Volume}_{\text{after\_hours}}}{\overline{\text{Volume}}_{\text{trailing}}}$$
 - **Empirical Volume Fallback**: When Bitget Demo 1H candle history is sparse ($<3$ candles), Sentinel dynamically falls back to the rolling 24H ticker volume normalized to hourly ($\text{Vol}_{24\text{h}} / 24$). Tagged `volume_basis: "FALLBACK_ESTIMATE"` for complete data-provenance transparency.
+- **Extended-Hours Feed for Unlisted Equities**: For the 7 tracked equities not listed on Bitget Demo (`MSFT`, `AMD`, `INTC`, `ARM`, `PLTR`, `BABA`, `NFLX`), `live.py` queries Yahoo Finance 5-minute extended-hours bars (`includePrePost=true`) to compute live post-market price moves and volume ratios.
 
 #### 3. LLM Analyst (`llm_analyst.py`)
-- Executes high-speed OpenAI-compatible inference against Groq (`qwen/qwen3.8-27b` / `llama-3.3-70b-versatile`).
+- Executes OpenAI-compatible inference against Groq using model `"qwen/qwen3.8-27b"` (`config.GROQ_MODEL`).
 - **Explainability & Isolation**: The LLM **never** sees the z-score or makes trade decisions; it strictly performs directional classification (`BULLISH`, `BEARISH`, `NEUTRAL`) and provides one sentence of qualitative rationale.
 - **Three-Way Provenance Tagging**:
   - `LIVE`: Verified real-time Groq API calls (`llm_source: "groq_qwen3.8-27b [live_api]"`).
@@ -64,37 +65,37 @@ graph TD
 
 #### 4. Dual-Strategy Risk Engine (`risk_engine.py`)
 Pure rule-based gatekeeper evaluating dynamic strategy modes:
-- **`MEAN_REVERSION` Mode** (Macro, Tariffs, Geopolitics, Regulatory, Corporate):
+- **`MEAN_REVERSION` Mode** (`macro`, `tariff`, `geopolitical`, `regulatory`, `corporate`, `other`):
   - Requires: Direction Contradiction (price moved opposite to fundamental news) + Weak Liquidity (`volume_ratio < 0.50`) + Statistical Outlier ($|z| \ge 2.0\sigma$).
-- **`MOMENTUM` Mode** (Earnings, Product Releases, Analyst Upgrades/Downgrades):
+- **`MOMENTUM` Mode** (`earnings`, `product`, `analyst`):
   - Requires: Direction Alignment (price confirmed by fundamental upside/downside) + Confirming Volume (`volume_ratio \ge 0.80`) + Statistical Breakout ($|z| \ge 2.0\sigma$).
-  - *Analyst Routing Justification*: Empirical log analysis across all live analyst events confirmed that analyst price-target changes trigger immediate directional momentum (`ALIGNMENT`). Routing them to MOMENTUM captures post-upgrade drift rather than attempting to fade institutional revisions.
+  - *Analyst Routing Note*: `analyst` events currently route to `MOMENTUM` in `risk_engine.py`. An earlier commit note (`2d3208b`) stated that all 35 historical analyst events showed `ALIGNMENT`, but ground-truth inspection of `logs/sentinel_trades.jsonl` shows that 33 of those 36 early records were `SKIPPED_NO_ASSET_MATCH` (which default `direction_alignment` to `"ALIGNMENT"` without price/LLM evaluation). Across the 60 matched-asset `analyst` events in the full live log, the empirical distribution is 28 `ALIGNMENT` (46.7%), 19 `CONTRADICTION` (31.7%), and 13 `NEUTRAL` (21.7%); full base-rate validation remains mixed.
 - **Portfolio Defense Rules**:
-  - Fixed **3% portfolio sizing** per trade.
-  - Hard stop loss at **1.5% from entry**.
-  - Take-profit target at **3.0%**.
-  - Maximum **2 concurrent open positions**.
-  - Daily loss limit of **2% of portfolio** (automatic circuit-breaker trading halt).
+  - Fixed **5% portfolio sizing** per trade (`POSITION_SIZE_PCT = 0.05` against Bitget Demo Multi-Asset Union Margin `unionTotalMargin` $\approx \$62,858.40$).
+  - Hard stop loss at **1.5% from entry** (`STOP_LOSS_PCT = 0.015`).
+  - Take-profit target at **3.0%** (`TAKE_PROFIT_PCT = 0.03`).
+  - Maximum **3 concurrent open positions** (`MAX_OPEN_POSITIONS = 3`).
+  - Daily loss limit of **3% of portfolio** (`DAILY_LOSS_LIMIT_PCT = 0.03`, automatic circuit-breaker trading halt).
 
 #### 5. Smart Hybrid Execution Router & Logger (`execution.py`)
-- **Dynamic Contract Discovery**: Queries Bitget Demo's live contract specifications (`/api/v2/mix/market/contracts`) to route supported contracts (`NVDA`, `TSLA`, `AAPL`, `AMZN`, etc.) directly to Bitget's matching engine via HMAC-SHA256 REST orders.
-- **Seamless Paper Fallback**: Unlisted demo contracts (`MSFT`, `PLTR`, etc.) are seamlessly captured in client-side simulation without exchange rejection errors.
+- **Dynamic Contract Discovery**: Queries Bitget Demo's live contract specifications (`/api/v2/mix/market/contracts?productType=usdt-futures`) to route the 8 exchange-listed equity contracts (`NVDAUSDT`, `TSLAUSDT`, `AAPLUSDT`, `GOOGLUSDT`, `AMZNUSDT`, `METAUSDT`, `COINUSDT`, `MSTRUSDT`) directly to Bitget's Demo matching engine via authenticated HMAC-SHA256 REST orders.
+- **Client-Side Simulation Fallback**: The 7 tracked equities not listed on Bitget Demo (`MSFT`, `AMD`, `INTC`, `ARM`, `PLTR`, `BABA`, `NFLX`) are routed to local client-side simulation and explicitly tagged `[Smart Hybrid: Paper Fallback]` (`status: "DRY_RUN_SIMULATED"`).
 - Appends immutable audit records to `logs/sentinel_trades.jsonl` and `logs/sentinel_trades.csv`.
 
 ---
 
-## 4. Tracked Asset Universe (All 17 Bitget Demo Contracts)
+## 4. Tracked Asset Universe (15 Equities + 2 Reference Benchmarks)
 
-Sentinel actively tracks the complete tokenized equity catalog available on Bitget USDT-Futures:
+Sentinel tracks 15 single-stock equities (8 listed on Bitget Demo USDT-Futures and 7 evaluated via Yahoo Finance extended-hours data with client-side paper simulation) against 2 reference benchmarks:
 
-| Category | Count | Tickers / Contracts | Benchmark Routing |
-|---|:---:|---|:---:|
-| **Semiconductor & Hardware** | 5 | `NVDA`, `AMD`, `INTC`, `ARM`, `AAPL` | `QQQ` (Invesco Nasdaq-100) |
-| **Enterprise Cloud & AI** | 4 | `MSFT`, `GOOGL`, `AMZN`, `PLTR` | `QQQ` (Invesco Nasdaq-100) |
-| **Consumer Tech & Media** | 3 | `TSLA`, `META`, `NFLX` | `QQQ` (Invesco Nasdaq-100) |
-| **Crypto-Correlated Equities** | 2 | `COIN` (Coinbase), `MSTR` (MicroStrategy) | Primary: `QQQ` · Secondary: `BTC` |
-| **China Tech ADR** | 1 | `BABA` (Alibaba) | `QQQ` (Invesco Nasdaq-100) |
-| **Benchmark Index Contracts** | 2 | `QQQUSDT`, `SPYUSDT` | Reference Baselines |
+| Category | Count | Bitget Demo Listed (`FILLED`) | Unlisted / Client-Side Simulated (`DRY_RUN_SIMULATED`) | Benchmark Routing |
+|---|:---:|---|---|:---:|
+| **Semiconductor & Hardware** | 5 | `NVDA` ($\beta=1.35$), `AAPL` ($\beta=1.05$) | `AMD` ($\beta=1.40$), `INTC` ($\beta=1.10$), `ARM` ($\beta=1.55$) | `QQQ` (6-Peer Composite) |
+| **Enterprise Cloud & AI** | 4 | `GOOGL` ($\beta=1.10$), `AMZN` ($\beta=1.20$) | `MSFT` ($\beta=1.15$), `PLTR` ($\beta=1.65$) | `QQQ` (6-Peer Composite) |
+| **Consumer Tech & Media** | 3 | `TSLA` ($\beta=1.45$), `META` ($\beta=1.25$) | `NFLX` ($\beta=1.20$) | `QQQ` (6-Peer Composite) |
+| **Crypto-Correlated Equities** | 2 | `COIN` ($\beta=2.20$), `MSTR` ($\beta=2.50$) | — | Primary: `QQQ` · Secondary: `BTC` (`BTCUSDT`) |
+| **China Tech ADR** | 1 | — | `BABA` ($\beta=0.95$) | `QQQ` (6-Peer Composite) |
+| **Reference Benchmarks** | 2 | `BTCUSDT` (Exchange Contract) | `QQQ` (Equal-Weighted Composite of `NVDA`, `AAPL`, `GOOGL`, `AMZN`, `META`, `TSLA`) | Reference Baselines |
 
 > **Crypto-Correlated Equities Architecture Note:** `COIN` and `MSTR` are assigned `QQQ` as their primary equity benchmark to maintain mathematical parity across the 15-stock pipeline, while documenting that their primary fundamental risk driver is spot Bitcoin volatility. Their higher initial betas ($\beta = 2.20$ and $2.50$) absorb this crypto-driven variance.
 
@@ -114,7 +115,7 @@ Sentinel actively tracks the complete tokenized equity catalog available on Bitg
 ### 1. Run Complete Test Suite (Zero External Dependencies)
 ```bash
 python3 -m unittest discover -s tests -v
-# Output: Ran 65 tests in ~3.0s — OK (100% pass rate)
+# Output: Ran 66 tests in ~3.3s — OK (100% pass rate)
 ```
 
 ### 2. Historical Replay (Backtest Validation)
@@ -158,10 +159,16 @@ npm run preview # Preview production build locally
 ## 7. Audit Trail & Verification Telemetry
 
 The canonical record of all autonomous decisions is maintained in `logs/`:
-* **`logs/sentinel_trades.jsonl`**: Complete JSON Lines log containing every evaluated event, benchmark move, beta, residual z-score, volume ratio, Qwen classification, risk gate outcome, and paper execution status.
+* **`logs/sentinel_trades.jsonl`**: Complete JSON Lines log spanning **485.9 hours** of `mode="live"` monitoring (`2026-09-17 18:53 UTC` to `2026-10-08 00:45 UTC`) across **3,175 live event evaluations** (`3,217` total records including `8` `backtest`, `26` `live_dryrun_mock`, and `8` test records).
+  * **Live LLM vs. Deterministic Fallback Provenance (`3,175` live records)**: `142` real-time Groq `qwen/qwen3.8-27b [live_api]` classifications, `343` deterministic keyword fallback classifications (`fallback_rules [...]`), and `2,690` pre-filtered `SKIPPED_NO_ASSET_MATCH` events (`llm_source: "skipped"`).
+  * **Live Execution Breakdown (Strictly Separated by Route)**:
+    * **Bitget Demo Exchange-Executed Trades (`BitgetAgentHubClient [Demo Environment: api.bitget.com]`)**: **16 closed trades** across exchange-listed contracts (`NVDA`: 5, `TSLA`: 3, `AAPL`: 3, `AMZN`: 2, `META`: 1, `MSTR`: 1, `COIN`: 1) — **11 wins / 5 losses (68.8% win rate), `+$338.49` realized P&L** (0 positions currently open).
+    * **Client-Side Simulated Fallback Trades (`[Smart Hybrid: Paper Fallback]`)**: **12 closed simulated trades** on unlisted tickers (`AMD`: 4, `MSFT`: 3, `PLTR`: 2, `NFLX`: 2, `INTC`: 1) — **12 wins / 0 losses (100.0% win rate), `+$418.61` client-side simulated P&L**.
+    * **Rejected / Skipped**: **457 `NO_TRADE`** risk-gate rejections and **2,690 `SKIPPED_NO_ASSET_MATCH`** events.
 * **`logs/sentinel_trades.csv`**: Tabular export of all logged decisions.
 * **`logs/submission_audit_trail.csv`**: Verified competition dataset (distinguishing live vs calibration backtest data).
-* **`logs/heartbeat.log`**: Hourly supervisor heartbeats recording process health and continuous **147+ hours unattended monitoring span** (545+ live event decisions recorded).
+* **`logs/heartbeat.log`**: Hourly supervisor heartbeats recording process health.
+* **Pre-Competition Manual Connectivity Test Disclosure (Sept 16, 2026)**: Prior to starting the autonomous live log on `2026-09-17 18:53 UTC`, manual API connectivity test fills on `NVDAUSDT` and `TSLAUSDT` on Sept 16 incurred an initial `~$0.0515` balance adjustment (and `~$1.34` cumulative fee/test delta against the initial `5,000.00 USDT` allocation, leaving `4,998.66 USDT` cash alongside `0.4 BTC` and `9.0 ETH` in Bitget Demo Multi-Asset Union Margin). These manual connectivity tests are excluded from autonomous agent trade metrics.
 
 ---
 
