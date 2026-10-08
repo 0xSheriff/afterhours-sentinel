@@ -4316,9 +4316,9 @@
     "signals_aligned": "3/3 signals aligned",
     "position_size": 3074.97,
     "stop_price": 636.9995,
-    "exit_price": 0,
-    "exit_reason": "OPEN",
-    "pnl": 0,
+    "exit_price": 655.1168,
+    "exit_reason": "TIME_EXIT_4H_POST_CATALYST",
+    "pnl": 40.02,
     "reason": "LONG signal approved: Price dumped -0.42% on bullish event with weak volume (0.40) and high divergence (z=+2.29).",
     "divergence": 0.018311,
     "id": 92
