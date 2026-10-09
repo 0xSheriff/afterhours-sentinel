@@ -5,6 +5,10 @@
 *.pem
 *.key
 
+# Local AI Memory & Scratch Notes
+memory.md
+
+
 # Dependencies
 node_modules/
 dashboard/node_modules/
