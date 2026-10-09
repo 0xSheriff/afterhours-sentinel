@@ -1637,9 +1637,9 @@
     "signals_aligned": "3/3 signals aligned",
     "position_size": 3003,
     "stop_price": 195.5824,
-    "exit_price": 0,
-    "exit_reason": "OPEN",
-    "pnl": 0,
+    "exit_price": 204.5176,
+    "exit_reason": "TAKE_PROFIT_MOMENTUM",
+    "pnl": 90.09,
     "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.69 >= 0.8) and statistical significance (z=+9.61).",
     "divergence": 0.076885,
     "id": 35
