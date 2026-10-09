@@ -616,19 +616,24 @@ export default function App() {
             {/* Logo / Wordmark */}
             <div
               onClick={() => navigateTo('Home')}
-              className="flex items-center gap-3 cursor-pointer group select-none"
+              className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group select-none"
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && navigateTo('Home')}
+              aria-label="AfterHours Sentinel Home"
             >
-              <div
-                className="w-8 h-8 rounded-xl flex items-center justify-center font-display font-black text-sm transition-transform duration-200 group-hover:scale-105 shadow-sm"
-                style={{ background: 'var(--brand-chartreuse)', color: '#0D0F12' }}
-              >
-                AH
-              </div>
-              <div className="flex flex-col">
+              <img
+                src="/favicon.svg"
+                alt="AfterHours Sentinel Mark"
+                width={36}
+                height={36}
+                className="w-9 h-9 rounded-xl shadow-sm transition-transform duration-200 group-hover:scale-105 shrink-0 object-contain"
+              />
+              <div className="hidden sm:flex flex-col">
                 <span className="font-display font-black text-lg sm:text-xl tracking-tight leading-none group-hover:opacity-90 transition-opacity">
                   AfterHours Sentinel
                 </span>
-                <span className="text-[10px] font-mono-data tracking-wider uppercase" style={{ color: 'var(--text-muted)' }}>
+                <span className="text-[10px] font-mono-data tracking-wider uppercase mt-1" style={{ color: 'var(--text-muted)' }}>
                   Autonomous rToken Agent
                 </span>
               </div>
@@ -730,7 +735,16 @@ export default function App() {
         <main className="flex-1">
           {isLoading ? (
             <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-4">
-              <div className="w-10 h-10 border-2 rounded-full animate-spin" style={{ borderColor: 'var(--border-hairline)', borderTopColor: 'var(--brand-chartreuse)' }} />
+              <div className="relative flex items-center justify-center">
+                <div className="w-12 h-12 border-2 rounded-full animate-spin" style={{ borderColor: 'var(--border-hairline)', borderTopColor: 'var(--brand-chartreuse)' }} />
+                <img
+                  src="/favicon.svg"
+                  alt="Loading AfterHours Sentinel"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6 rounded-md absolute object-contain"
+                />
+              </div>
               <div className="font-mono-data text-xs tracking-wider uppercase text-center" style={{ color: 'var(--text-muted)' }}>
                 Syncing Autonomous Audit Trail...
               </div>
@@ -1091,12 +1105,21 @@ export default function App() {
                 {/* 1.5 Full Landing Page Footer (Only displayed on Home) */}
                 <footer className="border-t pt-12 mt-16" style={{ borderColor: 'var(--border-hairline)' }}>
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-                    <div className="space-y-1 text-center sm:text-left">
-                      <div className="font-display font-black text-lg">
-                        AfterHours Sentinel
-                      </div>
-                      <div className="text-xs font-mono-data" style={{ color: 'var(--text-muted)' }}>
-                        Bitget AI Base Camp Hackathon S2 · Agentic Trading Track
+                    <div className="flex items-center gap-3 text-center sm:text-left">
+                      <img
+                        src="/favicon.svg"
+                        alt="AfterHours Sentinel"
+                        width={36}
+                        height={36}
+                        className="w-9 h-9 rounded-xl shadow-sm shrink-0 object-contain"
+                      />
+                      <div className="space-y-0.5">
+                        <div className="font-display font-black text-lg">
+                          AfterHours Sentinel
+                        </div>
+                        <div className="text-xs font-mono-data" style={{ color: 'var(--text-muted)' }}>
+                          Bitget AI Base Camp Hackathon S2 · Agentic Trading Track
+                        </div>
                       </div>
                     </div>
 
@@ -1845,8 +1868,15 @@ export default function App() {
         {activeScreen !== 'Home' && (
           <footer className="border-t py-4 mt-8" style={{ borderColor: 'var(--border-hairline)' }}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs" style={{ color: 'var(--text-muted)' }}>
-              <div className="font-display font-bold">
-                AfterHours Sentinel · Autonomous rToken Event-Driven Agent
+              <div className="flex items-center gap-2 font-display font-bold">
+                <img
+                  src="/favicon.svg"
+                  alt="AfterHours Sentinel"
+                  width={18}
+                  height={18}
+                  className="w-4.5 h-4.5 rounded shrink-0 object-contain"
+                />
+                <span>AfterHours Sentinel · Autonomous rToken Event-Driven Agent</span>
               </div>
               <div className="font-mono-data">
                 Bitget Agent Hub Demo Integration
