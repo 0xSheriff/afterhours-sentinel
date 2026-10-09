@@ -38,7 +38,7 @@ def run_cmd(cmd, cwd=BASE_DIR, timeout=60):
         return -1, "", str(e)
 
 def sync_records():
-    code, out, err = run_cmd("node dashboard/scripts/convert-csv.cjs", timeout=30)
+    code, out, err = run_cmd("env -u NODE_CHANNEL_FD -u NODE_CHANNEL_SERIALIZATION_MODE node dashboard/scripts/convert-csv.cjs", timeout=30)
     if code != 0:
         logging.warning(f"convert-csv.cjs warning: {err or out}")
     return code == 0
@@ -62,7 +62,18 @@ def push_updates():
         "logs/sentinel_trades.jsonl",
         "logs/sentinel_trades.csv"
     ]
-    run_cmd(f"git add {' '.join(files_to_stage)}", timeout=30)
+    add_code, add_out, add_err = run_cmd(f"git add {' '.join(files_to_stage)}", timeout=30)
+    if add_code != 0:
+        logging.error(f"git add failed (code={add_code}): {add_err or add_out}")
+        lock_path = os.path.join(BASE_DIR, ".git", "index.lock")
+        if os.path.exists(lock_path):
+            try:
+                if time.time() - os.path.getmtime(lock_path) > 60:
+                    os.remove(lock_path)
+                    logging.warning("Removed stale .git/index.lock file")
+            except Exception as e:
+                logging.error(f"Failed removing stale lock: {e}")
+        return False
     
     code, _, _ = run_cmd("git diff --cached --quiet", timeout=20)
     if code == 0:
