@@ -379,6 +379,7 @@ export default function App() {
   const [filterSymbol, setFilterSymbol] = useState('')
   const [scrolled, setScrolled] = useState(false)
   const [records, setRecords] = useState([])
+  const [summary, setSummary] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [isDemo, setIsDemo] = useState(false)
   const [lastRefreshed, setLastRefreshed] = useState(null)
@@ -388,7 +389,22 @@ export default function App() {
       if (!silent) setIsLoading(true)
       const baseUrl = import.meta.env.BASE_URL || './'
       const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`
-      const url = `${normalizedBase}data/records.json?_t=${Date.now()}`
+
+      // 1. Fetch precomputed summary with stable URL (~3KB payload)
+      let summaryData = null
+      try {
+        const summaryRes = await fetch(`${normalizedBase}data/summary.json`)
+        if (summaryRes.ok) {
+          summaryData = await summaryRes.json()
+          setSummary(summaryData)
+        }
+      } catch (sErr) {
+        console.warn('Dashboard summary fetch warning:', sErr)
+      }
+
+      // 2. Fetch lean records.json using version token from summary (or stable URL)
+      const versionParam = summaryData?.version ? `?v=${encodeURIComponent(summaryData.version)}` : ''
+      const url = `${normalizedBase}data/records.json${versionParam}`
       const res = await fetch(url)
       if (!res.ok) {
         throw new Error(`HTTP ${res.status}: failed to fetch records.json`)
@@ -434,6 +450,30 @@ export default function App() {
 
   // 1. LIVE PAPER TRADING STATS (Strict separation)
   const liveStats = useMemo(() => {
+    if (summary?.live) {
+      const s = summary.live
+      return {
+        total: s.total,
+        tradesCount: s.trades_count,
+        winsCount: s.wins_count,
+        winRate: s.win_rate != null ? s.win_rate : null,
+        totalPnl: s.total_pnl,
+        sharpeRatio: s.sharpe_ratio,
+        maxDdUsd: s.max_drawdown_usd,
+        maxDdPct: typeof s.max_drawdown_pct === 'number' ? s.max_drawdown_pct.toFixed(3) : s.max_drawdown_pct,
+        durationHrs: s.duration_hours,
+        startTime: s.start_time,
+        endTime: s.end_time,
+        liveCalls: s.live_calls,
+        fallbackCalls: s.fallback_calls,
+        skippedCalls: s.skipped_calls,
+        evaluatedCalls: s.evaluated_calls,
+        liveCallRate: s.live_call_rate,
+        noTrades: s.no_trades,
+        skipped: s.skipped_calls
+      }
+    }
+
     const liveRecs = records.filter(isLiveMode)
     if (!liveRecs.length) return null
 
@@ -515,10 +555,22 @@ export default function App() {
       noTrades,
       skipped
     }
-  }, [records])
+  }, [summary, records])
 
   // 2. BACKTEST CALIBRATION STATS (Secondary validation sample)
   const backtestStats = useMemo(() => {
+    if (summary?.backtest && summary.backtest.total > 0) {
+      const b = summary.backtest
+      return {
+        total: b.total,
+        tradesCount: b.trades_count,
+        winsCount: b.wins_count,
+        winRate: b.win_rate != null ? b.win_rate : '0',
+        totalPnl: b.total_pnl,
+        noTrades: b.no_trades
+      }
+    }
+
     const btRecs = records.filter(isBacktestMode)
     if (!btRecs.length) return null
 
@@ -541,7 +593,7 @@ export default function App() {
       maxT,
       noTrades
     }
-  }, [records])
+  }, [summary, records])
 
   // Filtered records for Decision Feed
   const filteredRecords = useMemo(() => {
