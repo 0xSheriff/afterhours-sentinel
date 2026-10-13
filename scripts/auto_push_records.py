@@ -47,6 +47,10 @@ def check_uncommitted():
     files_to_check = [
         "dashboard/public/data/records.json",
         "dashboard/src/data/records.json",
+        "dashboard/public/data/records-full.json",
+        "dashboard/src/data/records-full.json",
+        "dashboard/public/data/summary.json",
+        "dashboard/src/data/summary.json",
         "logs/sentinel_trades.jsonl",
         "logs/sentinel_trades.csv"
     ]
@@ -59,6 +63,10 @@ def push_updates():
     files_to_stage = [
         "dashboard/public/data/records.json",
         "dashboard/src/data/records.json",
+        "dashboard/public/data/records-full.json",
+        "dashboard/src/data/records-full.json",
+        "dashboard/public/data/summary.json",
+        "dashboard/src/data/summary.json",
         "logs/sentinel_trades.jsonl",
         "logs/sentinel_trades.csv"
     ]
