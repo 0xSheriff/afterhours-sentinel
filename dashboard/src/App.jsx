@@ -377,6 +377,8 @@ export default function App() {
   const [filterMode, setFilterMode] = useState('all')     // all | live | backtest
   const [filterSource, setFilterSource] = useState(initialSource) // all | live | fallback | skipped
   const [filterSymbol, setFilterSymbol] = useState('')
+  const [feedPage, setFeedPage] = useState(1)
+  const FEED_PAGE_SIZE = 50
   const [scrolled, setScrolled] = useState(false)
   const [records, setRecords] = useState([])
   const [summary, setSummary] = useState(null)
@@ -606,6 +608,18 @@ export default function App() {
     if (filterSymbol) r = r.filter(rec => rec.event_headline?.toLowerCase().includes(filterSymbol.toLowerCase()))
     return r.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
   }, [records, filterMode, filterSource, filterSymbol])
+
+  // Reset feedPage to 1 whenever any filter changes
+  useEffect(() => {
+    setFeedPage(1)
+  }, [filterMode, filterSource, filterSymbol])
+
+  const totalPages = Math.max(1, Math.ceil(filteredRecords.length / FEED_PAGE_SIZE))
+
+  const paginatedRecords = useMemo(() => {
+    const start = (feedPage - 1) * FEED_PAGE_SIZE
+    return filteredRecords.slice(start, start + FEED_PAGE_SIZE)
+  }, [filteredRecords, feedPage])
 
   // Featured decision: prioritize explicitly selected ID, then latest approved live trade, then latest live record
   const featuredRecord = useMemo(() => {
@@ -1571,7 +1585,7 @@ export default function App() {
                         </tr>
                       </thead>
                       <tbody>
-                        {filteredRecords.map((r, idx) => {
+                        {paginatedRecords.map((r, idx) => {
                           const cat = getLLMSourceCategory(r)
                           const barColor = cat === 'live'
                             ? 'var(--brand-chartreuse)'
@@ -1584,7 +1598,7 @@ export default function App() {
                               key={`${r.id}-${r.timestamp}`}
                               initial={{ opacity: 0, y: 4 }}
                               animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.2, delay: Math.min(idx * 0.015, 0.35) }}
+                              transition={{ duration: 0.15, delay: Math.min(idx * 0.008, 0.2) }}
                               onClick={() => selectAndViewDetail(r)}
                               className="group cursor-pointer transition-colors"
                               style={{
@@ -1630,6 +1644,70 @@ export default function App() {
                     </table>
                   </div>
                 </div>
+
+                {/* Pagination Controls */}
+                {totalPages > 1 && (
+                  <div
+                    className="flex flex-wrap items-center justify-between gap-4 px-4 py-3 rounded-2xl border"
+                    style={{
+                      background: 'var(--bg-surface)',
+                      borderColor: 'var(--border-hairline)'
+                    }}
+                  >
+                    <div className="text-xs font-mono-data" style={{ color: 'var(--text-muted)' }}>
+                      Showing{' '}
+                      <span className="font-bold" style={{ color: 'var(--text-primary)' }}>
+                        {filteredRecords.length > 0 ? (feedPage - 1) * FEED_PAGE_SIZE + 1 : 0}–{Math.min(feedPage * FEED_PAGE_SIZE, filteredRecords.length)}
+                      </span>{' '}
+                      of{' '}
+                      <span className="font-bold" style={{ color: 'var(--text-primary)' }}>
+                        {filteredRecords.length}
+                      </span>{' '}
+                      records
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => {
+                          setFeedPage(p => Math.max(1, p - 1))
+                          window.scrollTo({ top: 0, behavior: 'smooth' })
+                        }}
+                        disabled={feedPage <= 1}
+                        className="px-3 py-1.5 rounded-lg text-xs font-semibold font-display transition-opacity disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                        style={{
+                          background: 'var(--bg-surface-elevated)',
+                          border: '1px solid var(--border-hairline)',
+                          color: 'var(--text-primary)'
+                        }}
+                      >
+                        ← Previous
+                      </button>
+
+                      <span
+                        className="px-3 py-1.5 text-xs font-mono-data rounded-lg"
+                        style={{ background: 'var(--bg-surface-elevated)', color: 'var(--text-secondary)' }}
+                      >
+                        Page {feedPage} of {totalPages}
+                      </span>
+
+                      <button
+                        onClick={() => {
+                          setFeedPage(p => Math.min(totalPages, p + 1))
+                          window.scrollTo({ top: 0, behavior: 'smooth' })
+                        }}
+                        disabled={feedPage >= totalPages}
+                        className="px-3 py-1.5 rounded-lg text-xs font-semibold font-display transition-opacity disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                        style={{
+                          background: 'var(--bg-surface-elevated)',
+                          border: '1px solid var(--border-hairline)',
+                          color: 'var(--text-primary)'
+                        }}
+                      >
+                        Next →
+                      </button>
+                    </div>
+                  </div>
+                )}
               </motion.div>
             )}
 
