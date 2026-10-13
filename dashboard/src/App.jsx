@@ -125,7 +125,7 @@ export function formatEnumLabel(val) {
 }
 
 function isLiveMode(r) {
-  return r.mode === 'live'
+  return (r?.mode || '').toLowerCase().includes('live')
 }
 function isBacktestMode(r) {
   return r.mode === 'backtest' || r.mode === 'historical_replay'
@@ -381,10 +381,34 @@ export default function App() {
   const FEED_PAGE_SIZE = 50
   const [scrolled, setScrolled] = useState(false)
   const [records, setRecords] = useState([])
+  const [fullRecords, setFullRecords] = useState(null)
+  const [isLoadingFull, setIsLoadingFull] = useState(false)
   const [summary, setSummary] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [isDemo, setIsDemo] = useState(false)
   const [lastRefreshed, setLastRefreshed] = useState(null)
+
+  const loadFullRecords = useCallback(async () => {
+    if (fullRecords || isLoadingFull) return
+    try {
+      setIsLoadingFull(true)
+      const baseUrl = import.meta.env.BASE_URL || './'
+      const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`
+      const versionParam = summary?.version ? `?v=${encodeURIComponent(summary.version)}` : ''
+      const res = await fetch(`${normalizedBase}data/records-full.json${versionParam}`)
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}: failed to fetch records-full.json`)
+      }
+      const data = await res.json()
+      if (Array.isArray(data)) {
+        setFullRecords(data)
+      }
+    } catch (err) {
+      console.warn('Dashboard full audit records fetch warning:', err)
+    } finally {
+      setIsLoadingFull(false)
+    }
+  }, [fullRecords, isLoadingFull, summary])
 
   const loadRecords = useCallback(async (silent = false) => {
     try {
@@ -597,9 +621,23 @@ export default function App() {
     }
   }, [summary, records])
 
+  // Trigger on-demand loading of full audit log when user requests skipped records or complete audit trail
+  useEffect(() => {
+    if ((filterSource === 'skipped' || filterSource === 'all_with_skipped') && !fullRecords && !isLoadingFull) {
+      loadFullRecords()
+    }
+  }, [filterSource, fullRecords, isLoadingFull, loadFullRecords])
+
+  const sourceRecords = useMemo(() => {
+    if (fullRecords && (filterSource === 'skipped' || filterSource === 'all_with_skipped')) {
+      return fullRecords
+    }
+    return records
+  }, [fullRecords, filterSource, records])
+
   // Filtered records for Decision Feed
   const filteredRecords = useMemo(() => {
-    let r = [...records]
+    let r = [...sourceRecords]
     if (filterMode === 'live') r = r.filter(isLiveMode)
     if (filterMode === 'backtest') r = r.filter(isBacktestMode)
     if (filterSource === 'live') r = r.filter(isLiveCall)
@@ -607,7 +645,7 @@ export default function App() {
     if (filterSource === 'skipped') r = r.filter(isSkippedCall)
     if (filterSymbol) r = r.filter(rec => rec.event_headline?.toLowerCase().includes(filterSymbol.toLowerCase()))
     return r.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-  }, [records, filterMode, filterSource, filterSymbol])
+  }, [sourceRecords, filterMode, filterSource, filterSymbol])
 
   // Reset feedPage to 1 whenever any filter changes
   useEffect(() => {
@@ -624,7 +662,7 @@ export default function App() {
   // Featured decision: prioritize explicitly selected ID, then latest approved live trade, then latest live record
   const featuredRecord = useMemo(() => {
     if (selectedId != null) {
-      const found = records.find(r => r.id === selectedId)
+      const found = (fullRecords || records).find(r => r.id === selectedId)
       if (found) return found
     }
     const liveTrades = records.filter(r => isLiveMode(r) && (r.decision === 'LONG' || r.decision === 'SHORT'))
@@ -636,9 +674,16 @@ export default function App() {
       return [...liveRecs].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))[0]
     }
     return records[0] || null
-  }, [records, selectedId])
+  }, [records, fullRecords, selectedId])
 
-  const selectedRecord = selectedId != null ? records.find(r => r.id === selectedId) : null
+  const selectedRecord = useMemo(() => {
+    if (selectedId == null) return null
+    if (fullRecords) {
+      const found = fullRecords.find(r => r.id === selectedId)
+      if (found) return found
+    }
+    return records.find(r => r.id === selectedId) || null
+  }, [selectedId, fullRecords, records])
 
   function selectAndViewDetail(record) {
     setSelectedId(record.id)
@@ -1420,11 +1465,19 @@ export default function App() {
                             <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Risk Gate Evaluated &amp; Blocked (No Trade)</div>
                           </div>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="p-2.5 rounded-xl text-lg" style={{ background: 'var(--badge-skipped-bg)', color: 'var(--badge-skipped-text)' }}>⏭️</div>
+                        <div
+                          onClick={() => {
+                            setFilterSource('skipped')
+                            loadFullRecords()
+                            navigateTo('Decision Feed')
+                          }}
+                          className="flex items-center gap-3 cursor-pointer group hover:opacity-90 transition-opacity"
+                          title="Click to view Pre-Filter Skipped events in Decision Feed"
+                        >
+                          <div className="p-2.5 rounded-xl text-lg group-hover:scale-105 transition-transform" style={{ background: 'var(--badge-skipped-bg)', color: 'var(--badge-skipped-text)' }}>⏭️</div>
                           <div>
                             <div className="font-mono-data text-lg font-bold">{liveStats.skippedCalls}</div>
-                            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>Pre-Filter Skipped (No Target Equity Ticker)</div>
+                            <div className="text-xs group-hover:underline transition-all" style={{ color: 'var(--text-muted)' }}>Pre-Filter Skipped (No Target Equity Ticker) →</div>
                           </div>
                         </div>
                       </div>
@@ -1535,7 +1588,13 @@ export default function App() {
                     {/* Source Filter: Live API vs Fallback vs Skipped */}
                     <select
                       value={filterSource}
-                      onChange={e => setFilterSource(e.target.value)}
+                      onChange={e => {
+                        const val = e.target.value
+                        setFilterSource(val)
+                        if (val === 'skipped' || val === 'all_with_skipped') {
+                          loadFullRecords()
+                        }
+                      }}
                       className="px-3.5 py-2.5 rounded-xl text-sm outline-none font-display"
                       style={{
                         background: 'var(--bg-surface)',
@@ -1543,29 +1602,53 @@ export default function App() {
                         color: 'var(--text-primary)',
                       }}
                     >
-                      <option value="all">All Sources (Live, Fallback &amp; Skipped)</option>
-                      <option value="live">Live API Calls (Groq Qwen 3.8-27B)</option>
-                      <option value="fallback">Fallback Rules (Target Asset Matched)</option>
-                      <option value="skipped">Pre-Filter Skipped (No Target Asset)</option>
+                      <option value="all">Evaluated Decisions ({summary?.evaluated_count || records.length})</option>
+                      <option value="live">Live API Calls (Groq Qwen 3.8-27B — {summary?.live?.live_calls || '...'})</option>
+                      <option value="fallback">Fallback Rules ({summary?.live?.fallback_calls || 0})</option>
+                      <option value="skipped">Pre-Filter Skipped ({summary?.skipped_count || '3,800+'})</option>
+                      <option value="all_with_skipped">Complete Audit Trail (All {summary?.total_records || '5,900+'} Events)</option>
                     </select>
                   </div>
 
                   <div className="flex items-center gap-4 text-xs font-mono-data" style={{ color: 'var(--text-muted)' }}>
-                    <div className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={() => setFilterSource('live')}
+                      className="flex items-center gap-1.5 hover:underline cursor-pointer"
+                    >
                       <span className="w-2.5 h-2.5 rounded-sm" style={{ background: 'var(--brand-chartreuse)' }} />
                       <span>Live API</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setFilterSource('fallback')}
+                      className="flex items-center gap-1.5 hover:underline cursor-pointer"
+                    >
                       <span className="w-2.5 h-2.5 rounded-sm" style={{ background: '#F59E0B' }} />
                       <span>Fallback</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setFilterSource('skipped')
+                        loadFullRecords()
+                      }}
+                      className="flex items-center gap-1.5 hover:underline cursor-pointer"
+                    >
                       <span className="w-2.5 h-2.5 rounded-sm" style={{ background: '#818CF8' }} />
-                      <span>Pre-Filter Skipped</span>
-                    </div>
+                      <span>Pre-Filter Skipped ({summary?.skipped_count || '3,800+'})</span>
+                    </button>
                     <span className="font-bold">{filteredRecords.length} records</span>
                   </div>
                 </div>
+
+                {isLoadingFull && (
+                  <div className="p-4 rounded-xl border flex items-center justify-center gap-2 font-mono-data text-xs animate-pulse"
+                    style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-hairline)', color: '#818CF8' }}>
+                    <span className="inline-block w-2 h-2 rounded-full" style={{ background: '#818CF8' }} />
+                    <span>Loading pre-filter skipped events from full audit trail...</span>
+                  </div>
+                )}
 
                 {/* Table Container */}
                 <div className="rounded-2xl overflow-hidden border shadow-sm" style={{ borderColor: 'var(--border-hairline)' }}>

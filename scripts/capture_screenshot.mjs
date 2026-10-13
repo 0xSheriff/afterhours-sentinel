@@ -21,13 +21,14 @@ async function sleep(ms) {
 }
 
 async function getDebuggerUrl() {
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 40; i++) {
     try {
-      const res = await fetch(`http://127.0.0.1:${port}/json/version`);
-      const data = await res.json();
-      if (data.webSocketDebuggerUrl) return data.webSocketDebuggerUrl;
+      const res = await fetch(`http://127.0.0.1:${port}/json/list`);
+      const targets = await res.json();
+      const pageTarget = targets.find(t => t.type === 'page');
+      if (pageTarget && pageTarget.webSocketDebuggerUrl) return pageTarget.webSocketDebuggerUrl;
     } catch (e) {}
-    await sleep(200);
+    await sleep(250);
   }
   throw new Error('Chrome remote debugging did not respond');
 }
