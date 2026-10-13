@@ -621,15 +621,18 @@ export default function App() {
     }
   }, [summary, records])
 
-  // Trigger on-demand loading of full audit log when user requests skipped records or complete audit trail
+  // Trigger on-demand loading of full audit log when user requests complete audit trail or skipped records
   useEffect(() => {
-    if ((filterSource === 'skipped' || filterSource === 'all_with_skipped') && !fullRecords && !isLoadingFull) {
+    if ((filterSource === 'all' || filterSource === 'all_with_skipped' || filterSource === 'skipped') && !fullRecords && !isLoadingFull) {
       loadFullRecords()
     }
   }, [filterSource, fullRecords, isLoadingFull, loadFullRecords])
 
   const sourceRecords = useMemo(() => {
-    if (fullRecords && (filterSource === 'skipped' || filterSource === 'all_with_skipped')) {
+    if (fullRecords) {
+      if (filterSource === 'evaluated') {
+        return fullRecords.filter(r => r.decision !== 'SKIPPED_NO_ASSET_MATCH')
+      }
       return fullRecords
     }
     return records
@@ -640,6 +643,7 @@ export default function App() {
     let r = [...sourceRecords]
     if (filterMode === 'live') r = r.filter(isLiveMode)
     if (filterMode === 'backtest') r = r.filter(isBacktestMode)
+    if (filterSource === 'evaluated') r = r.filter(rec => rec.decision !== 'SKIPPED_NO_ASSET_MATCH')
     if (filterSource === 'live') r = r.filter(isLiveCall)
     if (filterSource === 'fallback') r = r.filter(isFallbackCall)
     if (filterSource === 'skipped') r = r.filter(isSkippedCall)
@@ -1585,13 +1589,13 @@ export default function App() {
                       <option value="backtest">Backtest Calibration Only</option>
                     </select>
 
-                    {/* Source Filter: Live API vs Fallback vs Skipped */}
+                    {/* Source Filter: Complete Audit Trail vs Evaluated vs Live vs Fallback vs Skipped */}
                     <select
-                      value={filterSource}
+                      value={filterSource === 'all_with_skipped' ? 'all' : filterSource}
                       onChange={e => {
                         const val = e.target.value
                         setFilterSource(val)
-                        if (val === 'skipped' || val === 'all_with_skipped') {
+                        if (val === 'all' || val === 'all_with_skipped' || val === 'skipped') {
                           loadFullRecords()
                         }
                       }}
@@ -1602,15 +1606,27 @@ export default function App() {
                         color: 'var(--text-primary)',
                       }}
                     >
-                      <option value="all">Evaluated Decisions ({summary?.evaluated_count || records.length})</option>
+                      <option value="all">Complete Audit Trail (All {summary?.total_records || '5,900+'} Events)</option>
+                      <option value="evaluated">Evaluated Decisions ({summary?.evaluated_count || records.length})</option>
                       <option value="live">Live API Calls (Groq Qwen 3.8-27B — {summary?.live?.live_calls || '...'})</option>
                       <option value="fallback">Fallback Rules ({summary?.live?.fallback_calls || 0})</option>
                       <option value="skipped">Pre-Filter Skipped ({summary?.skipped_count || '3,800+'})</option>
-                      <option value="all_with_skipped">Complete Audit Trail (All {summary?.total_records || '5,900+'} Events)</option>
                     </select>
                   </div>
 
                   <div className="flex items-center gap-4 text-xs font-mono-data" style={{ color: 'var(--text-muted)' }}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setFilterSource('all')
+                        loadFullRecords()
+                      }}
+                      className="flex items-center gap-1.5 hover:underline cursor-pointer"
+                      title="Show complete audit trail"
+                    >
+                      <span className="w-2.5 h-2.5 rounded-sm" style={{ background: '#38BDF8' }} />
+                      <span>All Events ({summary?.total_records || '5,900+'})</span>
+                    </button>
                     <button
                       type="button"
                       onClick={() => setFilterSource('live')}
@@ -1646,7 +1662,7 @@ export default function App() {
                   <div className="p-4 rounded-xl border flex items-center justify-center gap-2 font-mono-data text-xs animate-pulse"
                     style={{ background: 'var(--bg-surface)', borderColor: 'var(--border-hairline)', color: '#818CF8' }}>
                     <span className="inline-block w-2 h-2 rounded-full" style={{ background: '#818CF8' }} />
-                    <span>Loading pre-filter skipped events from full audit trail...</span>
+                    <span>Loading complete audit trail ({summary?.total_records || '5,900+'} events)...</span>
                   </div>
                 )}
 
