@@ -1,17 +1,17 @@
 {
-  "version": "1792081383339",
-  "generated_at": "2026-10-15T16:23:03.338Z",
-  "total_records": 7410,
-  "skipped_count": 4800,
-  "evaluated_count": 2604,
+  "version": "1792081508296",
+  "generated_at": "2026-10-15T16:25:08.295Z",
+  "total_records": 7413,
+  "skipped_count": 4801,
+  "evaluated_count": 2606,
   "decision_counts": {
     "LONG": 73,
     "SHORT": 22,
-    "NO_TRADE": 2515,
-    "SKIPPED_NO_ASSET_MATCH": 4800
+    "NO_TRADE": 2517,
+    "SKIPPED_NO_ASSET_MATCH": 4801
   },
   "live": {
-    "total": 7404,
+    "total": 7407,
     "trades_count": 93,
     "wins_count": 65,
     "win_rate": "69.9",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "10.84",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
-    "duration_hours": "704.6",
+    "duration_hours": "704.7",
     "start_time": 1789544649909,
-    "end_time": 1792081326853,
-    "live_calls": 2476,
+    "end_time": 1792081485104,
+    "live_calls": 2478,
     "fallback_calls": 128,
-    "skipped_calls": 4800,
-    "evaluated_calls": 2604,
+    "skipped_calls": 4801,
+    "evaluated_calls": 2606,
     "live_call_rate": "95",
-    "no_trades": 2511,
+    "no_trades": 2513,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.63 >= 0.8) and statistical significance (z=-2.24).",
       "divergence": -0.017889,
-      "id": 57
+      "id": 60
     },
     {
       "timestamp": "2026-10-15T14:17:25.456162+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -2.67% on bullish event with weak volume (0.29) and high divergence (z=+2.13).",
       "divergence": 0.017038,
-      "id": 111
+      "id": 114
     },
     {
       "timestamp": "2026-10-15T13:34:04.470094+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.63 >= 0.8) and statistical significance (z=+5.57).",
       "divergence": 0.044594,
-      "id": 144
+      "id": 147
     }
   ]
 }
