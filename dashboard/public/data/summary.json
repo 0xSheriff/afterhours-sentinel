@@ -1,6 +1,6 @@
 {
-  "version": "1792092169824",
-  "generated_at": "2026-10-15T19:22:49.823Z",
+  "version": "1792092296169",
+  "generated_at": "2026-10-15T19:24:56.168Z",
   "total_records": 7524,
   "skipped_count": 4866,
   "evaluated_count": 2652,
@@ -13,10 +13,10 @@
   "live": {
     "total": 7518,
     "trades_count": 93,
-    "wins_count": 67,
-    "win_rate": "72.0",
-    "total_pnl": 2537.52,
-    "sharpe_ratio": "11.27",
+    "wins_count": 68,
+    "win_rate": "73.1",
+    "total_pnl": 2575.76,
+    "sharpe_ratio": "11.45",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "707.6",
@@ -28,7 +28,7 @@
     "evaluated_calls": 2652,
     "live_call_rate": "95",
     "no_trades": 2559,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 93,
-      "pnl": 2537.52
+      "pnl": 2575.76
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-10-15T15:22:58.944920+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "INTC",
-      "event_headline": "TSMC CEO Hints Company Could Back Up Customers If Intel’s Advanced Packaging Ramp-Up Falls Short",
-      "event_type": "earnings",
-      "event_timestamp": "Thu, 15 Oct 2026 15:19:11 +0000",
-      "pre_event_price": 94.30500030517578,
-      "entry_price": 94.305,
-      "actual_move": -0.038881,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.020992,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.012863,
-      "beta": 1.6319,
-      "residual": -0.017889,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -2.24,
-      "z_threshold": 2,
-      "volume_ratio": 1.6317,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "TSMC's CEO suggesting they could back up customers if Intel's advanced packaging ramp-up falls short implies potential execution risks and competitive vulnerability for Intel in a critical growth area.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2978.13,
-      "stop_price": 95.7196,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.63 >= 0.8) and statistical significance (z=-2.24).",
-      "divergence": -0.017889,
-      "id": 171
-    }
-  ]
+  "open_positions": []
 }
