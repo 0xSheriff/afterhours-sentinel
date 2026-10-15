@@ -1,17 +1,17 @@
 {
-  "version": "1792083026437",
-  "generated_at": "2026-10-15T16:50:26.436Z",
-  "total_records": 7437,
-  "skipped_count": 4818,
-  "evaluated_count": 2613,
+  "version": "1792083153889",
+  "generated_at": "2026-10-15T16:52:33.889Z",
+  "total_records": 7440,
+  "skipped_count": 4820,
+  "evaluated_count": 2614,
   "decision_counts": {
     "LONG": 73,
     "SHORT": 22,
-    "NO_TRADE": 2524,
-    "SKIPPED_NO_ASSET_MATCH": 4818
+    "NO_TRADE": 2525,
+    "SKIPPED_NO_ASSET_MATCH": 4820
   },
   "live": {
-    "total": 7431,
+    "total": 7434,
     "trades_count": 93,
     "wins_count": 65,
     "win_rate": "69.9",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "705.1",
     "start_time": 1789544649909,
-    "end_time": 1792083025818,
-    "live_calls": 2485,
+    "end_time": 1792083152995,
+    "live_calls": 2486,
     "fallback_calls": 128,
-    "skipped_calls": 4818,
-    "evaluated_calls": 2613,
+    "skipped_calls": 4820,
+    "evaluated_calls": 2614,
     "live_call_rate": "95",
-    "no_trades": 2520,
+    "no_trades": 2521,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.63 >= 0.8) and statistical significance (z=-2.24).",
       "divergence": -0.017889,
-      "id": 84
+      "id": 87
     },
     {
       "timestamp": "2026-10-15T14:17:25.456162+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -2.67% on bullish event with weak volume (0.29) and high divergence (z=+2.13).",
       "divergence": 0.017038,
-      "id": 138
+      "id": 141
     },
     {
       "timestamp": "2026-10-15T13:34:04.470094+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.63 >= 0.8) and statistical significance (z=+5.57).",
       "divergence": 0.044594,
-      "id": 171
+      "id": 174
     }
   ]
 }
