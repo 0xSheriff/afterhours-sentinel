@@ -1,17 +1,17 @@
 {
-  "version": "1792167157577",
-  "generated_at": "2026-10-16T16:12:37.577Z",
-  "total_records": 8137,
-  "skipped_count": 5231,
-  "evaluated_count": 2900,
+  "version": "1792167282616",
+  "generated_at": "2026-10-16T16:14:42.616Z",
+  "total_records": 8141,
+  "skipped_count": 5234,
+  "evaluated_count": 2901,
   "decision_counts": {
     "LONG": 75,
     "SHORT": 28,
-    "NO_TRADE": 2803,
-    "SKIPPED_NO_ASSET_MATCH": 5231
+    "NO_TRADE": 2804,
+    "SKIPPED_NO_ASSET_MATCH": 5234
   },
   "live": {
-    "total": 8131,
+    "total": 8135,
     "trades_count": 101,
     "wins_count": 71,
     "win_rate": "70.3",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "728.5",
     "start_time": 1789544649909,
-    "end_time": 1792167132720,
+    "end_time": 1792167265047,
     "live_calls": 2759,
-    "fallback_calls": 141,
-    "skipped_calls": 5231,
-    "evaluated_calls": 2900,
+    "fallback_calls": 142,
+    "skipped_calls": 5234,
+    "evaluated_calls": 2901,
     "live_call_rate": "95",
-    "no_trades": 2799,
+    "no_trades": 2800,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +0.27% on bearish event with weak volume (0.02) and high divergence (z=+2.52).",
       "divergence": 0.020181,
-      "id": 7
+      "id": 11
     },
     {
       "timestamp": "2026-10-16T13:35:37.643586+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.66 >= 0.8) and statistical significance (z=-4.01).",
       "divergence": -0.032086,
-      "id": 123
+      "id": 127
     },
     {
       "timestamp": "2026-10-16T12:41:19.027534+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.87 >= 0.8) and statistical significance (z=-5.18).",
       "divergence": -0.04147,
-      "id": 161
+      "id": 165
     }
   ]
 }
