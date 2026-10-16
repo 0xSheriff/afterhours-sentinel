@@ -1,6 +1,6 @@
 {
-  "version": "1792118676574",
-  "generated_at": "2026-10-16T02:44:36.574Z",
+  "version": "1792118801592",
+  "generated_at": "2026-10-16T02:46:41.592Z",
   "total_records": 7703,
   "skipped_count": 4985,
   "evaluated_count": 2712,
@@ -15,8 +15,8 @@
     "trades_count": 96,
     "wins_count": 69,
     "win_rate": "71.9",
-    "total_pnl": 2640.4,
-    "sharpe_ratio": "11.43",
+    "total_pnl": 2595.67,
+    "sharpe_ratio": "11.09",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "715.0",
@@ -28,7 +28,7 @@
     "evaluated_calls": 2712,
     "live_call_rate": "95",
     "no_trades": 2616,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 96,
-      "pnl": 2640.4
+      "pnl": 2595.67
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -49,53 +49,6 @@
     }
   },
   "open_positions": [
-    {
-      "timestamp": "2026-10-16T01:30:33.956656+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "TSLA",
-      "event_headline": "Elon Musk Promised \"a Million Robotaxis\" by 2020. None Materialized, and a Dedicated Robotaxi Fleet Isn't Expected Until at Least 2027. Here's What That Track Record Means for Tesla's Valuation.",
-      "event_type": "product",
-      "event_timestamp": "Fri, 16 Oct 2026 01:25:00 +0000",
-      "pre_event_price": 362.42,
-      "entry_price": 362.42,
-      "actual_move": -0.00524,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.012379,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.004546,
-      "beta": 2.7231,
-      "residual": -0.017619,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -2.2,
-      "z_threshold": 2,
-      "volume_ratio": 1.6557,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The significant delay of the robotaxi fleet to 2027, coupled with a history of missed timelines, undermines the near-term revenue projections and valuation premium associated with Tesla's autonomous driving narrative.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2982.14,
-      "stop_price": 367.8563,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.66 >= 0.8) and statistical significance (z=-2.20).",
-      "divergence": -0.017619,
-      "id": 21
-    },
     {
       "timestamp": "2026-10-15T23:37:14.689437+00:00",
       "mode": "live",
