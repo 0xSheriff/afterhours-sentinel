@@ -1,6 +1,6 @@
 {
-  "version": "1792180845589",
-  "generated_at": "2026-10-16T20:00:45.589Z",
+  "version": "1792181121132",
+  "generated_at": "2026-10-16T20:05:21.132Z",
   "total_records": 8267,
   "skipped_count": 5296,
   "evaluated_count": 2965,
@@ -13,10 +13,10 @@
   "live": {
     "total": 8261,
     "trades_count": 103,
-    "wins_count": 73,
-    "win_rate": "70.9",
-    "total_pnl": 2710.9,
-    "sharpe_ratio": "10.94",
+    "wins_count": 74,
+    "win_rate": "71.8",
+    "total_pnl": 2718.12,
+    "sharpe_ratio": "10.98",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "732.3",
@@ -28,7 +28,7 @@
     "evaluated_calls": 2965,
     "live_call_rate": "95",
     "no_trades": 2862,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 103,
-      "pnl": 2710.9
+      "pnl": 2718.12
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "SHORT signal approved: Price pumped +0.25% on bearish event with weak volume (0.02) and high divergence (z=+3.11).",
       "divergence": 0.02492,
       "id": 87
-    },
-    {
-      "timestamp": "2026-10-16T16:04:49.695597+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "AAPL",
-      "event_headline": "Apple Could Face Downside Risk From Declining Wait Times for New iPhone Models, UBS Says",
-      "event_type": "other",
-      "event_timestamp": "Fri, 16 Oct 2026 15:57:31 +0000",
-      "pre_event_price": 344.52,
-      "entry_price": 344.52,
-      "actual_move": 0.00271,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.017471,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.010664,
-      "beta": 1.6383,
-      "residual": 0.020181,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 2.52,
-      "z_threshold": 2,
-      "volume_ratio": 0.0213,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bearish",
-      "price_direction": "bullish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "UBS's report highlights potential downside risk for Apple due to declining wait times for new iPhones, which suggests weaker initial demand or supply chain efficiency that could negatively impact sales expectations.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2960.13,
-      "stop_price": 349.6878,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved: Price pumped +0.27% on bearish event with weak volume (0.02) and high divergence (z=+2.52).",
-      "divergence": 0.020181,
-      "id": 137
     }
   ]
 }
