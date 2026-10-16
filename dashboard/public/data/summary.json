@@ -1,6 +1,6 @@
 {
-  "version": "1792121656614",
-  "generated_at": "2026-10-16T03:34:16.613Z",
+  "version": "1792121871729",
+  "generated_at": "2026-10-16T03:37:51.729Z",
   "total_records": 7713,
   "skipped_count": 4993,
   "evaluated_count": 2714,
@@ -13,10 +13,10 @@
   "live": {
     "total": 7707,
     "trades_count": 96,
-    "wins_count": 69,
-    "win_rate": "71.9",
-    "total_pnl": 2595.67,
-    "sharpe_ratio": "11.09",
+    "wins_count": 70,
+    "win_rate": "72.9",
+    "total_pnl": 2629.21,
+    "sharpe_ratio": "11.25",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "715.8",
@@ -28,7 +28,7 @@
     "evaluated_calls": 2714,
     "live_call_rate": "95",
     "no_trades": 2618,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 96,
-      "pnl": 2595.67
+      "pnl": 2629.21
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-10-15T23:37:14.689437+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "MSTR",
-      "event_headline": "MicroStrategy Could Be Removed From Major Global Stock Indexes",
-      "event_type": "other",
-      "event_timestamp": "Thu, 15 Oct 2026 23:08:51 +0000",
-      "pre_event_price": 148.66,
-      "entry_price": 148.66,
-      "actual_move": 0.04904,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.004163,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.000862,
-      "beta": 4.831,
-      "residual": 0.053203,
-      "residual_std": 0.011209,
-      "volatility_floor": 0.008,
-      "z_score": 4.75,
-      "z_threshold": 2,
-      "volume_ratio": 0.4393,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bearish",
-      "price_direction": "bullish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "Potential removal from major global stock indexes like MSCI would trigger forced selling by passive funds, creating significant downward pressure on MSTR's share price.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2985.8,
-      "stop_price": 150.8899,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved: Price pumped +4.90% on bearish event with weak volume (0.44) and high divergence (z=+4.75).",
-      "divergence": 0.053203,
-      "id": 58
-    }
-  ]
+  "open_positions": []
 }

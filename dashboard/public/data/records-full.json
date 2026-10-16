@@ -2718,9 +2718,9 @@
     "signals_aligned": "3/3 signals aligned",
     "position_size": 2985.8,
     "stop_price": 150.8899,
-    "exit_price": 0,
-    "exit_reason": "OPEN",
-    "pnl": 0,
+    "exit_price": 146.99,
+    "exit_reason": "TIME_EXIT_4H_POST_CATALYST",
+    "pnl": 33.54,
     "reason": "SHORT signal approved: Price pumped +4.90% on bearish event with weak volume (0.44) and high divergence (z=+4.75).",
     "divergence": 0.053203,
     "id": 58
