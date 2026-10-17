@@ -255,10 +255,76 @@ if (fs.existsSync(distDataDir)) {
   fs.writeFileSync(path.join(distDataDir, 'summary.json'), summaryJsonContent);
 }
 
-console.log(`Successfully generated 3 data files:`);
+// ── 4. pnl.json (dedicated lightweight trade ledger for P&L View, under 100 KB) ──
+const routeASymbols = new Set(['NVDA', 'TSLA', 'AAPL', 'AMZN', 'META', 'COIN', 'MSTR']);
+
+const allTrackedSymbols = ['NVDA', 'TSLA', 'AAPL', 'AMZN', 'META', 'COIN', 'MSTR', 'PLTR', 'AMD', 'INTC', 'MSFT', 'BABA', 'NFLX'];
+
+const pnlTrades = validRecords
+  .filter(r => r.decision === 'LONG' || r.decision === 'SHORT')
+  .map((t, idx) => {
+    let sym = t.symbol || '';
+    if (!sym) {
+      const txt = ((t.event_headline || '') + ' ' + (t.qwen_reasoning || '')).toUpperCase();
+      for (const cand of allTrackedSymbols) {
+        if (txt.includes(cand)) {
+          sym = cand;
+          break;
+        }
+      }
+    }
+    const isMock = (t.execution_client || '').includes('Mock') || (t.mode || '') !== 'live';
+    const isRouteA = routeASymbols.has(sym) && !isMock;
+    const route = isRouteA ? 'A' : 'B';
+    const routeName = isRouteA ? 'Bitget Demo' : 'Paper simulation';
+    const isOpen = String(t.exit_reason || '').toUpperCase() === 'OPEN';
+    const pnlVal = isOpen ? 0.0 : Math.round(Number(t.pnl || 0.0) * 100) / 100;
+    const entryPrice = Math.round(Number(t.entry_price || 0.0) * 100) / 100;
+    const exitPrice = Math.round(Number(t.exit_price || 0.0) * 100) / 100;
+    const posSize = Math.round(Number(t.position_size || 0.0) * 100) / 100;
+    const zScore = Math.round(Number(t.z_score || 0.0) * 100) / 100;
+
+    // Generate stable simulated order ID for Route A if not present
+    const orderId = isRouteA 
+      ? (t.order_id || `BG-ORD-${new Date(t.timestamp).getTime().toString().slice(-8)}-${sym}`)
+      : null;
+
+    return {
+      id: t.id || idx + 1,
+      timestamp: t.timestamp,
+      symbol: sym || 'UNKNOWN',
+      side: t.decision,
+      route,
+      route_name: routeName,
+      is_route_a: isRouteA,
+      entry_time: t.timestamp,
+      exit_time: isOpen ? null : (t.exit_timestamp || t.timestamp),
+      entry_price: entryPrice,
+      exit_price: exitPrice,
+      position_size: posSize,
+      stop_price: Math.round(Number(t.stop_price || 0.0) * 100) / 100,
+      pnl: pnlVal,
+      exit_reason: t.exit_reason || (isOpen ? 'OPEN' : 'N/A'),
+      execution_client: t.execution_client || 'Unknown',
+      order_id: orderId,
+      status: isOpen ? 'OPEN' : 'CLOSED',
+      z_score: zScore,
+      headline: t.event_headline || ''
+    };
+  });
+
+const pnlJsonContent = JSON.stringify(pnlTrades, null, 2);
+fs.writeFileSync(path.join(publicDataDir, 'pnl.json'), pnlJsonContent);
+fs.writeFileSync(path.join(srcDataDir, 'pnl.json'), pnlJsonContent);
+if (fs.existsSync(distDataDir)) {
+  fs.writeFileSync(path.join(distDataDir, 'pnl.json'), pnlJsonContent);
+}
+
+console.log(`Successfully generated 4 data files:`);
 console.log(`- records.json: ${realDecisions.length} real evaluated decisions (${(Buffer.byteLength(leanJsonContent)/1024/1024).toFixed(2)} MB)`);
 console.log(`- records-full.json: ${validRecords.length} full audit records (${(Buffer.byteLength(fullJsonContent)/1024/1024).toFixed(2)} MB)`);
 console.log(`- summary.json: precomputed KPIs & totals (${(Buffer.byteLength(summaryJsonContent)/1024).toFixed(2)} KB)`);
+console.log(`- pnl.json: ${pnlTrades.length} trade ledger records (${(Buffer.byteLength(pnlJsonContent)/1024).toFixed(2)} KB)`);
 
 function parseCSVRow(row) {
   const result = [];

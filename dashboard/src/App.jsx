@@ -1,6 +1,8 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import riskConfig from './data/riskConfig.json'
+import rawPnlTrades from './data/pnl.json'
+import PnLView from './components/PnLView.jsx'
 
 // ── Dev mode flag (set to false for submission build) ──
 const USE_DEMO_DATA = false
@@ -361,12 +363,13 @@ function DecisionBadge({ decision }) {
   )
 }
 
-const NAV_ITEMS = ['Home', 'Dashboard', 'Decision Feed', 'Event Detail', 'Risk Config']
+const NAV_ITEMS = ['Home', 'Dashboard', 'P&L', 'Decision Feed', 'Event Detail', 'Risk Config']
 
 export default function App() {
   const queryParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null
   const initialDark = queryParams ? queryParams.get('theme') === 'dark' : false
-  const initialScreen = queryParams && queryParams.get('screen') ? queryParams.get('screen') : 'Home'
+  const initialScreenRaw = queryParams && queryParams.get('screen') ? queryParams.get('screen') : 'Home'
+  const initialScreen = ['pnl', 'P&L', 'p&l', 'Pnl'].includes(initialScreenRaw) ? 'P&L' : initialScreenRaw
   const initialSource = queryParams && queryParams.get('source') ? queryParams.get('source') : 'all'
   const initialId = queryParams && queryParams.get('id') ? Number(queryParams.get('id')) : null
 
@@ -384,6 +387,7 @@ export default function App() {
   const [fullRecords, setFullRecords] = useState(null)
   const [isLoadingFull, setIsLoadingFull] = useState(false)
   const [summary, setSummary] = useState(null)
+  const [pnlData, setPnlData] = useState(rawPnlTrades || [])
   const [isLoading, setIsLoading] = useState(true)
   const [isDemo, setIsDemo] = useState(false)
   const [lastRefreshed, setLastRefreshed] = useState(null)
@@ -442,6 +446,20 @@ export default function App() {
         setLastRefreshed(new Date())
       } else {
         throw new Error('Data is not an array')
+      }
+
+      // 3. Fetch dedicated pnl.json using version token (~78KB payload)
+      try {
+        const pnlUrl = `${normalizedBase}data/pnl.json${versionParam}`
+        const pnlRes = await fetch(pnlUrl)
+        if (pnlRes.ok) {
+          const pnlJson = await pnlRes.json()
+          if (Array.isArray(pnlJson) && pnlJson.length > 0) {
+            setPnlData(pnlJson)
+          }
+        }
+      } catch (pErr) {
+        console.warn('Dashboard pnl.json fetch warning:', pErr)
       }
     } catch (err) {
       console.warn('Dashboard records fetch warning:', err)
@@ -1542,6 +1560,22 @@ export default function App() {
                     )}
                   </div>
                 </section>
+              </motion.div>
+            )}
+
+            {/* ─────────────────────────────────────────────────────────
+                P&L ANALYTICS SCREEN (Liquid Glass Architecture)
+               ───────────────────────────────────────────────────────── */}
+            {activeScreen === 'P&L' && (
+              <motion.div
+                key="pnl"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+                className="max-w-7xl mx-auto px-4 sm:px-6 py-6"
+              >
+                <PnLView dark={dark} pnlData={pnlData} />
               </motion.div>
             )}
 

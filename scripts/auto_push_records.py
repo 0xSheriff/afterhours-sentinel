@@ -51,6 +51,8 @@ def check_uncommitted():
         "dashboard/src/data/records-full.json",
         "dashboard/public/data/summary.json",
         "dashboard/src/data/summary.json",
+        "dashboard/public/data/pnl.json",
+        "dashboard/src/data/pnl.json",
         "logs/sentinel_trades.jsonl",
         "logs/sentinel_trades.csv"
     ]
@@ -67,6 +69,8 @@ def push_updates():
         "dashboard/src/data/records-full.json",
         "dashboard/public/data/summary.json",
         "dashboard/src/data/summary.json",
+        "dashboard/public/data/pnl.json",
+        "dashboard/src/data/pnl.json",
         "logs/sentinel_trades.jsonl",
         "logs/sentinel_trades.csv"
     ]
