@@ -1,6 +1,6 @@
 {
-  "version": "1792264837103",
-  "generated_at": "2026-10-17T19:20:37.102Z",
+  "version": "1792264962954",
+  "generated_at": "2026-10-17T19:22:42.954Z",
   "total_records": 8475,
   "skipped_count": 5417,
   "evaluated_count": 3052,
@@ -13,9 +13,9 @@
   "live": {
     "total": 8469,
     "trades_count": 110,
-    "wins_count": 78,
-    "win_rate": "70.9",
-    "total_pnl": 2724.95,
+    "wins_count": 79,
+    "win_rate": "71.8",
+    "total_pnl": 2725.54,
     "sharpe_ratio": "10.50",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
@@ -28,7 +28,7 @@
     "evaluated_calls": 3052,
     "live_call_rate": "95",
     "no_trades": 2942,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 110,
-      "pnl": 2724.95
+      "pnl": 2725.54
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-10-17T15:21:19.177271+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "TSLA",
-      "event_headline": "Tesla Just Won in Court: Self-Driving Buyers Can’t Sue as a Class",
-      "event_type": "regulatory",
-      "event_timestamp": "Sat, 17 Oct 2026 15:10:22 +0000",
-      "pre_event_price": 352.78,
-      "entry_price": 352.78,
-      "actual_move": -0.01672,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.040128,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.014736,
-      "beta": 2.7231,
-      "residual": 0.023408,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 2.93,
-      "z_threshold": 2,
-      "volume_ratio": 0.011,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bullish",
-      "price_direction": "bearish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The court ruling limiting class-action lawsuits against Tesla's self-driving technology reduces potential legal liabilities and regulatory overhang, which is fundamentally positive for the company's risk profile.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2957.79,
-      "stop_price": 347.4883,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved: Price dumped -1.67% on bullish event with weak volume (0.01) and high divergence (z=+2.93).",
-      "divergence": 0.023408,
-      "id": 30
-    }
-  ]
+  "open_positions": []
 }
