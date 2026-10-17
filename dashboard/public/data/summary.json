@@ -1,6 +1,6 @@
 {
-  "version": "1792211776849",
-  "generated_at": "2026-10-17T04:36:16.849Z",
+  "version": "1792212322054",
+  "generated_at": "2026-10-17T04:45:22.054Z",
   "total_records": 8364,
   "skipped_count": 5356,
   "evaluated_count": 3002,
@@ -28,7 +28,7 @@
     "evaluated_calls": 3002,
     "live_call_rate": "95",
     "no_trades": 2895,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -48,53 +48,5 @@
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-10-17T00:44:58.083322+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "TSLA",
-      "event_headline": "Stocktwits Zero To Sixty — Tesla’s Roadster Flies With SpaceX Thrusters, Rivian Opens Cars To AI Agents, And Lucid Eyes France",
-      "event_type": "other",
-      "event_timestamp": "Sat, 17 Oct 2026 00:33:21 +0000",
-      "pre_event_price": 352.78,
-      "entry_price": 352.78,
-      "actual_move": -0.02986,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.054979,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.02019,
-      "beta": 2.7231,
-      "residual": 0.025119,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 3.14,
-      "z_threshold": 2,
-      "volume_ratio": 0.0151,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bullish",
-      "price_direction": "bearish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The reveal of the long-delayed Tesla Roadster with SpaceX thrusters serves as a significant positive product milestone that reinforces Tesla's technological leadership and brand prestige.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2960.57,
-      "stop_price": 347.4883,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved: Price dumped -2.99% on bullish event with weak volume (0.02) and high divergence (z=+3.14).",
-      "divergence": 0.025119,
-      "id": 26
-    }
-  ]
+  "open_positions": []
 }
