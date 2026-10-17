@@ -1,34 +1,34 @@
 {
-  "version": "1792229356408",
-  "generated_at": "2026-10-17T09:29:16.408Z",
-  "total_records": 8397,
+  "version": "1792230411728",
+  "generated_at": "2026-10-17T09:46:51.727Z",
+  "total_records": 8398,
   "skipped_count": 5379,
-  "evaluated_count": 3012,
+  "evaluated_count": 3013,
   "decision_counts": {
     "LONG": 79,
-    "SHORT": 30,
+    "SHORT": 31,
     "NO_TRADE": 2909,
     "SKIPPED_NO_ASSET_MATCH": 5379
   },
   "live": {
-    "total": 8391,
-    "trades_count": 107,
+    "total": 8392,
+    "trades_count": 108,
     "wins_count": 77,
-    "win_rate": "72.0",
+    "win_rate": "71.3",
     "total_pnl": 2723.91,
-    "sharpe_ratio": "10.70",
+    "sharpe_ratio": "10.63",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
-    "duration_hours": "745.7",
+    "duration_hours": "746.0",
     "start_time": 1789544649909,
-    "end_time": 1792229337892,
-    "live_calls": 2862,
+    "end_time": 1792230405330,
+    "live_calls": 2863,
     "fallback_calls": 150,
     "skipped_calls": 5379,
-    "evaluated_calls": 3012,
+    "evaluated_calls": 3013,
     "live_call_rate": "95",
     "no_trades": 2905,
-    "open_positions_count": 0
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 107,
+      "trades": 108,
       "pnl": 2723.91
     },
     "MockExecutionClient [Local Simulator]": {
@@ -48,5 +48,53 @@
       "pnl": 209.71
     }
   },
-  "open_positions": []
+  "open_positions": [
+    {
+      "timestamp": "2026-10-17T09:46:45.330644+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "AAPL",
+      "event_headline": "Apple Is Ready to Fight Britain Over iPhone Tap-to-Pay. The Fee Is What Matters",
+      "event_type": "other",
+      "event_timestamp": "Sat, 17 Oct 2026 08:16:16 +0000",
+      "pre_event_price": 343.15,
+      "entry_price": 343.15,
+      "actual_move": 0.0021,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.06322,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.038588,
+      "beta": 1.6383,
+      "residual": 0.06532,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 8.17,
+      "z_threshold": 2,
+      "volume_ratio": 0.1635,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "WEAK_LIQUIDITY",
+      "event_direction": "bearish",
+      "price_direction": "bullish",
+      "direction_alignment": "CONTRADICTION",
+      "strategy_mode": "MEAN_REVERSION",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The potential regulatory mandate to open iPhone tap-to-pay to rival wallets threatens Apple's control over the payments ecosystem and could erode its associated service revenue streams.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2968.26,
+      "stop_price": 348.2972,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved: Price pumped +0.21% on bearish event with weak volume (0.16) and high divergence (z=+8.17).",
+      "divergence": 0.06532,
+      "id": 1
+    }
+  ]
 }
