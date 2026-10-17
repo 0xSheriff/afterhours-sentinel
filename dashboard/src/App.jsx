@@ -366,7 +366,8 @@ const NAV_ITEMS = ['Home', 'Dashboard', 'Decision Feed', 'Event Detail', 'Risk C
 export default function App() {
   const queryParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null
   const initialDark = queryParams ? queryParams.get('theme') === 'dark' : false
-  const initialScreen = queryParams && queryParams.get('screen') ? queryParams.get('screen') : 'Home'
+  const requestedScreen = queryParams && queryParams.get('screen') ? queryParams.get('screen') : 'Home'
+  const initialScreen = NAV_ITEMS.includes(requestedScreen) ? requestedScreen : 'Dashboard'
   const initialSource = queryParams && queryParams.get('source') ? queryParams.get('source') : 'all'
   const initialId = queryParams && queryParams.get('id') ? Number(queryParams.get('id')) : null
 
