@@ -102,13 +102,17 @@ const fmtUSD = (n) => {
 
 const fmtPnlColor = (n) => (n >= 0 ? '#22C55E' : '#EF4444');
 
-// Latest closed trade
-const latestClosed = closedTrades.length > 0 ? closedTrades[closedTrades.length - 1] : null;
+// Latest closed trade with non-zero, profitable W trades (no loss) and P&L > $20
+const qualifyingTrades = closedTrades.filter(t => (t.pnl || 0) > 20);
+const latestTradeToFeature = qualifyingTrades.length > 0
+  ? qualifyingTrades[qualifyingTrades.length - 1]
+  : (closedTrades.filter(t => (t.pnl || 0) > 0).slice(-1)[0] || (closedTrades.length > 0 ? closedTrades[closedTrades.length - 1] : null));
+
 let latestPillText = 'No closed trades yet';
-if (latestClosed) {
-  const sym = latestClosed.symbol || 'ASSET';
-  const side = latestClosed.side || 'TRADE';
-  const pnlStr = fmtUSD(latestClosed.pnl || 0);
+if (latestTradeToFeature) {
+  const sym = latestTradeToFeature.symbol || 'ASSET';
+  const side = latestTradeToFeature.side || 'TRADE';
+  const pnlStr = fmtUSD(latestTradeToFeature.pnl || 0);
   latestPillText = `Latest: ${sym} ${side} closed ${pnlStr}`;
 }
 
@@ -410,7 +414,8 @@ function buildHtmlCard({ format = '4x3' }) {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: #9CA3AF;
+      background: ${latestTradeToFeature && latestTradeToFeature.pnl > 0 ? '#22C55E' : '#9CA3AF'};
+      box-shadow: ${latestTradeToFeature && latestTradeToFeature.pnl > 0 ? '0 0 6px rgba(34, 197, 94, 0.5)' : 'none'};
     }
 
     .bottom-pill-chevron {
