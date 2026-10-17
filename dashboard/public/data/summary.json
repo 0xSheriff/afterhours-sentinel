@@ -1,6 +1,6 @@
 {
-  "version": "1792202989225",
-  "generated_at": "2026-10-17T02:09:49.224Z",
+  "version": "1792204105571",
+  "generated_at": "2026-10-17T02:28:25.570Z",
   "total_records": 8353,
   "skipped_count": 5350,
   "evaluated_count": 2997,
@@ -13,10 +13,10 @@
   "live": {
     "total": 8347,
     "trades_count": 107,
-    "wins_count": 76,
-    "win_rate": "71.0",
-    "total_pnl": 2720.8,
-    "sharpe_ratio": "10.69",
+    "wins_count": 77,
+    "win_rate": "72.0",
+    "total_pnl": 2724.08,
+    "sharpe_ratio": "10.70",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "738.4",
@@ -28,7 +28,7 @@
     "evaluated_calls": 2997,
     "live_call_rate": "95",
     "no_trades": 2890,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 107,
-      "pnl": 2720.8
+      "pnl": 2724.08
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved: Price dumped -2.90% on bullish event with weak volume (0.23) and high divergence (z=+2.70).",
       "divergence": 0.02164,
       "id": 37
-    },
-    {
-      "timestamp": "2026-10-16T22:27:45.668174+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "AAPL",
-      "event_headline": "Nasdaq 100 Records Worst Week In 18 Months As Investors Steer Clear Of Chipmakers — AAPL, MSTR, UBER, SOXX In Focus",
-      "event_type": "other",
-      "event_timestamp": "Fri, 16 Oct 2026 22:15:34 +0000",
-      "pre_event_price": 343.53,
-      "entry_price": 343.53,
-      "actual_move": 0.00386,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.04184,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.025538,
-      "beta": 1.6383,
-      "residual": 0.0457,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 5.71,
-      "z_threshold": 2,
-      "volume_ratio": 0.3448,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bearish",
-      "price_direction": "bullish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The prolonged decline in the semiconductor sector and the Nasdaq 100's worst week in 18 months signal broad risk-off sentiment and macroeconomic headwinds that negatively impact high-growth tech stocks like AAPL.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2964.49,
-      "stop_price": 348.6829,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved: Price pumped +0.39% on bearish event with weak volume (0.34) and high divergence (z=+5.71).",
-      "divergence": 0.0457,
-      "id": 40
     }
   ]
 }
