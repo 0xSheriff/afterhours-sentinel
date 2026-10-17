@@ -550,8 +550,7 @@ for (const t of targets) {
   const outPngPath = path.join(cardsDir, t.file);
 
   fs.writeFileSync(tmpHtmlPath, htmlContent, 'utf8');
-
-  const cmd = `"${chromeBin}" --headless --disable-gpu --force-device-scale-factor=2 --window-size=${t.viewport} --virtual-time-budget=2000 --screenshot="${outPngPath}" "file://${tmpHtmlPath}"`;
+  const cmd = `"${chromeBin}" --headless --disable-gpu --no-sandbox --disable-background-networking --disable-default-apps --disable-sync --disable-extensions --hide-scrollbars --force-device-scale-factor=2 --window-size=${t.viewport} --virtual-time-budget=1200 --screenshot="${outPngPath}" "file://${tmpHtmlPath}"`;
   
   try {
     execSync(cmd, { stdio: 'pipe' });
