@@ -1,17 +1,17 @@
 {
-  "version": "1792442134461",
-  "generated_at": "2026-10-19T20:35:34.461Z",
-  "total_records": 9271,
-  "skipped_count": 5843,
-  "evaluated_count": 3422,
+  "version": "1792442288138",
+  "generated_at": "2026-10-19T20:38:08.138Z",
+  "total_records": 9276,
+  "skipped_count": 5847,
+  "evaluated_count": 3423,
   "decision_counts": {
     "LONG": 88,
     "SHORT": 35,
-    "NO_TRADE": 3305,
-    "SKIPPED_NO_ASSET_MATCH": 5843
+    "NO_TRADE": 3306,
+    "SKIPPED_NO_ASSET_MATCH": 5847
   },
   "live": {
-    "total": 9265,
+    "total": 9270,
     "trades_count": 121,
     "wins_count": 85,
     "win_rate": "70.2",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "804.9",
     "start_time": 1789544649909,
-    "end_time": 1792442130880,
-    "live_calls": 3262,
+    "end_time": 1792442262712,
+    "live_calls": 3263,
     "fallback_calls": 160,
-    "skipped_calls": 5843,
-    "evaluated_calls": 3422,
+    "skipped_calls": 5847,
+    "evaluated_calls": 3423,
     "live_call_rate": "95",
-    "no_trades": 3301,
+    "no_trades": 3302,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.96 >= 0.8) and statistical significance (z=+3.41).",
       "divergence": 0.027244,
-      "id": 74
+      "id": 79
     },
     {
       "timestamp": "2026-10-19T19:07:44.834540+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.91 >= 0.8) and statistical significance (z=-4.98).",
       "divergence": -0.039802,
-      "id": 85
+      "id": 90
     },
     {
       "timestamp": "2026-10-19T17:52:45.759298+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.96 >= 0.8) and statistical significance (z=+3.76).",
       "divergence": 0.030043,
-      "id": 137
+      "id": 142
     }
   ]
 }
