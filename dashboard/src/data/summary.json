@@ -1,6 +1,6 @@
 {
-  "version": "1792443630546",
-  "generated_at": "2026-10-19T21:00:30.546Z",
+  "version": "1792443934292",
+  "generated_at": "2026-10-19T21:05:34.292Z",
   "total_records": 9300,
   "skipped_count": 5864,
   "evaluated_count": 3430,
@@ -15,8 +15,8 @@
     "trades_count": 121,
     "wins_count": 85,
     "win_rate": "70.2",
-    "total_pnl": 2917.95,
-    "sharpe_ratio": "10.42",
+    "total_pnl": 2873.65,
+    "sharpe_ratio": "10.15",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "805.3",
@@ -28,7 +28,7 @@
     "evaluated_calls": 3430,
     "live_call_rate": "95",
     "no_trades": 3309,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 121,
-      "pnl": 2917.95
+      "pnl": 2873.65
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.91 >= 0.8) and statistical significance (z=-4.98).",
       "divergence": -0.039802,
       "id": 114
-    },
-    {
-      "timestamp": "2026-10-19T17:52:45.759298+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "AMZN",
-      "event_headline": "AMZN Stock Set For Best Day In Three Months: Morgan Stanley Expects Amazon's AWS To Grow 47% In 2027, Denotes Stock As 'Top Pick'",
-      "event_type": "earnings",
-      "event_timestamp": "Mon, 19 Oct 2026 17:48:58 +0000",
-      "pre_event_price": 262.56,
-      "entry_price": 262.56,
-      "actual_move": 0.05272,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.022677,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.013146,
-      "beta": 1.725,
-      "residual": 0.030043,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 3.76,
-      "z_threshold": 2,
-      "volume_ratio": 0.9584,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "Morgan Stanley's designation of Amazon as a 'Top Pick' and its projection of 47% AWS growth through 2027 signal strong institutional confidence in the company's long-term earnings potential.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2953.45,
-      "stop_price": 258.6216,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.96 >= 0.8) and statistical significance (z=+3.76).",
-      "divergence": 0.030043,
-      "id": 166
     }
   ]
 }
