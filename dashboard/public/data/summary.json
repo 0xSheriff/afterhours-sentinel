@@ -1,6 +1,6 @@
 {
-  "version": "1792431710067",
-  "generated_at": "2026-10-19T17:41:50.067Z",
+  "version": "1792431743748",
+  "generated_at": "2026-10-19T17:42:23.748Z",
   "total_records": 9131,
   "skipped_count": 5765,
   "evaluated_count": 3360,
@@ -13,10 +13,10 @@
   "live": {
     "total": 9125,
     "trades_count": 118,
-    "wins_count": 83,
-    "win_rate": "70.3",
-    "total_pnl": 2822.28,
-    "sharpe_ratio": "10.29",
+    "wins_count": 84,
+    "win_rate": "71.2",
+    "total_pnl": 2854.1,
+    "sharpe_ratio": "10.41",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "802.0",
@@ -28,7 +28,7 @@
     "evaluated_calls": 3360,
     "live_call_rate": "95",
     "no_trades": 3242,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 118,
-      "pnl": 2822.28
+      "pnl": 2854.1
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.31 >= 0.8) and statistical significance (z=-4.73).",
       "divergence": -0.037873,
       "id": 190
-    },
-    {
-      "timestamp": "2026-10-19T13:41:34.941560+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NVDA",
-      "event_headline": "Intel and AMD Rise 4% as JPMorgan Upgrades Intel After Steep Pullback; NVIDIA Edges Higher",
-      "event_type": "analyst",
-      "event_timestamp": "Mon, 19 Oct 2026 13:36:06 +0000",
-      "pre_event_price": 215.33,
-      "entry_price": 215.33,
-      "actual_move": 0.00654,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.024599,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.01045,
-      "beta": 2.354,
-      "residual": -0.018059,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -2.26,
-      "z_threshold": 2,
-      "volume_ratio": 0.9933,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The JPMorgan upgrade of Intel and the resulting sector-wide rally in chip stocks create a positive sentiment spillover that supports NVIDIA's valuation, despite the primary focus being on Intel.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2965.8,
-      "stop_price": 212.1001,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.99 >= 0.8) and statistical significance (z=-2.26).",
-      "divergence": -0.018059,
-      "id": 215
     }
   ]
 }
