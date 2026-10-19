@@ -1,34 +1,34 @@
 {
-  "version": "1792443934292",
-  "generated_at": "2026-10-19T21:05:34.292Z",
-  "total_records": 9300,
+  "version": "1792444057908",
+  "generated_at": "2026-10-19T21:07:37.908Z",
+  "total_records": 9301,
   "skipped_count": 5864,
-  "evaluated_count": 3430,
+  "evaluated_count": 3431,
   "decision_counts": {
-    "LONG": 88,
+    "LONG": 89,
     "SHORT": 35,
     "NO_TRADE": 3313,
     "SKIPPED_NO_ASSET_MATCH": 5864
   },
   "live": {
-    "total": 9294,
-    "trades_count": 121,
+    "total": 9295,
+    "trades_count": 122,
     "wins_count": 85,
-    "win_rate": "70.2",
+    "win_rate": "69.7",
     "total_pnl": 2873.65,
-    "sharpe_ratio": "10.15",
+    "sharpe_ratio": "10.10",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
-    "duration_hours": "805.3",
+    "duration_hours": "805.4",
     "start_time": 1789544649909,
-    "end_time": 1792443613304,
-    "live_calls": 3270,
+    "end_time": 1792444051493,
+    "live_calls": 3271,
     "fallback_calls": 160,
     "skipped_calls": 5864,
-    "evaluated_calls": 3430,
+    "evaluated_calls": 3431,
     "live_call_rate": "95",
     "no_trades": 3309,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 121,
+      "trades": 122,
       "pnl": 2873.65
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-19T21:07:31.493963+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "AMZN",
+      "event_headline": "Why Amazon (AMZN) Stock Is Up Today",
+      "event_type": "analyst",
+      "event_timestamp": "Mon, 19 Oct 2026 20:56:55 +0000",
+      "pre_event_price": 262.79,
+      "entry_price": 262.79,
+      "actual_move": 0.0531,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.02639,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.015298,
+      "beta": 1.725,
+      "residual": 0.02671,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 3.34,
+      "z_threshold": 2,
+      "volume_ratio": 0.8962,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bullish",
+      "price_direction": "bullish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "Morgan Stanley's designation of Amazon as a top pick and the upward revision of its price target signal increased institutional confidence and positive future earnings expectations.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2958.53,
+      "stop_price": 258.8482,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.90 >= 0.8) and statistical significance (z=+3.34).",
+      "divergence": 0.02671,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-19T19:33:01.873489+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.96 >= 0.8) and statistical significance (z=+3.41).",
       "divergence": 0.027244,
-      "id": 103
+      "id": 104
     },
     {
       "timestamp": "2026-10-19T19:07:44.834540+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.91 >= 0.8) and statistical significance (z=-4.98).",
       "divergence": -0.039802,
-      "id": 114
+      "id": 115
     }
   ]
 }
