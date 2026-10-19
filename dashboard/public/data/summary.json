@@ -1,34 +1,34 @@
 {
-  "version": "1792417225831",
-  "generated_at": "2026-10-19T13:40:25.830Z",
-  "total_records": 8908,
-  "skipped_count": 5664,
-  "evaluated_count": 3238,
+  "version": "1792417352450",
+  "generated_at": "2026-10-19T13:42:32.449Z",
+  "total_records": 8918,
+  "skipped_count": 5672,
+  "evaluated_count": 3240,
   "decision_counts": {
-    "LONG": 84,
+    "LONG": 85,
     "SHORT": 34,
-    "NO_TRADE": 3126,
-    "SKIPPED_NO_ASSET_MATCH": 5664
+    "NO_TRADE": 3127,
+    "SKIPPED_NO_ASSET_MATCH": 5672
   },
   "live": {
-    "total": 8902,
-    "trades_count": 116,
+    "total": 8912,
+    "trades_count": 117,
     "wins_count": 82,
-    "win_rate": "70.7",
+    "win_rate": "70.1",
     "total_pnl": 2766.15,
-    "sharpe_ratio": "10.23",
+    "sharpe_ratio": "10.16",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
-    "duration_hours": "797.9",
+    "duration_hours": "798.0",
     "start_time": 1789544649909,
-    "end_time": 1792417220293,
-    "live_calls": 3081,
+    "end_time": 1792417298631,
+    "live_calls": 3083,
     "fallback_calls": 157,
-    "skipped_calls": 5664,
-    "evaluated_calls": 3238,
+    "skipped_calls": 5672,
+    "evaluated_calls": 3240,
     "live_call_rate": "95",
-    "no_trades": 3122,
-    "open_positions_count": 1
+    "no_trades": 3123,
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 116,
+      "trades": 117,
       "pnl": 2766.15
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-19T13:41:34.941560+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "NVDA",
+      "event_headline": "Intel and AMD Rise 4% as JPMorgan Upgrades Intel After Steep Pullback; NVIDIA Edges Higher",
+      "event_type": "analyst",
+      "event_timestamp": "Mon, 19 Oct 2026 13:36:06 +0000",
+      "pre_event_price": 215.33,
+      "entry_price": 215.33,
+      "actual_move": 0.00654,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.024599,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.01045,
+      "beta": 2.354,
+      "residual": -0.018059,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -2.26,
+      "z_threshold": 2,
+      "volume_ratio": 0.9933,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bullish",
+      "price_direction": "bullish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The JPMorgan upgrade of Intel and the resulting sector-wide rally in chip stocks create a positive sentiment spillover that supports NVIDIA's valuation, despite the primary focus being on Intel.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2965.8,
+      "stop_price": 212.1001,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.99 >= 0.8) and statistical significance (z=-2.26).",
+      "divergence": -0.018059,
+      "id": 2
+    },
     {
       "timestamp": "2026-10-19T13:40:20.293369+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.93 >= 0.8) and statistical significance (z=+3.98).",
       "divergence": 0.031864,
-      "id": 1
+      "id": 11
     }
   ]
 }
