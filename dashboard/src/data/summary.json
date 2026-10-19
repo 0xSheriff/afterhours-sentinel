@@ -1,6 +1,6 @@
 {
-  "version": "1792451178866",
-  "generated_at": "2026-10-19T23:06:18.865Z",
+  "version": "1792451302503",
+  "generated_at": "2026-10-19T23:08:22.503Z",
   "total_records": 9369,
   "skipped_count": 5910,
   "evaluated_count": 3453,
@@ -13,10 +13,10 @@
   "live": {
     "total": 9363,
     "trades_count": 122,
-    "wins_count": 85,
-    "win_rate": "69.7",
-    "total_pnl": 2873.65,
-    "sharpe_ratio": "10.10",
+    "wins_count": 86,
+    "win_rate": "70.5",
+    "total_pnl": 2878,
+    "sharpe_ratio": "10.12",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "807.4",
@@ -28,7 +28,7 @@
     "evaluated_calls": 3453,
     "live_call_rate": "95",
     "no_trades": 3331,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 122,
-      "pnl": 2873.65
+      "pnl": 2878
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.96 >= 0.8) and statistical significance (z=+3.41).",
       "divergence": 0.027244,
       "id": 172
-    },
-    {
-      "timestamp": "2026-10-19T19:07:44.834540+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NVDA",
-      "event_headline": "Nvidia vs. AMD: Who Can Afford the Next Jump in Research Spending?",
-      "event_type": "earnings",
-      "event_timestamp": "Mon, 19 Oct 2026 18:56:15 +0000",
-      "pre_event_price": 217.65,
-      "entry_price": 217.65,
-      "actual_move": 0.01739,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.057192,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.024296,
-      "beta": 2.354,
-      "residual": -0.039802,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -4.98,
-      "z_threshold": 2,
-      "volume_ratio": 0.9146,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The article highlights Nvidia's superior financial capacity to absorb increased research spending without sacrificing current profits, suggesting a durable competitive advantage and strong fundamental health.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2955.35,
-      "stop_price": 214.3853,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.91 >= 0.8) and statistical significance (z=-4.98).",
-      "divergence": -0.039802,
-      "id": 183
     }
   ]
 }
