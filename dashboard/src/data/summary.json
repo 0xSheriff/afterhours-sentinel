@@ -1,17 +1,17 @@
 {
-  "version": "1792395697517",
-  "generated_at": "2026-10-19T07:41:37.517Z",
-  "total_records": 8695,
-  "skipped_count": 5534,
+  "version": "1792395943252",
+  "generated_at": "2026-10-19T07:45:43.252Z",
+  "total_records": 8696,
+  "skipped_count": 5535,
   "evaluated_count": 3155,
   "decision_counts": {
     "LONG": 82,
     "SHORT": 32,
     "NO_TRADE": 3047,
-    "SKIPPED_NO_ASSET_MATCH": 5534
+    "SKIPPED_NO_ASSET_MATCH": 5535
   },
   "live": {
-    "total": 8689,
+    "total": 8690,
     "trades_count": 112,
     "wins_count": 80,
     "win_rate": "71.4",
@@ -21,10 +21,10 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "792.0",
     "start_time": 1789544649909,
-    "end_time": 1792395675010,
+    "end_time": 1792395923158,
     "live_calls": 2999,
     "fallback_calls": 156,
-    "skipped_calls": 5534,
+    "skipped_calls": 5535,
     "evaluated_calls": 3155,
     "live_call_rate": "95",
     "no_trades": 3043,
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.75 >= 0.8) and statistical significance (z=-2.26).",
       "divergence": -0.018058,
-      "id": 6
+      "id": 7
     }
   ]
 }
