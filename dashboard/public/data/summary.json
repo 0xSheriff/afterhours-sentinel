@@ -1,34 +1,34 @@
 {
-  "version": "1792438275890",
-  "generated_at": "2026-10-19T19:31:15.889Z",
-  "total_records": 9197,
+  "version": "1792438399551",
+  "generated_at": "2026-10-19T19:33:19.550Z",
+  "total_records": 9200,
   "skipped_count": 5792,
-  "evaluated_count": 3399,
+  "evaluated_count": 3402,
   "decision_counts": {
-    "LONG": 87,
+    "LONG": 88,
     "SHORT": 35,
-    "NO_TRADE": 3283,
+    "NO_TRADE": 3285,
     "SKIPPED_NO_ASSET_MATCH": 5792
   },
   "live": {
-    "total": 9191,
-    "trades_count": 120,
+    "total": 9194,
+    "trades_count": 121,
     "wins_count": 85,
-    "win_rate": "70.8",
+    "win_rate": "70.2",
     "total_pnl": 2917.95,
-    "sharpe_ratio": "10.48",
+    "sharpe_ratio": "10.42",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "803.8",
     "start_time": 1789544649909,
-    "end_time": 1792438255040,
-    "live_calls": 3239,
+    "end_time": 1792438389147,
+    "live_calls": 3242,
     "fallback_calls": 160,
     "skipped_calls": 5792,
-    "evaluated_calls": 3399,
+    "evaluated_calls": 3402,
     "live_call_rate": "95",
-    "no_trades": 3279,
-    "open_positions_count": 2
+    "no_trades": 3281,
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 120,
+      "trades": 121,
       "pnl": 2917.95
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-19T19:33:01.873489+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "AMZN",
+      "event_headline": "Amazon Soars 5% as Morgan Stanley Names It a Top Pick: AWS Runway “Under-Appreciated”",
+      "event_type": "analyst",
+      "event_timestamp": "Mon, 19 Oct 2026 19:18:52 +0000",
+      "pre_event_price": 263.78,
+      "entry_price": 263.78,
+      "actual_move": 0.05706,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.029816,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.017284,
+      "beta": 1.725,
+      "residual": 0.027244,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 3.41,
+      "z_threshold": 2,
+      "volume_ratio": 0.9576,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bullish",
+      "price_direction": "bullish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "Morgan Stanley's designation of Amazon as a Top Pick with a raised price target signals strong institutional confidence in the company's AWS growth trajectory and margin potential.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2957.25,
+      "stop_price": 259.8233,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.96 >= 0.8) and statistical significance (z=+3.41).",
+      "divergence": 0.027244,
+      "id": 3
+    },
     {
       "timestamp": "2026-10-19T19:07:44.834540+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.91 >= 0.8) and statistical significance (z=-4.98).",
       "divergence": -0.039802,
-      "id": 11
+      "id": 14
     },
     {
       "timestamp": "2026-10-19T17:52:45.759298+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.96 >= 0.8) and statistical significance (z=+3.76).",
       "divergence": 0.030043,
-      "id": 63
+      "id": 66
     }
   ]
 }
