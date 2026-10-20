@@ -1,17 +1,17 @@
 {
-  "version": "1792539923408",
-  "generated_at": "2026-10-20T23:45:23.408Z",
-  "total_records": 10287,
+  "version": "1792540410545",
+  "generated_at": "2026-10-20T23:53:30.545Z",
+  "total_records": 10288,
   "skipped_count": 6503,
-  "evaluated_count": 3778,
+  "evaluated_count": 3779,
   "decision_counts": {
     "LONG": 97,
     "SHORT": 37,
-    "NO_TRADE": 3650,
+    "NO_TRADE": 3651,
     "SKIPPED_NO_ASSET_MATCH": 6503
   },
   "live": {
-    "total": 10281,
+    "total": 10282,
     "trades_count": 132,
     "wins_count": 90,
     "win_rate": "68.2",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "9.62",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
-    "duration_hours": "832.0",
+    "duration_hours": "832.2",
     "start_time": 1789544649909,
-    "end_time": 1792539901742,
-    "live_calls": 3599,
+    "end_time": 1792540407245,
+    "live_calls": 3600,
     "fallback_calls": 179,
     "skipped_calls": 6503,
-    "evaluated_calls": 3778,
+    "evaluated_calls": 3779,
     "live_call_rate": "95",
-    "no_trades": 3646,
+    "no_trades": 3647,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.78 >= 0.8) and statistical significance (z=+5.02).",
       "divergence": 0.040133,
-      "id": 77
+      "id": 78
     },
     {
       "timestamp": "2026-10-20T21:15:09.243843+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.81 >= 0.8) and statistical significance (z=+4.06).",
       "divergence": 0.032484,
-      "id": 87
+      "id": 88
     },
     {
       "timestamp": "2026-10-20T20:17:52.057489+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.73 >= 0.8) and statistical significance (z=+4.59).",
       "divergence": 0.036693,
-      "id": 170
+      "id": 171
     }
   ]
 }
