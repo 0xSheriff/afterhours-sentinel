@@ -57,7 +57,25 @@ def check_uncommitted():
     code, out, _ = run_cmd(f"git status --porcelain {' '.join(files_to_check)}", timeout=20)
     return bool(out.strip())
 
+def clean_stale_git_locks():
+    """Removes stale index.lock and aborts stuck git rebase operations."""
+    lock_path = os.path.join(BASE_DIR, ".git", "index.lock")
+    if os.path.exists(lock_path):
+        try:
+            if time.time() - os.path.getmtime(lock_path) > 30:
+                os.remove(lock_path)
+                logging.warning("Removed stale .git/index.lock file")
+        except Exception as e:
+            logging.error(f"Failed removing stale lock: {e}")
+
+    rebase_merge = os.path.join(BASE_DIR, ".git", "rebase-merge")
+    rebase_apply = os.path.join(BASE_DIR, ".git", "rebase-apply")
+    if os.path.exists(rebase_merge) or os.path.exists(rebase_apply):
+        logging.warning("Detected incomplete/stuck git rebase. Aborting rebase to restore clean state...")
+        run_cmd("git rebase --abort")
+
 def push_updates():
+    clean_stale_git_locks()
     sync_records()
     
     files_to_stage = [
@@ -113,7 +131,10 @@ def push_updates():
     code, out, err = run_cmd(git_push_cmd, timeout=45)
     if code != 0:
         logging.warning(f"Initial push failed, attempting git pull --rebase: {err or out}")
-        run_cmd(git_pull_cmd, timeout=45)
+        pull_code, pull_out, pull_err = run_cmd(git_pull_cmd, timeout=45)
+        if pull_code != 0:
+            logging.warning(f"git pull --rebase failed ({pull_err or pull_out}), aborting rebase to protect working tree...")
+            run_cmd("git rebase --abort")
         code, out, err = run_cmd(git_push_cmd, timeout=45)
 
     if code == 0:
