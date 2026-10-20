@@ -1,6 +1,6 @@
 {
-  "version": "1792505515361",
-  "generated_at": "2026-10-20T14:11:55.361Z",
+  "version": "1792505572250",
+  "generated_at": "2026-10-20T14:12:52.249Z",
   "total_records": 9806,
   "skipped_count": 6196,
   "evaluated_count": 3604,
@@ -15,8 +15,8 @@
     "trades_count": 129,
     "wins_count": 88,
     "win_rate": "68.2",
-    "total_pnl": 2902.4,
-    "sharpe_ratio": "9.77",
+    "total_pnl": 2858.25,
+    "sharpe_ratio": "9.52",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "822.5",
@@ -28,7 +28,7 @@
     "evaluated_calls": 3604,
     "live_call_rate": "95",
     "no_trades": 3475,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 129,
-      "pnl": 2902.4
+      "pnl": 2858.25
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -49,53 +49,6 @@
     }
   },
   "open_positions": [
-    {
-      "timestamp": "2026-10-20T12:29:31.293948+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "AAPL",
-      "event_headline": "Apple slips as Loop Capital downgrades on iPhone shipment concerns",
-      "event_type": "analyst",
-      "event_timestamp": "Tue, 20 Oct 2026 08:27:39 -0400",
-      "pre_event_price": 338.1,
-      "entry_price": 338.1,
-      "actual_move": -0.01189,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.008955,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.005466,
-      "beta": 1.6383,
-      "residual": -0.020845,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -2.61,
-      "z_threshold": 2,
-      "volume_ratio": 1.1173,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The downgrade by Loop Capital citing concerns over iPhone shipments signals negative sentiment regarding Apple's core revenue driver, implying a bearish outlook for the stock.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2943.14,
-      "stop_price": 343.1715,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.12 >= 0.8) and statistical significance (z=-2.61).",
-      "divergence": -0.020845,
-      "id": 122
-    },
     {
       "timestamp": "2026-10-20T11:26:42.243296+00:00",
       "mode": "live",
