@@ -1,34 +1,34 @@
 {
-  "version": "1792496128367",
-  "generated_at": "2026-10-20T11:35:28.366Z",
-  "total_records": 9632,
-  "skipped_count": 6091,
+  "version": "1792496312536",
+  "generated_at": "2026-10-20T11:38:32.535Z",
+  "total_records": 9633,
+  "skipped_count": 6092,
   "evaluated_count": 3535,
   "decision_counts": {
     "LONG": 94,
     "SHORT": 36,
     "NO_TRADE": 3411,
-    "SKIPPED_NO_ASSET_MATCH": 6091
+    "SKIPPED_NO_ASSET_MATCH": 6092
   },
   "live": {
-    "total": 9626,
+    "total": 9627,
     "trades_count": 128,
     "wins_count": 88,
     "win_rate": "68.8",
-    "total_pnl": 2916.62,
-    "sharpe_ratio": "9.89",
+    "total_pnl": 2902.4,
+    "sharpe_ratio": "9.82",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "819.9",
     "start_time": 1789544649909,
-    "end_time": 1792496113419,
+    "end_time": 1792496304721,
     "live_calls": 3365,
     "fallback_calls": 170,
-    "skipped_calls": 6091,
+    "skipped_calls": 6092,
     "evaluated_calls": 3535,
     "live_call_rate": "95",
     "no_trades": 3407,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 128,
-      "pnl": 2916.62
+      "pnl": 2902.4
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.71 >= 0.8) and statistical significance (z=+3.23).",
       "divergence": 0.02586,
-      "id": 9
+      "id": 10
     },
     {
       "timestamp": "2026-10-20T11:25:32.776149+00:00",
@@ -141,54 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.86 >= 0.8) and statistical significance (z=+3.49).",
       "divergence": 0.02792,
-      "id": 12
-    },
-    {
-      "timestamp": "2026-10-20T07:38:08.967339+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "TSLA",
-      "event_headline": "SpaceX Faces Earnings Test Today: RBC Flags Over 50% Upside As Tesla Merger Buzz Builds, S&P Flags AI Financing Risks",
-      "event_type": "earnings",
-      "event_timestamp": "Tue, 20 Oct 2026 07:26:56 +0000",
-      "pre_event_price": 368.6,
-      "entry_price": 368.6,
-      "actual_move": 0.03705,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.010184,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.00374,
-      "beta": 2.7231,
-      "residual": 0.026866,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 3.36,
-      "z_threshold": 2,
-      "volume_ratio": 0.9158,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The headline highlights RBC's flag of over 50% upside potential driven by Tesla merger buzz, which serves as a strong positive catalyst for TSLA despite the unrelated S&P warning on AI financing.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2944.47,
-      "stop_price": 363.071,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.92 >= 0.8) and statistical significance (z=+3.36).",
-      "divergence": 0.026866,
-      "id": 181
+      "id": 13
     }
   ]
 }
