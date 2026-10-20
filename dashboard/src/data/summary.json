@@ -1,34 +1,34 @@
 {
-  "version": "1792495505184",
-  "generated_at": "2026-10-20T11:25:05.184Z",
-  "total_records": 9620,
-  "skipped_count": 6085,
-  "evaluated_count": 3529,
+  "version": "1792495539529",
+  "generated_at": "2026-10-20T11:25:39.529Z",
+  "total_records": 9622,
+  "skipped_count": 6086,
+  "evaluated_count": 3530,
   "decision_counts": {
-    "LONG": 92,
+    "LONG": 93,
     "SHORT": 36,
     "NO_TRADE": 3407,
-    "SKIPPED_NO_ASSET_MATCH": 6085
+    "SKIPPED_NO_ASSET_MATCH": 6086
   },
   "live": {
-    "total": 9614,
-    "trades_count": 126,
+    "total": 9616,
+    "trades_count": 127,
     "wins_count": 88,
-    "win_rate": "69.8",
+    "win_rate": "69.3",
     "total_pnl": 2916.62,
-    "sharpe_ratio": "10.00",
+    "sharpe_ratio": "9.94",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "819.7",
     "start_time": 1789544649909,
-    "end_time": 1792495501128,
-    "live_calls": 3359,
+    "end_time": 1792495536131,
+    "live_calls": 3360,
     "fallback_calls": 170,
-    "skipped_calls": 6085,
-    "evaluated_calls": 3529,
+    "skipped_calls": 6086,
+    "evaluated_calls": 3530,
     "live_call_rate": "95",
     "no_trades": 3403,
-    "open_positions_count": 1
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 126,
+      "trades": 127,
       "pnl": 2916.62
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-20T11:25:32.776149+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "AMZN",
+      "event_headline": "What Is Amazon Stock's Biggest Opportunity?",
+      "event_type": "earnings",
+      "event_timestamp": "Tue, 20 Oct 2026 11:03:02 +0000",
+      "pre_event_price": 262.49,
+      "entry_price": 262.49,
+      "actual_move": 0.0351,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.00718,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.004162,
+      "beta": 1.725,
+      "residual": 0.02792,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 3.49,
+      "z_threshold": 2,
+      "volume_ratio": 0.8631,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bullish",
+      "price_direction": "bullish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "Management's disclosure that AWS demand exceeds current supply capacity signals strong underlying growth potential and pricing power, which is a fundamentally positive indicator for the company's future earnings trajectory.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2939.69,
+      "stop_price": 258.5527,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.86 >= 0.8) and statistical significance (z=+3.49).",
+      "divergence": 0.02792,
+      "id": 2
+    },
     {
       "timestamp": "2026-10-20T07:38:08.967339+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.92 >= 0.8) and statistical significance (z=+3.36).",
       "divergence": 0.026866,
-      "id": 169
+      "id": 171
     }
   ]
 }
