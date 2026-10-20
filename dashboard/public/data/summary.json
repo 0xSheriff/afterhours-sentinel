@@ -1,17 +1,17 @@
 {
-  "version": "1792511171008",
-  "generated_at": "2026-10-20T15:46:11.008Z",
-  "total_records": 9903,
+  "version": "1792511232313",
+  "generated_at": "2026-10-20T15:47:12.313Z",
+  "total_records": 9904,
   "skipped_count": 6260,
-  "evaluated_count": 3637,
+  "evaluated_count": 3638,
   "decision_counts": {
     "LONG": 94,
     "SHORT": 37,
-    "NO_TRADE": 3512,
+    "NO_TRADE": 3513,
     "SKIPPED_NO_ASSET_MATCH": 6260
   },
   "live": {
-    "total": 9897,
+    "total": 9898,
     "trades_count": 129,
     "wins_count": 90,
     "win_rate": "69.8",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "824.0",
     "start_time": 1789544649909,
-    "end_time": 1792511104823,
-    "live_calls": 3465,
+    "end_time": 1792511227976,
+    "live_calls": 3466,
     "fallback_calls": 172,
     "skipped_calls": 6260,
-    "evaluated_calls": 3637,
+    "evaluated_calls": 3638,
     "live_call_rate": "95",
-    "no_trades": 3508,
+    "no_trades": 3509,
     "open_positions_count": 0
   },
   "backtest": {
