@@ -1,17 +1,17 @@
 {
-  "version": "1792499695691",
-  "generated_at": "2026-10-20T12:34:55.691Z",
-  "total_records": 9687,
+  "version": "1792499758569",
+  "generated_at": "2026-10-20T12:35:58.569Z",
+  "total_records": 9688,
   "skipped_count": 6125,
-  "evaluated_count": 3556,
+  "evaluated_count": 3557,
   "decision_counts": {
     "LONG": 94,
     "SHORT": 37,
-    "NO_TRADE": 3431,
+    "NO_TRADE": 3432,
     "SKIPPED_NO_ASSET_MATCH": 6125
   },
   "live": {
-    "total": 9681,
+    "total": 9682,
     "trades_count": 129,
     "wins_count": 88,
     "win_rate": "68.2",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "9.77",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
-    "duration_hours": "820.8",
+    "duration_hours": "820.9",
     "start_time": 1789544649909,
-    "end_time": 1792499689775,
-    "live_calls": 3386,
+    "end_time": 1792499754964,
+    "live_calls": 3387,
     "fallback_calls": 170,
     "skipped_calls": 6125,
-    "evaluated_calls": 3556,
+    "evaluated_calls": 3557,
     "live_call_rate": "95",
-    "no_trades": 3427,
+    "no_trades": 3428,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.12 >= 0.8) and statistical significance (z=-2.61).",
       "divergence": -0.020845,
-      "id": 3
+      "id": 4
     },
     {
       "timestamp": "2026-10-20T11:26:42.243296+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.71 >= 0.8) and statistical significance (z=+3.23).",
       "divergence": 0.02586,
-      "id": 64
+      "id": 65
     },
     {
       "timestamp": "2026-10-20T11:25:32.776149+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.86 >= 0.8) and statistical significance (z=+3.49).",
       "divergence": 0.02792,
-      "id": 67
+      "id": 68
     }
   ]
 }
