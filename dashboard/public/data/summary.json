@@ -1,17 +1,17 @@
 {
-  "version": "1792590653942",
-  "generated_at": "2026-10-21T13:50:53.942Z",
-  "total_records": 10794,
-  "skipped_count": 6787,
-  "evaluated_count": 4001,
+  "version": "1792590748874",
+  "generated_at": "2026-10-21T13:52:28.874Z",
+  "total_records": 10796,
+  "skipped_count": 6788,
+  "evaluated_count": 4002,
   "decision_counts": {
     "LONG": 102,
     "SHORT": 42,
-    "NO_TRADE": 3863,
-    "SKIPPED_NO_ASSET_MATCH": 6787
+    "NO_TRADE": 3864,
+    "SKIPPED_NO_ASSET_MATCH": 6788
   },
   "live": {
-    "total": 10788,
+    "total": 10790,
     "trades_count": 142,
     "wins_count": 98,
     "win_rate": "69.0",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "846.1",
     "start_time": 1789544649909,
-    "end_time": 1792590650568,
-    "live_calls": 3817,
+    "end_time": 1792590719977,
+    "live_calls": 3818,
     "fallback_calls": 184,
-    "skipped_calls": 6787,
-    "evaluated_calls": 4001,
+    "skipped_calls": 6788,
+    "evaluated_calls": 4002,
     "live_call_rate": "95",
-    "no_trades": 3859,
+    "no_trades": 3860,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (3.30 >= 0.8) and statistical significance (z=-7.45).",
       "divergence": -0.0596,
-      "id": 16
+      "id": 18
     },
     {
       "timestamp": "2026-10-21T11:11:30.091989+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.22 >= 0.8) and statistical significance (z=+5.17).",
       "divergence": 0.041344,
-      "id": 248
+      "id": 250
     },
     {
       "timestamp": "2026-10-21T10:25:51.231133+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.14 >= 0.8) and statistical significance (z=-10.34).",
       "divergence": -0.082735,
-      "id": 287
+      "id": 289
     }
   ]
 }
