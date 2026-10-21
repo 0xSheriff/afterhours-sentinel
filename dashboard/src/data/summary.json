@@ -1,17 +1,17 @@
 {
-  "version": "1792571117894",
-  "generated_at": "2026-10-21T08:25:17.893Z",
-  "total_records": 10428,
-  "skipped_count": 6597,
-  "evaluated_count": 3825,
+  "version": "1792571180424",
+  "generated_at": "2026-10-21T08:26:20.423Z",
+  "total_records": 10430,
+  "skipped_count": 6598,
+  "evaluated_count": 3826,
   "decision_counts": {
     "LONG": 101,
     "SHORT": 39,
-    "NO_TRADE": 3691,
-    "SKIPPED_NO_ASSET_MATCH": 6597
+    "NO_TRADE": 3692,
+    "SKIPPED_NO_ASSET_MATCH": 6598
   },
   "live": {
-    "total": 10422,
+    "total": 10424,
     "trades_count": 138,
     "wins_count": 94,
     "win_rate": "68.1",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "840.7",
     "start_time": 1789544649909,
-    "end_time": 1792571100806,
-    "live_calls": 3644,
+    "end_time": 1792571169795,
+    "live_calls": 3645,
     "fallback_calls": 181,
-    "skipped_calls": 6597,
-    "evaluated_calls": 3825,
+    "skipped_calls": 6598,
+    "evaluated_calls": 3826,
     "live_call_rate": "95",
-    "no_trades": 3687,
+    "no_trades": 3688,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.19 >= 0.8) and statistical significance (z=-9.59).",
       "divergence": -0.076717,
-      "id": 23
+      "id": 25
     },
     {
       "timestamp": "2026-10-21T06:08:17.577944+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.19 >= 0.8) and statistical significance (z=-10.63).",
       "divergence": -0.085077,
-      "id": 62
+      "id": 64
     },
     {
       "timestamp": "2026-10-21T04:49:52.766856+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.65 >= 0.8) and statistical significance (z=+4.75).",
       "divergence": 0.038001,
-      "id": 84
+      "id": 86
     }
   ]
 }
