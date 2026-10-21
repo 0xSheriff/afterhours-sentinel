@@ -1,34 +1,34 @@
 {
-  "version": "1792604631807",
-  "generated_at": "2026-10-21T17:43:51.807Z",
-  "total_records": 11126,
+  "version": "1792604672476",
+  "generated_at": "2026-10-21T17:44:32.476Z",
+  "total_records": 11127,
   "skipped_count": 6978,
-  "evaluated_count": 4142,
+  "evaluated_count": 4143,
   "decision_counts": {
     "LONG": 102,
-    "SHORT": 44,
+    "SHORT": 45,
     "NO_TRADE": 4002,
     "SKIPPED_NO_ASSET_MATCH": 6978
   },
   "live": {
-    "total": 11120,
-    "trades_count": 144,
+    "total": 11121,
+    "trades_count": 145,
     "wins_count": 101,
-    "win_rate": "70.1",
+    "win_rate": "69.7",
     "total_pnl": 3589.19,
-    "sharpe_ratio": "10.44",
+    "sharpe_ratio": "10.39",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "850.0",
     "start_time": 1789544649909,
-    "end_time": 1792604624074,
-    "live_calls": 3955,
+    "end_time": 1792604658387,
+    "live_calls": 3956,
     "fallback_calls": 187,
     "skipped_calls": 6978,
-    "evaluated_calls": 4142,
+    "evaluated_calls": 4143,
     "live_call_rate": "95",
     "no_trades": 3998,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 144,
+      "trades": 145,
       "pnl": 3589.19
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-21T17:44:18.387190+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "MSFT",
+      "event_headline": "Microsoft’s next gen Xbox device price is ‘a big pill to swallow’ even for the mega-cap company – SA’s Chris Ciaccia",
+      "event_type": "other",
+      "event_timestamp": "Wed, 21 Oct 2026 13:40:34 -0400",
+      "pre_event_price": 532.9299926757812,
+      "entry_price": 532.93,
+      "actual_move": 0.001993,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.018035,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.011913,
+      "beta": 1.5139,
+      "residual": -0.016043,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -2.01,
+      "z_threshold": 2,
+      "volume_ratio": 0.0796,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "WEAK_LIQUIDITY",
+      "event_direction": "bearish",
+      "price_direction": "bullish",
+      "direction_alignment": "CONTRADICTION",
+      "strategy_mode": "MEAN_REVERSION",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The analyst's comment characterizes the pricing of Microsoft's next-generation Xbox as a significant burden, implying potential margin pressure or reduced consumer adoption for a key hardware segment.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 3069.58,
+      "stop_price": 540.9239,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved: Price pumped +0.20% on bearish event with weak volume (0.08) and high divergence (z=-2.01).",
+      "divergence": -0.016043,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-21T15:27:31.712764+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (8.35 >= 0.8) and statistical significance (z=-7.92).",
       "divergence": -0.063331,
-      "id": 164
+      "id": 165
     },
     {
       "timestamp": "2026-10-21T14:27:49.522204+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (6.77 >= 0.8) and statistical significance (z=-5.14).",
       "divergence": -0.041082,
-      "id": 286
+      "id": 287
     }
   ]
 }
