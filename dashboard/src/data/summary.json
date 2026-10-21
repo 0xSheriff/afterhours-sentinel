@@ -1,6 +1,6 @@
 {
-  "version": "1792618841763",
-  "generated_at": "2026-10-21T21:40:41.763Z",
+  "version": "1792619087046",
+  "generated_at": "2026-10-21T21:44:47.046Z",
   "total_records": 11443,
   "skipped_count": 7182,
   "evaluated_count": 4255,
@@ -13,10 +13,10 @@
   "live": {
     "total": 11437,
     "trades_count": 147,
-    "wins_count": 103,
-    "win_rate": "70.1",
-    "total_pnl": 3751.06,
-    "sharpe_ratio": "10.62",
+    "wins_count": 104,
+    "win_rate": "70.7",
+    "total_pnl": 3788,
+    "sharpe_ratio": "10.73",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "853.9",
@@ -28,7 +28,7 @@
     "evaluated_calls": 4255,
     "live_call_rate": "95",
     "no_trades": 4108,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 147,
-      "pnl": 3751.06
+      "pnl": 3788
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved: Price dumped -0.24% on bullish event with weak volume (0.28) and high divergence (z=-2.16).",
       "divergence": -0.017279,
       "id": 258
-    },
-    {
-      "timestamp": "2026-10-21T17:44:18.387190+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "MSFT",
-      "event_headline": "Microsoft’s next gen Xbox device price is ‘a big pill to swallow’ even for the mega-cap company – SA’s Chris Ciaccia",
-      "event_type": "other",
-      "event_timestamp": "Wed, 21 Oct 2026 13:40:34 -0400",
-      "pre_event_price": 532.9299926757812,
-      "entry_price": 532.93,
-      "actual_move": 0.001993,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.018035,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.011913,
-      "beta": 1.5139,
-      "residual": -0.016043,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -2.01,
-      "z_threshold": 2,
-      "volume_ratio": 0.0796,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bearish",
-      "price_direction": "bullish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The analyst's comment characterizes the pricing of Microsoft's next-generation Xbox as a significant burden, implying potential margin pressure or reduced consumer adoption for a key hardware segment.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 3069.58,
-      "stop_price": 540.9239,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved: Price pumped +0.20% on bearish event with weak volume (0.08) and high divergence (z=-2.01).",
-      "divergence": -0.016043,
-      "id": 317
     }
   ]
 }
