@@ -1,6 +1,6 @@
 {
-  "version": "1792609878894",
-  "generated_at": "2026-10-21T19:11:18.893Z",
+  "version": "1792609971256",
+  "generated_at": "2026-10-21T19:12:51.256Z",
   "total_records": 11190,
   "skipped_count": 7007,
   "evaluated_count": 4177,
@@ -13,10 +13,10 @@
   "live": {
     "total": 11184,
     "trades_count": 146,
-    "wins_count": 102,
-    "win_rate": "69.9",
-    "total_pnl": 3659.14,
-    "sharpe_ratio": "10.50",
+    "wins_count": 103,
+    "win_rate": "70.5",
+    "total_pnl": 3751.06,
+    "sharpe_ratio": "10.67",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "851.5",
@@ -28,7 +28,7 @@
     "evaluated_calls": 4177,
     "live_call_rate": "95",
     "no_trades": 4031,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 146,
-      "pnl": 3659.14
+      "pnl": 3751.06
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "SHORT signal approved: Price pumped +0.20% on bearish event with weak volume (0.08) and high divergence (z=-2.01).",
       "divergence": -0.016043,
       "id": 64
-    },
-    {
-      "timestamp": "2026-10-21T15:27:31.712764+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NFLX",
-      "event_headline": "Netflix Stock Slammed With Price-Target Cuts After Q3 Report",
-      "event_type": "earnings",
-      "event_timestamp": "Wed, 21 Oct 2026 15:23:20 +0000",
-      "pre_event_price": 65.36509704589844,
-      "entry_price": 65.3651,
-      "actual_move": -0.048405,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.014926,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.008002,
-      "beta": 1.8654,
-      "residual": -0.063331,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -7.92,
-      "z_threshold": 2,
-      "volume_ratio": 8.3544,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The report of the slowest sales growth in three years triggering a wave of price-target cuts indicates a negative fundamental reassessment of Netflix's growth trajectory and valuation.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 3063.81,
-      "stop_price": 66.3456,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (8.35 >= 0.8) and statistical significance (z=-7.92).",
-      "divergence": -0.063331,
-      "id": 228
     }
   ]
 }
