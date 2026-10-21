@@ -1,17 +1,17 @@
 {
-  "version": "1792581705202",
-  "generated_at": "2026-10-21T11:21:45.202Z",
-  "total_records": 10558,
-  "skipped_count": 6676,
-  "evaluated_count": 3876,
+  "version": "1792581737028",
+  "generated_at": "2026-10-21T11:22:17.027Z",
+  "total_records": 10560,
+  "skipped_count": 6677,
+  "evaluated_count": 3877,
   "decision_counts": {
     "LONG": 102,
     "SHORT": 41,
-    "NO_TRADE": 3739,
-    "SKIPPED_NO_ASSET_MATCH": 6676
+    "NO_TRADE": 3740,
+    "SKIPPED_NO_ASSET_MATCH": 6677
   },
   "live": {
-    "total": 10552,
+    "total": 10554,
     "trades_count": 141,
     "wins_count": 97,
     "win_rate": "68.8",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "843.6",
     "start_time": 1789544649909,
-    "end_time": 1792581702029,
-    "live_calls": 3695,
+    "end_time": 1792581706401,
+    "live_calls": 3696,
     "fallback_calls": 181,
-    "skipped_calls": 6676,
-    "evaluated_calls": 3876,
+    "skipped_calls": 6677,
+    "evaluated_calls": 3877,
     "live_call_rate": "95",
-    "no_trades": 3735,
+    "no_trades": 3736,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.22 >= 0.8) and statistical significance (z=+5.17).",
       "divergence": 0.041344,
-      "id": 12
+      "id": 14
     },
     {
       "timestamp": "2026-10-21T10:25:51.231133+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.14 >= 0.8) and statistical significance (z=-10.34).",
       "divergence": -0.082735,
-      "id": 51
+      "id": 53
     },
     {
       "timestamp": "2026-10-21T09:48:42.907225+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.14 >= 0.8) and statistical significance (z=-10.44).",
       "divergence": -0.083523,
-      "id": 80
+      "id": 82
     }
   ]
 }
