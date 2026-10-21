@@ -1,6 +1,6 @@
 {
-  "version": "1792541650126",
-  "generated_at": "2026-10-21T00:14:10.126Z",
+  "version": "1792541893690",
+  "generated_at": "2026-10-21T00:18:13.690Z",
   "total_records": 10294,
   "skipped_count": 6507,
   "evaluated_count": 3781,
@@ -13,10 +13,10 @@
   "live": {
     "total": 10288,
     "trades_count": 132,
-    "wins_count": 90,
-    "win_rate": "68.2",
-    "total_pnl": 2960.9,
-    "sharpe_ratio": "9.62",
+    "wins_count": 91,
+    "win_rate": "68.9",
+    "total_pnl": 3009.39,
+    "sharpe_ratio": "9.76",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "832.5",
@@ -28,7 +28,7 @@
     "evaluated_calls": 3781,
     "live_call_rate": "95",
     "no_trades": 3649,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 132,
-      "pnl": 2960.9
+      "pnl": 3009.39
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.81 >= 0.8) and statistical significance (z=+4.06).",
       "divergence": 0.032484,
       "id": 94
-    },
-    {
-      "timestamp": "2026-10-20T20:17:52.057489+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "TSLA",
-      "event_headline": "SpaceX Pops After Q3 Beat, Posts First Profit (Live Coverage)",
-      "event_type": "earnings",
-      "event_timestamp": "Tue, 20 Oct 2026 20:15:37 +0000",
-      "pre_event_price": 374.59,
-      "entry_price": 374.59,
-      "actual_move": 0.01749,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.019203,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.007052,
-      "beta": 2.7231,
-      "residual": 0.036693,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 4.59,
-      "z_threshold": 2,
-      "volume_ratio": 0.7333,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "SpaceX's strong Q3 performance and first profit, driven by AI compute deals, signal positive momentum for Elon Musk's broader ecosystem, creating a sentiment tailwind for Tesla.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2987.58,
-      "stop_price": 368.9711,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.73 >= 0.8) and statistical significance (z=+4.59).",
-      "divergence": 0.036693,
-      "id": 177
     }
   ]
 }
