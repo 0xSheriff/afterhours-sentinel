@@ -1,6 +1,6 @@
 {
-  "version": "1792572496478",
-  "generated_at": "2026-10-21T08:48:16.477Z",
+  "version": "1792572618612",
+  "generated_at": "2026-10-21T08:50:18.611Z",
   "total_records": 10445,
   "skipped_count": 6612,
   "evaluated_count": 3827,
@@ -13,10 +13,10 @@
   "live": {
     "total": 10439,
     "trades_count": 138,
-    "wins_count": 94,
-    "win_rate": "68.1",
-    "total_pnl": 3073.58,
-    "sharpe_ratio": "9.68",
+    "wins_count": 95,
+    "win_rate": "68.8",
+    "total_pnl": 3086.43,
+    "sharpe_ratio": "9.73",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "841.1",
@@ -28,7 +28,7 @@
     "evaluated_calls": 3827,
     "live_call_rate": "95",
     "no_trades": 3689,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 138,
-      "pnl": 3073.58
+      "pnl": 3086.43
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.19 >= 0.8) and statistical significance (z=-10.63).",
       "divergence": -0.085077,
       "id": 79
-    },
-    {
-      "timestamp": "2026-10-21T04:49:52.766856+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "TSLA",
-      "event_headline": "Elon Musk backs SpaceX-Tesla merger as rocket firm turns profit",
-      "event_type": "earnings",
-      "event_timestamp": "Wed, 21 Oct 2026 04:37:11 +0000",
-      "pre_event_price": 380.46,
-      "entry_price": 380.46,
-      "actual_move": 0.03439,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.003611,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.001326,
-      "beta": 2.7231,
-      "residual": 0.038001,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 4.75,
-      "z_threshold": 2,
-      "volume_ratio": 0.645,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "Elon Musk's public support for a potential merger between SpaceX and Tesla signals a significant strategic consolidation that could enhance Tesla's valuation and operational synergies, creating a positive fundamental outlook for the stock.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2998.76,
-      "stop_price": 374.7531,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.65 >= 0.8) and statistical significance (z=+4.75).",
-      "divergence": 0.038001,
-      "id": 101
     }
   ]
 }
