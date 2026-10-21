@@ -1,34 +1,34 @@
 {
-  "version": "1792578238187",
-  "generated_at": "2026-10-21T10:23:58.187Z",
-  "total_records": 10507,
+  "version": "1792578361431",
+  "generated_at": "2026-10-21T10:26:01.431Z",
+  "total_records": 10508,
   "skipped_count": 6644,
-  "evaluated_count": 3857,
+  "evaluated_count": 3858,
   "decision_counts": {
     "LONG": 101,
-    "SHORT": 40,
+    "SHORT": 41,
     "NO_TRADE": 3722,
     "SKIPPED_NO_ASSET_MATCH": 6644
   },
   "live": {
-    "total": 10501,
-    "trades_count": 139,
+    "total": 10502,
+    "trades_count": 140,
     "wins_count": 96,
-    "win_rate": "69.1",
+    "win_rate": "68.6",
     "total_pnl": 3176.3,
-    "sharpe_ratio": "9.86",
+    "sharpe_ratio": "9.81",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "842.7",
     "start_time": 1789544649909,
-    "end_time": 1792578225808,
-    "live_calls": 3676,
+    "end_time": 1792578351231,
+    "live_calls": 3677,
     "fallback_calls": 181,
     "skipped_calls": 6644,
-    "evaluated_calls": 3857,
+    "evaluated_calls": 3858,
     "live_call_rate": "95",
     "no_trades": 3718,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 139,
+      "trades": 140,
       "pnl": 3176.3
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-21T10:25:51.231133+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "NFLX",
+      "event_headline": "Netflix Stock Drops. Why Wall Street Is Still Worried After Earnings Beat.",
+      "event_type": "earnings",
+      "event_timestamp": "Wed, 21 Oct 2026 09:38:00 +0000",
+      "pre_event_price": 64.36,
+      "entry_price": 64.36,
+      "actual_move": -0.078597,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.004138,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.002218,
+      "beta": 1.8654,
+      "residual": -0.082735,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -10.34,
+      "z_threshold": 2,
+      "volume_ratio": 2.1395,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "Despite the earnings beat, the significant year-to-date stock decline and persistent Wall Street concerns regarding market saturation and competition indicate a bearish fundamental outlook for Netflix.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 3013.3,
+      "stop_price": 65.3254,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.14 >= 0.8) and statistical significance (z=-10.34).",
+      "divergence": -0.082735,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-21T09:48:42.907225+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.14 >= 0.8) and statistical significance (z=-10.44).",
       "divergence": -0.083523,
-      "id": 29
+      "id": 30
     },
     {
       "timestamp": "2026-10-21T07:26:05.013613+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.19 >= 0.8) and statistical significance (z=-9.59).",
       "divergence": -0.076717,
-      "id": 102
+      "id": 103
     }
   ]
 }
