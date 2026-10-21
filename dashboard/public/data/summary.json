@@ -1,17 +1,17 @@
 {
-  "version": "1792594599519",
-  "generated_at": "2026-10-21T14:56:39.518Z",
-  "total_records": 10884,
-  "skipped_count": 6829,
-  "evaluated_count": 4049,
+  "version": "1792594671319",
+  "generated_at": "2026-10-21T14:57:51.318Z",
+  "total_records": 10888,
+  "skipped_count": 6831,
+  "evaluated_count": 4051,
   "decision_counts": {
     "LONG": 102,
     "SHORT": 43,
-    "NO_TRADE": 3910,
-    "SKIPPED_NO_ASSET_MATCH": 6829
+    "NO_TRADE": 3912,
+    "SKIPPED_NO_ASSET_MATCH": 6831
   },
   "live": {
-    "total": 10878,
+    "total": 10882,
     "trades_count": 143,
     "wins_count": 99,
     "win_rate": "69.2",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "847.2",
     "start_time": 1789544649909,
-    "end_time": 1792594580356,
-    "live_calls": 3864,
+    "end_time": 1792594654955,
+    "live_calls": 3866,
     "fallback_calls": 185,
-    "skipped_calls": 6829,
-    "evaluated_calls": 4049,
+    "skipped_calls": 6831,
+    "evaluated_calls": 4051,
     "live_call_rate": "95",
-    "no_trades": 3906,
+    "no_trades": 3908,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (6.77 >= 0.8) and statistical significance (z=-5.14).",
       "divergence": -0.041082,
-      "id": 44
+      "id": 48
     },
     {
       "timestamp": "2026-10-21T13:39:49.207853+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (3.30 >= 0.8) and statistical significance (z=-7.45).",
       "divergence": -0.0596,
-      "id": 106
+      "id": 110
     },
     {
       "timestamp": "2026-10-21T11:11:30.091989+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.22 >= 0.8) and statistical significance (z=+5.17).",
       "divergence": 0.041344,
-      "id": 338
+      "id": 342
     }
   ]
 }
