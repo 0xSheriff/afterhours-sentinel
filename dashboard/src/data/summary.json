@@ -1,17 +1,17 @@
 {
-  "version": "1792682414107",
-  "generated_at": "2026-10-22T15:20:14.106Z",
-  "total_records": 12206,
-  "skipped_count": 7651,
-  "evaluated_count": 4549,
+  "version": "1792682495094",
+  "generated_at": "2026-10-22T15:21:35.093Z",
+  "total_records": 12209,
+  "skipped_count": 7653,
+  "evaluated_count": 4550,
   "decision_counts": {
     "LONG": 108,
     "SHORT": 52,
-    "NO_TRADE": 4395,
-    "SKIPPED_NO_ASSET_MATCH": 7651
+    "NO_TRADE": 4396,
+    "SKIPPED_NO_ASSET_MATCH": 7653
   },
   "live": {
-    "total": 12200,
+    "total": 12203,
     "trades_count": 158,
     "wins_count": 112,
     "win_rate": "70.9",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "871.6",
     "start_time": 1789544649909,
-    "end_time": 1792682384813,
+    "end_time": 1792682484433,
     "live_calls": 4332,
-    "fallback_calls": 217,
-    "skipped_calls": 7651,
-    "evaluated_calls": 4549,
+    "fallback_calls": 218,
+    "skipped_calls": 7653,
+    "evaluated_calls": 4550,
     "live_call_rate": "95",
-    "no_trades": 4391,
+    "no_trades": 4392,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -0.10% on bullish event with weak volume (0.02) and high divergence (z=+7.81).",
       "divergence": 0.062466,
-      "id": 67
+      "id": 70
     },
     {
       "timestamp": "2026-10-22T14:26:32.546540+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +0.01% on bearish event with weak volume (0.02) and high divergence (z=+7.98).",
       "divergence": 0.063856,
-      "id": 69
+      "id": 72
     },
     {
       "timestamp": "2026-10-22T12:45:18.992672+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.98 >= 0.8) and statistical significance (z=+9.31).",
       "divergence": 0.074506,
-      "id": 199
+      "id": 202
     }
   ]
 }
