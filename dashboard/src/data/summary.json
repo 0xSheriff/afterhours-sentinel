@@ -1,6 +1,6 @@
 {
-  "version": "1792708658082",
-  "generated_at": "2026-10-22T22:37:38.082Z",
+  "version": "1792708931102",
+  "generated_at": "2026-10-22T22:42:11.102Z",
   "total_records": 12718,
   "skipped_count": 8014,
   "evaluated_count": 4698,
@@ -13,10 +13,10 @@
   "live": {
     "total": 12712,
     "trades_count": 163,
-    "wins_count": 115,
-    "win_rate": "70.6",
-    "total_pnl": 4341.85,
-    "sharpe_ratio": "10.83",
+    "wins_count": 116,
+    "win_rate": "71.2",
+    "total_pnl": 4362.18,
+    "sharpe_ratio": "10.89",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "878.9",
@@ -28,7 +28,7 @@
     "evaluated_calls": 4698,
     "live_call_rate": "95",
     "no_trades": 4535,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 163,
-      "pnl": 4341.85
+      "pnl": 4362.18
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved: Price dumped -10.51% on bullish event with weak volume (0.21) and high divergence (z=-6.30).",
       "divergence": -0.050432,
       "id": 71
-    },
-    {
-      "timestamp": "2026-10-22T18:41:49.435387+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "META",
-      "event_headline": "Meta has big plans for its Muse AI agent",
-      "event_type": "other",
-      "event_timestamp": "Thu, 22 Oct 2026 18:40:26 +0000",
-      "pre_event_price": 642.94,
-      "entry_price": 642.94,
-      "actual_move": -0.09232,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.062772,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.031216,
-      "beta": 2.0109,
-      "residual": -0.029548,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -3.69,
-      "z_threshold": 2,
-      "volume_ratio": 0.3278,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bullish",
-      "price_direction": "bearish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The announcement of significant plans for Meta's Muse AI agent signals continued strategic investment in generative AI, which is a key growth driver for the company's long-term valuation.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2943.86,
-      "stop_price": 633.2959,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved: Price dumped -9.23% on bullish event with weak volume (0.33) and high divergence (z=-3.69).",
-      "divergence": -0.029548,
-      "id": 288
     }
   ]
 }
