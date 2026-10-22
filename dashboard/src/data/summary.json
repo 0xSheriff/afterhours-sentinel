@@ -1,34 +1,34 @@
 {
-  "version": "1792703840889",
-  "generated_at": "2026-10-22T21:17:20.889Z",
-  "total_records": 12647,
+  "version": "1792703905514",
+  "generated_at": "2026-10-22T21:18:25.512Z",
+  "total_records": 12648,
   "skipped_count": 7954,
-  "evaluated_count": 4687,
+  "evaluated_count": 4688,
   "decision_counts": {
-    "LONG": 110,
+    "LONG": 111,
     "SHORT": 53,
     "NO_TRADE": 4530,
     "SKIPPED_NO_ASSET_MATCH": 7954
   },
   "live": {
-    "total": 12641,
-    "trades_count": 161,
+    "total": 12642,
+    "trades_count": 162,
     "wins_count": 114,
-    "win_rate": "70.8",
+    "win_rate": "70.4",
     "total_pnl": 4253.46,
-    "sharpe_ratio": "10.77",
+    "sharpe_ratio": "10.72",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
-    "duration_hours": "877.5",
+    "duration_hours": "877.6",
     "start_time": 1789544649909,
-    "end_time": 1792703807081,
-    "live_calls": 4460,
+    "end_time": 1792703870023,
+    "live_calls": 4461,
     "fallback_calls": 227,
     "skipped_calls": 7954,
-    "evaluated_calls": 4687,
+    "evaluated_calls": 4688,
     "live_call_rate": "95",
     "no_trades": 4526,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 161,
+      "trades": 162,
       "pnl": 4253.46
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-22T21:17:50.023290+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "META",
+      "event_headline": "Bill Ackman Says Meta Can Finance 'Whatever They Want,' Points to $82 Billion Cash",
+      "event_type": "other",
+      "event_timestamp": "Thu, 22 Oct 2026 21:15:12 +0000",
+      "pre_event_price": 646.84,
+      "entry_price": 646.84,
+      "actual_move": -0.1051,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.054668,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.027186,
+      "beta": 2.0109,
+      "residual": -0.050432,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -6.3,
+      "z_threshold": 2,
+      "volume_ratio": 0.2076,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "WEAK_LIQUIDITY",
+      "event_direction": "bullish",
+      "price_direction": "bearish",
+      "direction_alignment": "CONTRADICTION",
+      "strategy_mode": "MEAN_REVERSION",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "Bill Ackman's commentary highlights Meta's substantial cash reserves as a key strength that supports its AI investment strategy, countering market concerns about spending and signaling financial resilience.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2960.42,
+      "stop_price": 637.1374,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved: Price dumped -10.51% on bullish event with weak volume (0.21) and high divergence (z=-6.30).",
+      "divergence": -0.050432,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-22T18:41:49.435387+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -9.23% on bullish event with weak volume (0.33) and high divergence (z=-3.69).",
       "divergence": -0.029548,
-      "id": 217
+      "id": 218
     },
     {
       "timestamp": "2026-10-22T18:00:35.925001+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +3.14% on bearish event with weak volume (0.26) and high divergence (z=+12.58).",
       "divergence": 0.100617,
-      "id": 259
+      "id": 260
     }
   ]
 }
