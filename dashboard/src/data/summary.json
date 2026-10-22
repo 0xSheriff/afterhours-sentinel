@@ -1,6 +1,6 @@
 {
-  "version": "1792650035245",
-  "generated_at": "2026-10-22T06:20:35.245Z",
+  "version": "1792650080261",
+  "generated_at": "2026-10-22T06:21:20.260Z",
   "total_records": 11646,
   "skipped_count": 7286,
   "evaluated_count": 4354,
@@ -13,10 +13,10 @@
   "live": {
     "total": 11640,
     "trades_count": 152,
-    "wins_count": 108,
-    "win_rate": "71.1",
-    "total_pnl": 3938,
-    "sharpe_ratio": "10.77",
+    "wins_count": 109,
+    "win_rate": "71.7",
+    "total_pnl": 4007.6,
+    "sharpe_ratio": "10.92",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "862.6",
@@ -28,7 +28,7 @@
     "evaluated_calls": 4354,
     "live_call_rate": "95",
     "no_trades": 4202,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 152,
-      "pnl": 3938
+      "pnl": 4007.6
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "SHORT signal approved: Price pumped +0.36% on bearish event with weak volume (0.40) and high divergence (z=+4.08).",
       "divergence": 0.032621,
       "id": 6
-    },
-    {
-      "timestamp": "2026-10-22T02:20:54.050660+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NFLX",
-      "event_headline": "Netflix (NFLX) Stock Price Falls As Q3 Earnings Stir Valuation Doubts",
-      "event_type": "earnings",
-      "event_timestamp": "Thu, 22 Oct 2026 02:16:32 +0000",
-      "pre_event_price": 65.06,
-      "entry_price": 65.06,
-      "actual_move": -0.052846,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.011273,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.006043,
-      "beta": 1.8654,
-      "residual": -0.041573,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -5.2,
-      "z_threshold": 2,
-      "volume_ratio": 1.2811,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The stock's 5% decline following the Q3 report indicates that the market perceives the current valuation as fully pricing in recent margin strength, leading to a negative fundamental reassessment despite solid revenue figures.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2999.78,
-      "stop_price": 66.0359,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.28 >= 0.8) and statistical significance (z=-5.20).",
-      "divergence": -0.041573,
-      "id": 77
     }
   ]
 }
