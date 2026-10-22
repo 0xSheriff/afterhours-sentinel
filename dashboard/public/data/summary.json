@@ -1,6 +1,6 @@
 {
-  "version": "1792633641101",
-  "generated_at": "2026-10-22T01:47:21.100Z",
+  "version": "1792633674060",
+  "generated_at": "2026-10-22T01:47:54.059Z",
   "total_records": 11554,
   "skipped_count": 7234,
   "evaluated_count": 4314,
@@ -15,8 +15,8 @@
     "trades_count": 150,
     "wins_count": 106,
     "win_rate": "70.7",
-    "total_pnl": 3918.05,
-    "sharpe_ratio": "10.86",
+    "total_pnl": 3883.68,
+    "sharpe_ratio": "10.70",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "858.0",
@@ -28,7 +28,7 @@
     "evaluated_calls": 4314,
     "live_call_rate": "95",
     "no_trades": 4164,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 150,
-      "pnl": 3918.05
+      "pnl": 3883.68
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (6.03 >= 0.8) and statistical significance (z=+2.13).",
       "divergence": 0.017066,
       "id": 54
-    },
-    {
-      "timestamp": "2026-10-21T21:47:25.591927+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "META",
-      "event_headline": "Meta says Muse has over 10M users, with shopping a top activity",
-      "event_type": "earnings",
-      "event_timestamp": "Wed, 21 Oct 2026 21:14:19 +0000",
-      "pre_event_price": 721.81,
-      "entry_price": 721.81,
-      "actual_move": 0.0394,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.000173,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.000086,
-      "beta": 2.0109,
-      "residual": 0.039227,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 4.9,
-      "z_threshold": 2,
-      "volume_ratio": 1.1889,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The disclosure of over 10 million users for Meta's AI app Muse, with shopping as a top activity, signals strong product adoption and potential monetization opportunities, which is a positive fundamental indicator for the company's growth trajectory.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 3066.52,
-      "stop_price": 710.9828,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.19 >= 0.8) and statistical significance (z=+4.90).",
-      "divergence": 0.039227,
-      "id": 109
     }
   ]
 }
