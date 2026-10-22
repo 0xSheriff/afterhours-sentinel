@@ -1,34 +1,34 @@
 {
-  "version": "1792665473888",
-  "generated_at": "2026-10-22T10:37:53.888Z",
-  "total_records": 11827,
-  "skipped_count": 7404,
-  "evaluated_count": 4417,
+  "version": "1792665540666",
+  "generated_at": "2026-10-22T10:39:00.665Z",
+  "total_records": 11834,
+  "skipped_count": 7410,
+  "evaluated_count": 4418,
   "decision_counts": {
-    "LONG": 105,
+    "LONG": 106,
     "SHORT": 51,
     "NO_TRADE": 4267,
-    "SKIPPED_NO_ASSET_MATCH": 7404
+    "SKIPPED_NO_ASSET_MATCH": 7410
   },
   "live": {
-    "total": 11821,
-    "trades_count": 154,
+    "total": 11828,
+    "trades_count": 155,
     "wins_count": 111,
-    "win_rate": "72.1",
+    "win_rate": "71.6",
     "total_pnl": 4120.69,
-    "sharpe_ratio": "11.11",
+    "sharpe_ratio": "11.05",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "866.9",
     "start_time": 1789544649909,
-    "end_time": 1792665471795,
-    "live_calls": 4203,
+    "end_time": 1792665484871,
+    "live_calls": 4204,
     "fallback_calls": 214,
-    "skipped_calls": 7404,
-    "evaluated_calls": 4417,
+    "skipped_calls": 7410,
+    "evaluated_calls": 4418,
     "live_call_rate": "95",
     "no_trades": 4263,
-    "open_positions_count": 1
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 154,
+      "trades": 155,
       "pnl": 4120.69
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-22T10:37:54.819379+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "META",
+      "event_headline": "Meta has strong chance of getting $25 billion New Mexico penalty slashed on appeal, experts say",
+      "event_type": "other",
+      "event_timestamp": "2026-10-22 10:31:59",
+      "pre_event_price": 691.55,
+      "entry_price": 691.55,
+      "actual_move": -0.00294,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.021617,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.01075,
+      "beta": 2.0109,
+      "residual": 0.018677,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 2.33,
+      "z_threshold": 2,
+      "volume_ratio": 0.3929,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "WEAK_LIQUIDITY",
+      "event_direction": "bullish",
+      "price_direction": "bearish",
+      "direction_alignment": "CONTRADICTION",
+      "strategy_mode": "MEAN_REVERSION",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The prospect of a significant reduction in a $25 billion regulatory penalty represents a potential removal of a major financial liability, which is fundamentally positive for Meta's balance sheet and future earnings.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2975.25,
+      "stop_price": 681.1767,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved: Price dumped -0.29% on bullish event with weak volume (0.39) and high divergence (z=+2.33).",
+      "divergence": 0.018677,
+      "id": 6
+    },
     {
       "timestamp": "2026-10-22T08:11:41.102103+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +0.49% on bearish event with weak volume (0.44) and high divergence (z=+4.80).",
       "divergence": 0.038389,
-      "id": 122
+      "id": 129
     }
   ]
 }
