@@ -1,34 +1,34 @@
 {
-  "version": "1792751107387",
-  "generated_at": "2026-10-23T10:25:07.386Z",
-  "total_records": 12959,
-  "skipped_count": 8190,
+  "version": "1792751235235",
+  "generated_at": "2026-10-23T10:27:15.235Z",
+  "total_records": 12962,
+  "skipped_count": 8193,
   "evaluated_count": 4763,
   "decision_counts": {
     "LONG": 114,
     "SHORT": 55,
     "NO_TRADE": 4600,
-    "SKIPPED_NO_ASSET_MATCH": 8190
+    "SKIPPED_NO_ASSET_MATCH": 8193
   },
   "live": {
-    "total": 12953,
+    "total": 12956,
     "trades_count": 167,
     "wins_count": 118,
     "win_rate": "70.7",
-    "total_pnl": 4510.07,
-    "sharpe_ratio": "10.98",
+    "total_pnl": 4494.43,
+    "sharpe_ratio": "10.92",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "890.7",
     "start_time": 1789544649909,
-    "end_time": 1792751088348,
+    "end_time": 1792751223771,
     "live_calls": 4531,
     "fallback_calls": 232,
-    "skipped_calls": 8190,
+    "skipped_calls": 8193,
     "evaluated_calls": 4763,
     "live_call_rate": "95",
     "no_trades": 4596,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 167,
-      "pnl": 4510.07
+      "pnl": 4494.43
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +3.47% on bearish event with weak volume (0.02) and high divergence (z=+11.67).",
       "divergence": 0.093374,
-      "id": 39
+      "id": 42
     },
     {
       "timestamp": "2026-10-23T08:15:36.330534+00:00",
@@ -141,54 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -6.79% on bullish event with weak volume (0.22) and high divergence (z=-7.71).",
       "divergence": -0.061704,
-      "id": 80
-    },
-    {
-      "timestamp": "2026-10-23T06:26:31.166509+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "TSLA",
-      "event_headline": "TSLA Eyes Best Week In 2 Months — Analyst Sees Physical Tech’s ‘Berkshire,’ But Bear Credits Court Ruling For Q3 Beat",
-      "event_type": "regulatory",
-      "event_timestamp": "Fri, 23 Oct 2026 06:13:55 +0000",
-      "pre_event_price": 375.87,
-      "entry_price": 375.87,
-      "actual_move": 0.01182,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.077418,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.02843,
-      "beta": 2.7231,
-      "residual": 0.089238,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 11.15,
-      "z_threshold": 2,
-      "volume_ratio": 0.027,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bearish",
-      "price_direction": "bullish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The analyst argues that tariff relief artificially inflated gross profit to mask an underlying earnings miss, suggesting the company's core operational performance is weaker than reported.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2969.16,
-      "stop_price": 381.508,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved: Price pumped +1.18% on bearish event with weak volume (0.03) and high divergence (z=+11.15).",
-      "divergence": 0.089238,
-      "id": 119
+      "id": 83
     }
   ]
 }
