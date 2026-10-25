@@ -1,6 +1,6 @@
 {
-  "version": "1792900047402",
-  "generated_at": "2026-10-25T03:47:27.402Z",
+  "version": "1792901761204",
+  "generated_at": "2026-10-25T04:16:01.203Z",
   "total_records": 13738,
   "skipped_count": 8707,
   "evaluated_count": 5025,
@@ -13,10 +13,10 @@
   "live": {
     "total": 13732,
     "trades_count": 172,
-    "wins_count": 120,
-    "win_rate": "69.8",
-    "total_pnl": 4466.51,
-    "sharpe_ratio": "10.52",
+    "wins_count": 121,
+    "win_rate": "70.3",
+    "total_pnl": 4505.27,
+    "sharpe_ratio": "10.62",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "932.1",
@@ -28,7 +28,7 @@
     "evaluated_calls": 5025,
     "live_call_rate": "95",
     "no_trades": 4853,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 172,
-      "pnl": 4466.51
+      "pnl": 4505.27
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-10-25T00:15:25.534623+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NFLX",
-      "event_headline": "Netflix is losing ground to YouTube",
-      "event_type": "earnings",
-      "event_timestamp": "Sun, 25 Oct 2026 00:03:00 +0000",
-      "pre_event_price": 65.7845,
-      "entry_price": 65.7845,
-      "actual_move": -0.018874,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.000025,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.000013,
-      "beta": 1.8654,
-      "residual": -0.018899,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -2.36,
-      "z_threshold": 2,
-      "volume_ratio": 0.7459,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The headline highlights Netflix losing market share to YouTube, which signals competitive pressure and potential headwinds for subscriber growth despite the company's claim that its strategy remains unchanged.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2923.42,
-      "stop_price": 66.7713,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.75 >= 0.8) and statistical significance (z=-2.36).",
-      "divergence": -0.018899,
-      "id": 19
-    }
-  ]
+  "open_positions": []
 }
