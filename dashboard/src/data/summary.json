@@ -1,34 +1,34 @@
 {
-  "version": "1793020454300",
-  "generated_at": "2026-10-26T13:14:14.299Z",
-  "total_records": 14162,
+  "version": "1793020576586",
+  "generated_at": "2026-10-26T13:16:16.586Z",
+  "total_records": 14163,
   "skipped_count": 8959,
-  "evaluated_count": 5197,
+  "evaluated_count": 5198,
   "decision_counts": {
     "LONG": 117,
-    "SHORT": 59,
+    "SHORT": 60,
     "NO_TRADE": 5027,
     "SKIPPED_NO_ASSET_MATCH": 8959
   },
   "live": {
-    "total": 14156,
-    "trades_count": 174,
+    "total": 14157,
+    "trades_count": 175,
     "wins_count": 123,
-    "win_rate": "70.7",
+    "win_rate": "70.3",
     "total_pnl": 4565.28,
-    "sharpe_ratio": "10.69",
+    "sharpe_ratio": "10.64",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "965.5",
     "start_time": 1789544649909,
-    "end_time": 1793020378053,
-    "live_calls": 4950,
+    "end_time": 1793020565449,
+    "live_calls": 4951,
     "fallback_calls": 247,
     "skipped_calls": 8959,
-    "evaluated_calls": 5197,
+    "evaluated_calls": 5198,
     "live_call_rate": "95",
     "no_trades": 5023,
-    "open_positions_count": 0
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 174,
+      "trades": 175,
       "pnl": 4565.28
     },
     "MockExecutionClient [Local Simulator]": {
@@ -48,5 +48,53 @@
       "pnl": 209.71
     }
   },
-  "open_positions": []
+  "open_positions": [
+    {
+      "timestamp": "2026-10-26T13:16:05.449400+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "AAPL",
+      "event_headline": "Q3 Peak Season Arrives: Strong Beats, Sky-High AI Scrutiny",
+      "event_type": "earnings",
+      "event_timestamp": "Mon, 26 Oct 2026 13:03:57 +0000",
+      "pre_event_price": 343.96,
+      "entry_price": 343.96,
+      "actual_move": -0.01189,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.014699,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.008972,
+      "beta": 1.6383,
+      "residual": -0.026589,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -3.32,
+      "z_threshold": 2,
+      "volume_ratio": 0.9057,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The heightened scrutiny on AI capital expenditure following Meta's selloff creates a negative sentiment overhang for Apple's upcoming earnings, as investors are less likely to tolerate high infrastructure spend without immediate returns.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2893.59,
+      "stop_price": 349.1194,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.91 >= 0.8) and statistical significance (z=-3.32).",
+      "divergence": -0.026589,
+      "id": 1
+    }
+  ]
 }
