@@ -1,34 +1,34 @@
 {
-  "version": "1793022942637",
-  "generated_at": "2026-10-26T13:55:42.637Z",
-  "total_records": 14194,
+  "version": "1793023004908",
+  "generated_at": "2026-10-26T13:56:44.908Z",
+  "total_records": 14195,
   "skipped_count": 8967,
-  "evaluated_count": 5221,
+  "evaluated_count": 5222,
   "decision_counts": {
-    "LONG": 118,
+    "LONG": 119,
     "SHORT": 61,
     "NO_TRADE": 5048,
     "SKIPPED_NO_ASSET_MATCH": 8967
   },
   "live": {
-    "total": 14188,
-    "trades_count": 177,
+    "total": 14189,
+    "trades_count": 178,
     "wins_count": 124,
-    "win_rate": "70.1",
+    "win_rate": "69.7",
     "total_pnl": 4565.62,
-    "sharpe_ratio": "10.56",
+    "sharpe_ratio": "10.52",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
     "duration_hours": "966.2",
     "start_time": 1789544649909,
-    "end_time": 1793022930612,
-    "live_calls": 4971,
+    "end_time": 1793022989356,
+    "live_calls": 4972,
     "fallback_calls": 250,
     "skipped_calls": 8967,
-    "evaluated_calls": 5221,
+    "evaluated_calls": 5222,
     "live_call_rate": "95",
     "no_trades": 5044,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 177,
+      "trades": 178,
       "pnl": 4565.62
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-26T13:56:29.356888+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "TSLA",
+      "event_headline": "Stock Market Today: Dow Rises As Oil Prices Fall; Tesla Shares Rally On This (Live Coverage)",
+      "event_type": "analyst",
+      "event_timestamp": "Mon, 26 Oct 2026 13:49:55 +0000",
+      "pre_event_price": 394.92,
+      "entry_price": 394.92,
+      "actual_move": 0.06084,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.005049,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.001854,
+      "beta": 2.7231,
+      "residual": 0.065889,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 8.24,
+      "z_threshold": 2,
+      "volume_ratio": 2.6346,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bullish",
+      "price_direction": "bullish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The explicit mention of Tesla shares rallying due to an analyst upgrade indicates a positive sentiment shift and increased institutional confidence in the stock.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2873.41,
+      "stop_price": 388.9962,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (2.63 >= 0.8) and statistical significance (z=+8.24).",
+      "divergence": 0.065889,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-26T13:55:25.978827+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (2.64 >= 0.8) and statistical significance (z=+8.07).",
       "divergence": 0.064542,
-      "id": 2
+      "id": 3
     },
     {
       "timestamp": "2026-10-26T13:48:27.659905+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.80 >= 0.8) and statistical significance (z=-3.58).",
       "divergence": -0.028664,
-      "id": 14
+      "id": 15
     }
   ]
 }
