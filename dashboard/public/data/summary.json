@@ -1,34 +1,34 @@
 {
-  "version": "1793048530228",
-  "generated_at": "2026-10-26T21:02:10.228Z",
-  "total_records": 14724,
-  "skipped_count": 9312,
-  "evaluated_count": 5406,
+  "version": "1793048606408",
+  "generated_at": "2026-10-26T21:03:26.408Z",
+  "total_records": 14726,
+  "skipped_count": 9313,
+  "evaluated_count": 5407,
   "decision_counts": {
     "LONG": 122,
     "SHORT": 62,
-    "NO_TRADE": 5228,
-    "SKIPPED_NO_ASSET_MATCH": 9312
+    "NO_TRADE": 5229,
+    "SKIPPED_NO_ASSET_MATCH": 9313
   },
   "live": {
-    "total": 14718,
+    "total": 14720,
     "trades_count": 182,
     "wins_count": 126,
     "win_rate": "69.2",
-    "total_pnl": 4484.34,
-    "sharpe_ratio": "10.01",
-    "max_drawdown_usd": 112.97,
-    "max_drawdown_pct": "0.110",
+    "total_pnl": 4440.9,
+    "sharpe_ratio": "9.85",
+    "max_drawdown_usd": 124.72,
+    "max_drawdown_pct": "0.119",
     "duration_hours": "973.3",
     "start_time": 1789544649909,
-    "end_time": 1793048490825,
-    "live_calls": 5152,
+    "end_time": 1793048589824,
+    "live_calls": 5153,
     "fallback_calls": 254,
-    "skipped_calls": 9312,
-    "evaluated_calls": 5406,
+    "skipped_calls": 9313,
+    "evaluated_calls": 5407,
     "live_call_rate": "95",
-    "no_trades": 5224,
-    "open_positions_count": 2
+    "no_trades": 5225,
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 182,
-      "pnl": 4484.34
+      "pnl": 4440.9
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -94,54 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +6.07% on bearish event with weak volume (0.31) and high divergence (z=+8.07).",
       "divergence": 0.064574,
-      "id": 147
-    },
-    {
-      "timestamp": "2026-10-26T18:15:34.968991+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "AMZN",
-      "event_headline": "Prediction: Earnings Will “Double” at Amazon, Alphabet and Meta in Five Years",
-      "event_type": "earnings",
-      "event_timestamp": "Mon, 26 Oct 2026 17:58:35 +0000",
-      "pre_event_price": 249.33,
-      "entry_price": 249.33,
-      "actual_move": 0.00193,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.021201,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.01229,
-      "beta": 1.725,
-      "residual": -0.019271,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -2.41,
-      "z_threshold": 2,
-      "volume_ratio": 0.8761,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The commentary highlights that consensus estimates for Amazon's normalized EPS growth (26% annually) significantly exceed the 15% threshold required for earnings to double in five years, signaling strong fundamental momentum.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2895.88,
-      "stop_price": 245.5901,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.88 >= 0.8) and statistical significance (z=-2.41).",
-      "divergence": -0.019271,
-      "id": 193
+      "id": 149
     }
   ]
 }
