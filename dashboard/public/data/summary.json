@@ -1,34 +1,34 @@
 {
-  "version": "1792993078671",
-  "generated_at": "2026-10-26T05:37:58.671Z",
-  "total_records": 13940,
+  "version": "1792994018534",
+  "generated_at": "2026-10-26T05:53:38.533Z",
+  "total_records": 13941,
   "skipped_count": 8817,
-  "evaluated_count": 5117,
+  "evaluated_count": 5118,
   "decision_counts": {
     "LONG": 117,
-    "SHORT": 57,
+    "SHORT": 58,
     "NO_TRADE": 4949,
     "SKIPPED_NO_ASSET_MATCH": 8817
   },
   "live": {
-    "total": 13934,
-    "trades_count": 172,
+    "total": 13935,
+    "trades_count": 173,
     "wins_count": 121,
-    "win_rate": "70.3",
+    "win_rate": "69.9",
     "total_pnl": 4505.27,
-    "sharpe_ratio": "10.62",
+    "sharpe_ratio": "10.57",
     "max_drawdown_usd": 112.97,
     "max_drawdown_pct": "0.110",
-    "duration_hours": "957.9",
+    "duration_hours": "958.2",
     "start_time": 1789544649909,
-    "end_time": 1792993067021,
-    "live_calls": 4872,
+    "end_time": 1792993990923,
+    "live_calls": 4873,
     "fallback_calls": 245,
     "skipped_calls": 8817,
-    "evaluated_calls": 5117,
+    "evaluated_calls": 5118,
     "live_call_rate": "95",
     "no_trades": 4945,
-    "open_positions_count": 0
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 172,
+      "trades": 173,
       "pnl": 4505.27
     },
     "MockExecutionClient [Local Simulator]": {
@@ -48,5 +48,53 @@
       "pnl": 209.71
     }
   },
-  "open_positions": []
+  "open_positions": [
+    {
+      "timestamp": "2026-10-26T05:53:10.923753+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "BABA",
+      "event_headline": "BABA, BIDU, SKHY in Focus: Morgan Stanley Sees More Downside In Chinese Stocks, Goldman Sachs Cuts KOSPI Target",
+      "event_type": "earnings",
+      "event_timestamp": "Mon, 26 Oct 2026 05:43:38 +0000",
+      "pre_event_price": 99.73,
+      "entry_price": 99.73,
+      "actual_move": -0.020526,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.003416,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.002007,
+      "beta": 1.7025,
+      "residual": -0.023943,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -2.99,
+      "z_threshold": 2,
+      "volume_ratio": 1.0346,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "Morgan Stanley's explicit warning of valuation risks and further downside for Chinese stocks creates a negative sentiment headwind for BABA.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2897.67,
+      "stop_price": 101.2259,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.03 >= 0.8) and statistical significance (z=-2.99).",
+      "divergence": -0.023943,
+      "id": 1
+    }
+  ]
 }
