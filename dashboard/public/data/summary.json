@@ -1,17 +1,17 @@
 {
-  "version": "1793023165317",
-  "generated_at": "2026-10-26T13:59:25.316Z",
-  "total_records": 14198,
-  "skipped_count": 8967,
-  "evaluated_count": 5225,
+  "version": "1793023231191",
+  "generated_at": "2026-10-26T14:00:31.190Z",
+  "total_records": 14202,
+  "skipped_count": 8970,
+  "evaluated_count": 5226,
   "decision_counts": {
     "LONG": 119,
     "SHORT": 61,
-    "NO_TRADE": 5051,
-    "SKIPPED_NO_ASSET_MATCH": 8967
+    "NO_TRADE": 5052,
+    "SKIPPED_NO_ASSET_MATCH": 8970
   },
   "live": {
-    "total": 14192,
+    "total": 14196,
     "trades_count": 178,
     "wins_count": 124,
     "win_rate": "69.7",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.110",
     "duration_hours": "966.3",
     "start_time": 1789544649909,
-    "end_time": 1793023161199,
-    "live_calls": 4975,
+    "end_time": 1793023228726,
+    "live_calls": 4976,
     "fallback_calls": 250,
-    "skipped_calls": 8967,
-    "evaluated_calls": 5225,
+    "skipped_calls": 8970,
+    "evaluated_calls": 5226,
     "live_call_rate": "95",
-    "no_trades": 5047,
+    "no_trades": 5048,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (2.63 >= 0.8) and statistical significance (z=+8.24).",
       "divergence": 0.065889,
-      "id": 4
+      "id": 8
     },
     {
       "timestamp": "2026-10-26T13:55:25.978827+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (2.64 >= 0.8) and statistical significance (z=+8.07).",
       "divergence": 0.064542,
-      "id": 6
+      "id": 10
     },
     {
       "timestamp": "2026-10-26T13:48:27.659905+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.80 >= 0.8) and statistical significance (z=-3.58).",
       "divergence": -0.028664,
-      "id": 18
+      "id": 22
     }
   ]
 }
