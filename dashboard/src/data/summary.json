@@ -1,6 +1,6 @@
 {
-  "version": "1793055467354",
-  "generated_at": "2026-10-26T22:57:47.354Z",
+  "version": "1793056482347",
+  "generated_at": "2026-10-26T23:14:42.346Z",
   "total_records": 14796,
   "skipped_count": 9365,
   "evaluated_count": 5425,
@@ -13,10 +13,10 @@
   "live": {
     "total": 14790,
     "trades_count": 183,
-    "wins_count": 126,
-    "win_rate": "68.9",
-    "total_pnl": 4440.9,
-    "sharpe_ratio": "9.81",
+    "wins_count": 127,
+    "win_rate": "69.4",
+    "total_pnl": 4458.31,
+    "sharpe_ratio": "9.86",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "975.2",
@@ -28,7 +28,7 @@
     "evaluated_calls": 5425,
     "live_call_rate": "95",
     "no_trades": 5242,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 183,
-      "pnl": 4440.9
+      "pnl": 4458.31
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.62 >= 0.8) and statistical significance (z=-2.09).",
       "divergence": -0.016748,
       "id": 34
-    },
-    {
-      "timestamp": "2026-10-26T19:14:33.593684+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "TSLA",
-      "event_headline": "Move Over, Tesla: This Robotics Stock Is the Better Buy",
-      "event_type": "other",
-      "event_timestamp": "Mon, 26 Oct 2026 19:05:00 +0000",
-      "pre_event_price": 395.02,
-      "entry_price": 395.02,
-      "actual_move": 0.06068,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.003894,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.00143,
-      "beta": 2.7231,
-      "residual": 0.064574,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 8.07,
-      "z_threshold": 2,
-      "volume_ratio": 0.307,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bearish",
-      "price_direction": "bullish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The headline explicitly positions a competitor as a superior investment choice over Tesla, implying a relative negative sentiment or reduced attractiveness for TSLA in the robotics sector.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2889.36,
-      "stop_price": 400.9453,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved: Price pumped +6.07% on bearish event with weak volume (0.31) and high divergence (z=+8.07).",
-      "divergence": 0.064574,
-      "id": 219
     }
   ]
 }
