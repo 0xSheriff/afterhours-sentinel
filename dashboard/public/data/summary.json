@@ -1,6 +1,6 @@
 {
-  "version": "1793135156945",
-  "generated_at": "2026-10-27T21:05:56.944Z",
+  "version": "1793135293896",
+  "generated_at": "2026-10-27T21:08:13.896Z",
   "total_records": 15958,
   "skipped_count": 10282,
   "evaluated_count": 5670,
@@ -13,10 +13,10 @@
   "live": {
     "total": 15952,
     "trades_count": 190,
-    "wins_count": 131,
-    "win_rate": "68.9",
-    "total_pnl": 4622.45,
-    "sharpe_ratio": "9.85",
+    "wins_count": 132,
+    "win_rate": "69.5",
+    "total_pnl": 4639.06,
+    "sharpe_ratio": "9.89",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "997.4",
@@ -28,7 +28,7 @@
     "evaluated_calls": 5670,
     "live_call_rate": "95",
     "no_trades": 5480,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 190,
-      "pnl": 4622.45
+      "pnl": 4639.06
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.89 >= 0.8) and statistical significance (z=-3.35).",
       "divergence": -0.026765,
       "id": 229
-    },
-    {
-      "timestamp": "2026-10-27T17:07:44.466822+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "META",
-      "event_headline": "Meta’s Capital Raise Is Spooking Investors. What the Price Targets Say Now",
-      "event_type": "earnings",
-      "event_timestamp": "Tue, 27 Oct 2026 17:03:42 +0000",
-      "pre_event_price": 624.7,
-      "entry_price": 624.7,
-      "actual_move": -0.02912,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.02444,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.012154,
-      "beta": 2.0109,
-      "residual": -0.05356,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -6.7,
-      "z_threshold": 2,
-      "volume_ratio": 0.7805,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The combination of negative free cash flow, a legal charge, and a new share class for capital raising signals financial stress and potential dilution, which are fundamentally negative for existing shareholders.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2914.15,
-      "stop_price": 634.0705,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.78 >= 0.8) and statistical significance (z=-6.70).",
-      "divergence": -0.05356,
-      "id": 417
     }
   ]
 }
