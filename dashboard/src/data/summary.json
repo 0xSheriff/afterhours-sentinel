@@ -1,17 +1,17 @@
 {
-  "version": "1793106752608",
-  "generated_at": "2026-10-27T13:12:32.608Z",
-  "total_records": 15238,
-  "skipped_count": 9699,
-  "evaluated_count": 5533,
+  "version": "1793106805084",
+  "generated_at": "2026-10-27T13:13:25.084Z",
+  "total_records": 15241,
+  "skipped_count": 9700,
+  "evaluated_count": 5535,
   "decision_counts": {
     "LONG": 126,
     "SHORT": 64,
-    "NO_TRADE": 5349,
-    "SKIPPED_NO_ASSET_MATCH": 9699
+    "NO_TRADE": 5351,
+    "SKIPPED_NO_ASSET_MATCH": 9700
   },
   "live": {
-    "total": 15232,
+    "total": 15235,
     "trades_count": 188,
     "wins_count": 129,
     "win_rate": "68.6",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "989.5",
     "start_time": 1789544649909,
-    "end_time": 1793106726004,
-    "live_calls": 5275,
+    "end_time": 1793106797568,
+    "live_calls": 5277,
     "fallback_calls": 258,
-    "skipped_calls": 9699,
-    "evaluated_calls": 5533,
+    "skipped_calls": 9700,
+    "evaluated_calls": 5535,
     "live_call_rate": "95",
-    "no_trades": 5345,
+    "no_trades": 5347,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.69 >= 0.8) and statistical significance (z=+4.83).",
       "divergence": 0.038642,
-      "id": 82
+      "id": 85
     },
     {
       "timestamp": "2026-10-27T12:12:37.944832+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.73 >= 0.8) and statistical significance (z=-4.54).",
       "divergence": -0.036283,
-      "id": 87
+      "id": 90
     },
     {
       "timestamp": "2026-10-27T10:53:20.908141+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +4.31% on bearish event with weak volume (0.29) and high divergence (z=+4.66).",
       "divergence": 0.037256,
-      "id": 183
+      "id": 186
     }
   ]
 }
