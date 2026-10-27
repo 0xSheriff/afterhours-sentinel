@@ -1,17 +1,17 @@
 {
-  "version": "1793103952610",
-  "generated_at": "2026-10-27T12:25:52.610Z",
-  "total_records": 15174,
-  "skipped_count": 9648,
-  "evaluated_count": 5520,
+  "version": "1793104016732",
+  "generated_at": "2026-10-27T12:26:56.732Z",
+  "total_records": 15179,
+  "skipped_count": 9652,
+  "evaluated_count": 5521,
   "decision_counts": {
     "LONG": 126,
     "SHORT": 64,
-    "NO_TRADE": 5336,
-    "SKIPPED_NO_ASSET_MATCH": 9648
+    "NO_TRADE": 5337,
+    "SKIPPED_NO_ASSET_MATCH": 9652
   },
   "live": {
-    "total": 15168,
+    "total": 15173,
     "trades_count": 188,
     "wins_count": 129,
     "win_rate": "68.6",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "988.7",
     "start_time": 1789544649909,
-    "end_time": 1793103939887,
-    "live_calls": 5263,
+    "end_time": 1793104011512,
+    "live_calls": 5264,
     "fallback_calls": 257,
-    "skipped_calls": 9648,
-    "evaluated_calls": 5520,
+    "skipped_calls": 9652,
+    "evaluated_calls": 5521,
     "live_call_rate": "95",
-    "no_trades": 5332,
+    "no_trades": 5333,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.69 >= 0.8) and statistical significance (z=+4.83).",
       "divergence": 0.038642,
-      "id": 18
+      "id": 23
     },
     {
       "timestamp": "2026-10-27T12:12:37.944832+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.73 >= 0.8) and statistical significance (z=-4.54).",
       "divergence": -0.036283,
-      "id": 23
+      "id": 28
     },
     {
       "timestamp": "2026-10-27T10:53:20.908141+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +4.31% on bearish event with weak volume (0.29) and high divergence (z=+4.66).",
       "divergence": 0.037256,
-      "id": 119
+      "id": 124
     }
   ]
 }
