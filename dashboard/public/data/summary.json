@@ -1,34 +1,34 @@
 {
-  "version": "1793189469524",
-  "generated_at": "2026-10-28T12:11:09.524Z",
-  "total_records": 16511,
+  "version": "1793189592239",
+  "generated_at": "2026-10-28T12:13:12.238Z",
+  "total_records": 16512,
   "skipped_count": 10717,
-  "evaluated_count": 5788,
+  "evaluated_count": 5789,
   "decision_counts": {
     "LONG": 132,
-    "SHORT": 66,
+    "SHORT": 67,
     "NO_TRADE": 5596,
     "SKIPPED_NO_ASSET_MATCH": 10717
   },
   "live": {
-    "total": 16505,
-    "trades_count": 196,
+    "total": 16506,
+    "trades_count": 197,
     "wins_count": 136,
-    "win_rate": "69.4",
+    "win_rate": "69.0",
     "total_pnl": 4734.96,
-    "sharpe_ratio": "9.86",
+    "sharpe_ratio": "9.83",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1012.4",
+    "duration_hours": "1012.5",
     "start_time": 1789544649909,
-    "end_time": 1793189438595,
-    "live_calls": 5520,
+    "end_time": 1793189565119,
+    "live_calls": 5521,
     "fallback_calls": 268,
     "skipped_calls": 10717,
-    "evaluated_calls": 5788,
+    "evaluated_calls": 5789,
     "live_call_rate": "95",
     "no_trades": 5592,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 196,
+      "trades": 197,
       "pnl": 4734.96
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-28T12:12:45.119362+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "COIN",
+      "event_headline": "Coinbase User? Your Contact Details May Have Leaked Through a Vendor",
+      "event_type": "earnings",
+      "event_timestamp": "Wed, 28 Oct 2026 11:56:52 +0000",
+      "pre_event_price": 158.1,
+      "entry_price": 158.1,
+      "actual_move": -0.00983,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.054893,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.012847,
+      "beta": 4.2729,
+      "residual": -0.064723,
+      "residual_std": 0.009918,
+      "volatility_floor": 0.008,
+      "z_score": -6.53,
+      "z_threshold": 2,
+      "volume_ratio": 2.717,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The disclosure of a data breach involving customer contact details poses a reputational risk and potential regulatory liability, which is fundamentally negative for the company's outlook ahead of its earnings release.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2921.12,
+      "stop_price": 160.4715,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.72 >= 0.8) and statistical significance (z=-6.53).",
+      "divergence": -0.064723,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-28T11:51:19.515383+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.00 >= 0.8) and statistical significance (z=+4.78).",
       "divergence": 0.038264,
-      "id": 25
+      "id": 26
     },
     {
       "timestamp": "2026-10-28T10:16:47.404096+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.08 >= 0.8) and statistical significance (z=-2.84).",
       "divergence": -0.022752,
-      "id": 140
+      "id": 141
     }
   ]
 }
