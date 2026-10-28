@@ -1,17 +1,17 @@
 {
-  "version": "1793222734298",
-  "generated_at": "2026-10-28T21:25:34.298Z",
-  "total_records": 17521,
-  "skipped_count": 11509,
-  "evaluated_count": 6006,
+  "version": "1793222796621",
+  "generated_at": "2026-10-28T21:26:36.621Z",
+  "total_records": 17524,
+  "skipped_count": 11511,
+  "evaluated_count": 6007,
   "decision_counts": {
     "LONG": 135,
     "SHORT": 68,
-    "NO_TRADE": 5809,
-    "SKIPPED_NO_ASSET_MATCH": 11509
+    "NO_TRADE": 5810,
+    "SKIPPED_NO_ASSET_MATCH": 11511
   },
   "live": {
-    "total": 17515,
+    "total": 17518,
     "trades_count": 201,
     "wins_count": 137,
     "win_rate": "68.2",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1021.7",
     "start_time": 1789544649909,
-    "end_time": 1793222705425,
-    "live_calls": 5725,
+    "end_time": 1793222776502,
+    "live_calls": 5726,
     "fallback_calls": 281,
-    "skipped_calls": 11509,
-    "evaluated_calls": 6006,
+    "skipped_calls": 11511,
+    "evaluated_calls": 6007,
     "live_call_rate": "95",
-    "no_trades": 5805,
+    "no_trades": 5806,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.74 >= 0.8) and statistical significance (z=+7.25).",
       "divergence": 0.058034,
-      "id": 82
+      "id": 85
     },
     {
       "timestamp": "2026-10-28T20:04:34.534668+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.74 >= 0.8) and statistical significance (z=+8.96).",
       "divergence": 0.071668,
-      "id": 238
+      "id": 241
     },
     {
       "timestamp": "2026-10-28T18:51:16.302251+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +2.89% on bearish event with weak volume (0.47) and high divergence (z=+4.89).",
       "divergence": 0.039098,
-      "id": 299
+      "id": 302
     }
   ]
 }
