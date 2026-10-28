@@ -1,17 +1,17 @@
 {
-  "version": "1793218382931",
-  "generated_at": "2026-10-28T20:13:02.931Z",
-  "total_records": 17306,
-  "skipped_count": 11333,
-  "evaluated_count": 5967,
+  "version": "1793218499826",
+  "generated_at": "2026-10-28T20:14:59.826Z",
+  "total_records": 17312,
+  "skipped_count": 11338,
+  "evaluated_count": 5968,
   "decision_counts": {
     "LONG": 134,
     "SHORT": 68,
-    "NO_TRADE": 5771,
-    "SKIPPED_NO_ASSET_MATCH": 11333
+    "NO_TRADE": 5772,
+    "SKIPPED_NO_ASSET_MATCH": 11338
   },
   "live": {
-    "total": 17300,
+    "total": 17306,
     "trades_count": 200,
     "wins_count": 137,
     "win_rate": "68.5",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1020.5",
     "start_time": 1789544649909,
-    "end_time": 1793218356219,
-    "live_calls": 5688,
+    "end_time": 1793218495134,
+    "live_calls": 5689,
     "fallback_calls": 279,
-    "skipped_calls": 11333,
-    "evaluated_calls": 5967,
+    "skipped_calls": 11338,
+    "evaluated_calls": 5968,
     "live_call_rate": "95",
-    "no_trades": 5767,
+    "no_trades": 5768,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.74 >= 0.8) and statistical significance (z=+8.96).",
       "divergence": 0.071668,
-      "id": 23
+      "id": 29
     },
     {
       "timestamp": "2026-10-28T19:45:17.835972+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (5.27 >= 0.8) and statistical significance (z=+2.38).",
       "divergence": 0.019055,
-      "id": 41
+      "id": 47
     },
     {
       "timestamp": "2026-10-28T18:51:16.302251+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +2.89% on bearish event with weak volume (0.47) and high divergence (z=+4.89).",
       "divergence": 0.039098,
-      "id": 84
+      "id": 90
     }
   ]
 }
