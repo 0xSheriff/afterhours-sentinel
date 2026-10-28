@@ -1,6 +1,6 @@
 {
-  "version": "1793170690104",
-  "generated_at": "2026-10-28T06:58:10.104Z",
+  "version": "1793170817307",
+  "generated_at": "2026-10-28T07:00:17.306Z",
   "total_records": 16254,
   "skipped_count": 10521,
   "evaluated_count": 5727,
@@ -13,10 +13,10 @@
   "live": {
     "total": 16248,
     "trades_count": 194,
-    "wins_count": 135,
-    "win_rate": "69.6",
-    "total_pnl": 4661.96,
-    "sharpe_ratio": "9.81",
+    "wins_count": 136,
+    "win_rate": "70.1",
+    "total_pnl": 4734.96,
+    "sharpe_ratio": "9.93",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1007.2",
@@ -28,7 +28,7 @@
     "evaluated_calls": 5727,
     "live_call_rate": "95",
     "no_trades": 5533,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 194,
-      "pnl": 4661.96
+      "pnl": 4734.96
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-10-28T03:00:09.768489+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NFLX",
-      "event_headline": "Why Did NFLX, OPEN, WHR Stocks Tumble To 52-Week Lows Today?",
-      "event_type": "earnings",
-      "event_timestamp": "Wed, 28 Oct 2026 02:52:15 +0000",
-      "pre_event_price": 62.589,
-      "entry_price": 62.589,
-      "actual_move": -0.020516,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.025164,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.01349,
-      "beta": 1.8654,
-      "residual": -0.04568,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -5.71,
-      "z_threshold": 2,
-      "volume_ratio": 0.9103,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The headline explicitly cites disappointing earnings and outlook as primary drivers for the stock's decline to 52-week lows, indicating negative fundamental sentiment.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2921.82,
-      "stop_price": 63.5278,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.91 >= 0.8) and statistical significance (z=-5.71).",
-      "divergence": -0.04568,
-      "id": 114
-    }
-  ]
+  "open_positions": []
 }
