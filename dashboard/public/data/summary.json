@@ -1,34 +1,34 @@
 {
-  "version": "1793281395200",
-  "generated_at": "2026-10-29T13:43:15.200Z",
-  "total_records": 18384,
+  "version": "1793281504743",
+  "generated_at": "2026-10-29T13:45:04.742Z",
+  "total_records": 18385,
   "skipped_count": 12171,
-  "evaluated_count": 6207,
+  "evaluated_count": 6208,
   "decision_counts": {
     "LONG": 145,
-    "SHORT": 69,
+    "SHORT": 70,
     "NO_TRADE": 5999,
     "SKIPPED_NO_ASSET_MATCH": 12171
   },
   "live": {
-    "total": 18378,
-    "trades_count": 212,
+    "total": 18379,
+    "trades_count": 213,
     "wins_count": 148,
-    "win_rate": "69.8",
+    "win_rate": "69.5",
     "total_pnl": 5411.38,
-    "sharpe_ratio": "10.01",
+    "sharpe_ratio": "9.97",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1038.0",
     "start_time": 1789544649909,
-    "end_time": 1793281356477,
-    "live_calls": 5908,
+    "end_time": 1793281480266,
+    "live_calls": 5909,
     "fallback_calls": 299,
     "skipped_calls": 12171,
-    "evaluated_calls": 6207,
+    "evaluated_calls": 6208,
     "live_call_rate": "95",
     "no_trades": 5995,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 212,
+      "trades": 213,
       "pnl": 5411.38
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-29T13:44:40.266873+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "NVDA",
+      "event_headline": "Microsoft beat estimates while Google looks at a value hit, and rising risks at Nvidia",
+      "event_type": "earnings",
+      "event_timestamp": "Thu, 29 Oct 2026 13:43:06 +0000",
+      "pre_event_price": 214.32,
+      "entry_price": 214.32,
+      "actual_move": -0.02231,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.066273,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.028154,
+      "beta": 2.354,
+      "residual": 0.043963,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 5.5,
+      "z_threshold": 2,
+      "volume_ratio": 6.0513,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The headline explicitly cites 'rising risks at Nvidia' in the context of a broader earnings roundup, signaling negative fundamental sentiment or concerns regarding the company's outlook.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2877.42,
+      "stop_price": 217.5348,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (6.05 >= 0.8) and statistical significance (z=+5.50).",
+      "divergence": 0.043963,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-29T13:27:55.835098+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.24 >= 0.8) and statistical significance (z=+11.86).",
       "divergence": 0.094913,
-      "id": 28
+      "id": 29
     },
     {
       "timestamp": "2026-10-29T12:10:59.291168+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.92 >= 0.8) and statistical significance (z=+6.84).",
       "divergence": 0.05468,
-      "id": 166
+      "id": 167
     }
   ]
 }
