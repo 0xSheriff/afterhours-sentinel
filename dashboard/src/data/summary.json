@@ -1,6 +1,6 @@
 {
-  "version": "1793267930514",
-  "generated_at": "2026-10-29T09:58:50.514Z",
+  "version": "1793268021391",
+  "generated_at": "2026-10-29T10:00:21.390Z",
   "total_records": 17982,
   "skipped_count": 11858,
   "evaluated_count": 6118,
@@ -13,10 +13,10 @@
   "live": {
     "total": 17976,
     "trades_count": 209,
-    "wins_count": 145,
-    "win_rate": "69.4",
-    "total_pnl": 5275.56,
-    "sharpe_ratio": "10.00",
+    "wins_count": 146,
+    "win_rate": "69.9",
+    "total_pnl": 5281.66,
+    "sharpe_ratio": "10.01",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1034.2",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6118,
     "live_call_rate": "95",
     "no_trades": 5909,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 209,
-      "pnl": 5275.56
+      "pnl": 5281.66
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.92 >= 0.8) and statistical significance (z=+9.57).",
       "divergence": 0.076568,
       "id": 86
-    },
-    {
-      "timestamp": "2026-10-29T05:59:34.839985+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "TSLA",
-      "event_headline": "Tesla Is Flying in Europe, and We Aren't Talking About the Roadster -- 1 Big Concern Remains",
-      "event_type": "geopolitical",
-      "event_timestamp": "Thu, 29 Oct 2026 05:50:00 +0000",
-      "pre_event_price": 402.07,
-      "entry_price": 402.07,
-      "actual_move": -0.01853,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.070076,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.025734,
-      "beta": 2.7231,
-      "residual": 0.051546,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 6.44,
-      "z_threshold": 2,
-      "volume_ratio": 0.0251,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bullish",
-      "price_direction": "bearish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The successful expansion of Tesla's vehicle exports to Europe provides a positive revenue diversification strategy that mitigates the risks associated with the intensifying price war in the Chinese market.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2887.31,
-      "stop_price": 396.0389,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved: Price dumped -1.85% on bullish event with weak volume (0.03) and high divergence (z=+6.44).",
-      "divergence": 0.051546,
-      "id": 171
     }
   ]
 }
