@@ -1,6 +1,6 @@
 {
-  "version": "1793265562700",
-  "generated_at": "2026-10-29T09:19:22.699Z",
+  "version": "1793265792249",
+  "generated_at": "2026-10-29T09:23:12.249Z",
   "total_records": 17952,
   "skipped_count": 11834,
   "evaluated_count": 6112,
@@ -13,10 +13,10 @@
   "live": {
     "total": 17946,
     "trades_count": 208,
-    "wins_count": 144,
-    "win_rate": "69.2",
-    "total_pnl": 5188.8,
-    "sharpe_ratio": "9.91",
+    "wins_count": 145,
+    "win_rate": "69.7",
+    "total_pnl": 5275.56,
+    "sharpe_ratio": "10.03",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1033.6",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6112,
     "live_call_rate": "95",
     "no_trades": 5904,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 208,
-      "pnl": 5188.8
+      "pnl": 5275.56
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved: Price dumped -1.85% on bullish event with weak volume (0.03) and high divergence (z=+6.44).",
       "divergence": 0.051546,
       "id": 141
-    },
-    {
-      "timestamp": "2026-10-29T05:37:47.260251+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "MSFT",
-      "event_headline": "Microsoft (MSFT) Q1 2027 Earnings Call Transcript",
-      "event_type": "earnings",
-      "event_timestamp": "Thu, 29 Oct 2026 05:29:21 +0000",
-      "pre_event_price": 546.3,
-      "entry_price": 546.3,
-      "actual_move": 0.028175,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.036538,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.024135,
-      "beta": 1.5139,
-      "residual": 0.064712,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 8.09,
-      "z_threshold": 2,
-      "volume_ratio": 1.8955,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The 30% surge in cloud revenue driven by accelerating AI adoption signals strong fundamental growth and robust demand for Microsoft's core enterprise services.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2891.84,
-      "stop_price": 538.1055,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.90 >= 0.8) and statistical significance (z=+8.09).",
-      "divergence": 0.064712,
-      "id": 151
     }
   ]
 }
