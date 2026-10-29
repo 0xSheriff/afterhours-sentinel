@@ -1,34 +1,34 @@
 {
-  "version": "1793293900250",
-  "generated_at": "2026-10-29T17:11:40.249Z",
-  "total_records": 18770,
-  "skipped_count": 12464,
-  "evaluated_count": 6300,
+  "version": "1793294024987",
+  "generated_at": "2026-10-29T17:13:44.986Z",
+  "total_records": 18778,
+  "skipped_count": 12471,
+  "evaluated_count": 6301,
   "decision_counts": {
     "LONG": 146,
     "SHORT": 70,
-    "NO_TRADE": 6090,
-    "SKIPPED_NO_ASSET_MATCH": 12464
+    "NO_TRADE": 6091,
+    "SKIPPED_NO_ASSET_MATCH": 12471
   },
   "live": {
-    "total": 18764,
+    "total": 18772,
     "trades_count": 214,
-    "wins_count": 149,
-    "win_rate": "69.6",
-    "total_pnl": 5494.88,
-    "sharpe_ratio": "10.05",
+    "wins_count": 150,
+    "win_rate": "70.1",
+    "total_pnl": 5581.56,
+    "sharpe_ratio": "10.17",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1041.5",
     "start_time": 1789544649909,
-    "end_time": 1793293892904,
-    "live_calls": 5999,
+    "end_time": 1793294010591,
+    "live_calls": 6000,
     "fallback_calls": 301,
-    "skipped_calls": 12464,
-    "evaluated_calls": 6300,
+    "skipped_calls": 12471,
+    "evaluated_calls": 6301,
     "live_call_rate": "95",
-    "no_trades": 6086,
-    "open_positions_count": 3
+    "no_trades": 6087,
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 214,
-      "pnl": 5494.88
+      "pnl": 5581.56
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -12.45% on bullish event with weak volume (0.08) and high divergence (z=-15.65).",
       "divergence": -0.12522,
-      "id": 27
+      "id": 35
     },
     {
       "timestamp": "2026-10-29T13:44:40.266873+00:00",
@@ -141,54 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (6.05 >= 0.8) and statistical significance (z=+5.50).",
       "divergence": 0.043963,
-      "id": 386
-    },
-    {
-      "timestamp": "2026-10-29T13:27:55.835098+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "PLTR",
-      "event_headline": "JPMorgan starts Palantir at Overweight, calls it a disruptive AI leader",
-      "event_type": "analyst",
-      "event_timestamp": "2026-10-29 13:20:16",
-      "pre_event_price": 199.1,
-      "entry_price": 199.1,
-      "actual_move": 0.001862,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.093051,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.029232,
-      "beta": 3.1832,
-      "residual": 0.094913,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 11.86,
-      "z_threshold": 2,
-      "volume_ratio": 1.2418,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "JPMorgan's initiation of coverage with an Overweight rating and characterization of Palantir as a disruptive AI leader signals strong institutional confidence in the company's growth trajectory and market position.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2889.46,
-      "stop_price": 196.1135,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.24 >= 0.8) and statistical significance (z=+11.86).",
-      "divergence": 0.094913,
-      "id": 414
+      "id": 394
     }
   ]
 }
