@@ -1,17 +1,17 @@
 {
-  "version": "1793273826006",
-  "generated_at": "2026-10-29T11:37:06.006Z",
-  "total_records": 18143,
-  "skipped_count": 11995,
-  "evaluated_count": 6142,
+  "version": "1793273921806",
+  "generated_at": "2026-10-29T11:38:41.806Z",
+  "total_records": 18145,
+  "skipped_count": 11996,
+  "evaluated_count": 6143,
   "decision_counts": {
     "LONG": 143,
     "SHORT": 69,
-    "NO_TRADE": 5936,
-    "SKIPPED_NO_ASSET_MATCH": 11995
+    "NO_TRADE": 5937,
+    "SKIPPED_NO_ASSET_MATCH": 11996
   },
   "live": {
-    "total": 18137,
+    "total": 18139,
     "trades_count": 210,
     "wins_count": 146,
     "win_rate": "69.5",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1035.9",
     "start_time": 1789544649909,
-    "end_time": 1793273821899,
-    "live_calls": 5847,
+    "end_time": 1793273828174,
+    "live_calls": 5848,
     "fallback_calls": 295,
-    "skipped_calls": 11995,
-    "evaluated_calls": 6142,
+    "skipped_calls": 11996,
+    "evaluated_calls": 6143,
     "live_call_rate": "95",
-    "no_trades": 5932,
+    "no_trades": 5933,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.96 >= 0.8) and statistical significance (z=+9.39).",
       "divergence": 0.093094,
-      "id": 161
+      "id": 163
     },
     {
       "timestamp": "2026-10-29T09:25:47.562875+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.92 >= 0.8) and statistical significance (z=+9.06).",
       "divergence": 0.072503,
-      "id": 190
+      "id": 192
     },
     {
       "timestamp": "2026-10-29T08:09:31.744295+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.92 >= 0.8) and statistical significance (z=+9.57).",
       "divergence": 0.076568,
-      "id": 247
+      "id": 249
     }
   ]
 }
