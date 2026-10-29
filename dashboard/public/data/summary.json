@@ -1,6 +1,6 @@
 {
-  "version": "1793241848827",
-  "generated_at": "2026-10-29T02:44:08.826Z",
+  "version": "1793242064412",
+  "generated_at": "2026-10-29T02:47:44.412Z",
   "total_records": 17731,
   "skipped_count": 11664,
   "evaluated_count": 6061,
@@ -13,10 +13,10 @@
   "live": {
     "total": 17725,
     "trades_count": 204,
-    "wins_count": 140,
-    "win_rate": "68.6",
-    "total_pnl": 4926.45,
-    "sharpe_ratio": "9.69",
+    "wins_count": 141,
+    "win_rate": "69.1",
+    "total_pnl": 5014.2,
+    "sharpe_ratio": "9.81",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1027.0",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6061,
     "live_call_rate": "95",
     "no_trades": 5857,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 204,
-      "pnl": 4926.45
+      "pnl": 5014.2
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.74 >= 0.8) and statistical significance (z=+7.71).",
       "divergence": 0.061658,
       "id": 71
-    },
-    {
-      "timestamp": "2026-10-28T22:59:06.115136+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "MSFT",
-      "event_headline": "Microsoft beats expectations fueled by Azure cloud business",
-      "event_type": "earnings",
-      "event_timestamp": "Wed, 28 Oct 2026 22:48:32 +0000",
-      "pre_event_price": 545.88,
-      "entry_price": 545.88,
-      "actual_move": 0.027384,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.033447,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.022093,
-      "beta": 1.5139,
-      "residual": 0.060831,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 7.6,
-      "z_threshold": 2,
-      "volume_ratio": 0.7446,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "Microsoft's strong earnings beat driven by 48% Azure growth signals robust fundamental health and market leadership, which outweighs the competitive pressure from Google's cloud expansion.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2924.92,
-      "stop_price": 537.6918,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.74 >= 0.8) and statistical significance (z=+7.60).",
-      "divergence": 0.060831,
-      "id": 98
     }
   ]
 }
