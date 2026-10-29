@@ -1,17 +1,17 @@
 {
-  "version": "1793257599334",
-  "generated_at": "2026-10-29T07:06:39.334Z",
-  "total_records": 17857,
-  "skipped_count": 11763,
-  "evaluated_count": 6088,
+  "version": "1793257815243",
+  "generated_at": "2026-10-29T07:10:15.243Z",
+  "total_records": 17859,
+  "skipped_count": 11764,
+  "evaluated_count": 6089,
   "decision_counts": {
     "LONG": 141,
     "SHORT": 68,
-    "NO_TRADE": 5885,
-    "SKIPPED_NO_ASSET_MATCH": 11763
+    "NO_TRADE": 5886,
+    "SKIPPED_NO_ASSET_MATCH": 11764
   },
   "live": {
-    "total": 17851,
+    "total": 17853,
     "trades_count": 207,
     "wins_count": 143,
     "win_rate": "69.1",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1031.4",
     "start_time": 1789544649909,
-    "end_time": 1793257588617,
-    "live_calls": 5795,
+    "end_time": 1793257809132,
+    "live_calls": 5796,
     "fallback_calls": 293,
-    "skipped_calls": 11763,
-    "evaluated_calls": 6088,
+    "skipped_calls": 11764,
+    "evaluated_calls": 6089,
     "live_call_rate": "95",
-    "no_trades": 5881,
+    "no_trades": 5882,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -1.85% on bullish event with weak volume (0.03) and high divergence (z=+6.44).",
       "divergence": 0.051546,
-      "id": 46
+      "id": 48
     },
     {
       "timestamp": "2026-10-29T05:37:47.260251+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.90 >= 0.8) and statistical significance (z=+8.09).",
       "divergence": 0.064712,
-      "id": 56
+      "id": 58
     },
     {
       "timestamp": "2026-10-29T04:12:36.310629+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.90 >= 0.8) and statistical significance (z=+8.74).",
       "divergence": 0.069925,
-      "id": 91
+      "id": 93
     }
   ]
 }
