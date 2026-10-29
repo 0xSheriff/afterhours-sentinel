@@ -1,17 +1,17 @@
 {
-  "version": "1793281779030",
-  "generated_at": "2026-10-29T13:49:39.030Z",
-  "total_records": 18388,
-  "skipped_count": 12173,
-  "evaluated_count": 6209,
+  "version": "1793281827590",
+  "generated_at": "2026-10-29T13:50:27.589Z",
+  "total_records": 18398,
+  "skipped_count": 12182,
+  "evaluated_count": 6210,
   "decision_counts": {
     "LONG": 145,
     "SHORT": 70,
-    "NO_TRADE": 6000,
-    "SKIPPED_NO_ASSET_MATCH": 12173
+    "NO_TRADE": 6001,
+    "SKIPPED_NO_ASSET_MATCH": 12182
   },
   "live": {
-    "total": 18382,
+    "total": 18392,
     "trades_count": 213,
     "wins_count": 148,
     "win_rate": "69.5",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1038.1",
     "start_time": 1789544649909,
-    "end_time": 1793281765833,
-    "live_calls": 5910,
+    "end_time": 1793281821830,
+    "live_calls": 5911,
     "fallback_calls": 299,
-    "skipped_calls": 12173,
-    "evaluated_calls": 6209,
+    "skipped_calls": 12182,
+    "evaluated_calls": 6210,
     "live_call_rate": "95",
-    "no_trades": 5996,
+    "no_trades": 5997,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (6.05 >= 0.8) and statistical significance (z=+5.50).",
       "divergence": 0.043963,
-      "id": 4
+      "id": 14
     },
     {
       "timestamp": "2026-10-29T13:27:55.835098+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.24 >= 0.8) and statistical significance (z=+11.86).",
       "divergence": 0.094913,
-      "id": 32
+      "id": 42
     },
     {
       "timestamp": "2026-10-29T12:10:59.291168+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.92 >= 0.8) and statistical significance (z=+6.84).",
       "divergence": 0.05468,
-      "id": 170
+      "id": 180
     }
   ]
 }
