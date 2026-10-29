@@ -1,17 +1,17 @@
 {
-  "version": "1793300027578",
-  "generated_at": "2026-10-29T18:53:47.578Z",
-  "total_records": 18886,
+  "version": "1793300109965",
+  "generated_at": "2026-10-29T18:55:09.964Z",
+  "total_records": 18887,
   "skipped_count": 12552,
-  "evaluated_count": 6328,
+  "evaluated_count": 6329,
   "decision_counts": {
     "LONG": 146,
     "SHORT": 70,
-    "NO_TRADE": 6118,
+    "NO_TRADE": 6119,
     "SKIPPED_NO_ASSET_MATCH": 12552
   },
   "live": {
-    "total": 18880,
+    "total": 18881,
     "trades_count": 214,
     "wins_count": 151,
     "win_rate": "70.6",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1043.2",
     "start_time": 1789544649909,
-    "end_time": 1793300005116,
+    "end_time": 1793300071579,
     "live_calls": 6024,
-    "fallback_calls": 304,
+    "fallback_calls": 305,
     "skipped_calls": 12552,
-    "evaluated_calls": 6328,
+    "evaluated_calls": 6329,
     "live_call_rate": "95",
-    "no_trades": 6114,
+    "no_trades": 6115,
     "open_positions_count": 1
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -12.45% on bullish event with weak volume (0.08) and high divergence (z=-15.65).",
       "divergence": -0.12522,
-      "id": 143
+      "id": 144
     }
   ]
 }
