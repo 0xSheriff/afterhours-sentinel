@@ -1,34 +1,34 @@
 {
-  "version": "1793302176672",
-  "generated_at": "2026-10-29T19:29:36.672Z",
-  "total_records": 18916,
+  "version": "1793302240202",
+  "generated_at": "2026-10-29T19:30:40.202Z",
+  "total_records": 18918,
   "skipped_count": 12569,
-  "evaluated_count": 6341,
+  "evaluated_count": 6343,
   "decision_counts": {
     "LONG": 146,
-    "SHORT": 70,
-    "NO_TRADE": 6131,
+    "SHORT": 71,
+    "NO_TRADE": 6132,
     "SKIPPED_NO_ASSET_MATCH": 12569
   },
   "live": {
-    "total": 18910,
-    "trades_count": 214,
+    "total": 18912,
+    "trades_count": 215,
     "wins_count": 151,
-    "win_rate": "70.6",
+    "win_rate": "70.2",
     "total_pnl": 5590.15,
-    "sharpe_ratio": "10.19",
+    "sharpe_ratio": "10.16",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1043.7",
+    "duration_hours": "1043.8",
     "start_time": 1789544649909,
-    "end_time": 1793302130244,
-    "live_calls": 6035,
+    "end_time": 1793302200407,
+    "live_calls": 6037,
     "fallback_calls": 306,
     "skipped_calls": 12569,
-    "evaluated_calls": 6341,
+    "evaluated_calls": 6343,
     "live_call_rate": "95",
-    "no_trades": 6127,
-    "open_positions_count": 1
+    "no_trades": 6128,
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 214,
+      "trades": 215,
       "pnl": 5590.15
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-29T19:30:00.407552+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "MSFT",
+      "event_headline": "What Does Nebius Group (NBIS) Face From Slower AI Data Center Spending?",
+      "event_type": "earnings",
+      "event_timestamp": "Thu, 29 Oct 2026 19:18:10 +0000",
+      "pre_event_price": 528.5499877929688,
+      "entry_price": 528.55,
+      "actual_move": -0.004633,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.029814,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.019693,
+      "beta": 1.5139,
+      "residual": 0.025181,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 3.15,
+      "z_threshold": 2,
+      "volume_ratio": 10.3028,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "Microsoft's lower-than-expected capital expenditure guidance for cloud infrastructure signals a deceleration in hyperscaler spending, which negatively impacts the demand outlook for third-party neocloud providers like Nebius Group.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2900.73,
+      "stop_price": 536.4782,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (10.30 >= 0.8) and statistical significance (z=+3.15).",
+      "divergence": 0.025181,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-29T17:02:07.245833+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -12.45% on bullish event with weak volume (0.08) and high divergence (z=-15.65).",
       "divergence": -0.12522,
-      "id": 173
+      "id": 175
     }
   ]
 }
