@@ -1,34 +1,34 @@
 {
-  "version": "1793303816354",
-  "generated_at": "2026-10-29T19:56:56.353Z",
-  "total_records": 18939,
+  "version": "1793303935198",
+  "generated_at": "2026-10-29T19:58:55.197Z",
+  "total_records": 18940,
   "skipped_count": 12586,
-  "evaluated_count": 6347,
+  "evaluated_count": 6348,
   "decision_counts": {
     "LONG": 146,
-    "SHORT": 71,
+    "SHORT": 72,
     "NO_TRADE": 6136,
     "SKIPPED_NO_ASSET_MATCH": 12586
   },
   "live": {
-    "total": 18933,
-    "trades_count": 215,
+    "total": 18934,
+    "trades_count": 216,
     "wins_count": 151,
-    "win_rate": "70.2",
+    "win_rate": "69.9",
     "total_pnl": 5590.15,
-    "sharpe_ratio": "10.16",
+    "sharpe_ratio": "10.12",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1044.2",
     "start_time": 1789544649909,
-    "end_time": 1793303801941,
-    "live_calls": 6041,
+    "end_time": 1793303930062,
+    "live_calls": 6042,
     "fallback_calls": 306,
     "skipped_calls": 12586,
-    "evaluated_calls": 6347,
+    "evaluated_calls": 6348,
     "live_call_rate": "95",
     "no_trades": 6132,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 215,
+      "trades": 216,
       "pnl": 5590.15
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-29T19:58:50.062967+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "AMD",
+      "event_headline": "AMD faces high expectations as Jefferies sees limited near-term upside",
+      "event_type": "earnings",
+      "event_timestamp": "Thu, 29 Oct 2026 19:44:00 +0000",
+      "pre_event_price": 566.0399780273438,
+      "entry_price": 566.04,
+      "actual_move": -0.021437,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.06032,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.023168,
+      "beta": 2.6036,
+      "residual": 0.038883,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 4.86,
+      "z_threshold": 2,
+      "volume_ratio": 0.558,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "Jefferies' caution regarding supply constraints and a demanding valuation suggests limited near-term upside, which is a bearish signal for the stock's immediate trajectory despite expected earnings beats.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2903.88,
+      "stop_price": 574.5306,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.56 >= 0.8) and statistical significance (z=+4.86).",
+      "divergence": 0.038883,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-29T19:30:00.407552+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (10.30 >= 0.8) and statistical significance (z=+3.15).",
       "divergence": 0.025181,
-      "id": 22
+      "id": 23
     },
     {
       "timestamp": "2026-10-29T17:02:07.245833+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -12.45% on bullish event with weak volume (0.08) and high divergence (z=-15.65).",
       "divergence": -0.12522,
-      "id": 196
+      "id": 197
     }
   ]
 }
