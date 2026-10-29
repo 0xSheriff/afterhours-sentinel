@@ -1,17 +1,17 @@
 {
-  "version": "1793305373115",
-  "generated_at": "2026-10-29T20:22:53.114Z",
-  "total_records": 19001,
-  "skipped_count": 12628,
-  "evaluated_count": 6367,
+  "version": "1793305454135",
+  "generated_at": "2026-10-29T20:24:14.135Z",
+  "total_records": 19012,
+  "skipped_count": 12634,
+  "evaluated_count": 6372,
   "decision_counts": {
     "LONG": 146,
     "SHORT": 72,
-    "NO_TRADE": 6155,
-    "SKIPPED_NO_ASSET_MATCH": 12628
+    "NO_TRADE": 6160,
+    "SKIPPED_NO_ASSET_MATCH": 12634
   },
   "live": {
-    "total": 18995,
+    "total": 19006,
     "trades_count": 216,
     "wins_count": 151,
     "win_rate": "69.9",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "10.12",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1044.6",
+    "duration_hours": "1044.7",
     "start_time": 1789544649909,
-    "end_time": 1793305345791,
-    "live_calls": 6061,
+    "end_time": 1793305442806,
+    "live_calls": 6066,
     "fallback_calls": 306,
-    "skipped_calls": 12628,
-    "evaluated_calls": 6367,
+    "skipped_calls": 12634,
+    "evaluated_calls": 6372,
     "live_call_rate": "95",
-    "no_trades": 6151,
+    "no_trades": 6156,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.56 >= 0.8) and statistical significance (z=+4.86).",
       "divergence": 0.038883,
-      "id": 62
+      "id": 73
     },
     {
       "timestamp": "2026-10-29T19:30:00.407552+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (10.30 >= 0.8) and statistical significance (z=+3.15).",
       "divergence": 0.025181,
-      "id": 84
+      "id": 95
     },
     {
       "timestamp": "2026-10-29T17:02:07.245833+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -12.45% on bullish event with weak volume (0.08) and high divergence (z=-15.65).",
       "divergence": -0.12522,
-      "id": 258
+      "id": 269
     }
   ]
 }
