@@ -1,6 +1,6 @@
 {
-  "version": "1793260331245",
-  "generated_at": "2026-10-29T07:52:11.245Z",
+  "version": "1793260676146",
+  "generated_at": "2026-10-29T07:57:56.145Z",
   "total_records": 17889,
   "skipped_count": 11790,
   "evaluated_count": 6093,
@@ -13,10 +13,10 @@
   "live": {
     "total": 17883,
     "trades_count": 207,
-    "wins_count": 143,
-    "win_rate": "69.1",
-    "total_pnl": 5102.62,
-    "sharpe_ratio": "9.83",
+    "wins_count": 144,
+    "win_rate": "69.6",
+    "total_pnl": 5188.8,
+    "sharpe_ratio": "9.95",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1032.1",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6093,
     "live_call_rate": "95",
     "no_trades": 5886,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 207,
-      "pnl": 5102.62
+      "pnl": 5188.8
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.90 >= 0.8) and statistical significance (z=+8.09).",
       "divergence": 0.064712,
       "id": 88
-    },
-    {
-      "timestamp": "2026-10-29T04:12:36.310629+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "MSFT",
-      "event_headline": "What Microsoft (MSFT) Said on Its Q1 Earnings Call",
-      "event_type": "earnings",
-      "event_timestamp": "Thu, 29 Oct 2026 04:04:15 +0000",
-      "pre_event_price": 546.3,
-      "entry_price": 546.3,
-      "actual_move": 0.028175,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.041751,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.027578,
-      "beta": 1.5139,
-      "residual": 0.069925,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 8.74,
-      "z_threshold": 2,
-      "volume_ratio": 1.8955,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "Microsoft's Q1 revenue of $92.3 billion, representing a 19% year-over-year increase and exceeding expectations driven by strong cloud and AI demand, signals robust fundamental growth and operational strength.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2872.54,
-      "stop_price": 538.1055,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.90 >= 0.8) and statistical significance (z=+8.74).",
-      "divergence": 0.069925,
-      "id": 123
     }
   ]
 }
