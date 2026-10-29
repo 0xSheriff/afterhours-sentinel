@@ -1,6 +1,6 @@
 {
-  "version": "1793245463389",
-  "generated_at": "2026-10-29T03:44:23.389Z",
+  "version": "1793245924920",
+  "generated_at": "2026-10-29T03:52:04.920Z",
   "total_records": 17750,
   "skipped_count": 11677,
   "evaluated_count": 6067,
@@ -13,10 +13,10 @@
   "live": {
     "total": 17744,
     "trades_count": 204,
-    "wins_count": 141,
-    "win_rate": "69.1",
-    "total_pnl": 5014.2,
-    "sharpe_ratio": "9.81",
+    "wins_count": 142,
+    "win_rate": "69.6",
+    "total_pnl": 5101.93,
+    "sharpe_ratio": "9.93",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1028.0",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6067,
     "live_call_rate": "95",
     "no_trades": 5863,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 204,
-      "pnl": 5014.2
+      "pnl": 5101.93
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "LONG signal approved: Price dumped -9.67% on bullish event with weak volume (0.06) and high divergence (z=-10.70).",
       "divergence": -0.085561,
       "id": 53
-    },
-    {
-      "timestamp": "2026-10-29T00:06:30.398440+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "MSFT",
-      "event_headline": "Microsoft Q1 FY27 slides: cloud surge drives 19% revenue growth",
-      "event_type": "earnings",
-      "event_timestamp": "2026-10-29 00:04:07",
-      "pre_event_price": 546.3,
-      "entry_price": 546.3,
-      "actual_move": 0.025723,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.035935,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.023737,
-      "beta": 1.5139,
-      "residual": 0.061658,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 7.71,
-      "z_threshold": 2,
-      "volume_ratio": 0.7446,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The 19% revenue growth driven by a cloud surge indicates strong fundamental performance and accelerating demand in Microsoft's core high-margin business segment.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2924.22,
-      "stop_price": 538.1055,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.74 >= 0.8) and statistical significance (z=+7.71).",
-      "divergence": 0.061658,
-      "id": 90
     }
   ]
 }
