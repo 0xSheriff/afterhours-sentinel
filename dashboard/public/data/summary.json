@@ -1,17 +1,17 @@
 {
-  "version": "1793374449373",
-  "generated_at": "2026-10-30T15:34:09.373Z",
-  "total_records": 20126,
+  "version": "1793374577026",
+  "generated_at": "2026-10-30T15:36:17.025Z",
+  "total_records": 20128,
   "skipped_count": 13393,
-  "evaluated_count": 6727,
+  "evaluated_count": 6729,
   "decision_counts": {
     "LONG": 146,
     "SHORT": 85,
-    "NO_TRADE": 6502,
+    "NO_TRADE": 6504,
     "SKIPPED_NO_ASSET_MATCH": 13393
   },
   "live": {
-    "total": 20120,
+    "total": 20122,
     "trades_count": 229,
     "wins_count": 159,
     "win_rate": "69.4",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "9.99",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1063.8",
+    "duration_hours": "1063.9",
     "start_time": 1789544649909,
-    "end_time": 1793374435686,
-    "live_calls": 6412,
+    "end_time": 1793374567810,
+    "live_calls": 6414,
     "fallback_calls": 315,
     "skipped_calls": 13393,
-    "evaluated_calls": 6727,
+    "evaluated_calls": 6729,
     "live_call_rate": "95",
-    "no_trades": 6498,
+    "no_trades": 6500,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (5.65 >= 0.8) and statistical significance (z=-32.26).",
       "divergence": -0.258094,
-      "id": 135
+      "id": 137
     },
     {
       "timestamp": "2026-10-30T12:51:44.652835+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.06 >= 0.8) and statistical significance (z=-29.66).",
       "divergence": -0.237316,
-      "id": 182
+      "id": 184
     },
     {
       "timestamp": "2026-10-30T12:35:28.151099+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.60 >= 0.8) and statistical significance (z=+5.95).",
       "divergence": 0.047595,
-      "id": 197
+      "id": 199
     }
   ]
 }
