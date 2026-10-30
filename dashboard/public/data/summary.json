@@ -1,6 +1,6 @@
 {
-  "version": "1793321375941",
-  "generated_at": "2026-10-30T00:49:35.941Z",
+  "version": "1793321453909",
+  "generated_at": "2026-10-30T00:50:53.909Z",
   "total_records": 19477,
   "skipped_count": 12994,
   "evaluated_count": 6477,
@@ -13,10 +13,10 @@
   "live": {
     "total": 19471,
     "trades_count": 219,
-    "wins_count": 153,
-    "win_rate": "69.9",
-    "total_pnl": 5673.82,
-    "sharpe_ratio": "10.14",
+    "wins_count": 154,
+    "win_rate": "70.3",
+    "total_pnl": 5758.53,
+    "sharpe_ratio": "10.25",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1049.1",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6477,
     "live_call_rate": "95",
     "no_trades": 6258,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 219,
-      "pnl": 5673.82
+      "pnl": 5758.53
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.68 >= 0.8) and statistical significance (z=-11.41).",
       "divergence": -0.091267,
       "id": 36
-    },
-    {
-      "timestamp": "2026-10-29T21:04:17.400771+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "INTC",
-      "event_headline": "INTC Stock Tumbles After-Hours After Q3 PC Slump And Supply Bottlenecks Cloud Fourth-Quarter Guidance",
-      "event_type": "earnings",
-      "event_timestamp": "Thu, 29 Oct 2026 20:54:01 +0000",
-      "pre_event_price": 76.5897,
-      "entry_price": 76.5897,
-      "actual_move": -0.198265,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.039903,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.024452,
-      "beta": 1.6319,
-      "residual": -0.158362,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -19.8,
-      "z_threshold": 2,
-      "volume_ratio": 1.0891,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "Intel's Q4 revenue and profit guidance significantly missed Wall Street expectations due to a PC slump and supply bottlenecks, signaling deteriorating near-term fundamentals.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2823.75,
-      "stop_price": 77.7385,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.09 >= 0.8) and statistical significance (z=-19.80).",
-      "divergence": -0.158362,
-      "id": 325
     }
   ]
 }
