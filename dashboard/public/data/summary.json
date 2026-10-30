@@ -1,17 +1,17 @@
 {
-  "version": "1793371385334",
-  "generated_at": "2026-10-30T14:43:05.333Z",
-  "total_records": 20072,
+  "version": "1793371470437",
+  "generated_at": "2026-10-30T14:44:30.437Z",
+  "total_records": 20073,
   "skipped_count": 13367,
-  "evaluated_count": 6699,
+  "evaluated_count": 6700,
   "decision_counts": {
     "LONG": 146,
     "SHORT": 85,
-    "NO_TRADE": 6474,
+    "NO_TRADE": 6475,
     "SKIPPED_NO_ASSET_MATCH": 13367
   },
   "live": {
-    "total": 20066,
+    "total": 20067,
     "trades_count": 229,
     "wins_count": 159,
     "win_rate": "69.4",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1063.0",
     "start_time": 1789544649909,
-    "end_time": 1793371345976,
-    "live_calls": 6384,
+    "end_time": 1793371413030,
+    "live_calls": 6385,
     "fallback_calls": 315,
     "skipped_calls": 13367,
-    "evaluated_calls": 6699,
+    "evaluated_calls": 6700,
     "live_call_rate": "95",
-    "no_trades": 6470,
+    "no_trades": 6471,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (5.65 >= 0.8) and statistical significance (z=-32.26).",
       "divergence": -0.258094,
-      "id": 81
+      "id": 82
     },
     {
       "timestamp": "2026-10-30T12:51:44.652835+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.06 >= 0.8) and statistical significance (z=-29.66).",
       "divergence": -0.237316,
-      "id": 128
+      "id": 129
     },
     {
       "timestamp": "2026-10-30T12:35:28.151099+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.60 >= 0.8) and statistical significance (z=+5.95).",
       "divergence": 0.047595,
-      "id": 143
+      "id": 144
     }
   ]
 }
