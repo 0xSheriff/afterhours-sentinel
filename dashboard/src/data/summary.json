@@ -1,34 +1,34 @@
 {
-  "version": "1793393908902",
-  "generated_at": "2026-10-30T20:58:28.902Z",
-  "total_records": 20432,
+  "version": "1793394094330",
+  "generated_at": "2026-10-30T21:01:34.329Z",
+  "total_records": 20433,
   "skipped_count": 13580,
-  "evaluated_count": 6846,
+  "evaluated_count": 6847,
   "decision_counts": {
     "LONG": 148,
-    "SHORT": 87,
+    "SHORT": 88,
     "NO_TRADE": 6617,
     "SKIPPED_NO_ASSET_MATCH": 13580
   },
   "live": {
-    "total": 20426,
-    "trades_count": 233,
+    "total": 20427,
+    "trades_count": 234,
     "wins_count": 162,
-    "win_rate": "69.5",
+    "win_rate": "69.2",
     "total_pnl": 6069.9,
-    "sharpe_ratio": "10.02",
+    "sharpe_ratio": "9.99",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1069.2",
+    "duration_hours": "1069.3",
     "start_time": 1789544649909,
-    "end_time": 1793393897275,
-    "live_calls": 6526,
+    "end_time": 1793394083713,
+    "live_calls": 6527,
     "fallback_calls": 320,
     "skipped_calls": 13580,
-    "evaluated_calls": 6846,
+    "evaluated_calls": 6847,
     "live_call_rate": "95",
     "no_trades": 6613,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 233,
+      "trades": 234,
       "pnl": 6069.9
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-30T21:01:23.713467+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "INTC",
+      "event_headline": "Intel Stock Suffers Worst Crash in 50 Years as Weak Forecast Overshadows AI Chip Demand",
+      "event_type": "earnings",
+      "event_timestamp": "Fri, 30 Oct 2026 20:53:23 +0000",
+      "pre_event_price": 65.235,
+      "entry_price": 65.235,
+      "actual_move": -0.291463,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.00139,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.000852,
+      "beta": 1.6319,
+      "residual": -0.292853,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -36.61,
+      "z_threshold": 2,
+      "volume_ratio": 1.5412,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The warning of a prolonged PC slump and the resulting worst daily decline in 50 years indicate severe negative forward-looking guidance that outweighs the current quarter's earnings beat.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2774.94,
+      "stop_price": 66.2135,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.54 >= 0.8) and statistical significance (z=-36.61).",
+      "divergence": -0.292853,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-30T18:09:44.792654+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -1.68% on bullish event with weak volume (0.43) and high divergence (z=+2.43).",
       "divergence": 0.01945,
-      "id": 127
+      "id": 128
     },
     {
       "timestamp": "2026-10-30T18:09:39.997360+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.65 >= 0.8) and statistical significance (z=+2.62).",
       "divergence": 0.020955,
-      "id": 128
+      "id": 129
     }
   ]
 }
