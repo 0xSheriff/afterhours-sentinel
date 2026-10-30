@@ -1,34 +1,34 @@
 {
-  "version": "1793363109157",
-  "generated_at": "2026-10-30T12:25:09.157Z",
-  "total_records": 19920,
+  "version": "1793363201462",
+  "generated_at": "2026-10-30T12:26:41.461Z",
+  "total_records": 19921,
   "skipped_count": 13302,
-  "evaluated_count": 6612,
+  "evaluated_count": 6613,
   "decision_counts": {
     "LONG": 146,
     "SHORT": 82,
-    "NO_TRADE": 6390,
+    "NO_TRADE": 6391,
     "SKIPPED_NO_ASSET_MATCH": 13302
   },
   "live": {
-    "total": 19914,
+    "total": 19915,
     "trades_count": 226,
-    "wins_count": 157,
-    "win_rate": "69.5",
-    "total_pnl": 5829.62,
-    "sharpe_ratio": "10.09",
+    "wins_count": 158,
+    "win_rate": "69.9",
+    "total_pnl": 5913.42,
+    "sharpe_ratio": "10.20",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1060.7",
     "start_time": 1789544649909,
-    "end_time": 1793363100700,
-    "live_calls": 6297,
+    "end_time": 1793363137383,
+    "live_calls": 6298,
     "fallback_calls": 315,
     "skipped_calls": 13302,
-    "evaluated_calls": 6612,
+    "evaluated_calls": 6613,
     "live_call_rate": "95",
-    "no_trades": 6386,
-    "open_positions_count": 3
+    "no_trades": 6387,
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 226,
-      "pnl": 5829.62
+      "pnl": 5913.42
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -94,54 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.59 >= 0.8) and statistical significance (z=-8.51).",
       "divergence": -0.068055,
-      "id": 229
-    },
-    {
-      "timestamp": "2026-10-30T08:40:31.867692+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "INTC",
-      "event_headline": "Intel Q3 2026 net income falls 18%, revenue rises 21%",
-      "event_type": "earnings",
-      "event_timestamp": "Fri, 30 Oct 2026 08:36:25 +0000",
-      "pre_event_price": 67.56,
-      "entry_price": 67.56,
-      "actual_move": -0.292788,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.047815,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.0293,
-      "beta": 1.6319,
-      "residual": -0.244972,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -30.62,
-      "z_threshold": 2,
-      "volume_ratio": 1.0557,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The 18% decline in net income and weakness in the key computing segment outweigh the revenue growth, signaling deteriorating profitability and core business health.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2793.46,
-      "stop_price": 68.5734,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.06 >= 0.8) and statistical significance (z=-30.62).",
-      "divergence": -0.244972,
-      "id": 265
+      "id": 230
     },
     {
       "timestamp": "2026-10-30T08:34:03.640200+00:00",
@@ -188,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.57 >= 0.8) and statistical significance (z=-9.53).",
       "divergence": -0.076268,
-      "id": 270
+      "id": 271
     }
   ]
 }
