@@ -1,17 +1,17 @@
 {
-  "version": "1793323634628",
-  "generated_at": "2026-10-30T01:27:14.628Z",
-  "total_records": 19488,
-  "skipped_count": 12999,
-  "evaluated_count": 6483,
+  "version": "1793323688016",
+  "generated_at": "2026-10-30T01:28:08.015Z",
+  "total_records": 19492,
+  "skipped_count": 13000,
+  "evaluated_count": 6486,
   "decision_counts": {
     "LONG": 146,
     "SHORT": 76,
-    "NO_TRADE": 6267,
-    "SKIPPED_NO_ASSET_MATCH": 12999
+    "NO_TRADE": 6270,
+    "SKIPPED_NO_ASSET_MATCH": 13000
   },
   "live": {
-    "total": 19482,
+    "total": 19486,
     "trades_count": 220,
     "wins_count": 154,
     "win_rate": "70.0",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1049.7",
     "start_time": 1789544649909,
-    "end_time": 1793323625293,
-    "live_calls": 6177,
-    "fallback_calls": 306,
-    "skipped_calls": 12999,
-    "evaluated_calls": 6483,
+    "end_time": 1793323672629,
+    "live_calls": 6179,
+    "fallback_calls": 307,
+    "skipped_calls": 13000,
+    "evaluated_calls": 6486,
     "live_call_rate": "95",
-    "no_trades": 6263,
+    "no_trades": 6266,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.75 >= 0.8) and statistical significance (z=-10.53).",
       "divergence": -0.084221,
-      "id": 8
+      "id": 12
     },
     {
       "timestamp": "2026-10-30T00:02:11.014858+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.76 >= 0.8) and statistical significance (z=-11.35).",
       "divergence": -0.090789,
-      "id": 43
+      "id": 47
     },
     {
       "timestamp": "2026-10-29T23:58:16.423467+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.68 >= 0.8) and statistical significance (z=-11.41).",
       "divergence": -0.091267,
-      "id": 47
+      "id": 51
     }
   ]
 }
