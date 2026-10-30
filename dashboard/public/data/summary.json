@@ -1,6 +1,6 @@
 {
-  "version": "1793332940943",
-  "generated_at": "2026-10-30T04:02:20.943Z",
+  "version": "1793332973040",
+  "generated_at": "2026-10-30T04:02:53.040Z",
   "total_records": 19545,
   "skipped_count": 13032,
   "evaluated_count": 6507,
@@ -13,10 +13,10 @@
   "live": {
     "total": 19539,
     "trades_count": 220,
-    "wins_count": 155,
-    "win_rate": "70.5",
-    "total_pnl": 5768.18,
-    "sharpe_ratio": "10.24",
+    "wins_count": 156,
+    "win_rate": "70.9",
+    "total_pnl": 5783.72,
+    "sharpe_ratio": "10.28",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1052.3",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6507,
     "live_call_rate": "95",
     "no_trades": 6287,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 220,
-      "pnl": 5768.18
+      "pnl": 5783.72
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.75 >= 0.8) and statistical significance (z=-10.53).",
       "divergence": -0.084221,
       "id": 65
-    },
-    {
-      "timestamp": "2026-10-30T00:02:11.014858+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "AMZN",
-      "event_headline": "Nasdaq 100 Futures Dip On Weak Intel, Amazon Earnings With Bloated Capex Worries Weighing On Sentiment —  AMZN, INTC, SBUX, PLTR, ASTS In Focus",
-      "event_type": "earnings",
-      "event_timestamp": "Thu, 29 Oct 2026 23:54:15 +0000",
-      "pre_event_price": 227.49,
-      "entry_price": 227.49,
-      "actual_move": -0.10264,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.011851,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.00687,
-      "beta": 1.725,
-      "residual": -0.090789,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -11.35,
-      "z_threshold": 2,
-      "volume_ratio": 0.763,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "Amazon's Q3 earnings and revenue missing expectations, combined with concerns over bloated capital expenditures, signal deteriorating near-term profitability and operational efficiency, which is fundamentally negative for the stock.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2806.5,
-      "stop_price": 230.9023,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.76 >= 0.8) and statistical significance (z=-11.35).",
-      "divergence": -0.090789,
-      "id": 100
     }
   ]
 }
