@@ -1,6 +1,6 @@
 {
-  "version": "1793378137955",
-  "generated_at": "2026-10-30T16:35:37.954Z",
+  "version": "1793378186833",
+  "generated_at": "2026-10-30T16:36:26.833Z",
   "total_records": 20195,
   "skipped_count": 13432,
   "evaluated_count": 6757,
@@ -15,8 +15,8 @@
     "trades_count": 229,
     "wins_count": 159,
     "win_rate": "69.4",
-    "total_pnl": 5877.05,
-    "sharpe_ratio": "9.99",
+    "total_pnl": 5861.16,
+    "sharpe_ratio": "9.95",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1064.9",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6757,
     "live_call_rate": "95",
     "no_trades": 6528,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 229,
-      "pnl": 5877.05
+      "pnl": 5861.16
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.06 >= 0.8) and statistical significance (z=-29.66).",
       "divergence": -0.237316,
       "id": 251
-    },
-    {
-      "timestamp": "2026-10-30T12:35:28.151099+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "AAPL",
-      "event_headline": "Apple in focus as BofA questions Wall Street estimates amid staggered iPhone launch",
-      "event_type": "product",
-      "event_timestamp": "Fri, 30 Oct 2026 08:32:55 -0400",
-      "pre_event_price": 345.7,
-      "entry_price": 345.7,
-      "actual_move": -0.00727,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.054865,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.033488,
-      "beta": 1.6383,
-      "residual": 0.047595,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 5.95,
-      "z_threshold": 2,
-      "volume_ratio": 0.6026,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "BofA's skepticism regarding Wall Street estimates in the context of a staggered iPhone launch suggests potential downside risk to revenue projections, implying a negative sentiment shift for the stock.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2788.86,
-      "stop_price": 350.8855,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.60 >= 0.8) and statistical significance (z=+5.95).",
-      "divergence": 0.047595,
-      "id": 266
     }
   ]
 }
