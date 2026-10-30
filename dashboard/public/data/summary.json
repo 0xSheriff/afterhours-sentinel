@@ -1,34 +1,34 @@
 {
-  "version": "1793348604824",
-  "generated_at": "2026-10-30T08:23:24.824Z",
-  "total_records": 19650,
+  "version": "1793349273791",
+  "generated_at": "2026-10-30T08:34:33.790Z",
+  "total_records": 19651,
   "skipped_count": 13107,
-  "evaluated_count": 6537,
+  "evaluated_count": 6538,
   "decision_counts": {
     "LONG": 146,
-    "SHORT": 79,
+    "SHORT": 80,
     "NO_TRADE": 6318,
     "SKIPPED_NO_ASSET_MATCH": 13107
   },
   "live": {
-    "total": 19644,
-    "trades_count": 223,
+    "total": 19645,
+    "trades_count": 224,
     "wins_count": 157,
-    "win_rate": "70.4",
+    "win_rate": "70.1",
     "total_pnl": 5835.32,
-    "sharpe_ratio": "10.20",
+    "sharpe_ratio": "10.17",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1056.7",
+    "duration_hours": "1056.8",
     "start_time": 1789544649909,
-    "end_time": 1793348596069,
-    "live_calls": 6223,
+    "end_time": 1793349243640,
+    "live_calls": 6224,
     "fallback_calls": 314,
     "skipped_calls": 13107,
-    "evaluated_calls": 6537,
+    "evaluated_calls": 6538,
     "live_call_rate": "95",
     "no_trades": 6314,
-    "open_positions_count": 1
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 223,
+      "trades": 224,
       "pnl": 5835.32
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-10-30T08:34:03.640200+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "AMZN",
+      "event_headline": "Stock market today: Dow, S&P 500, Nasdaq futures fall as Amazon, Intel earnings rattle investors",
+      "event_type": "earnings",
+      "event_timestamp": "Fri, 30 Oct 2026 08:32:36 +0000",
+      "pre_event_price": 226.89,
+      "entry_price": 226.89,
+      "actual_move": -0.10185,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.025582,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.01483,
+      "beta": 1.725,
+      "residual": -0.076268,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -9.53,
+      "z_threshold": 2,
+      "volume_ratio": 0.5733,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The event highlights that Amazon's earnings rekindled investor concerns regarding high AI capital expenditures, which is perceived as a negative factor for the stock's valuation and future cash flows.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2797.1,
+      "stop_price": 230.2933,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.57 >= 0.8) and statistical significance (z=-9.53).",
+      "divergence": -0.076268,
+      "id": 1
+    },
     {
       "timestamp": "2026-10-30T05:35:18.861969+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.69 >= 0.8) and statistical significance (z=-10.49).",
       "divergence": -0.083953,
-      "id": 71
+      "id": 72
     }
   ]
 }
