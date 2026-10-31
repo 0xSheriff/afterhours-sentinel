@@ -1,6 +1,6 @@
 {
-  "version": "1793426439675",
-  "generated_at": "2026-10-31T06:00:39.674Z",
+  "version": "1793426594894",
+  "generated_at": "2026-10-31T06:03:14.894Z",
   "total_records": 20551,
   "skipped_count": 13657,
   "evaluated_count": 6888,
@@ -15,8 +15,8 @@
     "trades_count": 237,
     "wins_count": 166,
     "win_rate": "70.0",
-    "total_pnl": 6184.57,
-    "sharpe_ratio": "10.06",
+    "total_pnl": 6183.35,
+    "sharpe_ratio": "10.05",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1078.3",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6888,
     "live_call_rate": "95",
     "no_trades": 6651,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 237,
-      "pnl": 6184.57
+      "pnl": 6183.35
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-10-31T02:02:54.149764+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NVDA",
-      "event_headline": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
-      "event_type": "other",
-      "event_timestamp": "Sat, 31 Oct 2026 01:20:05 +0000",
-      "pre_event_price": 205.67,
-      "entry_price": 205.67,
-      "actual_move": -0.01153,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.0332,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.014104,
-      "beta": 2.354,
-      "residual": -0.04473,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -5.59,
-      "z_threshold": 2,
-      "volume_ratio": 0.4987,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bullish",
-      "price_direction": "bearish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "Nvidia's willingness to cosign the loan for Nscale's AI data center signals strong confidence in the project's viability and reinforces the structural demand for its hardware, which is a positive fundamental indicator.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2783.26,
-      "stop_price": 202.5849,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved: Price dumped -1.15% on bullish event with weak volume (0.50) and high divergence (z=-5.59).",
-      "divergence": -0.04473,
-      "id": 16
-    }
-  ]
+  "open_positions": []
 }
