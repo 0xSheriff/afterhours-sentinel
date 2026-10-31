@@ -1,6 +1,6 @@
 {
-  "version": "1793467253844",
-  "generated_at": "2026-10-31T17:20:53.843Z",
+  "version": "1793467501076",
+  "generated_at": "2026-10-31T17:25:01.076Z",
   "total_records": 20663,
   "skipped_count": 13708,
   "evaluated_count": 6949,
@@ -28,7 +28,7 @@
     "evaluated_calls": 6949,
     "live_call_rate": "95",
     "no_trades": 6709,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -48,53 +48,5 @@
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-10-31T13:24:17.551843+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "fallback_rules [pending_groq_api_key]",
-      "symbol": "GOOGL",
-      "event_headline": "Alphabet (GOOGL) Stock Sees Fair Value Cut After Q3 Miss And Higher AI Spending",
-      "event_type": "earnings",
-      "event_timestamp": "Sat, 31 Oct 2026 13:13:00 +0000",
-      "pre_event_price": 281.33,
-      "entry_price": 281.33,
-      "actual_move": -0.00135,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.017732,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.012784,
-      "beta": 1.387,
-      "residual": -0.019082,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -2.39,
-      "z_threshold": 2,
-      "volume_ratio": 81.9339,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "Event introduces adverse regulatory, tariff, or fundamental pressure on GOOGL.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2787.62,
-      "stop_price": 285.5499,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (81.93 >= 0.8) and statistical significance (z=-2.39).",
-      "divergence": -0.019082,
-      "id": 47
-    }
-  ]
+  "open_positions": []
 }
