@@ -1,6 +1,6 @@
 {
-  "version": "1793423926029",
-  "generated_at": "2026-10-31T05:18:46.028Z",
+  "version": "1793424112793",
+  "generated_at": "2026-10-31T05:21:52.792Z",
   "total_records": 20547,
   "skipped_count": 13656,
   "evaluated_count": 6885,
@@ -13,9 +13,9 @@
   "live": {
     "total": 20541,
     "trades_count": 237,
-    "wins_count": 165,
-    "win_rate": "69.6",
-    "total_pnl": 6184.38,
+    "wins_count": 166,
+    "win_rate": "70.0",
+    "total_pnl": 6184.57,
     "sharpe_ratio": "10.06",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6885,
     "live_call_rate": "95",
     "no_trades": 6648,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 237,
-      "pnl": 6184.38
+      "pnl": 6184.57
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "LONG signal approved: Price dumped -1.15% on bullish event with weak volume (0.50) and high divergence (z=-5.59).",
       "divergence": -0.04473,
       "id": 12
-    },
-    {
-      "timestamp": "2026-10-31T01:21:12.504668+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "COIN",
-      "event_headline": "7 Banks Change Their Coinbase Stock Price Targets After Q3 Earnings",
-      "event_type": "earnings",
-      "event_timestamp": "Sat, 31 Oct 2026 00:44:55 +0000",
-      "pre_event_price": 145.39,
-      "entry_price": 145.39,
-      "actual_move": -0.03855,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.044274,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.010362,
-      "beta": 4.2729,
-      "residual": -0.082824,
-      "residual_std": 0.009918,
-      "volatility_floor": 0.008,
-      "z_score": -8.35,
-      "z_threshold": 2,
-      "volume_ratio": 0.7645,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The collective reduction of price targets by seven major banks following weak Q4 trading revenue signals a consensus view of deteriorating fundamental performance and lower future valuation expectations for Coinbase.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2787.82,
-      "stop_price": 147.5708,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.76 >= 0.8) and statistical significance (z=-8.35).",
-      "divergence": -0.082824,
-      "id": 15
     }
   ]
 }
