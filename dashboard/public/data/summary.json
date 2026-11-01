@@ -1,6 +1,6 @@
 {
-  "version": "1793501742035",
-  "generated_at": "2026-11-01T02:55:42.035Z",
+  "version": "1793502828642",
+  "generated_at": "2026-11-01T03:13:48.642Z",
   "total_records": 20695,
   "skipped_count": 13717,
   "evaluated_count": 6972,
@@ -13,10 +13,10 @@
   "live": {
     "total": 20689,
     "trades_count": 242,
-    "wins_count": 167,
-    "win_rate": "69.0",
-    "total_pnl": 6267.16,
-    "sharpe_ratio": "10.01",
+    "wins_count": 168,
+    "win_rate": "69.4",
+    "total_pnl": 6350.87,
+    "sharpe_ratio": "10.11",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1099.2",
@@ -28,7 +28,7 @@
     "evaluated_calls": 6972,
     "live_call_rate": "95",
     "no_trades": 6730,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 242,
-      "pnl": 6267.16
+      "pnl": 6350.87
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-10-31T23:28:16.529898+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "INTC",
-      "event_headline": "Intel (INTC) Stock Fair Value Falls After Mixed Analyst Reactions To Weak Guidance",
-      "event_type": "earnings",
-      "event_timestamp": "Sat, 31 Oct 2026 23:10:12 +0000",
-      "pre_event_price": 64.89,
-      "entry_price": 64.89,
-      "actual_move": -0.29521,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.000462,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.000283,
-      "beta": 1.6319,
-      "residual": -0.295673,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -36.96,
-      "z_threshold": 2,
-      "volume_ratio": 2.3124,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The reduction in Intel's fair value estimate by approximately 7.9% following mixed analyst reactions to weak guidance signals a bearish shift in fundamental valuation expectations.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2790.41,
-      "stop_price": 65.8633,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.31 >= 0.8) and statistical significance (z=-36.96).",
-      "divergence": -0.295673,
-      "id": 11
-    }
-  ]
+  "open_positions": []
 }
