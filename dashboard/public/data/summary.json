@@ -1,34 +1,34 @@
 {
-  "version": "1793660470971",
-  "generated_at": "2026-11-02T23:01:10.971Z",
-  "total_records": 22153,
+  "version": "1793660535816",
+  "generated_at": "2026-11-02T23:02:15.815Z",
+  "total_records": 22154,
   "skipped_count": 14722,
-  "evaluated_count": 7425,
+  "evaluated_count": 7426,
   "decision_counts": {
     "LONG": 156,
-    "SHORT": 102,
+    "SHORT": 103,
     "NO_TRADE": 7173,
     "SKIPPED_NO_ASSET_MATCH": 14722
   },
   "live": {
-    "total": 22147,
-    "trades_count": 256,
+    "total": 22148,
+    "trades_count": 257,
     "wins_count": 176,
-    "win_rate": "68.8",
+    "win_rate": "68.5",
     "total_pnl": 6715.9,
-    "sharpe_ratio": "10.07",
+    "sharpe_ratio": "10.05",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1143.3",
     "start_time": 1789544649909,
-    "end_time": 1793660452622,
-    "live_calls": 7089,
+    "end_time": 1793660519026,
+    "live_calls": 7090,
     "fallback_calls": 336,
     "skipped_calls": 14722,
-    "evaluated_calls": 7425,
+    "evaluated_calls": 7426,
     "live_call_rate": "95",
     "no_trades": 7169,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 256,
+      "trades": 257,
       "pnl": 6715.9
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-11-02T23:01:59.026471+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "AAPL",
+      "event_headline": "Apple Stock Drops Even As Revenue Outlook Beats Estimates",
+      "event_type": "earnings",
+      "event_timestamp": "Mon, 02 Nov 2026 22:33:47 +0000",
+      "pre_event_price": 327.57,
+      "entry_price": 327.57,
+      "actual_move": -0.05242,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.003621,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.00221,
+      "beta": 1.6383,
+      "residual": -0.056041,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -7.01,
+      "z_threshold": 2,
+      "volume_ratio": 0.605,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "Although the revenue guidance exceeded expectations, the explicit stock price decline indicates that the market perceives the results as insufficient to justify current valuations, signaling a negative fundamental reaction.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2722.75,
+      "stop_price": 332.4835,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.60 >= 0.8) and statistical significance (z=-7.01).",
+      "divergence": -0.056041,
+      "id": 1
+    },
     {
       "timestamp": "2026-11-02T22:11:22.649621+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.92 >= 0.8) and statistical significance (z=+4.15).",
       "divergence": 0.033195,
-      "id": 60
+      "id": 61
     },
     {
       "timestamp": "2026-11-02T21:04:14.666206+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.04 >= 0.8) and statistical significance (z=+4.69).",
       "divergence": 0.037493,
-      "id": 251
+      "id": 252
     }
   ]
 }
