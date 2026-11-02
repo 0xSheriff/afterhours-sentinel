@@ -1,17 +1,17 @@
 {
-  "version": "1793631401068",
-  "generated_at": "2026-11-02T14:56:41.067Z",
-  "total_records": 21441,
-  "skipped_count": 14226,
-  "evaluated_count": 7209,
+  "version": "1793631499531",
+  "generated_at": "2026-11-02T14:58:19.531Z",
+  "total_records": 21447,
+  "skipped_count": 14227,
+  "evaluated_count": 7214,
   "decision_counts": {
     "LONG": 152,
     "SHORT": 100,
-    "NO_TRADE": 6963,
-    "SKIPPED_NO_ASSET_MATCH": 14226
+    "NO_TRADE": 6968,
+    "SKIPPED_NO_ASSET_MATCH": 14227
   },
   "live": {
-    "total": 21435,
+    "total": 21441,
     "trades_count": 250,
     "wins_count": 172,
     "win_rate": "68.8",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1135.2",
     "start_time": 1789544649909,
-    "end_time": 1793631398479,
-    "live_calls": 6875,
+    "end_time": 1793631483906,
+    "live_calls": 6880,
     "fallback_calls": 334,
-    "skipped_calls": 14226,
-    "evaluated_calls": 7209,
+    "skipped_calls": 14227,
+    "evaluated_calls": 7214,
     "live_call_rate": "95",
-    "no_trades": 6959,
+    "no_trades": 6964,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.01 >= 0.8) and statistical significance (z=+3.63).",
       "divergence": 0.029062,
-      "id": 36
+      "id": 42
     },
     {
       "timestamp": "2026-11-02T14:16:11.410280+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.98 >= 0.8) and statistical significance (z=-5.03).",
       "divergence": -0.049908,
-      "id": 74
+      "id": 80
     },
     {
       "timestamp": "2026-11-02T13:59:13.318920+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.10 >= 0.8) and statistical significance (z=-37.83).",
       "divergence": -0.302647,
-      "id": 100
+      "id": 106
     }
   ]
 }
