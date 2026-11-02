@@ -1,6 +1,6 @@
 {
-  "version": "1793599854315",
-  "generated_at": "2026-11-02T06:10:54.315Z",
+  "version": "1793599888615",
+  "generated_at": "2026-11-02T06:11:28.615Z",
   "total_records": 20948,
   "skipped_count": 13890,
   "evaluated_count": 7052,
@@ -13,10 +13,10 @@
   "live": {
     "total": 20942,
     "trades_count": 243,
-    "wins_count": 168,
-    "win_rate": "69.1",
-    "total_pnl": 6350.87,
-    "sharpe_ratio": "10.08",
+    "wins_count": 169,
+    "win_rate": "69.5",
+    "total_pnl": 6435.65,
+    "sharpe_ratio": "10.18",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1126.4",
@@ -28,7 +28,7 @@
     "evaluated_calls": 7052,
     "live_call_rate": "95",
     "no_trades": 6809,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 243,
-      "pnl": 6350.87
+      "pnl": 6435.65
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-11-02T02:26:06.817138+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "INTC",
-      "event_headline": "Intel Shares Collapse. Why I'm Still Not Buying the Stock",
-      "event_type": "earnings",
-      "event_timestamp": "Mon, 02 Nov 2026 02:20:00 +0000",
-      "pre_event_price": 64.89,
-      "entry_price": 64.89,
-      "actual_move": -0.29521,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.005815,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.003563,
-      "beta": 1.6319,
-      "residual": -0.301025,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -37.63,
-      "z_threshold": 2,
-      "volume_ratio": 2.3124,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The stock's significant decline following weak forward-looking guidance indicates a negative reassessment of Intel's future revenue and profitability prospects.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2825.99,
-      "stop_price": 65.8633,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.31 >= 0.8) and statistical significance (z=-37.63).",
-      "divergence": -0.301025,
-      "id": 44
-    }
-  ]
+  "open_positions": []
 }
