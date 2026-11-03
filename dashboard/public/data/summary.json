@@ -1,17 +1,17 @@
 {
-  "version": "1793743001153",
-  "generated_at": "2026-11-03T21:56:41.152Z",
-  "total_records": 23612,
-  "skipped_count": 15753,
-  "evaluated_count": 7853,
+  "version": "1793743099845",
+  "generated_at": "2026-11-03T21:58:19.845Z",
+  "total_records": 23623,
+  "skipped_count": 15762,
+  "evaluated_count": 7855,
   "decision_counts": {
     "LONG": 160,
     "SHORT": 113,
-    "NO_TRADE": 7586,
-    "SKIPPED_NO_ASSET_MATCH": 15753
+    "NO_TRADE": 7588,
+    "SKIPPED_NO_ASSET_MATCH": 15762
   },
   "live": {
-    "total": 23606,
+    "total": 23617,
     "trades_count": 271,
     "wins_count": 183,
     "win_rate": "67.5",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1166.2",
     "start_time": 1789544649909,
-    "end_time": 1793742977281,
-    "live_calls": 7483,
+    "end_time": 1793743072147,
+    "live_calls": 7485,
     "fallback_calls": 370,
-    "skipped_calls": 15753,
-    "evaluated_calls": 7853,
+    "skipped_calls": 15762,
+    "evaluated_calls": 7855,
     "live_call_rate": "95",
-    "no_trades": 7582,
+    "no_trades": 7584,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.58 >= 0.8) and statistical significance (z=-5.18).",
       "divergence": -0.041431,
-      "id": 14
+      "id": 25
     },
     {
       "timestamp": "2026-11-03T19:26:23.177754+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.84 >= 0.8) and statistical significance (z=-2.07).",
       "divergence": -0.016584,
-      "id": 249
+      "id": 260
     },
     {
       "timestamp": "2026-11-03T18:11:54.667262+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.83 >= 0.8) and statistical significance (z=+4.54).",
       "divergence": 0.0363,
-      "id": 342
+      "id": 353
     }
   ]
 }
