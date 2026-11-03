@@ -1,17 +1,17 @@
 {
-  "version": "1793707687405",
-  "generated_at": "2026-11-03T12:08:07.405Z",
-  "total_records": 22640,
-  "skipped_count": 15060,
-  "evaluated_count": 7574,
+  "version": "1793707779388",
+  "generated_at": "2026-11-03T12:09:39.388Z",
+  "total_records": 22645,
+  "skipped_count": 15062,
+  "evaluated_count": 7577,
   "decision_counts": {
     "LONG": 157,
     "SHORT": 108,
-    "NO_TRADE": 7315,
-    "SKIPPED_NO_ASSET_MATCH": 15060
+    "NO_TRADE": 7318,
+    "SKIPPED_NO_ASSET_MATCH": 15062
   },
   "live": {
-    "total": 22634,
+    "total": 22639,
     "trades_count": 263,
     "wins_count": 179,
     "win_rate": "68.1",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1156.4",
     "start_time": 1789544649909,
-    "end_time": 1793707681251,
-    "live_calls": 7222,
+    "end_time": 1793707764168,
+    "live_calls": 7225,
     "fallback_calls": 352,
-    "skipped_calls": 15060,
-    "evaluated_calls": 7574,
+    "skipped_calls": 15062,
+    "evaluated_calls": 7577,
     "live_call_rate": "95",
-    "no_trades": 7311,
+    "no_trades": 7314,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.03 >= 0.8) and statistical significance (z=+5.95).",
       "divergence": 0.047617,
-      "id": 153
+      "id": 158
     },
     {
       "timestamp": "2026-11-03T09:36:20.979222+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.56 >= 0.8) and statistical significance (z=-6.16).",
       "divergence": -0.049247,
-      "id": 169
+      "id": 174
     },
     {
       "timestamp": "2026-11-03T08:09:37.730015+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.01 >= 0.8) and statistical significance (z=-3.19).",
       "divergence": -0.025484,
-      "id": 216
+      "id": 221
     }
   ]
 }
