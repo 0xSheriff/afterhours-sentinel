@@ -1,6 +1,6 @@
 {
-  "version": "1793690471369",
-  "generated_at": "2026-11-03T07:21:11.369Z",
+  "version": "1793690573816",
+  "generated_at": "2026-11-03T07:22:53.815Z",
   "total_records": 22403,
   "skipped_count": 14904,
   "evaluated_count": 7493,
@@ -13,10 +13,10 @@
   "live": {
     "total": 22397,
     "trades_count": 260,
-    "wins_count": 178,
-    "win_rate": "68.5",
-    "total_pnl": 6779.65,
-    "sharpe_ratio": "10.02",
+    "wins_count": 179,
+    "win_rate": "68.8",
+    "total_pnl": 6791.34,
+    "sharpe_ratio": "10.04",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1151.6",
@@ -28,7 +28,7 @@
     "evaluated_calls": 7493,
     "live_call_rate": "95",
     "no_trades": 7233,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 260,
-      "pnl": 6779.65
+      "pnl": 6791.34
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-11-03T03:22:33.353104+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "AAPL",
-      "event_headline": "U.S. stock futures steady ahead of midterms; Apple dips after mixed earnings",
-      "event_type": "earnings",
-      "event_timestamp": "Tue, 03 Nov 2026 01:31:06 +0000",
-      "pre_event_price": 331.11,
-      "entry_price": 331.11,
-      "actual_move": -0.04115,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.003749,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.002288,
-      "beta": 1.6383,
-      "residual": -0.037401,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -4.68,
-      "z_threshold": 2,
-      "volume_ratio": 0.5745,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The headline explicitly states that Apple dipped following mixed earnings, indicating a negative market reaction to the company's financial results.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2725.33,
-      "stop_price": 336.0766,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.57 >= 0.8) and statistical significance (z=-4.68).",
-      "divergence": -0.037401,
-      "id": 122
-    }
-  ]
+  "open_positions": []
 }
