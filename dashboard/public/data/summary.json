@@ -1,34 +1,34 @@
 {
-  "version": "1793733880545",
-  "generated_at": "2026-11-03T19:24:40.544Z",
-  "total_records": 23363,
+  "version": "1793734009936",
+  "generated_at": "2026-11-03T19:26:49.936Z",
+  "total_records": 23364,
   "skipped_count": 15558,
-  "evaluated_count": 7799,
+  "evaluated_count": 7800,
   "decision_counts": {
     "LONG": 160,
-    "SHORT": 111,
+    "SHORT": 112,
     "NO_TRADE": 7534,
     "SKIPPED_NO_ASSET_MATCH": 15558
   },
   "live": {
-    "total": 23357,
-    "trades_count": 269,
+    "total": 23358,
+    "trades_count": 270,
     "wins_count": 182,
-    "win_rate": "67.7",
+    "win_rate": "67.4",
     "total_pnl": 6844.83,
-    "sharpe_ratio": "9.77",
+    "sharpe_ratio": "9.75",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1163.7",
     "start_time": 1789544649909,
-    "end_time": 1793733856429,
-    "live_calls": 7431,
+    "end_time": 1793733983177,
+    "live_calls": 7432,
     "fallback_calls": 368,
     "skipped_calls": 15558,
-    "evaluated_calls": 7799,
+    "evaluated_calls": 7800,
     "live_call_rate": "95",
     "no_trades": 7530,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 269,
+      "trades": 270,
       "pnl": 6844.83
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-11-03T19:26:23.177754+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "GOOGL",
+      "event_headline": "Alphabet Stock Tanks After Earnings: Should Investors Buy the Dip?",
+      "event_type": "earnings",
+      "event_timestamp": "Tue, 03 Nov 2026 19:20:02 +0000",
+      "pre_event_price": 279.07,
+      "entry_price": 279.07,
+      "actual_move": -0.01158,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.005004,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.003608,
+      "beta": 1.387,
+      "residual": -0.016584,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -2.07,
+      "z_threshold": 2,
+      "volume_ratio": 0.8387,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The report of underwhelming quarterly results and the stock trading near its 52-week low indicates negative fundamental performance and investor pessimism regarding the company's current trajectory.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2747.65,
+      "stop_price": 283.256,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.84 >= 0.8) and statistical significance (z=-2.07).",
+      "divergence": -0.016584,
+      "id": 1
+    },
     {
       "timestamp": "2026-11-03T18:11:54.667262+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.83 >= 0.8) and statistical significance (z=+4.54).",
       "divergence": 0.0363,
-      "id": 93
+      "id": 94
     },
     {
       "timestamp": "2026-11-03T17:50:47.891866+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.87 >= 0.8) and statistical significance (z=+3.49).",
       "divergence": 0.027888,
-      "id": 142
+      "id": 143
     }
   ]
 }
