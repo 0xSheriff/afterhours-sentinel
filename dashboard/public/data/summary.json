@@ -1,17 +1,17 @@
 {
-  "version": "1793714896264",
-  "generated_at": "2026-11-03T14:08:16.263Z",
-  "total_records": 22867,
-  "skipped_count": 15231,
-  "evaluated_count": 7630,
+  "version": "1793715057339",
+  "generated_at": "2026-11-03T14:10:57.339Z",
+  "total_records": 22869,
+  "skipped_count": 15232,
+  "evaluated_count": 7631,
   "decision_counts": {
     "LONG": 157,
     "SHORT": 111,
-    "NO_TRADE": 7368,
-    "SKIPPED_NO_ASSET_MATCH": 15231
+    "NO_TRADE": 7369,
+    "SKIPPED_NO_ASSET_MATCH": 15232
   },
   "live": {
-    "total": 22861,
+    "total": 22863,
     "trades_count": 266,
     "wins_count": 181,
     "win_rate": "68.0",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1158.4",
     "start_time": 1789544649909,
-    "end_time": 1793714880620,
-    "live_calls": 7274,
+    "end_time": 1793715040653,
+    "live_calls": 7275,
     "fallback_calls": 356,
-    "skipped_calls": 15231,
-    "evaluated_calls": 7630,
+    "skipped_calls": 15232,
+    "evaluated_calls": 7631,
     "live_call_rate": "95",
-    "no_trades": 7364,
+    "no_trades": 7365,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.02 >= 0.8) and statistical significance (z=+2.15).",
       "divergence": 0.017204,
-      "id": 11
+      "id": 13
     },
     {
       "timestamp": "2026-11-03T13:54:53.142305+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.90 >= 0.8) and statistical significance (z=-8.29).",
       "divergence": -0.066327,
-      "id": 23
+      "id": 25
     },
     {
       "timestamp": "2026-11-03T12:22:42.583745+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.68 >= 0.8) and statistical significance (z=-6.46).",
       "divergence": -0.051683,
-      "id": 190
+      "id": 192
     }
   ]
 }
