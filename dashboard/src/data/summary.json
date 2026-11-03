@@ -1,34 +1,34 @@
 {
-  "version": "1793708496119",
-  "generated_at": "2026-11-03T12:21:36.118Z",
-  "total_records": 22677,
+  "version": "1793708572439",
+  "generated_at": "2026-11-03T12:22:52.439Z",
+  "total_records": 22678,
   "skipped_count": 15093,
-  "evaluated_count": 7578,
+  "evaluated_count": 7579,
   "decision_counts": {
     "LONG": 157,
-    "SHORT": 108,
+    "SHORT": 109,
     "NO_TRADE": 7319,
     "SKIPPED_NO_ASSET_MATCH": 15093
   },
   "live": {
-    "total": 22671,
-    "trades_count": 263,
+    "total": 22672,
+    "trades_count": 264,
     "wins_count": 180,
-    "win_rate": "68.4",
+    "win_rate": "68.2",
     "total_pnl": 6835.37,
-    "sharpe_ratio": "10.03",
+    "sharpe_ratio": "10.00",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1156.6",
     "start_time": 1789544649909,
-    "end_time": 1793708467452,
-    "live_calls": 7226,
+    "end_time": 1793708562583,
+    "live_calls": 7227,
     "fallback_calls": 352,
     "skipped_calls": 15093,
-    "evaluated_calls": 7578,
+    "evaluated_calls": 7579,
     "live_call_rate": "95",
     "no_trades": 7315,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 263,
+      "trades": 264,
       "pnl": 6835.37
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-11-03T12:22:42.583745+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "AAPL",
+      "event_headline": "What analysts are telling us while Apple’s stock falls after earnings report",
+      "event_type": "earnings",
+      "event_timestamp": "Tue, 03 Nov 2026 12:20:00 GMT",
+      "pre_event_price": 325.77,
+      "entry_price": 325.77,
+      "actual_move": -0.05497,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.003287,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.002006,
+      "beta": 1.6383,
+      "residual": -0.051683,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -6.46,
+      "z_threshold": 2,
+      "volume_ratio": 0.6757,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The event is classified as earnings because it directly follows Apple's financial report, and the direction is bearish due to investor disappointment with the gross margin outlook and slowing services revenue growth, which triggered a 4.5% premarket decline.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2743.41,
+      "stop_price": 330.6565,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.68 >= 0.8) and statistical significance (z=-6.46).",
+      "divergence": -0.051683,
+      "id": 1
+    },
     {
       "timestamp": "2026-11-03T09:58:48.746321+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.03 >= 0.8) and statistical significance (z=+5.95).",
       "divergence": 0.047617,
-      "id": 190
+      "id": 191
     },
     {
       "timestamp": "2026-11-03T09:36:20.979222+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.56 >= 0.8) and statistical significance (z=-6.16).",
       "divergence": -0.049247,
-      "id": 206
+      "id": 207
     }
   ]
 }
