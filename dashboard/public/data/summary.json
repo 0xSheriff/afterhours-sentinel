@@ -1,34 +1,34 @@
 {
-  "version": "1793803453638",
-  "generated_at": "2026-11-04T14:44:13.637Z",
-  "total_records": 24463,
-  "skipped_count": 16386,
-  "evaluated_count": 8071,
+  "version": "1793803553217",
+  "generated_at": "2026-11-04T14:45:53.216Z",
+  "total_records": 24466,
+  "skipped_count": 16387,
+  "evaluated_count": 8073,
   "decision_counts": {
-    "LONG": 170,
+    "LONG": 171,
     "SHORT": 114,
-    "NO_TRADE": 7793,
-    "SKIPPED_NO_ASSET_MATCH": 16386
+    "NO_TRADE": 7794,
+    "SKIPPED_NO_ASSET_MATCH": 16387
   },
   "live": {
-    "total": 24457,
-    "trades_count": 282,
+    "total": 24460,
+    "trades_count": 283,
     "wins_count": 193,
-    "win_rate": "68.4",
+    "win_rate": "68.2",
     "total_pnl": 7460.06,
-    "sharpe_ratio": "10.13",
+    "sharpe_ratio": "10.10",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1183.0",
     "start_time": 1789544649909,
-    "end_time": 1793803435985,
-    "live_calls": 7673,
+    "end_time": 1793803511212,
+    "live_calls": 7675,
     "fallback_calls": 398,
-    "skipped_calls": 16386,
-    "evaluated_calls": 8071,
+    "skipped_calls": 16387,
+    "evaluated_calls": 8073,
     "live_call_rate": "95",
-    "no_trades": 7789,
-    "open_positions_count": 1
+    "no_trades": 7790,
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 282,
+      "trades": 283,
       "pnl": 7460.06
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-11-04T14:44:35.205961+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "MSFT",
+      "event_headline": "Microsoft Corporation (MSFT) Outperforms with Record Quarter Driven by Azure Demand Surge",
+      "event_type": "earnings",
+      "event_timestamp": "Wed, 04 Nov 2026 14:31:13 +0000",
+      "pre_event_price": 549.030029296875,
+      "entry_price": 549.03,
+      "actual_move": 0.053821,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.037156,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.024543,
+      "beta": 1.5139,
+      "residual": 0.016665,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 2.08,
+      "z_threshold": 2,
+      "volume_ratio": 1.9795,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bullish",
+      "price_direction": "bullish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The headline explicitly states that Microsoft outperformed with a record quarter driven by a surge in Azure demand, which is a fundamentally positive signal for the company's growth trajectory.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2833.66,
+      "stop_price": 540.7946,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.98 >= 0.8) and statistical significance (z=+2.08).",
+      "divergence": 0.016665,
+      "id": 2
+    },
     {
       "timestamp": "2026-11-04T14:32:20.369510+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.08 >= 0.8) and statistical significance (z=-10.97).",
       "divergence": -0.087789,
-      "id": 14
+      "id": 17
     }
   ]
 }
