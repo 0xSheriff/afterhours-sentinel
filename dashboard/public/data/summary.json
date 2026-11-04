@@ -1,17 +1,17 @@
 {
-  "version": "1793796020397",
-  "generated_at": "2026-11-04T12:40:20.396Z",
-  "total_records": 24296,
-  "skipped_count": 16272,
-  "evaluated_count": 8018,
+  "version": "1793796146843",
+  "generated_at": "2026-11-04T12:42:26.843Z",
+  "total_records": 24299,
+  "skipped_count": 16273,
+  "evaluated_count": 8020,
   "decision_counts": {
     "LONG": 170,
     "SHORT": 113,
-    "NO_TRADE": 7741,
-    "SKIPPED_NO_ASSET_MATCH": 16272
+    "NO_TRADE": 7743,
+    "SKIPPED_NO_ASSET_MATCH": 16273
   },
   "live": {
-    "total": 24290,
+    "total": 24293,
     "trades_count": 281,
     "wins_count": 190,
     "win_rate": "67.6",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "9.89",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1180.9",
+    "duration_hours": "1181.0",
     "start_time": 1789544649909,
-    "end_time": 1793796008937,
-    "live_calls": 7627,
+    "end_time": 1793796144865,
+    "live_calls": 7629,
     "fallback_calls": 391,
-    "skipped_calls": 16272,
-    "evaluated_calls": 8018,
+    "skipped_calls": 16273,
+    "evaluated_calls": 8020,
     "live_call_rate": "95",
-    "no_trades": 7737,
+    "no_trades": 7739,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.59 >= 0.8) and statistical significance (z=+2.58).",
       "divergence": 0.020608,
-      "id": 40
+      "id": 43
     },
     {
       "timestamp": "2026-11-04T11:46:31.086893+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.82 >= 0.8) and statistical significance (z=+4.26).",
       "divergence": 0.034116,
-      "id": 106
+      "id": 109
     },
     {
       "timestamp": "2026-11-04T11:02:10.231085+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.83 >= 0.8) and statistical significance (z=+4.27).",
       "divergence": 0.034143,
-      "id": 173
+      "id": 176
     }
   ]
 }
