@@ -1,6 +1,6 @@
 {
-  "version": "1793770747759",
-  "generated_at": "2026-11-04T05:39:07.759Z",
+  "version": "1793771363316",
+  "generated_at": "2026-11-04T05:49:23.312Z",
   "total_records": 23951,
   "skipped_count": 16023,
   "evaluated_count": 7922,
@@ -13,10 +13,10 @@
   "live": {
     "total": 23945,
     "trades_count": 274,
-    "wins_count": 185,
-    "win_rate": "67.5",
-    "total_pnl": 6915.89,
-    "sharpe_ratio": "9.76",
+    "wins_count": 186,
+    "win_rate": "67.9",
+    "total_pnl": 6969.59,
+    "sharpe_ratio": "9.83",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1173.9",
@@ -28,7 +28,7 @@
     "evaluated_calls": 7922,
     "live_call_rate": "95",
     "no_trades": 7648,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 274,
-      "pnl": 6915.89
+      "pnl": 6969.59
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.24 >= 0.8) and statistical significance (z=+4.34).",
       "divergence": 0.034732,
       "id": 107
-    },
-    {
-      "timestamp": "2026-11-04T01:48:49.116508+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "PLTR",
-      "event_headline": "Palantir's CEO just called the old-school software sales model 'dead'",
-      "event_type": "corporate",
-      "event_timestamp": "Wed, 04 Nov 2026 01:37:00 +0000",
-      "pre_event_price": 172.6,
-      "entry_price": 172.6,
-      "actual_move": -0.062517,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.028946,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.009093,
-      "beta": 3.1832,
-      "residual": -0.033571,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -4.2,
-      "z_threshold": 2,
-      "volume_ratio": 0.0086,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bullish",
-      "price_direction": "bearish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The CEO's declaration that traditional software sales models are obsolete reinforces Palantir's strategic pivot toward high-growth, consumption-based AI platforms, signaling a competitive advantage in the evolving enterprise tech landscape.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2725.71,
-      "stop_price": 170.011,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved: Price dumped -6.25% on bullish event with weak volume (0.01) and high divergence (z=-4.20).",
-      "divergence": -0.033571,
-      "id": 119
     }
   ]
 }
