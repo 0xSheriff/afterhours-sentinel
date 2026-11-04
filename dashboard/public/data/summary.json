@@ -1,17 +1,17 @@
 {
-  "version": "1793801238467",
-  "generated_at": "2026-11-04T14:07:18.467Z",
-  "total_records": 24412,
-  "skipped_count": 16359,
-  "evaluated_count": 8047,
+  "version": "1793801341391",
+  "generated_at": "2026-11-04T14:09:01.391Z",
+  "total_records": 24414,
+  "skipped_count": 16360,
+  "evaluated_count": 8048,
   "decision_counts": {
     "LONG": 170,
     "SHORT": 113,
-    "NO_TRADE": 7770,
-    "SKIPPED_NO_ASSET_MATCH": 16359
+    "NO_TRADE": 7771,
+    "SKIPPED_NO_ASSET_MATCH": 16360
   },
   "live": {
-    "total": 24406,
+    "total": 24408,
     "trades_count": 281,
     "wins_count": 190,
     "win_rate": "67.6",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1182.4",
     "start_time": 1789544649909,
-    "end_time": 1793801229574,
-    "live_calls": 7654,
+    "end_time": 1793801329944,
+    "live_calls": 7655,
     "fallback_calls": 393,
-    "skipped_calls": 16359,
-    "evaluated_calls": 8047,
+    "skipped_calls": 16360,
+    "evaluated_calls": 8048,
     "live_call_rate": "95",
-    "no_trades": 7766,
+    "no_trades": 7767,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.59 >= 0.8) and statistical significance (z=+2.58).",
       "divergence": 0.020608,
-      "id": 156
+      "id": 158
     },
     {
       "timestamp": "2026-11-04T11:46:31.086893+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.82 >= 0.8) and statistical significance (z=+4.26).",
       "divergence": 0.034116,
-      "id": 222
+      "id": 224
     },
     {
       "timestamp": "2026-11-04T11:02:10.231085+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.83 >= 0.8) and statistical significance (z=+4.27).",
       "divergence": 0.034143,
-      "id": 289
+      "id": 291
     }
   ]
 }
