@@ -1,34 +1,34 @@
 {
-  "version": "1793853345523",
-  "generated_at": "2026-11-05T04:35:45.523Z",
-  "total_records": 25823,
-  "skipped_count": 17523,
-  "evaluated_count": 8294,
+  "version": "1793853374751",
+  "generated_at": "2026-11-05T04:36:14.745Z",
+  "total_records": 25829,
+  "skipped_count": 17528,
+  "evaluated_count": 8295,
   "decision_counts": {
     "LONG": 177,
-    "SHORT": 115,
+    "SHORT": 116,
     "NO_TRADE": 8008,
-    "SKIPPED_NO_ASSET_MATCH": 17523
+    "SKIPPED_NO_ASSET_MATCH": 17528
   },
   "live": {
-    "total": 25817,
-    "trades_count": 290,
+    "total": 25823,
+    "trades_count": 291,
     "wins_count": 196,
-    "win_rate": "67.6",
+    "win_rate": "67.4",
     "total_pnl": 7445.75,
-    "sharpe_ratio": "9.82",
+    "sharpe_ratio": "9.80",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1196.9",
     "start_time": 1789544649909,
-    "end_time": 1793853339044,
-    "live_calls": 7880,
+    "end_time": 1793853357478,
+    "live_calls": 7881,
     "fallback_calls": 414,
-    "skipped_calls": 17523,
-    "evaluated_calls": 8294,
+    "skipped_calls": 17528,
+    "evaluated_calls": 8295,
     "live_call_rate": "95",
     "no_trades": 8004,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 290,
+      "trades": 291,
       "pnl": 7445.75
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-11-05T04:35:41.673573+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "ARM",
+      "event_headline": "Asian chip stocks slide as disappointing Qualcomm, Arm earnings weigh",
+      "event_type": "earnings",
+      "event_timestamp": "2026-11-05 04:21:37",
+      "pre_event_price": 188.4659,
+      "entry_price": 188.4659,
+      "actual_move": -0.069258,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.099852,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.033908,
+      "beta": 2.9448,
+      "residual": -0.16911,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -21.14,
+      "z_threshold": 2,
+      "volume_ratio": 2.1258,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The headline explicitly cites disappointing Arm earnings as a primary driver for the slide in Asian chip stocks, indicating negative fundamental sentiment for the company.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2887.02,
+      "stop_price": 191.2929,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.13 >= 0.8) and statistical significance (z=-21.14).",
+      "divergence": -0.16911,
+      "id": 6
+    },
     {
       "timestamp": "2026-11-05T04:26:42.431236+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.93 >= 0.8) and statistical significance (z=+5.16).",
       "divergence": 0.041316,
-      "id": 4
+      "id": 10
     },
     {
       "timestamp": "2026-11-05T04:22:31.782333+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -1.17% on bullish event with weak volume (0.02) and high divergence (z=-14.87).",
       "divergence": -0.11894,
-      "id": 5
+      "id": 11
     }
   ]
 }
