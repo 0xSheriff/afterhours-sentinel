@@ -1,17 +1,17 @@
 {
-  "version": "1793900559647",
-  "generated_at": "2026-11-05T17:42:39.646Z",
-  "total_records": 26727,
-  "skipped_count": 18213,
+  "version": "1793900635674",
+  "generated_at": "2026-11-05T17:43:55.674Z",
+  "total_records": 26728,
+  "skipped_count": 18214,
   "evaluated_count": 8508,
   "decision_counts": {
     "LONG": 179,
     "SHORT": 121,
     "NO_TRADE": 8214,
-    "SKIPPED_NO_ASSET_MATCH": 18213
+    "SKIPPED_NO_ASSET_MATCH": 18214
   },
   "live": {
-    "total": 26721,
+    "total": 26722,
     "trades_count": 298,
     "wins_count": 201,
     "win_rate": "67.4",
@@ -21,10 +21,10 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1210.0",
     "start_time": 1789544649909,
-    "end_time": 1793900513920,
+    "end_time": 1793900609597,
     "live_calls": 8082,
     "fallback_calls": 426,
-    "skipped_calls": 18213,
+    "skipped_calls": 18214,
     "evaluated_calls": 8508,
     "live_call_rate": "95",
     "no_trades": 8210,
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.11 >= 0.8) and statistical significance (z=+6.87).",
       "divergence": 0.054999,
-      "id": 170
+      "id": 171
     },
     {
       "timestamp": "2026-11-05T14:01:15.329498+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +4.28% on bearish event with weak volume (0.34) and high divergence (z=+3.70).",
       "divergence": 0.029575,
-      "id": 323
+      "id": 324
     }
   ]
 }
