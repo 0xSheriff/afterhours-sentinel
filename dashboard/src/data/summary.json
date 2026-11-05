@@ -1,6 +1,6 @@
 {
-  "version": "1793867036532",
-  "generated_at": "2026-11-05T08:23:56.532Z",
+  "version": "1793867222364",
+  "generated_at": "2026-11-05T08:27:02.364Z",
   "total_records": 25936,
   "skipped_count": 17616,
   "evaluated_count": 8314,
@@ -13,10 +13,10 @@
   "live": {
     "total": 25930,
     "trades_count": 291,
-    "wins_count": 198,
-    "win_rate": "68.0",
-    "total_pnl": 7535.24,
-    "sharpe_ratio": "9.89",
+    "wins_count": 199,
+    "win_rate": "68.4",
+    "total_pnl": 7581.16,
+    "sharpe_ratio": "9.95",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1200.7",
@@ -28,7 +28,7 @@
     "evaluated_calls": 8314,
     "live_call_rate": "95",
     "no_trades": 8023,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 291,
-      "pnl": 7535.24
+      "pnl": 7581.16
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-11-05T04:26:42.431236+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "AMZN",
-      "event_headline": "Pattern Group Q3 Earnings Call Highlights",
-      "event_type": "earnings",
-      "event_timestamp": "Thu, 05 Nov 2026 04:14:22 +0000",
-      "pre_event_price": 264.4,
-      "entry_price": 264.4,
-      "actual_move": 0.07927,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.037954,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.022002,
-      "beta": 1.725,
-      "residual": 0.041316,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 5.16,
-      "z_threshold": 2,
-      "volume_ratio": 0.925,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "Pattern Group's strong revenue growth and expansion beyond Amazon indicate a healthy e-commerce ecosystem, which serves as a positive leading indicator for Amazon's marketplace activity and advertising revenue.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2877.31,
-      "stop_price": 260.434,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.93 >= 0.8) and statistical significance (z=+5.16).",
-      "divergence": 0.041316,
-      "id": 117
-    }
-  ]
+  "open_positions": []
 }
