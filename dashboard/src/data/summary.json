@@ -1,17 +1,17 @@
 {
-  "version": "1793907064537",
-  "generated_at": "2026-11-05T19:31:04.537Z",
-  "total_records": 26887,
-  "skipped_count": 18328,
-  "evaluated_count": 8553,
+  "version": "1793907134154",
+  "generated_at": "2026-11-05T19:32:14.154Z",
+  "total_records": 26890,
+  "skipped_count": 18329,
+  "evaluated_count": 8555,
   "decision_counts": {
     "LONG": 180,
     "SHORT": 122,
-    "NO_TRADE": 8257,
-    "SKIPPED_NO_ASSET_MATCH": 18328
+    "NO_TRADE": 8259,
+    "SKIPPED_NO_ASSET_MATCH": 18329
   },
   "live": {
-    "total": 26881,
+    "total": 26884,
     "trades_count": 300,
     "wins_count": 202,
     "win_rate": "67.3",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1211.8",
     "start_time": 1789544649909,
-    "end_time": 1793907048198,
-    "live_calls": 8127,
+    "end_time": 1793907120723,
+    "live_calls": 8129,
     "fallback_calls": 426,
-    "skipped_calls": 18328,
-    "evaluated_calls": 8553,
+    "skipped_calls": 18329,
+    "evaluated_calls": 8555,
     "live_call_rate": "95",
-    "no_trades": 8253,
+    "no_trades": 8255,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.71 >= 0.8) and statistical significance (z=+3.61).",
       "divergence": 0.028888,
-      "id": 115
+      "id": 118
     },
     {
       "timestamp": "2026-11-05T17:57:21.122472+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -2.49% on bullish event with weak volume (0.12) and high divergence (z=+8.76).",
       "divergence": 0.070097,
-      "id": 130
+      "id": 133
     },
     {
       "timestamp": "2026-11-05T15:56:06.165557+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.11 >= 0.8) and statistical significance (z=+6.87).",
       "divergence": 0.054999,
-      "id": 330
+      "id": 333
     }
   ]
 }
