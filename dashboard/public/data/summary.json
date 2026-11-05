@@ -1,17 +1,17 @@
 {
-  "version": "1793915127112",
-  "generated_at": "2026-11-05T21:45:27.111Z",
-  "total_records": 27135,
-  "skipped_count": 18526,
-  "evaluated_count": 8603,
+  "version": "1793915228637",
+  "generated_at": "2026-11-05T21:47:08.637Z",
+  "total_records": 27140,
+  "skipped_count": 18530,
+  "evaluated_count": 8604,
   "decision_counts": {
     "LONG": 181,
     "SHORT": 123,
-    "NO_TRADE": 8305,
-    "SKIPPED_NO_ASSET_MATCH": 18526
+    "NO_TRADE": 8306,
+    "SKIPPED_NO_ASSET_MATCH": 18530
   },
   "live": {
-    "total": 27129,
+    "total": 27134,
     "trades_count": 302,
     "wins_count": 203,
     "win_rate": "67.2",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1214.0",
     "start_time": 1789544649909,
-    "end_time": 1793915111509,
-    "live_calls": 8176,
+    "end_time": 1793915189800,
+    "live_calls": 8177,
     "fallback_calls": 427,
-    "skipped_calls": 18526,
-    "evaluated_calls": 8603,
+    "skipped_calls": 18530,
+    "evaluated_calls": 8604,
     "live_call_rate": "95",
-    "no_trades": 8301,
+    "no_trades": 8302,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -2.52% on bullish event with weak volume (0.06) and high divergence (z=+6.72).",
       "divergence": 0.053777,
-      "id": 115
+      "id": 120
     },
     {
       "timestamp": "2026-11-05T20:26:00.604768+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.07 >= 0.8) and statistical significance (z=+13.18).",
       "divergence": 0.130712,
-      "id": 170
+      "id": 175
     },
     {
       "timestamp": "2026-11-05T17:57:21.122472+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -2.49% on bullish event with weak volume (0.12) and high divergence (z=+8.76).",
       "divergence": 0.070097,
-      "id": 378
+      "id": 383
     }
   ]
 }
