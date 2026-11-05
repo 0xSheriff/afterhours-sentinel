@@ -1,17 +1,17 @@
 {
-  "version": "1793897907996",
-  "generated_at": "2026-11-05T16:58:27.989Z",
-  "total_records": 26657,
-  "skipped_count": 18160,
-  "evaluated_count": 8491,
+  "version": "1793898030692",
+  "generated_at": "2026-11-05T17:00:30.692Z",
+  "total_records": 26666,
+  "skipped_count": 18168,
+  "evaluated_count": 8492,
   "decision_counts": {
     "LONG": 179,
     "SHORT": 121,
-    "NO_TRADE": 8197,
-    "SKIPPED_NO_ASSET_MATCH": 18160
+    "NO_TRADE": 8198,
+    "SKIPPED_NO_ASSET_MATCH": 18168
   },
   "live": {
-    "total": 26651,
+    "total": 26660,
     "trades_count": 298,
     "wins_count": 200,
     "win_rate": "67.1",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "9.69",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1209.2",
+    "duration_hours": "1209.3",
     "start_time": 1789544649909,
-    "end_time": 1793897905773,
-    "live_calls": 8067,
+    "end_time": 1793898025276,
+    "live_calls": 8068,
     "fallback_calls": 424,
-    "skipped_calls": 18160,
-    "evaluated_calls": 8491,
+    "skipped_calls": 18168,
+    "evaluated_calls": 8492,
     "live_call_rate": "95",
-    "no_trades": 8193,
+    "no_trades": 8194,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.11 >= 0.8) and statistical significance (z=+6.87).",
       "divergence": 0.054999,
-      "id": 100
+      "id": 109
     },
     {
       "timestamp": "2026-11-05T14:01:15.329498+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +4.28% on bearish event with weak volume (0.34) and high divergence (z=+3.70).",
       "divergence": 0.029575,
-      "id": 253
+      "id": 262
     },
     {
       "timestamp": "2026-11-05T13:49:59.919403+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.98 >= 0.8) and statistical significance (z=-20.52).",
       "divergence": -0.164138,
-      "id": 270
+      "id": 279
     }
   ]
 }
