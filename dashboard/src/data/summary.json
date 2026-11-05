@@ -1,17 +1,17 @@
 {
-  "version": "1793894618929",
-  "generated_at": "2026-11-05T16:03:38.923Z",
-  "total_records": 26575,
-  "skipped_count": 18094,
-  "evaluated_count": 8475,
+  "version": "1793894660870",
+  "generated_at": "2026-11-05T16:04:20.870Z",
+  "total_records": 26577,
+  "skipped_count": 18095,
+  "evaluated_count": 8476,
   "decision_counts": {
     "LONG": 179,
     "SHORT": 121,
-    "NO_TRADE": 8181,
-    "SKIPPED_NO_ASSET_MATCH": 18094
+    "NO_TRADE": 8182,
+    "SKIPPED_NO_ASSET_MATCH": 18095
   },
   "live": {
-    "total": 26569,
+    "total": 26571,
     "trades_count": 298,
     "wins_count": 200,
     "win_rate": "67.1",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1208.3",
     "start_time": 1789544649909,
-    "end_time": 1793894612444,
-    "live_calls": 8052,
+    "end_time": 1793894654895,
+    "live_calls": 8053,
     "fallback_calls": 423,
-    "skipped_calls": 18094,
-    "evaluated_calls": 8475,
+    "skipped_calls": 18095,
+    "evaluated_calls": 8476,
     "live_call_rate": "95",
-    "no_trades": 8177,
+    "no_trades": 8178,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.11 >= 0.8) and statistical significance (z=+6.87).",
       "divergence": 0.054999,
-      "id": 18
+      "id": 20
     },
     {
       "timestamp": "2026-11-05T14:01:15.329498+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +4.28% on bearish event with weak volume (0.34) and high divergence (z=+3.70).",
       "divergence": 0.029575,
-      "id": 171
+      "id": 173
     },
     {
       "timestamp": "2026-11-05T13:49:59.919403+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.98 >= 0.8) and statistical significance (z=-20.52).",
       "divergence": -0.164138,
-      "id": 188
+      "id": 190
     }
   ]
 }
