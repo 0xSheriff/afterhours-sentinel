@@ -1,6 +1,6 @@
 {
-  "version": "1793837888654",
-  "generated_at": "2026-11-05T00:18:08.654Z",
+  "version": "1793837955639",
+  "generated_at": "2026-11-05T00:19:15.615Z",
   "total_records": 25610,
   "skipped_count": 17342,
   "evaluated_count": 8262,
@@ -15,8 +15,8 @@
     "trades_count": 288,
     "wins_count": 195,
     "win_rate": "67.7",
-    "total_pnl": 7458.23,
-    "sharpe_ratio": "9.94",
+    "total_pnl": 7425.67,
+    "sharpe_ratio": "9.87",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1192.6",
@@ -28,7 +28,7 @@
     "evaluated_calls": 8262,
     "live_call_rate": "95",
     "no_trades": 7974,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 288,
-      "pnl": 7458.23
+      "pnl": 7425.67
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.51 >= 0.8) and statistical significance (z=-3.82).",
       "divergence": -0.030536,
       "id": 344
-    },
-    {
-      "timestamp": "2026-11-04T20:18:58.898882+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "TSLA",
-      "event_headline": "Stock Market Today: Dow Soars 1,500 Points As At Least 10 Stocks Break Out (Live Coverage)",
-      "event_type": "geopolitical",
-      "event_timestamp": "Wed, 04 Nov 2026 19:06:41 +0000",
-      "pre_event_price": 387.25,
-      "entry_price": 387.25,
-      "actual_move": -0.02782,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.09307,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.034178,
-      "beta": 2.7231,
-      "residual": -0.12089,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -15.11,
-      "z_threshold": 2,
-      "volume_ratio": 0.0345,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bullish",
-      "price_direction": "bearish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The surge in the Dow Jones following U.S. election results indicates a positive macroeconomic sentiment and risk-on environment that typically benefits high-beta growth stocks like Tesla.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2871.85,
-      "stop_price": 381.4412,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved: Price dumped -2.78% on bullish event with weak volume (0.03) and high divergence (z=-15.11).",
-      "divergence": -0.12089,
-      "id": 509
     }
   ]
 }
