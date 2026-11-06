@@ -1,17 +1,17 @@
 {
-  "version": "1793955466814",
-  "generated_at": "2026-11-06T08:57:46.814Z",
-  "total_records": 27720,
+  "version": "1793955904918",
+  "generated_at": "2026-11-06T09:05:04.918Z",
+  "total_records": 27721,
   "skipped_count": 19061,
-  "evaluated_count": 8653,
+  "evaluated_count": 8654,
   "decision_counts": {
     "LONG": 183,
     "SHORT": 127,
-    "NO_TRADE": 8349,
+    "NO_TRADE": 8350,
     "SKIPPED_NO_ASSET_MATCH": 19061
   },
   "live": {
-    "total": 27714,
+    "total": 27715,
     "trades_count": 308,
     "wins_count": 206,
     "win_rate": "66.9",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "9.51",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1225.2",
+    "duration_hours": "1225.3",
     "start_time": 1789544649909,
-    "end_time": 1793955455762,
-    "live_calls": 8221,
+    "end_time": 1793955895735,
+    "live_calls": 8222,
     "fallback_calls": 432,
     "skipped_calls": 19061,
-    "evaluated_calls": 8653,
+    "evaluated_calls": 8654,
     "live_call_rate": "95",
-    "no_trades": 8345,
+    "no_trades": 8346,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.43 >= 0.8) and statistical significance (z=-3.64).",
       "divergence": -0.02911,
-      "id": 6
+      "id": 7
     },
     {
       "timestamp": "2026-11-06T06:32:15.361039+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.82 >= 0.8) and statistical significance (z=+3.11).",
       "divergence": 0.024888,
-      "id": 65
+      "id": 66
     },
     {
       "timestamp": "2026-11-06T05:27:35.748822+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -1.27% on bullish event with weak volume (0.07) and high divergence (z=+6.50).",
       "divergence": 0.051971,
-      "id": 100
+      "id": 101
     }
   ]
 }
