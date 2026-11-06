@@ -1,17 +1,17 @@
 {
-  "version": "1793948360514",
-  "generated_at": "2026-11-06T06:59:20.514Z",
-  "total_records": 27671,
-  "skipped_count": 19018,
-  "evaluated_count": 8647,
+  "version": "1793949423672",
+  "generated_at": "2026-11-06T07:17:03.672Z",
+  "total_records": 27674,
+  "skipped_count": 19020,
+  "evaluated_count": 8648,
   "decision_counts": {
     "LONG": 183,
     "SHORT": 126,
-    "NO_TRADE": 8344,
-    "SKIPPED_NO_ASSET_MATCH": 19018
+    "NO_TRADE": 8345,
+    "SKIPPED_NO_ASSET_MATCH": 19020
   },
   "live": {
-    "total": 27665,
+    "total": 27668,
     "trades_count": 307,
     "wins_count": 206,
     "win_rate": "67.1",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "9.54",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1223.2",
+    "duration_hours": "1223.5",
     "start_time": 1789544649909,
-    "end_time": 1793948345437,
+    "end_time": 1793949419999,
     "live_calls": 8216,
-    "fallback_calls": 431,
-    "skipped_calls": 19018,
-    "evaluated_calls": 8647,
+    "fallback_calls": 432,
+    "skipped_calls": 19020,
+    "evaluated_calls": 8648,
     "live_call_rate": "95",
-    "no_trades": 8340,
+    "no_trades": 8341,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (1.82 >= 0.8) and statistical significance (z=+3.11).",
       "divergence": 0.024888,
-      "id": 16
+      "id": 19
     },
     {
       "timestamp": "2026-11-06T05:27:35.748822+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -1.27% on bullish event with weak volume (0.07) and high divergence (z=+6.50).",
       "divergence": 0.051971,
-      "id": 51
+      "id": 54
     },
     {
       "timestamp": "2026-11-06T04:15:37.234876+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -1.65% on bullish event with weak volume (0.20) and high divergence (z=+7.58).",
       "divergence": 0.060631,
-      "id": 80
+      "id": 83
     }
   ]
 }
