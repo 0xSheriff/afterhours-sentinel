@@ -1,6 +1,6 @@
 {
-  "version": "1793975155630",
-  "generated_at": "2026-11-06T14:25:55.629Z",
+  "version": "1793975298893",
+  "generated_at": "2026-11-06T14:28:18.892Z",
   "total_records": 28151,
   "skipped_count": 19394,
   "evaluated_count": 8751,
@@ -15,8 +15,8 @@
     "trades_count": 311,
     "wins_count": 210,
     "win_rate": "67.5",
-    "total_pnl": 7876.65,
-    "sharpe_ratio": "9.67",
+    "total_pnl": 7836.05,
+    "sharpe_ratio": "9.58",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1230.7",
@@ -28,7 +28,7 @@
     "evaluated_calls": 8751,
     "live_call_rate": "95",
     "no_trades": 8440,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 311,
-      "pnl": 7876.65
+      "pnl": 7836.05
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -49,53 +49,6 @@
     }
   },
   "open_positions": [
-    {
-      "timestamp": "2026-11-06T12:50:50.154399+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NVDA",
-      "event_headline": "Nvidia Just Had Its Worst Day Since DeepSeek, Losing About $450 Billion",
-      "event_type": "earnings",
-      "event_timestamp": "Fri, 06 Nov 2026 12:37:04 +0000",
-      "pre_event_price": 188.82,
-      "entry_price": 188.82,
-      "actual_move": -0.04079,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.10461,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.04444,
-      "beta": 2.354,
-      "residual": 0.06382,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 7.98,
-      "z_threshold": 2,
-      "volume_ratio": 0.5831,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The headline attributes the significant market value loss to a political shock, indicating that geopolitical risks are currently outweighing the positive fundamental signals of revenue growth and valuation compression.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2706.95,
-      "stop_price": 191.6523,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.58 >= 0.8) and statistical significance (z=+7.98).",
-      "divergence": 0.06382,
-      "id": 152
-    },
     {
       "timestamp": "2026-11-06T12:27:59.149786+00:00",
       "mode": "live",
