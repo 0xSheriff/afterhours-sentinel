@@ -1,34 +1,34 @@
 {
-  "version": "1793995992815",
-  "generated_at": "2026-11-06T20:13:12.815Z",
-  "total_records": 28490,
-  "skipped_count": 19606,
+  "version": "1793996026711",
+  "generated_at": "2026-11-06T20:13:46.710Z",
+  "total_records": 28491,
+  "skipped_count": 19607,
   "evaluated_count": 8878,
   "decision_counts": {
     "LONG": 188,
     "SHORT": 129,
     "NO_TRADE": 8567,
-    "SKIPPED_NO_ASSET_MATCH": 19606
+    "SKIPPED_NO_ASSET_MATCH": 19607
   },
   "live": {
-    "total": 28484,
+    "total": 28485,
     "trades_count": 315,
-    "wins_count": 213,
-    "win_rate": "67.6",
-    "total_pnl": 7996.11,
-    "sharpe_ratio": "9.68",
+    "wins_count": 214,
+    "win_rate": "67.9",
+    "total_pnl": 8076.96,
+    "sharpe_ratio": "9.76",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1236.4",
+    "duration_hours": "1236.5",
     "start_time": 1789544649909,
-    "end_time": 1793995638165,
+    "end_time": 1793996018506,
     "live_calls": 8425,
     "fallback_calls": 453,
-    "skipped_calls": 19606,
+    "skipped_calls": 19607,
     "evaluated_calls": 8878,
     "live_call_rate": "95",
     "no_trades": 8563,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 315,
-      "pnl": 7996.11
+      "pnl": 8076.96
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -94,54 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.90 >= 0.8) and statistical significance (z=-3.41).",
       "divergence": -0.027258,
-      "id": 37
-    },
-    {
-      "timestamp": "2026-11-06T16:28:22.967340+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "AMD",
-      "event_headline": "AMD Stocks Surge 11.01% as Chip Buyers Return After AI Rout",
-      "event_type": "earnings",
-      "event_timestamp": "Fri, 06 Nov 2026 16:20:06 +0000",
-      "pre_event_price": 443.81500244140625,
-      "entry_price": 443.815,
-      "actual_move": 0.097465,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.03162,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.012145,
-      "beta": 2.6036,
-      "residual": 0.065845,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 8.23,
-      "z_threshold": 2,
-      "volume_ratio": 0.8155,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "AMD's near-doubling of data center sales and strong Q4 revenue guidance signal robust demand and operational momentum, driving a significant positive fundamental reassessment.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2695.13,
-      "stop_price": 437.1578,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.82 >= 0.8) and statistical significance (z=+8.23).",
-      "divergence": 0.065845,
-      "id": 219
+      "id": 38
     }
   ]
 }
