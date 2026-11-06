@@ -1,34 +1,34 @@
 {
-  "version": "1793942676931",
-  "generated_at": "2026-11-06T05:24:36.931Z",
-  "total_records": 27620,
-  "skipped_count": 18973,
-  "evaluated_count": 8641,
+  "version": "1793942894100",
+  "generated_at": "2026-11-06T05:28:14.100Z",
+  "total_records": 27623,
+  "skipped_count": 18975,
+  "evaluated_count": 8642,
   "decision_counts": {
-    "LONG": 182,
+    "LONG": 183,
     "SHORT": 125,
     "NO_TRADE": 8340,
-    "SKIPPED_NO_ASSET_MATCH": 18973
+    "SKIPPED_NO_ASSET_MATCH": 18975
   },
   "live": {
-    "total": 27614,
-    "trades_count": 305,
+    "total": 27617,
+    "trades_count": 306,
     "wins_count": 206,
-    "win_rate": "67.5",
+    "win_rate": "67.3",
     "total_pnl": 7723.62,
-    "sharpe_ratio": "9.59",
+    "sharpe_ratio": "9.57",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1221.7",
     "start_time": 1789544649909,
-    "end_time": 1793942665586,
-    "live_calls": 8211,
+    "end_time": 1793942864300,
+    "live_calls": 8212,
     "fallback_calls": 430,
-    "skipped_calls": 18973,
-    "evaluated_calls": 8641,
+    "skipped_calls": 18975,
+    "evaluated_calls": 8642,
     "live_call_rate": "95",
     "no_trades": 8336,
-    "open_positions_count": 1
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 305,
+      "trades": 306,
       "pnl": 7723.62
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-11-06T05:27:35.748822+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "GOOGL",
+      "event_headline": "Oracle vs. Alphabet: Which Is the Better AI Cloud Stock to Own for the Next 5 Years?",
+      "event_type": "other",
+      "event_timestamp": "Fri, 06 Nov 2026 05:20:00 +0000",
+      "pre_event_price": 282.95,
+      "entry_price": 282.95,
+      "actual_move": -0.0127,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.064671,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.046626,
+      "beta": 1.387,
+      "residual": 0.051971,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 6.5,
+      "z_threshold": 2,
+      "volume_ratio": 0.0661,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "WEAK_LIQUIDITY",
+      "event_direction": "bullish",
+      "price_direction": "bearish",
+      "direction_alignment": "CONTRADICTION",
+      "strategy_mode": "MEAN_REVERSION",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The article positions Alphabet as the superior AI cloud stock compared to Oracle, highlighting its competitive edge in cloud computing which supports a positive fundamental outlook.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2692.32,
+      "stop_price": 278.7057,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved: Price dumped -1.27% on bullish event with weak volume (0.07) and high divergence (z=+6.50).",
+      "divergence": 0.051971,
+      "id": 3
+    },
     {
       "timestamp": "2026-11-06T04:15:37.234876+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -1.65% on bullish event with weak volume (0.20) and high divergence (z=+7.58).",
       "divergence": 0.060631,
-      "id": 29
+      "id": 32
     }
   ]
 }
