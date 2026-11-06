@@ -1,34 +1,34 @@
 {
-  "version": "1793992817349",
-  "generated_at": "2026-11-06T19:20:17.348Z",
-  "total_records": 28453,
-  "skipped_count": 19585,
-  "evaluated_count": 8862,
+  "version": "1793993159075",
+  "generated_at": "2026-11-06T19:25:59.074Z",
+  "total_records": 28455,
+  "skipped_count": 19586,
+  "evaluated_count": 8863,
   "decision_counts": {
-    "LONG": 187,
+    "LONG": 188,
     "SHORT": 129,
     "NO_TRADE": 8552,
-    "SKIPPED_NO_ASSET_MATCH": 19585
+    "SKIPPED_NO_ASSET_MATCH": 19586
   },
   "live": {
-    "total": 28447,
-    "trades_count": 314,
+    "total": 28449,
+    "trades_count": 315,
     "wins_count": 212,
-    "win_rate": "67.5",
+    "win_rate": "67.3",
     "total_pnl": 7952.28,
-    "sharpe_ratio": "9.64",
+    "sharpe_ratio": "9.62",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1235.6",
+    "duration_hours": "1235.7",
     "start_time": 1789544649909,
-    "end_time": 1793992788274,
-    "live_calls": 8411,
+    "end_time": 1793993135674,
+    "live_calls": 8412,
     "fallback_calls": 451,
-    "skipped_calls": 19585,
-    "evaluated_calls": 8862,
+    "skipped_calls": 19586,
+    "evaluated_calls": 8863,
     "live_call_rate": "95",
     "no_trades": 8548,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 314,
+      "trades": 315,
       "pnl": 7952.28
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-11-06T19:25:29.644617+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "AMZN",
+      "event_headline": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
+      "event_type": "earnings",
+      "event_timestamp": "Fri, 06 Nov 2026 19:20:00 +0000",
+      "pre_event_price": 262.13,
+      "entry_price": 262.13,
+      "actual_move": 0.01119,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.038448,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.022288,
+      "beta": 1.725,
+      "residual": -0.027258,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -3.41,
+      "z_threshold": 2,
+      "volume_ratio": 0.903,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bullish",
+      "price_direction": "bullish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The report highlights strong 12% growth in Amazon's advertising revenue and management's guidance for high-teens growth in the coming quarter, indicating robust performance in a high-margin business segment.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2696.3,
+      "stop_price": 258.198,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.90 >= 0.8) and statistical significance (z=-3.41).",
+      "divergence": -0.027258,
+      "id": 2
+    },
     {
       "timestamp": "2026-11-06T16:28:22.967340+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.82 >= 0.8) and statistical significance (z=+8.23).",
       "divergence": 0.065845,
-      "id": 182
+      "id": 184
     },
     {
       "timestamp": "2026-11-06T16:12:48.272692+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.81 >= 0.8) and statistical significance (z=-3.23).",
       "divergence": -0.025859,
-      "id": 201
+      "id": 203
     }
   ]
 }
