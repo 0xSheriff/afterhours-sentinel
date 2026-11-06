@@ -1,6 +1,6 @@
 {
-  "version": "1793924944326",
-  "generated_at": "2026-11-06T00:29:04.326Z",
+  "version": "1793925371856",
+  "generated_at": "2026-11-06T00:36:11.855Z",
   "total_records": 27450,
   "skipped_count": 18820,
   "evaluated_count": 8624,
@@ -15,8 +15,8 @@
     "trades_count": 303,
     "wins_count": 204,
     "win_rate": "67.3",
-    "total_pnl": 7742.7,
-    "sharpe_ratio": "9.68",
+    "total_pnl": 7702.19,
+    "sharpe_ratio": "9.59",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1216.7",
@@ -28,7 +28,7 @@
     "evaluated_calls": 8624,
     "live_call_rate": "95",
     "no_trades": 8321,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 303,
-      "pnl": 7742.7
+      "pnl": 7702.19
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -49,53 +49,6 @@
     }
   },
   "open_positions": [
-    {
-      "timestamp": "2026-11-05T21:54:15.734257+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NVDA",
-      "event_headline": "Stock Market Today: Nasdaq Slammed By Big Tech Sell-Off; Nvidia Hits Bear Territory (Live Coverage)",
-      "event_type": "earnings",
-      "event_timestamp": "Thu, 05 Nov 2026 21:34:45 +0000",
-      "pre_event_price": 182.73,
-      "entry_price": 182.73,
-      "actual_move": -0.09423,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.119939,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.050952,
-      "beta": 2.354,
-      "residual": 0.025709,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 3.21,
-      "z_threshold": 2,
-      "volume_ratio": 0.6258,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The headline explicitly states that Nvidia has entered bear territory amidst a significant Big Tech sell-off, indicating a negative fundamental sentiment for the asset.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2700.84,
-      "stop_price": 185.4709,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.63 >= 0.8) and statistical significance (z=+3.21).",
-      "divergence": 0.025709,
-      "id": 281
-    },
     {
       "timestamp": "2026-11-05T21:08:53.052228+00:00",
       "mode": "live",

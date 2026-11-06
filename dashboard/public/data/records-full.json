@@ -13199,9 +13199,9 @@
     "signals_aligned": "3/3 signals aligned",
     "position_size": 2700.84,
     "stop_price": 185.4709,
-    "exit_price": 0,
-    "exit_reason": "OPEN",
-    "pnl": 0,
+    "exit_price": 185.4709,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -40.51,
     "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.63 >= 0.8) and statistical significance (z=+3.21).",
     "divergence": 0.025709,
     "id": 281
