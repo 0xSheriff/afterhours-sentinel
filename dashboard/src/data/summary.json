@@ -1,6 +1,6 @@
 {
-  "version": "1794089377470",
-  "generated_at": "2026-11-07T22:09:37.469Z",
+  "version": "1794090321294",
+  "generated_at": "2026-11-07T22:25:21.284Z",
   "total_records": 28820,
   "skipped_count": 19825,
   "evaluated_count": 8989,
@@ -15,7 +15,7 @@
     "trades_count": 319,
     "wins_count": 217,
     "win_rate": "68.0",
-    "total_pnl": 8213.88,
+    "total_pnl": 8213.02,
     "sharpe_ratio": "9.79",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
@@ -28,7 +28,7 @@
     "evaluated_calls": 8989,
     "live_call_rate": "95",
     "no_trades": 8670,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 319,
-      "pnl": 8213.88
+      "pnl": 8213.02
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-11-07T18:24:48.976541+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NVDA",
-      "event_headline": "Nvidia Stock Has More Than 60% Upside According to Analysts' Average Price Target. Should You Buy While the AI Trade Wobbles?",
-      "event_type": "analyst",
-      "event_timestamp": "Sat, 07 Nov 2026 18:20:00 +0000",
-      "pre_event_price": 189,
-      "entry_price": 189,
-      "actual_move": 0.01466,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.007716,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.003278,
-      "beta": 2.354,
-      "residual": 0.022376,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 2.8,
-      "z_threshold": 2,
-      "volume_ratio": 1.2825,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "CONFIRMING_VOLUME",
-      "event_direction": "bullish",
-      "price_direction": "bullish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The report highlights a significant 60% upside potential and confirms that Nvidia's growth prospects remain intact, signaling strong analyst confidence in the company's valuation and future performance.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2700.57,
-      "stop_price": 186.165,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.28 >= 0.8) and statistical significance (z=+2.80).",
-      "divergence": 0.022376,
-      "id": 27
-    }
-  ]
+  "open_positions": []
 }
