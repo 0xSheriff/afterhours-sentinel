@@ -1,34 +1,34 @@
 {
-  "version": "1794060881614",
-  "generated_at": "2026-11-07T14:14:41.613Z",
-  "total_records": 28735,
+  "version": "1794061153955",
+  "generated_at": "2026-11-07T14:19:13.954Z",
+  "total_records": 28736,
   "skipped_count": 19775,
-  "evaluated_count": 8954,
+  "evaluated_count": 8955,
   "decision_counts": {
     "LONG": 190,
-    "SHORT": 129,
+    "SHORT": 130,
     "NO_TRADE": 8641,
     "SKIPPED_NO_ASSET_MATCH": 19775
   },
   "live": {
-    "total": 28729,
-    "trades_count": 317,
+    "total": 28730,
+    "trades_count": 318,
     "wins_count": 216,
-    "win_rate": "68.1",
+    "win_rate": "67.9",
     "total_pnl": 8213.02,
-    "sharpe_ratio": "9.83",
+    "sharpe_ratio": "9.81",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1254.5",
+    "duration_hours": "1254.6",
     "start_time": 1789544649909,
-    "end_time": 1794060836605,
-    "live_calls": 8483,
+    "end_time": 1794061145146,
+    "live_calls": 8484,
     "fallback_calls": 471,
     "skipped_calls": 19775,
-    "evaluated_calls": 8954,
+    "evaluated_calls": 8955,
     "live_call_rate": "95",
     "no_trades": 8637,
-    "open_positions_count": 0
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 317,
+      "trades": 318,
       "pnl": 8213.02
     },
     "MockExecutionClient [Local Simulator]": {
@@ -48,5 +48,53 @@
       "pnl": 209.71
     }
   },
-  "open_positions": []
+  "open_positions": [
+    {
+      "timestamp": "2026-11-07T14:19:05.146337+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "NVDA",
+      "event_headline": "Nvidia Is Worth $1.3 Trillion Less After Its 5th Straight Losing Week",
+      "event_type": "earnings",
+      "event_timestamp": "Sat, 07 Nov 2026 14:04:45 +0000",
+      "pre_event_price": 189,
+      "entry_price": 189,
+      "actual_move": -0.00615,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.025832,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.010974,
+      "beta": 2.354,
+      "residual": -0.031982,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -4,
+      "z_threshold": 2,
+      "volume_ratio": 2.4227,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The headline highlights a significant $1.3 trillion loss in market value following five consecutive losing weeks, indicating strong negative sentiment and fundamental concerns ahead of the upcoming earnings report.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2706.52,
+      "stop_price": 191.835,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (2.42 >= 0.8) and statistical significance (z=-4.00).",
+      "divergence": -0.031982,
+      "id": 1
+    }
+  ]
 }
