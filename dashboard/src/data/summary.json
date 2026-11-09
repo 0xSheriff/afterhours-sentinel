@@ -1,17 +1,17 @@
 {
-  "version": "1794233137137",
-  "generated_at": "2026-11-09T14:05:37.136Z",
-  "total_records": 29464,
+  "version": "1794233263728",
+  "generated_at": "2026-11-09T14:07:43.727Z",
+  "total_records": 29465,
   "skipped_count": 20190,
-  "evaluated_count": 9268,
+  "evaluated_count": 9269,
   "decision_counts": {
     "LONG": 196,
     "SHORT": 132,
-    "NO_TRADE": 8946,
+    "NO_TRADE": 8947,
     "SKIPPED_NO_ASSET_MATCH": 20190
   },
   "live": {
-    "total": 29458,
+    "total": 29459,
     "trades_count": 326,
     "wins_count": 223,
     "win_rate": "68.4",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1302.4",
     "start_time": 1789544649909,
-    "end_time": 1794233119106,
+    "end_time": 1794233155217,
     "live_calls": 8777,
-    "fallback_calls": 491,
+    "fallback_calls": 492,
     "skipped_calls": 20190,
-    "evaluated_calls": 9268,
+    "evaluated_calls": 9269,
     "live_call_rate": "95",
-    "no_trades": 8942,
+    "no_trades": 8943,
     "open_positions_count": 1
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +2.10% on bearish event with weak volume (0.06) and high divergence (z=+2.70).",
       "divergence": 0.021596,
-      "id": 33
+      "id": 34
     }
   ]
 }
