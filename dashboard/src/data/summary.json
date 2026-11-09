@@ -1,34 +1,34 @@
 {
-  "version": "1794253219179",
-  "generated_at": "2026-11-09T19:40:19.179Z",
-  "total_records": 29857,
+  "version": "1794253383155",
+  "generated_at": "2026-11-09T19:43:03.155Z",
+  "total_records": 29859,
   "skipped_count": 20377,
-  "evaluated_count": 9474,
+  "evaluated_count": 9476,
   "decision_counts": {
     "LONG": 197,
-    "SHORT": 134,
-    "NO_TRADE": 9149,
+    "SHORT": 135,
+    "NO_TRADE": 9150,
     "SKIPPED_NO_ASSET_MATCH": 20377
   },
   "live": {
-    "total": 29851,
-    "trades_count": 329,
+    "total": 29853,
+    "trades_count": 330,
     "wins_count": 224,
-    "win_rate": "68.1",
+    "win_rate": "67.9",
     "total_pnl": 8283.03,
-    "sharpe_ratio": "9.66",
+    "sharpe_ratio": "9.64",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1307.9",
+    "duration_hours": "1308.0",
     "start_time": 1789544649909,
-    "end_time": 1794253202333,
-    "live_calls": 8977,
+    "end_time": 1794253370156,
+    "live_calls": 8979,
     "fallback_calls": 497,
     "skipped_calls": 20377,
-    "evaluated_calls": 9474,
+    "evaluated_calls": 9476,
     "live_call_rate": "95",
-    "no_trades": 9145,
-    "open_positions_count": 2
+    "no_trades": 9146,
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 329,
+      "trades": 330,
       "pnl": 8283.03
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-11-09T19:42:50.156154+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "TSLA",
+      "event_headline": "Elon Musk's Cybertruck pivot highlights the founder-CEO advantage",
+      "event_type": "corporate",
+      "event_timestamp": "Mon, 09 Nov 2026 19:41:17 +0000",
+      "pre_event_price": 381.48,
+      "entry_price": 381.48,
+      "actual_move": 0.0597,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.039501,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.014506,
+      "beta": 2.7231,
+      "residual": 0.020199,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 2.52,
+      "z_threshold": 2,
+      "volume_ratio": 0.1248,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "WEAK_LIQUIDITY",
+      "event_direction": "bearish",
+      "price_direction": "bullish",
+      "direction_alignment": "CONTRADICTION",
+      "strategy_mode": "MEAN_REVERSION",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The report of a potential halt to Cybertruck production and the need to refund customer deposits signals significant operational and financial risks that negatively impact investor sentiment.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2641.69,
+      "stop_price": 387.2022,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved: Price pumped +5.97% on bearish event with weak volume (0.12) and high divergence (z=+2.52).",
+      "divergence": 0.020199,
+      "id": 1
+    },
     {
       "timestamp": "2026-11-09T18:04:31.989305+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.96 >= 0.8) and statistical significance (z=+3.67).",
       "divergence": 0.029347,
-      "id": 89
+      "id": 91
     },
     {
       "timestamp": "2026-11-09T16:27:17.256144+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +5.12% on bearish event with weak volume (0.13) and high divergence (z=+2.95).",
       "divergence": 0.023569,
-      "id": 200
+      "id": 202
     }
   ]
 }
