@@ -1,33 +1,33 @@
 {
-  "version": "1794230209059",
-  "generated_at": "2026-11-09T13:16:49.059Z",
-  "total_records": 29395,
-  "skipped_count": 20157,
-  "evaluated_count": 9232,
+  "version": "1794230266426",
+  "generated_at": "2026-11-09T13:17:46.419Z",
+  "total_records": 29401,
+  "skipped_count": 20161,
+  "evaluated_count": 9234,
   "decision_counts": {
-    "LONG": 195,
+    "LONG": 196,
     "SHORT": 131,
-    "NO_TRADE": 8912,
-    "SKIPPED_NO_ASSET_MATCH": 20157
+    "NO_TRADE": 8913,
+    "SKIPPED_NO_ASSET_MATCH": 20161
   },
   "live": {
-    "total": 29389,
-    "trades_count": 324,
-    "wins_count": 222,
-    "win_rate": "68.5",
-    "total_pnl": 8301.08,
-    "sharpe_ratio": "9.80",
+    "total": 29395,
+    "trades_count": 325,
+    "wins_count": 223,
+    "win_rate": "68.6",
+    "total_pnl": 8301.32,
+    "sharpe_ratio": "9.78",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1301.5",
+    "duration_hours": "1301.6",
     "start_time": 1789544649909,
-    "end_time": 1794230201800,
-    "live_calls": 8741,
+    "end_time": 1794230261050,
+    "live_calls": 8743,
     "fallback_calls": 491,
-    "skipped_calls": 20157,
-    "evaluated_calls": 9232,
+    "skipped_calls": 20161,
+    "evaluated_calls": 9234,
     "live_call_rate": "95",
-    "no_trades": 8908,
+    "no_trades": 8909,
     "open_positions_count": 0
   },
   "backtest": {
@@ -40,8 +40,8 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 324,
-      "pnl": 8301.08
+      "trades": 325,
+      "pnl": 8301.32
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
