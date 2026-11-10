@@ -1,6 +1,6 @@
 {
-  "version": "1794276272267",
-  "generated_at": "2026-11-10T02:04:32.263Z",
+  "version": "1794276918491",
+  "generated_at": "2026-11-10T02:15:18.491Z",
   "total_records": 30213,
   "skipped_count": 20648,
   "evaluated_count": 9559,
@@ -15,8 +15,8 @@
     "trades_count": 333,
     "wins_count": 227,
     "win_rate": "68.2",
-    "total_pnl": 8363.45,
-    "sharpe_ratio": "9.65",
+    "total_pnl": 8331.01,
+    "sharpe_ratio": "9.58",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1314.3",
@@ -28,7 +28,7 @@
     "evaluated_calls": 9559,
     "live_call_rate": "95",
     "no_trades": 9226,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 333,
-      "pnl": 8363.45
+      "pnl": 8331.01
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "SHORT signal approved: Price pumped +1.42% on bearish event with weak volume (0.04) and high divergence (z=-3.45).",
       "divergence": -0.027573,
       "id": 3
-    },
-    {
-      "timestamp": "2026-11-09T22:15:07.369690+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NVDA",
-      "event_headline": "Nvidia scandal could help China long-term, and risks in the AI trade",
-      "event_type": "product",
-      "event_timestamp": "Mon, 09 Nov 2026 22:14:07 +0000",
-      "pre_event_price": 179.49,
-      "entry_price": 179.49,
-      "actual_move": -0.05032,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.083594,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.035512,
-      "beta": 2.354,
-      "residual": -0.133914,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -16.74,
-      "z_threshold": 2,
-      "volume_ratio": 0.7583,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "HIGH_VOLUME_CONFIRMED",
-      "event_direction": "bearish",
-      "price_direction": "bearish",
-      "direction_alignment": "ALIGNMENT",
-      "strategy_mode": "MOMENTUM",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The headline highlights a scandal that could benefit China long-term and introduces risks to the AI trade, signaling potential geopolitical headwinds and regulatory uncertainty for Nvidia's operations.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2634.89,
-      "stop_price": 182.1823,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.76 >= 0.8) and statistical significance (z=-16.74).",
-      "divergence": -0.133914,
-      "id": 164
     }
   ]
 }
