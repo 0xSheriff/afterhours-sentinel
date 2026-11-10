@@ -1,6 +1,6 @@
 {
-  "version": "1794287587097",
-  "generated_at": "2026-11-10T05:13:07.097Z",
+  "version": "1794336934984",
+  "generated_at": "2026-11-10T18:55:34.980Z",
   "total_records": 30282,
   "skipped_count": 20699,
   "evaluated_count": 9577,
@@ -13,10 +13,10 @@
   "live": {
     "total": 30276,
     "trades_count": 334,
-    "wins_count": 227,
-    "win_rate": "68.0",
-    "total_pnl": 8331.01,
-    "sharpe_ratio": "9.56",
+    "wins_count": 228,
+    "win_rate": "68.3",
+    "total_pnl": 8370.6,
+    "sharpe_ratio": "9.62",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1317.5",
@@ -28,7 +28,7 @@
     "evaluated_calls": 9577,
     "live_call_rate": "95",
     "no_trades": 9243,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 334,
-      "pnl": 8331.01
+      "pnl": 8370.6
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.77 >= 0.8) and statistical significance (z=+24.42).",
       "divergence": 0.195388,
       "id": 65
-    },
-    {
-      "timestamp": "2026-11-10T01:58:28.063824+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "GOOGL",
-      "event_headline": "Is Wall Street Turning on AI?",
-      "event_type": "other",
-      "event_timestamp": "Tue, 10 Nov 2026 01:53:01 +0000",
-      "pre_event_price": 290.59,
-      "entry_price": 290.59,
-      "actual_move": 0.01424,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.041813,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.030146,
-      "beta": 1.387,
-      "residual": -0.027573,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -3.45,
-      "z_threshold": 2,
-      "volume_ratio": 0.0366,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bearish",
-      "price_direction": "bullish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The headline highlights a sharp sell-off driven by investor concerns over high AI capital expenditures, signaling a negative sentiment shift regarding the company's near-term profitability and valuation.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2632.44,
-      "stop_price": 294.9488,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved: Price pumped +1.42% on bearish event with weak volume (0.04) and high divergence (z=-3.45).",
-      "divergence": -0.027573,
-      "id": 72
     }
   ]
 }
