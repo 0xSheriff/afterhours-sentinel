@@ -1,17 +1,17 @@
 {
-  "version": "1794416550904",
-  "generated_at": "2026-11-11T17:02:30.903Z",
-  "total_records": 31410,
-  "skipped_count": 21516,
-  "evaluated_count": 9888,
+  "version": "1794416626616",
+  "generated_at": "2026-11-11T17:03:46.612Z",
+  "total_records": 31413,
+  "skipped_count": 21517,
+  "evaluated_count": 9890,
   "decision_counts": {
     "LONG": 204,
     "SHORT": 142,
-    "NO_TRADE": 9548,
-    "SKIPPED_NO_ASSET_MATCH": 21516
+    "NO_TRADE": 9550,
+    "SKIPPED_NO_ASSET_MATCH": 21517
   },
   "live": {
-    "total": 31404,
+    "total": 31407,
     "trades_count": 344,
     "wins_count": 232,
     "win_rate": "67.4",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1353.3",
     "start_time": 1789544649909,
-    "end_time": 1794416544327,
-    "live_calls": 9383,
+    "end_time": 1794416622272,
+    "live_calls": 9385,
     "fallback_calls": 505,
-    "skipped_calls": 21516,
-    "evaluated_calls": 9888,
+    "skipped_calls": 21517,
+    "evaluated_calls": 9890,
     "live_call_rate": "95",
-    "no_trades": 9544,
+    "no_trades": 9546,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +2.54% on bearish event with weak volume (0.26) and high divergence (z=-3.38).",
       "divergence": -0.027033,
-      "id": 75
+      "id": 78
     },
     {
       "timestamp": "2026-11-11T15:11:44.364133+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.73 >= 0.8) and statistical significance (z=+4.39).",
       "divergence": 0.035084,
-      "id": 135
+      "id": 138
     },
     {
       "timestamp": "2026-11-11T15:10:33.980255+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.70 >= 0.8) and statistical significance (z=+5.20).",
       "divergence": 0.041579,
-      "id": 137
+      "id": 140
     }
   ]
 }
