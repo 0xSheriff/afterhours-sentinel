@@ -1,6 +1,6 @@
 {
-  "version": "1794427000608",
-  "generated_at": "2026-11-11T19:56:40.608Z",
+  "version": "1794427067655",
+  "generated_at": "2026-11-11T19:57:47.654Z",
   "total_records": 31567,
   "skipped_count": 21610,
   "evaluated_count": 9951,
@@ -13,10 +13,10 @@
   "live": {
     "total": 31561,
     "trades_count": 345,
-    "wins_count": 234,
-    "win_rate": "67.8",
-    "total_pnl": 8523.85,
-    "sharpe_ratio": "9.47",
+    "wins_count": 235,
+    "win_rate": "68.1",
+    "total_pnl": 8567.33,
+    "sharpe_ratio": "9.52",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1356.2",
@@ -28,7 +28,7 @@
     "evaluated_calls": 9951,
     "live_call_rate": "95",
     "no_trades": 9606,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 345,
-      "pnl": 8523.85
+      "pnl": 8567.33
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (0.53 >= 0.8) and statistical significance (z=+3.40).",
       "divergence": 0.027227,
       "id": 3
-    },
-    {
-      "timestamp": "2026-11-11T15:57:24.631686+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "PLTR",
-      "event_headline": "Helsing debuts Clarity military AI to challenge Palantir in Europe",
-      "event_type": "geopolitical",
-      "event_timestamp": "2026-11-11 15:46:25",
-      "pre_event_price": 173.10000610351562,
-      "entry_price": 173.1,
-      "actual_move": 0.025352,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": 0.052385,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": 0.016457,
-      "beta": 3.1832,
-      "residual": -0.027033,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -3.38,
-      "z_threshold": 2,
-      "volume_ratio": 0.2647,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bearish",
-      "price_direction": "bullish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The entry of a new competitor, Helsing, into the European military AI market directly challenges Palantir's market position and potential revenue growth in that region.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2583.55,
-      "stop_price": 175.6965,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved: Price pumped +2.54% on bearish event with weak volume (0.26) and high divergence (z=-3.38).",
-      "divergence": -0.027033,
-      "id": 232
     }
   ]
 }
