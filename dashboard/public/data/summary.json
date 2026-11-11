@@ -1,17 +1,17 @@
 {
-  "version": "1794417257243",
-  "generated_at": "2026-11-11T17:14:17.243Z",
-  "total_records": 31426,
-  "skipped_count": 21526,
-  "evaluated_count": 9894,
+  "version": "1794417361595",
+  "generated_at": "2026-11-11T17:16:01.595Z",
+  "total_records": 31428,
+  "skipped_count": 21527,
+  "evaluated_count": 9895,
   "decision_counts": {
     "LONG": 204,
     "SHORT": 142,
-    "NO_TRADE": 9554,
-    "SKIPPED_NO_ASSET_MATCH": 21526
+    "NO_TRADE": 9555,
+    "SKIPPED_NO_ASSET_MATCH": 21527
   },
   "live": {
-    "total": 31420,
+    "total": 31422,
     "trades_count": 344,
     "wins_count": 232,
     "win_rate": "67.4",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.119",
     "duration_hours": "1353.5",
     "start_time": 1789544649909,
-    "end_time": 1794417231192,
-    "live_calls": 9389,
+    "end_time": 1794417332077,
+    "live_calls": 9390,
     "fallback_calls": 505,
-    "skipped_calls": 21526,
-    "evaluated_calls": 9894,
+    "skipped_calls": 21527,
+    "evaluated_calls": 9895,
     "live_call_rate": "95",
-    "no_trades": 9550,
+    "no_trades": 9551,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +2.54% on bearish event with weak volume (0.26) and high divergence (z=-3.38).",
       "divergence": -0.027033,
-      "id": 91
+      "id": 93
     },
     {
       "timestamp": "2026-11-11T15:11:44.364133+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.73 >= 0.8) and statistical significance (z=+4.39).",
       "divergence": 0.035084,
-      "id": 151
+      "id": 153
     },
     {
       "timestamp": "2026-11-11T15:10:33.980255+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.70 >= 0.8) and statistical significance (z=+5.20).",
       "divergence": 0.041579,
-      "id": 153
+      "id": 155
     }
   ]
 }
