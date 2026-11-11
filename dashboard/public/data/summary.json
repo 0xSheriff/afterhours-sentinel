@@ -1,17 +1,17 @@
 {
-  "version": "1794415603853",
-  "generated_at": "2026-11-11T16:46:43.853Z",
-  "total_records": 31394,
+  "version": "1794415938783",
+  "generated_at": "2026-11-11T16:52:18.783Z",
+  "total_records": 31395,
   "skipped_count": 21506,
-  "evaluated_count": 9882,
+  "evaluated_count": 9883,
   "decision_counts": {
     "LONG": 204,
     "SHORT": 142,
-    "NO_TRADE": 9542,
+    "NO_TRADE": 9543,
     "SKIPPED_NO_ASSET_MATCH": 21506
   },
   "live": {
-    "total": 31388,
+    "total": 31389,
     "trades_count": 344,
     "wins_count": 232,
     "win_rate": "67.4",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "9.36",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1353.0",
+    "duration_hours": "1353.1",
     "start_time": 1789544649909,
-    "end_time": 1794415589664,
-    "live_calls": 9377,
+    "end_time": 1794415931394,
+    "live_calls": 9378,
     "fallback_calls": 505,
     "skipped_calls": 21506,
-    "evaluated_calls": 9882,
+    "evaluated_calls": 9883,
     "live_call_rate": "95",
-    "no_trades": 9538,
+    "no_trades": 9539,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +2.54% on bearish event with weak volume (0.26) and high divergence (z=-3.38).",
       "divergence": -0.027033,
-      "id": 59
+      "id": 60
     },
     {
       "timestamp": "2026-11-11T15:11:44.364133+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.73 >= 0.8) and statistical significance (z=+4.39).",
       "divergence": 0.035084,
-      "id": 119
+      "id": 120
     },
     {
       "timestamp": "2026-11-11T15:10:33.980255+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.70 >= 0.8) and statistical significance (z=+5.20).",
       "divergence": 0.041579,
-      "id": 121
+      "id": 122
     }
   ]
 }
