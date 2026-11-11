@@ -1,17 +1,17 @@
 {
-  "version": "1794396558149",
-  "generated_at": "2026-11-11T11:29:18.149Z",
-  "total_records": 31060,
+  "version": "1794396597124",
+  "generated_at": "2026-11-11T11:29:57.120Z",
+  "total_records": 31061,
   "skipped_count": 21305,
-  "evaluated_count": 9749,
+  "evaluated_count": 9750,
   "decision_counts": {
     "LONG": 202,
     "SHORT": 141,
-    "NO_TRADE": 9412,
+    "NO_TRADE": 9413,
     "SKIPPED_NO_ASSET_MATCH": 21305
   },
   "live": {
-    "total": 31054,
+    "total": 31055,
     "trades_count": 341,
     "wins_count": 230,
     "win_rate": "67.4",
@@ -19,15 +19,15 @@
     "sharpe_ratio": "9.38",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
-    "duration_hours": "1347.7",
+    "duration_hours": "1347.8",
     "start_time": 1789544649909,
-    "end_time": 1794396523731,
-    "live_calls": 9246,
+    "end_time": 1794396591704,
+    "live_calls": 9247,
     "fallback_calls": 503,
     "skipped_calls": 21305,
-    "evaluated_calls": 9749,
+    "evaluated_calls": 9750,
     "live_call_rate": "95",
-    "no_trades": 9408,
+    "no_trades": 9409,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -1.43% on bullish event with weak volume (0.03) and high divergence (z=-3.06).",
       "divergence": -0.024488,
-      "id": 27
+      "id": 28
     },
     {
       "timestamp": "2026-11-11T10:42:41.500048+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (3.20 >= 0.8) and statistical significance (z=+3.64).",
       "divergence": 0.029095,
-      "id": 38
+      "id": 39
     },
     {
       "timestamp": "2026-11-11T09:50:45.409726+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (4.10 >= 0.8) and statistical significance (z=+5.43).",
       "divergence": 0.043436,
-      "id": 64
+      "id": 65
     }
   ]
 }
