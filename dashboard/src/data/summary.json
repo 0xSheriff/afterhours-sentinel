@@ -1,34 +1,34 @@
 {
-  "version": "1794412564261",
-  "generated_at": "2026-11-11T15:56:04.261Z",
-  "total_records": 31331,
-  "skipped_count": 21465,
-  "evaluated_count": 9860,
+  "version": "1794412652159",
+  "generated_at": "2026-11-11T15:57:32.159Z",
+  "total_records": 31336,
+  "skipped_count": 21469,
+  "evaluated_count": 9861,
   "decision_counts": {
     "LONG": 204,
-    "SHORT": 141,
+    "SHORT": 142,
     "NO_TRADE": 9521,
-    "SKIPPED_NO_ASSET_MATCH": 21465
+    "SKIPPED_NO_ASSET_MATCH": 21469
   },
   "live": {
-    "total": 31325,
-    "trades_count": 343,
+    "total": 31330,
+    "trades_count": 344,
     "wins_count": 232,
-    "win_rate": "67.6",
+    "win_rate": "67.4",
     "total_pnl": 8411.97,
-    "sharpe_ratio": "9.38",
+    "sharpe_ratio": "9.36",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1352.2",
     "start_time": 1789544649909,
-    "end_time": 1794412531486,
-    "live_calls": 9355,
+    "end_time": 1794412644631,
+    "live_calls": 9356,
     "fallback_calls": 505,
-    "skipped_calls": 21465,
-    "evaluated_calls": 9860,
+    "skipped_calls": 21469,
+    "evaluated_calls": 9861,
     "live_call_rate": "95",
     "no_trades": 9517,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 343,
+      "trades": 344,
       "pnl": 8411.97
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-11-11T15:57:24.631686+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "PLTR",
+      "event_headline": "Helsing debuts Clarity military AI to challenge Palantir in Europe",
+      "event_type": "geopolitical",
+      "event_timestamp": "2026-11-11 15:46:25",
+      "pre_event_price": 173.10000610351562,
+      "entry_price": 173.1,
+      "actual_move": 0.025352,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.052385,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.016457,
+      "beta": 3.1832,
+      "residual": -0.027033,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -3.38,
+      "z_threshold": 2,
+      "volume_ratio": 0.2647,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "WEAK_LIQUIDITY",
+      "event_direction": "bearish",
+      "price_direction": "bullish",
+      "direction_alignment": "CONTRADICTION",
+      "strategy_mode": "MEAN_REVERSION",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The entry of a new competitor, Helsing, into the European military AI market directly challenges Palantir's market position and potential revenue growth in that region.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2583.55,
+      "stop_price": 175.6965,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved: Price pumped +2.54% on bearish event with weak volume (0.26) and high divergence (z=-3.38).",
+      "divergence": -0.027033,
+      "id": 1
+    },
     {
       "timestamp": "2026-11-11T15:11:44.364133+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.73 >= 0.8) and statistical significance (z=+4.39).",
       "divergence": 0.035084,
-      "id": 56
+      "id": 61
     },
     {
       "timestamp": "2026-11-11T15:10:33.980255+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved (MOMENTUM/PEAD): Bullish earnings drift with confirming volume (1.70 >= 0.8) and statistical significance (z=+5.20).",
       "divergence": 0.041579,
-      "id": 58
+      "id": 63
     }
   ]
 }
