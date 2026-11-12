@@ -1,6 +1,6 @@
 {
-  "version": "1794476326861",
-  "generated_at": "2026-11-12T09:38:46.861Z",
+  "version": "1794476429712",
+  "generated_at": "2026-11-12T09:40:29.712Z",
   "total_records": 32111,
   "skipped_count": 21955,
   "evaluated_count": 10150,
@@ -13,10 +13,10 @@
   "live": {
     "total": 32105,
     "trades_count": 351,
-    "wins_count": 237,
-    "win_rate": "67.5",
-    "total_pnl": 8645.39,
-    "sharpe_ratio": "9.40",
+    "wins_count": 238,
+    "win_rate": "67.8",
+    "total_pnl": 8710.52,
+    "sharpe_ratio": "9.46",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1369.9",
@@ -28,7 +28,7 @@
     "evaluated_calls": 10150,
     "live_call_rate": "95",
     "no_trades": 9799,
-    "open_positions_count": 3
+    "open_positions_count": 2
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 351,
-      "pnl": 8645.39
+      "pnl": 8710.52
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -142,53 +142,6 @@
       "reason": "LONG signal approved: Price dumped -6.77% on bullish event with weak volume (0.31) and high divergence (z=-8.13).",
       "divergence": -0.065031,
       "id": 89
-    },
-    {
-      "timestamp": "2026-11-12T05:40:12.766923+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NVDA",
-      "event_headline": "Chinese university bought Nvidia H200 chips despite US blacklist",
-      "event_type": "other",
-      "event_timestamp": "Thu, 12 Nov 2026 05:01:15 +0000",
-      "pre_event_price": 160.45,
-      "entry_price": 160.45,
-      "actual_move": -0.07168,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.006676,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.002836,
-      "beta": 2.354,
-      "residual": -0.065004,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -8.13,
-      "z_threshold": 2,
-      "volume_ratio": 0.3729,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bullish",
-      "price_direction": "bearish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The successful sale of H200 chips to a Chinese institution, despite US restrictions, demonstrates resilient demand for Nvidia's high-end hardware and suggests that export controls may not fully suppress revenue potential in the Chinese market.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2567.48,
-      "stop_price": 158.0433,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved: Price dumped -7.17% on bullish event with weak volume (0.37) and high divergence (z=-8.13).",
-      "divergence": -0.065004,
-      "id": 165
     }
   ]
 }
