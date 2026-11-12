@@ -1,34 +1,34 @@
 {
-  "version": "1794514764869",
-  "generated_at": "2026-11-12T20:19:24.864Z",
-  "total_records": 33055,
-  "skipped_count": 22409,
-  "evaluated_count": 10637,
+  "version": "1794514821821",
+  "generated_at": "2026-11-12T20:20:21.821Z",
+  "total_records": 33057,
+  "skipped_count": 22410,
+  "evaluated_count": 10638,
   "decision_counts": {
-    "LONG": 213,
+    "LONG": 214,
     "SHORT": 150,
     "NO_TRADE": 10283,
-    "SKIPPED_NO_ASSET_MATCH": 22409
+    "SKIPPED_NO_ASSET_MATCH": 22410
   },
   "live": {
-    "total": 33049,
-    "trades_count": 361,
+    "total": 33051,
+    "trades_count": 362,
     "wins_count": 241,
-    "win_rate": "66.8",
+    "win_rate": "66.6",
     "total_pnl": 8563.58,
-    "sharpe_ratio": "8.91",
+    "sharpe_ratio": "8.89",
     "max_drawdown_usd": 240.9,
     "max_drawdown_pct": "0.221",
     "duration_hours": "1380.6",
     "start_time": 1789544649909,
-    "end_time": 1794514732939,
+    "end_time": 1794514807592,
     "live_calls": 10068,
-    "fallback_calls": 569,
-    "skipped_calls": 22409,
-    "evaluated_calls": 10637,
+    "fallback_calls": 570,
+    "skipped_calls": 22410,
+    "evaluated_calls": 10638,
     "live_call_rate": "95",
     "no_trades": 10279,
-    "open_positions_count": 0
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 361,
+      "trades": 362,
       "pnl": 8563.58
     },
     "MockExecutionClient [Local Simulator]": {
@@ -48,5 +48,53 @@
       "pnl": 209.71
     }
   },
-  "open_positions": []
+  "open_positions": [
+    {
+      "timestamp": "2026-11-12T20:20:00.047828+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "fallback_rules [pending_groq_api_key]",
+      "symbol": "NVDA",
+      "event_headline": "AMD Is Up 127% in a Year. William Blair Just Upgraded It as Nvidia Loses Its CEO",
+      "event_type": "corporate",
+      "event_timestamp": "Thu, 12 Nov 2026 20:05:35 +0000",
+      "pre_event_price": 164.73,
+      "entry_price": 164.73,
+      "actual_move": -0.05906,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.007448,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.003164,
+      "beta": 2.354,
+      "residual": -0.066508,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -8.31,
+      "z_threshold": 2,
+      "volume_ratio": 0.2135,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "WEAK_LIQUIDITY",
+      "event_direction": "bullish",
+      "price_direction": "bearish",
+      "direction_alignment": "CONTRADICTION",
+      "strategy_mode": "MEAN_REVERSION",
+      "qwen_direction": "BULLISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "Event signals fundamental revenue/guidance upside or favorable operational growth for NVDA.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "LONG",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2500.87,
+      "stop_price": 162.259,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "LONG signal approved: Price dumped -5.91% on bullish event with weak volume (0.21) and high divergence (z=-8.31).",
+      "divergence": -0.066508,
+      "id": 2
+    }
+  ]
 }
