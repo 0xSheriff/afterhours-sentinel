@@ -1,6 +1,6 @@
 {
-  "version": "1794484770997",
-  "generated_at": "2026-11-12T11:59:30.996Z",
+  "version": "1794484798522",
+  "generated_at": "2026-11-12T11:59:58.522Z",
   "total_records": 32264,
   "skipped_count": 22026,
   "evaluated_count": 10232,
@@ -13,10 +13,10 @@
   "live": {
     "total": 32258,
     "trades_count": 352,
-    "wins_count": 238,
-    "win_rate": "67.6",
-    "total_pnl": 8709.4,
-    "sharpe_ratio": "9.44",
+    "wins_count": 239,
+    "win_rate": "67.9",
+    "total_pnl": 8786.54,
+    "sharpe_ratio": "9.51",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1372.2",
@@ -28,7 +28,7 @@
     "evaluated_calls": 10232,
     "live_call_rate": "95",
     "no_trades": 9880,
-    "open_positions_count": 2
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -41,7 +41,7 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 352,
-      "pnl": 8709.4
+      "pnl": 8786.54
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
@@ -95,53 +95,6 @@
       "reason": "SHORT signal approved: Price pumped +0.18% on bearish event with weak volume (0.25) and high divergence (z=+5.83).",
       "divergence": 0.046629,
       "id": 142
-    },
-    {
-      "timestamp": "2026-11-12T08:14:27.785393+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "INTC",
-      "event_headline": "INTC, BABA Shares Slide Over Links To Firm Tied To Suspected Chinese Spy",
-      "event_type": "other",
-      "event_timestamp": "Thu, 12 Nov 2026 08:04:46 +0000",
-      "pre_event_price": 60.9496,
-      "entry_price": 60.9496,
-      "actual_move": 0.048505,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.021408,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.013118,
-      "beta": 1.6319,
-      "residual": 0.069913,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": 8.74,
-      "z_threshold": 2,
-      "volume_ratio": 0.4618,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bearish",
-      "price_direction": "bullish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BEARISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The association with a suspected Chinese spy introduces significant geopolitical and reputational risk, likely triggering investor concerns over supply chain security and potential regulatory scrutiny.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "SHORT",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2571.33,
-      "stop_price": 61.8638,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "SHORT signal approved: Price pumped +4.85% on bearish event with weak volume (0.46) and high divergence (z=+8.74).",
-      "divergence": 0.069913,
-      "id": 228
     }
   ]
 }
