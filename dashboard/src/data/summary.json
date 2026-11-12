@@ -1,34 +1,34 @@
 {
-  "version": "1794471193514",
-  "generated_at": "2026-11-12T08:13:13.513Z",
-  "total_records": 32036,
+  "version": "1794471285680",
+  "generated_at": "2026-11-12T08:14:45.680Z",
+  "total_records": 32037,
   "skipped_count": 21905,
-  "evaluated_count": 10125,
+  "evaluated_count": 10126,
   "decision_counts": {
     "LONG": 208,
-    "SHORT": 144,
+    "SHORT": 145,
     "NO_TRADE": 9779,
     "SKIPPED_NO_ASSET_MATCH": 21905
   },
   "live": {
-    "total": 32030,
-    "trades_count": 350,
+    "total": 32031,
+    "trades_count": 351,
     "wins_count": 237,
-    "win_rate": "67.7",
+    "win_rate": "67.5",
     "total_pnl": 8645.39,
-    "sharpe_ratio": "9.41",
+    "sharpe_ratio": "9.40",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1368.5",
     "start_time": 1789544649909,
-    "end_time": 1794471171681,
-    "live_calls": 9595,
+    "end_time": 1794471267785,
+    "live_calls": 9596,
     "fallback_calls": 530,
     "skipped_calls": 21905,
-    "evaluated_calls": 10125,
+    "evaluated_calls": 10126,
     "live_call_rate": "95",
     "no_trades": 9775,
-    "open_positions_count": 2
+    "open_positions_count": 3
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 350,
+      "trades": 351,
       "pnl": 8645.39
     },
     "MockExecutionClient [Local Simulator]": {
@@ -49,6 +49,53 @@
     }
   },
   "open_positions": [
+    {
+      "timestamp": "2026-11-12T08:14:27.785393+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "INTC",
+      "event_headline": "INTC, BABA Shares Slide Over Links To Firm Tied To Suspected Chinese Spy",
+      "event_type": "other",
+      "event_timestamp": "Thu, 12 Nov 2026 08:04:46 +0000",
+      "pre_event_price": 60.9496,
+      "entry_price": 60.9496,
+      "actual_move": 0.048505,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": -0.021408,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": -0.013118,
+      "beta": 1.6319,
+      "residual": 0.069913,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": 8.74,
+      "z_threshold": 2,
+      "volume_ratio": 0.4618,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "WEAK_LIQUIDITY",
+      "event_direction": "bearish",
+      "price_direction": "bullish",
+      "direction_alignment": "CONTRADICTION",
+      "strategy_mode": "MEAN_REVERSION",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The association with a suspected Chinese spy introduces significant geopolitical and reputational risk, likely triggering investor concerns over supply chain security and potential regulatory scrutiny.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2571.33,
+      "stop_price": 61.8638,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved: Price pumped +4.85% on bearish event with weak volume (0.46) and high divergence (z=+8.74).",
+      "divergence": 0.069913,
+      "id": 1
+    },
     {
       "timestamp": "2026-11-12T07:52:56.588589+00:00",
       "mode": "live",
@@ -94,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -6.77% on bullish event with weak volume (0.31) and high divergence (z=-8.13).",
       "divergence": -0.065031,
-      "id": 14
+      "id": 15
     },
     {
       "timestamp": "2026-11-12T05:40:12.766923+00:00",
@@ -141,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -7.17% on bullish event with weak volume (0.37) and high divergence (z=-8.13).",
       "divergence": -0.065004,
-      "id": 90
+      "id": 91
     }
   ]
 }
