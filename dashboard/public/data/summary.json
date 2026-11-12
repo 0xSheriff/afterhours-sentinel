@@ -1,34 +1,34 @@
 {
-  "version": "1794492717493",
-  "generated_at": "2026-11-12T14:11:57.493Z",
-  "total_records": 32514,
-  "skipped_count": 22175,
-  "evaluated_count": 10333,
+  "version": "1794492765505",
+  "generated_at": "2026-11-12T14:12:45.505Z",
+  "total_records": 32517,
+  "skipped_count": 22176,
+  "evaluated_count": 10335,
   "decision_counts": {
     "LONG": 210,
-    "SHORT": 146,
-    "NO_TRADE": 9983,
-    "SKIPPED_NO_ASSET_MATCH": 22175
+    "SHORT": 147,
+    "NO_TRADE": 9984,
+    "SKIPPED_NO_ASSET_MATCH": 22176
   },
   "live": {
-    "total": 32508,
-    "trades_count": 354,
+    "total": 32511,
+    "trades_count": 355,
     "wins_count": 240,
-    "win_rate": "67.8",
+    "win_rate": "67.6",
     "total_pnl": 8728.49,
-    "sharpe_ratio": "9.35",
+    "sharpe_ratio": "9.33",
     "max_drawdown_usd": 124.72,
     "max_drawdown_pct": "0.119",
     "duration_hours": "1374.5",
     "start_time": 1789544649909,
-    "end_time": 1794492679488,
-    "live_calls": 9784,
+    "end_time": 1794492754362,
+    "live_calls": 9786,
     "fallback_calls": 549,
-    "skipped_calls": 22175,
-    "evaluated_calls": 10333,
+    "skipped_calls": 22176,
+    "evaluated_calls": 10335,
     "live_call_rate": "95",
-    "no_trades": 9979,
-    "open_positions_count": 0
+    "no_trades": 9980,
+    "open_positions_count": 1
   },
   "backtest": {
     "total": 6,
@@ -40,7 +40,7 @@
   },
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
-      "trades": 354,
+      "trades": 355,
       "pnl": 8728.49
     },
     "MockExecutionClient [Local Simulator]": {
@@ -48,5 +48,53 @@
       "pnl": 209.71
     }
   },
-  "open_positions": []
+  "open_positions": [
+    {
+      "timestamp": "2026-11-12T14:12:24.068081+00:00",
+      "mode": "live",
+      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
+      "llm_source": "groq_qwen3.8-27b [live_api]",
+      "symbol": "NVDA",
+      "event_headline": "AMD Shares Jump on Stunning Upgrade Amid Nvidia Turmoil",
+      "event_type": "analyst",
+      "event_timestamp": "Thu, 12 Nov 2026 14:04:14 +0000",
+      "pre_event_price": 154.12,
+      "entry_price": 154.12,
+      "actual_move": -0.11674,
+      "actual_move_basis": "ROLLING_24H",
+      "actual_move_status": "MEASURED",
+      "expected_move": 0.000989,
+      "benchmark_type": "PEER_TECH_BASKET",
+      "benchmark_move": 0.00042,
+      "beta": 2.354,
+      "residual": -0.117729,
+      "residual_std": 0.008,
+      "volatility_floor": 0.008,
+      "z_score": -14.72,
+      "z_threshold": 2,
+      "volume_ratio": 0.8165,
+      "volume_basis": "MEASURED",
+      "volume_status": "EMPIRICAL",
+      "liquidity_condition": "CONFIRMING_VOLUME",
+      "event_direction": "bearish",
+      "price_direction": "bearish",
+      "direction_alignment": "ALIGNMENT",
+      "strategy_mode": "MOMENTUM",
+      "qwen_direction": "BEARISH",
+      "qwen_validation": "PASS",
+      "qwen_reasoning": "The headline explicitly cites 'Nvidia Turmoil' as the catalyst for AMD's upgrade, implying negative analyst sentiment or deteriorating fundamentals for NVDA.",
+      "quant_signal": "PASS",
+      "risk_gate": "PASS",
+      "decision": "SHORT",
+      "signals_aligned": "3/3 signals aligned",
+      "position_size": 2520.41,
+      "stop_price": 156.4318,
+      "exit_price": 0,
+      "exit_reason": "OPEN",
+      "pnl": 0,
+      "reason": "SHORT signal approved (MOMENTUM/PEAD): Bearish earnings breakdown with confirming volume (0.82 >= 0.8) and statistical significance (z=-14.72).",
+      "divergence": -0.117729,
+      "id": 3
+    }
+  ]
 }
