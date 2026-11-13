@@ -1,17 +1,17 @@
 {
-  "version": "1794530717664",
-  "generated_at": "2026-11-13T00:45:17.663Z",
-  "total_records": 33472,
+  "version": "1794530851218",
+  "generated_at": "2026-11-13T00:47:31.218Z",
+  "total_records": 33473,
   "skipped_count": 22715,
-  "evaluated_count": 10746,
+  "evaluated_count": 10747,
   "decision_counts": {
     "LONG": 216,
     "SHORT": 151,
-    "NO_TRADE": 10390,
+    "NO_TRADE": 10391,
     "SKIPPED_NO_ASSET_MATCH": 22715
   },
   "live": {
-    "total": 33466,
+    "total": 33467,
     "trades_count": 365,
     "wins_count": 242,
     "win_rate": "66.3",
@@ -21,13 +21,13 @@
     "max_drawdown_pct": "0.221",
     "duration_hours": "1385.0",
     "start_time": 1789544649909,
-    "end_time": 1794530703099,
-    "live_calls": 10160,
+    "end_time": 1794530771275,
+    "live_calls": 10161,
     "fallback_calls": 586,
     "skipped_calls": 22715,
-    "evaluated_calls": 10746,
+    "evaluated_calls": 10747,
     "live_call_rate": "95",
-    "no_trades": 10386,
+    "no_trades": 10387,
     "open_positions_count": 3
   },
   "backtest": {
@@ -94,7 +94,7 @@
       "pnl": 0,
       "reason": "SHORT signal approved: Price pumped +5.36% on bearish event with weak volume (0.27) and high divergence (z=+3.35).",
       "divergence": 0.026814,
-      "id": 17
+      "id": 18
     },
     {
       "timestamp": "2026-11-12T21:44:34.577404+00:00",
@@ -141,7 +141,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -4.40% on bullish event with weak volume (0.25) and high divergence (z=-7.58).",
       "divergence": -0.060623,
-      "id": 265
+      "id": 266
     },
     {
       "timestamp": "2026-11-12T21:00:39.899799+00:00",
@@ -188,7 +188,7 @@
       "pnl": 0,
       "reason": "LONG signal approved: Price dumped -4.41% on bullish event with weak volume (0.25) and high divergence (z=-7.07).",
       "divergence": -0.056575,
-      "id": 371
+      "id": 372
     }
   ]
 }
