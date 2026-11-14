@@ -1,6 +1,6 @@
 {
-  "version": "1794624060721",
-  "generated_at": "2026-11-14T02:41:00.721Z",
+  "version": "1794625505999",
+  "generated_at": "2026-11-14T03:05:05.996Z",
   "total_records": 34793,
   "skipped_count": 23493,
   "evaluated_count": 11289,
@@ -13,9 +13,9 @@
   "live": {
     "total": 34787,
     "trades_count": 376,
-    "wins_count": 255,
-    "win_rate": "67.8",
-    "total_pnl": 9245.89,
+    "wins_count": 256,
+    "win_rate": "68.1",
+    "total_pnl": 9246.04,
     "sharpe_ratio": "9.35",
     "max_drawdown_usd": 240.9,
     "max_drawdown_pct": "0.221",
@@ -28,7 +28,7 @@
     "evaluated_calls": 11289,
     "live_call_rate": "95",
     "no_trades": 10918,
-    "open_positions_count": 1
+    "open_positions_count": 0
   },
   "backtest": {
     "total": 6,
@@ -41,60 +41,12 @@
   "execution_clients": {
     "BitgetAgentHubClient [Demo Environment: api.bitget.com]": {
       "trades": 376,
-      "pnl": 9245.89
+      "pnl": 9246.04
     },
     "MockExecutionClient [Local Simulator]": {
       "trades": 2,
       "pnl": 209.71
     }
   },
-  "open_positions": [
-    {
-      "timestamp": "2026-11-13T23:04:37.212209+00:00",
-      "mode": "live",
-      "execution_client": "BitgetAgentHubClient [Demo Environment: api.bitget.com]",
-      "llm_source": "groq_qwen3.8-27b [live_api]",
-      "symbol": "NVDA",
-      "event_headline": "Nvidia Has Real Problems—but Don’t Fall For Fear Mongering",
-      "event_type": "other",
-      "event_timestamp": "Fri, 13 Nov 2026 22:40:00 +0000",
-      "pre_event_price": 161.22,
-      "entry_price": 161.22,
-      "actual_move": -0.03784,
-      "actual_move_basis": "ROLLING_24H",
-      "actual_move_status": "MEASURED",
-      "expected_move": -0.014844,
-      "benchmark_type": "PEER_TECH_BASKET",
-      "benchmark_move": -0.006306,
-      "beta": 2.354,
-      "residual": -0.022996,
-      "residual_std": 0.008,
-      "volatility_floor": 0.008,
-      "z_score": -2.87,
-      "z_threshold": 2,
-      "volume_ratio": 0.4332,
-      "volume_basis": "MEASURED",
-      "volume_status": "EMPIRICAL",
-      "liquidity_condition": "WEAK_LIQUIDITY",
-      "event_direction": "bullish",
-      "price_direction": "bearish",
-      "direction_alignment": "CONTRADICTION",
-      "strategy_mode": "MEAN_REVERSION",
-      "qwen_direction": "BULLISH",
-      "qwen_validation": "PASS",
-      "qwen_reasoning": "The headline explicitly advises against fear-mongering and defends Nvidia's role in the AI buildout, signaling a positive fundamental outlook that counters negative sentiment.",
-      "quant_signal": "PASS",
-      "risk_gate": "PASS",
-      "decision": "LONG",
-      "signals_aligned": "3/3 signals aligned",
-      "position_size": 2412.9,
-      "stop_price": 158.8017,
-      "exit_price": 0,
-      "exit_reason": "OPEN",
-      "pnl": 0,
-      "reason": "LONG signal approved: Price dumped -3.78% on bullish event with weak volume (0.43) and high divergence (z=-2.87).",
-      "divergence": -0.022996,
-      "id": 45
-    }
-  ]
+  "open_positions": []
 }
